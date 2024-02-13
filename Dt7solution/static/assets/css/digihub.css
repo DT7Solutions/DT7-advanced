@@ -878,7 +878,7 @@ i {
   display: inline-block;
   width: 45px;
   height: 45px;
-  background: var(--digihub-special, #8EC557);
+  background: var(--digihub-base, #8EC557);
   position: fixed;
   bottom: 40px;
   right: 40px;
@@ -4583,10 +4583,12 @@ i {
 .about-one__inner-title {
   margin-bottom: 9px;
   transition: all 0.3s ease-in-out;
+  color:#FFFFFF;
 }
 .about-one__inner-desc {
   margin-bottom: 0;
   transition: all 0.3s ease-in-out;
+  color:#FFFFFF;
 }
 .about-one__shape-one {
   position: absolute;
@@ -7183,10 +7185,12 @@ i {
 }
 .blog-one__info-box {
   padding: 30px 30px 40px;
+  min-height:300px!important;
 }
 @media (max-width: 375px) {
   .blog-one__info-box {
     padding: 25px 20px;
+    
   }
 }
 .blog-one__comment-box {
@@ -8380,7 +8384,7 @@ i {
   padding: 0;
   width: 133px;
   height: 52px;
-  background-color: var(--digihub-special, #8EC557);
+  background-color: var(--digihub-base, #EA4723);
 }
 .footer-one__newsletter-btn span {
   background-color: var(--digihub-base, #EA4723);
@@ -8427,7 +8431,7 @@ i {
 .footer-one__checkbox-text::before {
   content: "";
   background-color: transparent;
-  border: 1px solid var(--digihub-special, #8EC557);
+  border: 1px solid var(--digihub-base, #8EC557);
   padding: 7px;
   display: inline-block;
   position: relative;
@@ -8957,6 +8961,15 @@ i {
   padding-top: 150px;
   padding-bottom: 150px;
   background-image: url(../images/award/trail-logos.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 1;
+}
+.image-highlight{
+  position: relative;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background-image: url(../images/award/background-6D.png);
   background-repeat: no-repeat;
   background-size: 100%;
   z-index: 1;
