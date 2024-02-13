@@ -1,0 +1,352 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us || Digihub || HTML Template For Digital Agency</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest'%}">
+    <meta name="description" content="Digihub HTML Template For Digital Agency">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/digihub-icons/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/jarallax/jarallax.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.pips.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/tiny-slider/tiny-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.theme.default.min.css' %}">
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/digihub.css' %}">
+</head>
+
+<body class="custom-cursor">
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+    <!-- /.Custom Cursor -->
+
+    <div class="preloader">
+        <img class="preloader__image" width="55" src="{% static 'assets/images/loader.png' %}" alt="digihub">
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+        <header class="main-header">
+            <nav class="main-menu-one main-menu">
+                <div class="container">
+                    <div class="main-menu-one__left">
+                        <div class="main-menu-one__logo">
+                            <a href="index.html" class="main-menu-one__logo-box">
+                                <img src="{% static 'assets/images/DT7-logo.png' %}" alt="logo-dark">
+                            </a>
+                        </div><!-- /.main-menu-one__logo -->
+                       
+                    </div><!-- /.main-menu-one__left -->
+                    <ul class="main-menu__list black">
+                        <li class="dropdown">
+                            <a href="/">Home </a>
+                           
+                        </li>
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="/solutions/">Solutions <i class="fas fa-angle-down"></i></a>
+                            <ul>
+                                
+                                <li><a href="web-genius.html">Web Genius</a></li>
+                                <li><a href="social-boost.html">Social Boost</a></li>
+                                <li><a href="data-sprint.html">Data Sprint</a></li>
+                                <li><a href="creative-agency.html">Creative Agency</a></li>
+                                <li><a href="brand-max.html">Brand Max</a></li>
+                                <li><a href="tech-secure.html">Tech Secure</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="dropdown">
+                            <a href="#">Projects <i class="fas fa-angle-down"></i></a>
+                            <ul>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="projects-carousel.html">Projects Carousel</a></li>
+                                <li><a href="projects-details.html">Projects Details</a></li>
+                            </ul>
+                        </li> -->
+                        <li >
+                            <a href="/projects/">Portfolio</a>
+                            <!-- <ul>
+                                <li><a href="portfolio.html">Portfolio</a></li>
+                                <li><a href="portfolio-carousel.html">Portfolio Carousel 01</a></li>
+                                <li><a href="portfolio-carousel-2.html">Portfolio Carousel 02</a></li>
+                                <li><a href="team.html">Team</a></li>
+                                <li><a href="team-carousel.html">Team Carousel 01</a></li>
+                                <li><a href="team-carousel-2.html">Team Carousel 02</a></li>
+                                <li><a href="team-single.html">Team Single</a></li>
+                            </ul> -->
+                        </li>
+                        <li class="dropdown">
+                            <a href="/blog/">Blogs</a>
+                            <ul>
+                                
+                             
+                                <li class="dropdown"><a href="/blogdetails/">Blog Details</a>
+                                    
+                                </li>
+                            </ul>
+                        </li>
+                       
+                        <li>
+                            <a href="/contact/">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="main-menu-one__right">
+                        <button type="button" class="main-menu-one__bar mobile-nav__toggler">
+                            <span class="mobile-nav__toggler-bars"></span>
+                            <span class="mobile-nav__toggler-bars"></span>
+                            <span class="mobile-nav__toggler-bars"></span>
+                        </button>
+                        <!-- <a href="#" class="main-menu-one__search search-toggler"><i class="fa fa-search"></i></a> -->
+                        <a href="contact.html" class="main-menu-one__btn digihub-btn digihub-btn--secondary">Get In Touch <span></span><span></span><span></span><span></span></a>
+                    </div><!-- /.main-menu-one__right -->
+                </div><!-- /.container -->
+            </nav>
+            <!-- /.main-menu-one -->
+        </header><!-- /.main-header -->
+        <div class="stricky-header stricky-header-four stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+        {% block content %}
+    
+        {% endblock %}
+        <footer class="footer-three footer-one footer-three--one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-5 col-xl-4 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                        <div class="footer-three__about-box">
+                            <div class="footer-three__logo-box">
+                                <a href="index.html">
+                                    <img src="{% static 'assets/images/DT7-logo.png' %}" alt="logo-light" class="footer-three__logo">
+                                </a>
+                            </div><!-- /.footer-three__logo-box -->
+                            <p class="footer-three__about-text"> We're a creative team pushing limits dedicated to helping brands achieve the immposssible </p>
+                        </div><!-- /.footer-three__about -->
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-sm-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <div class="footer-three__link-box footer-three__link-box-one">
+                            <h3 class="footer-three__title">Solutions</h3>
+                            <ul class="footer-three__link-list">
+                                <li class="footer-three__link-item">
+                                    <a href="about.html" class="footer-three__link">Digital Marketing</a>
+                                </li>
+                                <li class="footer-three__link-item">
+                                    <a href="contact.html" class="footer-three__link">Web Desgin </a>
+                                </li>
+                                <li class="footer-three__link-item">
+                                    <a href="service.html" class="footer-three__link">logo and branding </a>
+                                </li>
+                                <li class="footer-three__link-item">
+                                    <a href="team.html" class="footer-three__link">WhatsApp Marketing</a>
+                                </li>
+                                <li class="footer-three__link-item">
+                                    <a href="portfolio.html" class="footer-three__link">3rd Part Listing</a>
+                                </li>
+                            </ul><!-- /.footer-three__link-list -->
+                        </div><!-- /.footer-three__link-box -->
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-sm-6 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
+                        <div class="footer-three__link-box footer-three__link-box-two">
+                            <h3 class="footer-three__title">Quick Links</h3>
+                            <ul class="footer-three__link-list">
+                                <li class="footer-three__link-item">
+                                    <a href="brand-max.html" class="footer-three__link">Home</a>
+                                </li>
+                                <li class="footer-three__link-item">
+                                    <a href="web-genius.html" class="footer-three__link">about</a>
+                                </li>
+                                <li class="footer-three__link-item">
+                                    <a href="data-sprint.html" class="footer-three__link">blogs</a>
+                                </li>
+                                <li class="footer-three__link-item">
+                                    <a href="social-boost.html" class="footer-three__link">Portfolio</a>
+                                </li>
+                                <li class="footer-three__link-item">
+                                    <a href="social-boost.html" class="footer-three__link">Contact</a>
+                                </li>
+                                
+                            </ul><!-- /.footer-three__link-list -->
+                        </div><!-- /.footer-three__link-box -->
+                    </div>
+                    <div class="col-xxl-3 col-xl-4 col-lg-6 wow animated fadeInUp" data-wow-delay="0.7s" data-wow-duration="1500ms">
+                        <div class="footer-three__info-box">
+                            <h3 class="footer-three__title">Contact</h3>
+                            <ul class="footer-three__info">
+                                <li class="footer-three__info-item">
+                                    <i class="fa fa-envelope"></i>
+                                    <a href="mailto:digihub@envato.com" class="footer-three__info-text footer-three__info-mail-text">digihub@envato.com</a>
+                                </li>
+                                <li class="footer-three__info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <p class="footer-three__info-text">3891 Ranchview Dr. Richardson, California 62639</p>
+                                </li>
+                            </ul><!-- /.footer-three__info -->
+                            <ul class="footer-three__social">
+                                <li class="footer-three__social-item">
+                                    <a href="https://www.facebook.com/" class="footer-three__social-link">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="footer-three__social-item">
+                                    <a href="https://twitter.com/" class="footer-three__social-link">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="footer-three__social-item">
+                                    <a href="https://www.linkedin.com/?original_referer=" class="footer-three__social-link">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                                <li class="footer-three__social-item">
+                                    <a href="https://www.pinterest.com/" class="footer-three__social-link">
+                                        <i class="fab fa-pinterest-p"></i>
+                                    </a>
+                                </li>
+                            </ul><!-- /.footer-three__socila -->
+                        </div><!-- /.footer-three__info-box -->
+                    </div>
+                </div><!-- /.row -->
+                <div class="footer-one__bottom container-fluid @@extraClassName">
+                    <div class="row">
+                        <div class="footer-one__bottom-col-one col-lg-5">
+                            <div class="footer-one__copyright">
+                                <p class="footer-one__copyright-text">&copy; Copyright @2023   | Desgined by DT7 Solutions</p>
+                            </div><!-- /.footer__copyright -->
+                        </div>
+                        <div class="footer-one__bottom-col-two col-lg-7">
+                            <div class="footer-one__bottom-link-box">
+                                <a href="team.html" class="footer-one__bottom-link">Trams & Condition</a>
+                                <a href="about.html" class="footer-one__bottom-link">Privacy Policy</a>
+                                <a href="contact.html" class="footer-one__bottom-link">Contact Us</a>
+                            </div><!-- /.footer__bottom-link-box -->
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.footer__bottom -->
+            </div><!-- /.container -->
+        </footer><!-- /.footer-one -->
+        <!-- Footer Three End -->
+    </div><!-- /.page-wrapper -->
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="{% static 'assets/images/logo-dark.png' %}" width="155" alt="digihub"></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:digihub@envato.com">digihub@envato.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone"></i>
+                    <a href="tel:8085550111">(808) 555-0111</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <ul class="mobile-nav__social">
+                <li>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/?original_referer="><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
+                </li>
+            </ul><!-- /.mobile-nav__social -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form role="search" method="get" class="search-popup__form" action="#">
+                <input type="text" id="search" placeholder="Search Here...">
+                <button type="submit" aria-label="search submit" class="search-popup__form__btn">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-long-arrow-alt-up"></i></a>
+
+
+    <script src="{% static 'assets/vendors/jquery/jquery-3.7.0.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jarallax/jarallax.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-appear/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-validate/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/nouislider/nouislider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/tiny-slider/tiny-slider.js' %}"></script>
+    <script src="{% static 'assets/vendors/wnumb/wNumb.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/owl-carousel/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+    <script src="{% static 'assets/vendors/tilt/tilt.jquery.js' %}"></script>
+    <script src="{% static 'assets/vendors/isotope/isotope.js' %}"></script>
+    <script src="{% static 'assets/vendors/gsap/gsap.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/gsap/three.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/gsap/hover.js' %}"></script>
+    <script src="{% static 'assets/vendors/countdown/countdown.min.js' %}"></script>
+
+    <!-- template js -->
+    <script src="{% static 'assets/js/digihub.js' %}"></script>
+    <script>
+        // Example form validation using jQuery
+        $(document).ready(function () {
+          $('#myForm').submit(function (event) {
+            var form = $(this);
+            if (form[0].checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.addClass('was-validated');
+          });
+        });
+      </script>
+     
+</body>
+
+</html>

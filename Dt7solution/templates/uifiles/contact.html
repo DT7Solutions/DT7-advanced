@@ -1,0 +1,228 @@
+
+{% extends 'uifiles/subase.html' %}
+{% load static %}
+{% block content %}
+
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <h2 class="page-header__title wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">Contact Us</h2>
+                    <ul class="digihub-breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li>/</li>
+                        <li><span>Contact Us</span></li>
+                    </ul><!-- /.thm-breadcrumb list-unstyled -->
+                </div><!-- /.page-header__content -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+        <!-- Page Header End -->
+    
+        <!-- Contact Page Start -->
+        <section class="contact-page">
+            <div class="container">
+                <div class="row">
+                  
+                    <div class="col-lg-6 ">
+                        <div class="contact-page__info container-fluid">
+                            <div class="alignments row">
+                                <div class="col-sm-6 col-xl-12">
+                                  <div class="service-two__single">
+                                    <div class="service-two__icon-box service-two__icon-box--two">
+                                        <span class="service-two__icon service-two__icon--two fas fa-building"></span>
+                                        <h3 class="service-two__number service-two__number--two">01</h3>
+                                    </div><!-- /.service-two__icon-box -->
+                                    <div class="service-two__content service-two__content--two">
+                                        <h3 class="service-two__title">Guntur</h3>
+                                       
+                                        <p class="service-two__desc mb-2"><i class="fas fa-phone-alt"></i> +91 888 578 2778</p>
+                                        <p class="service-two__desc mb-2"><i class="far fa-envelope"></i> info@dt7solutions.com</p>
+                                        <p class="service-two__desc"><i class="fas fa-map-marker-alt"></i> DT7solutions, Inner Ring Road, Guntur</p>
+                                    </div><!-- /.service-two__content -->
+                                </div><!-- /.service-two__single -->
+                               
+                                </div>
+                                <div class="col-sm-6 col-xl-12">
+                                  <div class="service-two__single">
+                                    <div class="service-two__icon-box service-two__icon-box--three">
+                                        <span class="service-two__icon service-two__icon--three fas fa-building"></span>
+                                        <h3 class="service-two__number service-two__number--three">02</h3>
+                                    </div><!-- /.service-two__icon-box -->
+                                    <div class="service-two__content service-two__content--three">
+                                      
+                                        <h3 class="service-two__title">Hyderabad</h3>
+                                        <p class="service-two__desc mb-2"><i class="fas fa-phone-alt"></i>+91 888 578 2778</p>
+                                        <p class="service-two__desc mb-2"><i class="far fa-envelope"></i>info@dt7solutions.com</p>
+                                        <p class="service-two__desc "><i class="fas fa-map-marker-alt"></i> Unit no.202,2nd floor,M square Building, street number 1,patrika nagar,madhapur,hyderabad, telangana 500081.</p>
+                                    </div><!-- /.service-two__content -->
+                                </div><!-- /.service-two__single -->
+                                </div>
+                            </div><!-- /.contact-page__info-row -->
+                        </div><!-- /.contact-page__info -->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="comment-form">
+                           
+                            <!-- <form class="comment-form__form container-fluid">
+                                <div class="comment-form__form-row row">
+                                    <div class="col-xl-6 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                        <div class="comment-form__form-input-box">
+                                            <input type="text" name="comment-form-form-name" id="comment-form-form-name" placeholder="Your Name" class="comment-form__form-input">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                                        <div class="comment-form__form-input-box">
+                                            <input type="email" name="comment-form-form-email" id="comment-form-form-email" placeholder="Your Email" class="comment-form__form-input">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                        <div class="comment-form__form-input-box">
+                                            <textarea name="comment-form-form-message" id="comment-form-form-message" placeholder="Write your messege" cols="30" rows="10" class="comment-form__form-message comment-form__form-input"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                        <div class="comment-form__form-input-box">
+                                            <button type="submit" class="comment-form__form-btn digihub-btn digihub-btn--secondary">Submit Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form> -->
+                            <form id="myForm" action="#" method="POST" class="comment-form__form container-fluid form-back">
+                              {% csrf_token %}
+                                <div class="comment-form__form-row row">
+                                  <div class="col-md-6 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                    <div class="form-group comment-form__form-input-box">
+                                      <label for="firstName">First Name</label>
+                                      <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                    <div class="form-group comment-form__form-input-box">
+                                      <label for="lastName">Last Name</label>
+                                      <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <div class="form-group">
+                                  <label for="email">Email</label>
+                                  <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2 wow animated fadeInUp " data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <label>Services Interested In:</label><br>
+                                <div class="d-flex">
+                                <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <div class="form-group">
+                                 
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="digitalMarketing" name="servicesInterestedIn" value="Digital Marketing">
+                                    <label class="form-check-label" for="digitalMarketing">Digital Marketing</label>
+                                  </div>
+                               
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="whatsappMarketing" name="servicesInterestedIn" value="Digital Marketing">
+                                    <label class="form-check-label" for="whatsappMarketing">WhatsApp Marketing</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="logoBranding" name="servicesInterestedIn" value="logoBranding">
+                                    <label class="form-check-label" for="logoBranding">Logo Branding</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="emailMarketing" name="servicesInterestedIn" value="emailMarketing">
+                                    <label class="form-check-label" for="emailMarketing">Email Marketing</label>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <div class="form-group">
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="webDesigning" name="servicesInterestedIn" value="webDesigning">
+                                    <label class="form-check-label" for="webDesigning">Web Designing (UI/UX)</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="thirdPartyListing" name="servicesInterestedIn" value="thirdPartyListing">
+                                    <label class="form-check-label" for="thirdPartyListing">3rd Party Listing</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="onlinePaidMarketing" name="servicesInterestedIn" value="onlinePaidMarketing">
+                                    <label class="form-check-label" for="onlinePaidMarketing">Online Paid Marketing</label>
+                                  </div>
+                                  
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                            <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <div class="form-group">
+                                  <label for="message">Message</label>
+                                  <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                                </div>
+                            </div>
+                                <div class="form-check">
+                                  <input type="checkbox" class="form-check-input" id="termsAndConditions" name="termsAndConditions" required>
+                                  <label class="form-check-label" for="termsAndConditions">I agree to the Terms and Conditions</label>
+                                </div>
+                                <button type="submit" id="submitBtn" class="comment-form__form-btn digihub-btn digihub-btn--secondary mt-3">Submit</button>
+                              </form>
+                        </div><!-- /.comment-form -->
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.contact-page -->
+        <!-- Contact Page End -->
+     
+
+        <!-- Our Locations -->
+
+    
+    <section class="blog-one pt-5">
+      <div class="container">
+          <div class="blog-one__sec-title sec-title wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">
+            
+              <h2 class="blog-one__heading sec-title__heading">Our Locations</h2>
+          </div><!-- /.blog-one__sec-title -->
+          <div class="row">
+            <div class="col-xl-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
+              <div class="blog-one__card">
+                  <a href="blog-details.html" data-hover-image="assets/images/shapes/hover-two.jpg" class="blog-one__img-box digihub-image-hover">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3828.816650854845!2d80.445161!3d16.33231!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a358be086d986d3%3A0x258611ac392f948e!2sDT7%20Solutions!5e0!3m2!1sen!2sus!4v1707725494684!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                     
+                  </a><!-- /.blog-one__img-box -->
+                  <div class="blog-one__info-box">
+                     
+                      <h3 class="blog-one__title"><a href="blog-details.html">Guntur</a></h3>
+                      <p> <i class="fas fa-phone-alt"></i> +91 885782778</p>
+                      
+                      <p><i class="fas fa-map-marker-alt"></i> DT7Solutions,Inner Ring Road, Guntur </p>
+                      <a href="blog-details.html" class="blog-one__btn digihub-btn digihub-btn--border-one">Get Directions
+                          <span></span><span></span><span></span><span></span></a>
+                  </div><!-- /.blog-one__info-box -->
+              </div><!-- /.blog-one__card -->
+          </div>
+          <div class="col-xl-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
+            <div class="blog-one__card">
+                <a href="blog-details.html" data-hover-image="assets/images/shapes/hover-two.jpg" class="blog-one__img-box digihub-image-hover">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7612.526409579906!2d78.379649!3d17.447112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb932e7522c47d%3A0x41eadcca78959a0e!2sDt7%20Solutions!5e0!3m2!1sen!2sin!4v1707725553170!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                   
+                </a><!-- /.blog-one__img-box -->
+                <div class="blog-one__info-box 
+                ">
+                    
+                    <h3 class="blog-one__title"><a href="blog-details.html"> Hyderabad</a></h3>
+                    <p><i class="fas fa-phone-alt"></i> +91 888 578 2778</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Unit no 202,2nd Floor MSquare Building Street number 1, Patrika nagar , Madhapur, Hyderabad</p>
+                    <a href="blog-details.html" class="blog-one__btn digihub-btn digihub-btn--border-one">Get Directions
+                        <span></span><span></span><span></span><span></span></a>
+                </div><!-- /.blog-one__info-box -->
+            </div><!-- /.blog-one__card -->
+        </div>
+             
+              
+              
+          </div><!-- /.row -->
+      </div><!-- /.container -->
+  </section><!-- /.blog-one -->
+ 
+        <!-- Our Locations end  -->
+
+{% endblock %}
