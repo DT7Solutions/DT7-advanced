@@ -18,8 +18,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-
-
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}">
@@ -312,6 +312,14 @@
 
     <!-- template js -->
     <script src="{% static 'assets/js/digihub.js' %}"></script>
+    <script>
+        // Check if the URL contains a success message parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const successMessage = urlParams.get('success');
+        if (successMessage === 'true') {
+            alert('Message has been successfully sent.');  // Display an alert message
+        }
+    </script>
     <script>
         // Example form validation using jQuery
         $(document).ready(function () {

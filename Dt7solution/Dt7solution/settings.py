@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'DT7App',
-    'ckeditor5'
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -137,8 +137,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'connectmagsmen@gmail.com'
-EMAIL_HOST_PASSWORD = 'swdazsfmewgaqmzb'
+EMAIL_HOST_USER = 'dt7solutions@gmail.com'
+EMAIL_HOST_PASSWORD = 'jpqxgzfewqvcnqiv'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False

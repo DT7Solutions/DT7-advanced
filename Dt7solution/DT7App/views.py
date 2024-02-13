@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import JsonResponse,HttpResponse
 from .models import FormsData,BlogPost
 from django.views.decorators.http import require_POST
@@ -79,18 +79,15 @@ def Contact(request):
         try:
             send_mail(
                 'New Contact Form Submission',  # Subject
-                f'Message: {message}\nServices Interested In: {", ".join(services_interested)}',  # Message
+                f'Email : {email}\nMessage: {message}\nServices Interested In: {", ".join(services_interested)}',  # Message
                 'noreplaybadugudinesh94@gmail.com',  # Sender's email
                 ['manideep723@gmail.com'],  # Recipient list
                 fail_silently=False,  # Raise exception if sending fails
             )
             messages.success(request, 'Message has been successfully sent.')
-            print("Message has been successfully sent.")
+            return redirect('contact')  # Redirect to the contact page to clear the form data and display the success message
         except Exception as e:
             messages.error(request, f'Failed to send message. Error: {e}')
             print("Error")
 
-        return render(request, 'uifiles/contact.html')  # Return the rendered contact page after sending the email
-
-    else:
-        return render(request, 'uifiles/contact.html')
+    return render(request, 'uifiles/contact.html')
