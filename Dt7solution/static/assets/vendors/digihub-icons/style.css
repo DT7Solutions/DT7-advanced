@@ -28,6 +28,10 @@
 .icon-link:before {
   content: "\e919";
 }
+.fa-building:before {
+  content: "\f1ad"
+}
+
 .icon-targeted-public:before {
   content: "\e900";
 }
