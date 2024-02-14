@@ -3151,6 +3151,12 @@ i {
   }
 }
 
+@media (max-width: 567px) {
+  .main-slider__image {
+    height: 130px!important;
+  }
+}
+
 /*-------------------------------------
 # Main Slider Two
 -------------------------------------*/
@@ -3788,7 +3794,7 @@ i {
 # Service One
 -------------------------------------*/
 .service-one {
-  padding-top: 283px;
+  padding-top: 183px;
   background-color: var(--digihub-white3, #F6F6F6);
   position: relative;
   margin-top: -136px;
@@ -6403,8 +6409,8 @@ i {
 -------------------------------------*/
 .sliding-text-one {
   position: relative;
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 40px;
+  padding-bottom: 180px;
   width: 100%;
   overflow: hidden;
   background-color: var(--digihub-white3, #F6F6F6);
@@ -6425,9 +6431,30 @@ i {
 .sliding-text-one__animate-text:hover {
   animation-play-state: paused;
 }
+@media (max-width: 576px) {
+  .sliding-text-one__animate-text span {
+    
+    font-size: 32px!important;
+    font-weight: 700!important;
+    line-height: 1!important;
+    
+  }
+  .sliding-text-one {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 150px;
+    
+   
+  }
+  .star-image{
+    width:40px;
+    height:40px;
+  }
+ 
+}
 .sliding-text-one__animate-text span {
   font-family: var(--heading-font, "Plus Jakarta Sans", sans-serif);
-  font-size: 82px;
+  font-size: 52px;
   font-weight: 700;
   line-height: 1.207;
   margin: 0;
@@ -8985,6 +9012,15 @@ i {
     background-size: cover!important;
     z-index: 1;
   }
+  .quote-section {
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-image: url(../images/award/trail-logos.png);
+    background-repeat: no-repeat;
+    background-size:  cover!important;
+    z-index: 1;
+  }
   
 }
 .black > li > a{
@@ -9027,4 +9063,21 @@ i {
   To get crisp results, use sizes that are
   a multiple of 20; because Linearicons was
   designed on a 20 by 20 grid. */
+}
+.alignments-two{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between!important;
+}
+/* .margin-top{
+  margin-top: 3rem;
+}
+.margin-bottom{
+  margin-bottom: 5rem;
+} */
+.blog-one__info-box .fa-phone-alt,.fa-map-marker-alt{
+  color:var(--digihub-special, #8EC557);
+}
+.padding-top-thirty{
+  padding-top:50px!important;
 }
