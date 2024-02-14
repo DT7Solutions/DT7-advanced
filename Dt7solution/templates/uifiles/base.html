@@ -43,7 +43,7 @@
     <!-- /.Custom Cursor -->
 
     <div class="preloader">
-        <img class="preloader__image" width="55" src="{% static 'assets/images/loader.png' %}" alt="digihub">
+        <img class="preloader__image" width="120" src="{% static 'assets/images/DT7-logo-dark.png' %}" alt="digihub">
     </div>
     <!-- /.preloader -->
     <div class="page-wrapper">
@@ -59,15 +59,15 @@
                        
                     </div><!-- /.main-menu-one__left -->
                     <ul class="main-menu__list">
-                        <li class="dropdown">
-                            <a href="/">Home </a>
+                        <li >
+                            <a class="nav-btn {% if navbar == 'Home' %} active {% endif %}" href="/">Home </a>
                            
                         </li>
-                        <li>
-                            <a href="/about/">About</a>
+                        <li >
+                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" href="/about/">About</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="/solutions/">Solutions </a>
+                        <li >
+                            <a  class=" nav-btn {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/">Solutions </a>
                             <!-- <ul>
                                 
                                 <li><a href="web-genius.html">Web Genius</a></li>
@@ -95,8 +95,8 @@
                             
                         </li> -->
                        
-                        <li>
-                            <a href="/contact/">Contact</a>
+                        <li >
+                            <a class="nav-btn {% if navbar == 'Contact' %} active {% endif %}" href="/contact/">Contact</a>
                         </li>
                     </ul>
                     <div class="main-menu-one__right">
@@ -179,16 +179,16 @@
                             <h3 class="footer-one__title">Quick Links</h3>
                             <ul class="footer-one__link-list">
                                 <li class="footer-one__link-item">
-                                    <a href="contact.html" class="footer-one__link">Home</a>
+                                    <a href="/" class="footer-one__link">Home</a>
                                 </li>
                                 <li class="footer-one__link-item">
-                                    <a href="service.html" class="footer-one__link">About</a>
+                                    <a href="/about/" class="footer-one__link">About</a>
                                 </li>
                                 <li class="footer-one__link-item">
-                                    <a href="blog-grid-right.html" class="footer-one__link">Blogs</a>
+                                    <a href="/" class="footer-one__link">Blogs</a>
                                 </li>
                                 <li class="footer-one__link-item">
-                                    <a href="blog-grid-right.html" class="footer-one__link">Portfolio</a>
+                                    <a href="/" class="footer-one__link">Portfolio</a>
                                 </li>
                             </ul><!-- /.footer-one__link-list -->
                         </div><!-- /.footer-one__link-box -->
@@ -219,9 +219,9 @@
                         </div>
                         <div class="footer-one__bottom-col-two col-lg-7">
                             <div class="footer-one__bottom-link-box">
-                                <a href="team.html" class="footer-one__bottom-link">Trams & Condition</a>
-                                <a href="about.html" class="footer-one__bottom-link">Privacy Policy</a>
-                                <a href="contact.html" class="footer-one__bottom-link">Contact Us</a>
+                                <a href="/" class="footer-one__bottom-link">Trams & Condition</a>
+                                <a href="/" class="footer-one__bottom-link">Privacy Policy</a>
+                                <a href="/contact/" class="footer-one__bottom-link">Contact Us</a>
                             </div><!-- /.footer__bottom-link-box -->
                         </div>
                     </div><!-- /.row -->
@@ -246,7 +246,7 @@
             <ul class="mobile-nav__contact">
                 <li>
                     <i class="fa fa-envelope"></i>
-                    <a href="mailto:digihub@envato.com">digihub@envato.com</a>
+                    <a target="_blank" href="mailto:info@dt7solutions.com">info@dt7solutions.com</a>
                 </li>
                 <li>
                     <i class="fa fa-phone"></i>
@@ -288,7 +288,17 @@
     <!-- /.search-popup -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-long-arrow-alt-up"></i></a>
-
+    <script>
+        $(document).ready(function(){
+            // Add click event handler to the "Home" navigation item
+            $('nav.main-menu-one ul.main-menu__list li:nth-child(1) a').click(function(){
+                // Remove 'active' class from all navigation items
+                $('nav.main-menu-one ul.main-menu__list li a').removeClass('active');
+                // Add 'active' class to the clicked navigation item
+                $(this).addClass('active');
+            });
+        });
+        </script>
 
     <script src="{% static 'assets/vendors/jquery/jquery-3.7.0.min.js' %}"></script>
     <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

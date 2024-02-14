@@ -9,10 +9,10 @@ from django.contrib import messages
 # Create your views here.
 
 def Home(request):
-    return render(request, 'uifiles/home.html')
+    return render(request, 'uifiles/home.html',{'navbar':'Home'})
 
 def About(request):
-    return render(request, 'uifiles/about.html')
+    return render(request, 'uifiles/about.html',{'navbar':'About'})
 def Blog(request):
     blog = BlogPost.objects.filter().order_by('-Id')
     
@@ -29,9 +29,9 @@ def Blogdetails(request,slug):
     next_post = BlogPost.objects.filter(id__gt=selectpost.id).first()
     return render(request, 'uifiles/blogdetails.html',{'selectpost':selectpost},{ 'previous_post': previous_post},{'next_post': next_post})    
 def Solutions(request):
-    return render(request, 'uifiles/service.html')   
+    return render(request, 'uifiles/service.html',{'navbar':'Solutions'})   
 def Projects(request):
-    return render(request, 'uifiles/projects.html')
+    return render(request, 'uifiles/projects.html' ,{'navbar':'Projects'})
 # def Contact(request):
 #     if request.method == "POST":
 #         first_name = request.POST.get('firstName',"")
@@ -90,7 +90,7 @@ def Contact(request):
             messages.error(request, f'Failed to send message. Error: {e}')
             print("Error")
 
-        return render(request, 'uifiles/contact.html')  
+        return render(request, 'uifiles/contact.html',{'navbar':'Contact'})  
 
     else:
-        return render(request, 'uifiles/contact.html')
+        return render(request, 'uifiles/contact.html',{'navbar':'Contact'})
