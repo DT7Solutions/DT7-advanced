@@ -6454,7 +6454,7 @@ i {
  
 }
 .sliding-text-one__animate-text span {
-  font-family: var(--heading-font, "Plus Jakarta Sans", sans-serif);
+  font-family: var(--heading-font,  sans-serif);
   font-size: 52px;
   font-weight: 700;
   line-height: 1.207;
