@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse,HttpResponse
-from .models import FormsData,BlogPost
+from .models import FormsData,BlogPost,Category
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.core.paginator import Paginator
@@ -23,11 +23,12 @@ def Blog(request):
     return render(request, 'uifiles/blog.html',{'blog':posts,'posts':posts,'page':page})
 def Blogdetails(request,slug):
     selectpost = BlogPost.objects.get(Sluglink=slug)
-    previous_post = BlogPost.objects.filter(id__lt=selectpost.id).order_by('-id').first()
     
-    # Fetch next post
-    next_post = BlogPost.objects.filter(id__gt=selectpost.id).first()
-    return render(request, 'uifiles/blogdetails.html',{'selectpost':selectpost},{ 'previous_post': previous_post},{'next_post': next_post})    
+    # previous_post = BlogPost.objects.filter(id__lt=selectpost.id).order_by('-id').first()
+    
+    
+    # next_post = BlogPost.objects.filter(id__gt=selectpost.id).first()
+    return render(request, 'uifiles/blogdetails.html',{'selectpost':selectpost})    
 def Solutions(request):
     return render(request, 'uifiles/service.html',{'navbar':'Solutions'})   
 def Projects(request):

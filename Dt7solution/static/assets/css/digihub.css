@@ -6396,9 +6396,9 @@ i {
   width: auto !important;
   max-width: 100% !important;
   display: inline-block !important;
-  opacity: 0.5;
+ 
 }
-.clients-logo-one__item:hover .clients-logo-one__logo {
+.clients-logo-one__item .clients-logo-one__logo {
   opacity: 1;
 }
 
@@ -9116,3 +9116,7 @@ a.nav-btn.active {
 }
 
 
+.portfolio-two__img-box:hover{
+box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+ 
+}

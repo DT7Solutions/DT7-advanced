@@ -129,6 +129,10 @@ if DEBUG:
     STATICFILES_DIRS = [STATIC_DIR,]
 else:
     STATIC_ROOT = os.path.join(BASE_DIR,'static')
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    UPLOAD_ROOT = os.path.join(BASE_DIR, 'upload')
+
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

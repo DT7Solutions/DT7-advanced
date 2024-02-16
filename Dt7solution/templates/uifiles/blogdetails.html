@@ -16,11 +16,12 @@
             </div><!-- /.container -->
         </section><!-- /.page-header -->
         <!-- Page Header End -->
-        {% if selectpost %}
+       
         <!-- Blog Details Page Start -->
         <section class="blog-details-page">
             <div class="container">
                 <div class="row">
+                    {% if selectpost %}
                     <div class="col-xl-8 col-lg-7">
                         <div class="blog-details-page__content">
                             <div class="blog-details-page__post wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
@@ -79,12 +80,12 @@
                                     <a href="#" class="blog-details-page__prev-icon">
                                         <i class="fas fa-arrow-left"></i>
                                     </a>
-                                    {% if previous_post %}
+                                    
                                     <div class="blog-details-page__prev-content">
                                         <h3 class="blog-details-page__prev-title">Previous post</h3>
-                                        <p class="blog-details-page__prev-text">{{ previous_post.Title }}</p>
+                                        <p class="blog-details-page__prev-text">{{selectpost.Title}}</p>
                                     </div>
-                                    {% endif %}
+                                   
                                 </div><!-- /.blog-details-page__prev-box -->
                                 <div class="blog-details-page__next-box">
                                     <div class="blog-details-page__next-content">
@@ -100,18 +101,20 @@
                          
                         </div><!-- /.blog-details-page__content -->
                     </div>
+                    {% endif %}
                     <div class="col-xl-4 col-lg-5">
                         <div class="page-sidebar">
-                           
+                            
                             <div class="page-sidebar__category page-sidebar__single wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="page-sidebar__category-title page-sidebar__title">Category</h3>
                                 <ul class="page-sidebar__category-list">
+                                    {% for category in categories %}
+                                    
+                                    
                                     <li class="page-sidebar__category-item">
-                                        <a href="#" class="page-sidebar__category-link"><span>Web Design</span> <span>02</span></a>
+                                        <a href="#" class="page-sidebar__category-link"><span>{{ category.Name }}</span> <span>05</span></a>
                                     </li>
-                                    <li class="page-sidebar__category-item">
-                                        <a href="#" class="page-sidebar__category-link"><span>Digital Marketing</span> <span>05</span></a>
-                                    </li>
+                                    {% endfor %}
                                     <li class="page-sidebar__category-item">
                                         <a href="#" class="page-sidebar__category-link"><span>Social Media seo</span> <span>11</span></a>
                                     </li>
@@ -123,6 +126,7 @@
                                     </li>
                                 </ul><!-- /.page-sidebar__category-list -->
                             </div><!-- /.page-sidebar__category -->
+                           
                             <div class="page-sidebar__line page-sidebar__single"></div><!-- /.page-sidebar__line -->
                             <div class="page-sidebar__post page-sidebar__single wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="page-sidebar__post-title page-sidebar__title">Recent post</h3>
@@ -169,7 +173,7 @@
                             <div class="page-sidebar__tag page-sidebar__single wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="page-sidebar__tag-title page-sidebar__title">Tags</h3>
                                 <div class="page-sidebar__tag-box">
-                                    <a href="#" class="page-sidebar__tag-btn">{{selectpost.Tags}}</a>
+                                    <!-- <a href="#" class="page-sidebar__tag-btn">{{selectpost.Tags}}</a> -->
                                   
                                 </div><!-- /.page-sidebar__tag-box -->
                             </div><!-- /.page-sidebar__tag -->
@@ -180,6 +184,6 @@
         </section><!-- /.blog-details-page -->
         <!-- Blog Details Page End -->
        
-        {% endif %}
+       
    
 {% endblock %} 
