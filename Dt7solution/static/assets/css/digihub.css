@@ -9111,4 +9111,8 @@ a.nav-btn.active {
   padding:20px;
   
 }
+.custom-video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
 
