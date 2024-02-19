@@ -7214,7 +7214,7 @@ i {
 }
 .blog-one__info-box {
   padding: 30px 30px 40px;
-  min-height:300px!important;
+  min-height:330px!important;
 }
 @media (max-width: 375px) {
   .blog-one__info-box {
