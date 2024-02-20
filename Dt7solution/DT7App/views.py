@@ -33,6 +33,8 @@ def Solutions(request):
     return render(request, 'uifiles/service.html',{'navbar':'Solutions'})   
 def Projects(request):
     return render(request, 'uifiles/projects.html' ,{'navbar':'Projects'})
+def Projectdetails(request):
+    return render(request, 'uifiles/projects-details.html' ,{'navbar':'Projects'})
 # def Contact(request):
 #     if request.method == "POST":
 #         first_name = request.POST.get('firstName',"")

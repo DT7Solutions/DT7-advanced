@@ -283,12 +283,12 @@
 }
 .sec-title__heading {
   font-family: var(--heading-font, "Plus Jakarta Sans", sans-serif);
-  font-size: var(--digihub-size-7xl);
+  font-size: 48px;
   font-weight: 700;
   color: var(--digihub-primary, #1A1A1A);
   text-transform: capitalize;
   letter-spacing: -1.7px;
-  line-height: 1.07;
+  line-height: 1.35;
   margin-bottom: 0px;
 }
 
@@ -3921,7 +3921,7 @@ i {
 }
 @media (max-width: 1399px) {
   .service-one__item:last-child .service-one__title {
-    margin-left: 60px;
+    margin-left: 40px;
   }
 }
 @media (max-width: 1199px) {
@@ -4001,11 +4001,16 @@ i {
   grid-template-columns: 116px auto;
   border: 1px solid #E9E9E9;
   background-color: var(--digihub-white, #FFFFFF);
+  min-height:330px;
+}
+.contact-height{
+  min-height:230px;
 }
 @media (max-width: 425px) {
   .service-two__single {
     grid-template-columns: 1fr;
   }
+ 
 }
 .service-two__icon-box {
   padding: 40px 26px;
