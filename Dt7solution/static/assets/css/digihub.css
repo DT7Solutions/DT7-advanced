@@ -4821,8 +4821,10 @@ i {
 @media (max-width: 575px) {
   .about-three {
     padding-top: 80px;
-    padding-bottom: 161px;
+    padding-bottom: 101px;
   }
+ 
+  
 }
 @media (max-width: 360px) {
   .about-three {
@@ -5001,7 +5003,7 @@ i {
 }
 @media (max-width: 767px) {
   .about-three__img-box-inner {
-    margin-top: 80px;
+    margin-top: 0px;
   }
 }
 .about-three__img {
@@ -9022,6 +9024,10 @@ i {
     background-size: cover!important;
     z-index: 1;
   }
+  .col-xl-12 .custom-video {
+        width: 100%; /* Ensure the video fills the entire width */
+        height: auto; /* Allow the height to adjust proportionally */
+    }
   .quote-section {
     position: relative;
     padding-top: 150px;
@@ -9118,6 +9124,7 @@ a.nav-btn.active {
 }
 .custom-video::-webkit-media-controls-enclosure {
   display: none !important;
+ 
 }
 
 
