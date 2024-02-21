@@ -37,7 +37,7 @@
                     <div class="col-xl-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                         <div class="blog-page__blog">
                             <div class="blog-page__blog-img-box">
-                                <img src="{% static 'assets/images/blog/blog-4-2.jpg' %}" alt="blog" class="blog-page__blog-img">
+                                <img src="/media/{{blogitem.Image1}}" alt="blog" class="blog-page__blog-img">
                                 <span class="blog-page__plus icon-plus"></span>
                             </div>
                             <div class="blog-page__blog-content">
@@ -59,33 +59,7 @@
                         </div>
                     </div>
                     {% endfor %}
-                    <div class="col-xl-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
-                        <div class="blog-page__blog">
-                            <div class="blog-page__blog-img-box">
-                                <img src="{% static 'assets/images/blog/blog-4-2.jpg' %}" alt="blog" class="blog-page__blog-img">
-                                <span class="blog-page__plus icon-plus"></span>
-                            </div>
-                            <div class="blog-page__blog-content">
-                                <ul class="blog-page__blog-info">
-                                    <li>
-                                        <i class="far fa-user"></i>
-                                        <span>By Admin</span>
-                                    </li>
-                                    <li>
-                                        <i class="far fa-calendar-alt"></i>
-                                        <span>28th February</span>
-                                    </li>
-                                    <li>
-                                        <i class="far fa-comments"></i>
-                                        <span>Comment</span>
-                                    </li>
-                                </ul>
-                                <a href="blog-details.html" class="blog-page__blog-title">Bringing your brand to life in the digital </a>
-                                <p class="blog-page__blog-desc">Aliquam eros justo, posuere loborti viverra lao ullamcorper posuere viverra .Aliquam eros justo, posuere lobortis non, viverra </p>
-                                <a href="blog-details.html" class="blog-page__blog-btn digihub-btn digihub-btn--secondary">READ MORE <span></span><span></span><span></span><span></span></a>
-                            </div>
-                        </div>
-                    </div>
+                   
                     
                 </div><!-- /.row -->
             </div><!-- /.container -->

@@ -36,16 +36,13 @@
                                 </div><!-- /.blog-details-page__post-content -->
                             </div><!-- /.blog-details-page__post -->
                            
-                            <div class="blog-details-page__text-box">
-                                <p class="blog-details-page__text">Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere viverra .Aliquam eros justo, posuere lobortis, viverra laoreet augue mattis fermentum ullamcorper viverra laoreet Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere viverra .Aliquam eros justo, posuere lobortis non Aliquam eros justo, posuere loborti viverra laoreet matti ullamcorper posuere viverra .Aliquam eros justo, posuere lobortis non, viverra laoreet augue mattis fermentum ullamcorper viverra laoreet Aliquam eros justo, posuere.DESIGN desifn bu the man who.</p>
-                                
-                            </div><!-- /.blog-details-page__text-box -->
+                          
                           
                             <div class="blog-details-page__social-box">
                                 <h3 class="blog-details-page__social-title">Share This Article</h3>
                                 <ul class="blog-details-page__social">
                                     <li class="blog-details-page__social-item">
-                                        <a href="#" class="blog-details-page__social-link">
+                                        <a href="#" class="blog-details-page__social-link" >
                                             <i class="fab fa-facebook"></i>
                                         </a>
                                     </li>
@@ -76,26 +73,30 @@
                                 </ul><!-- /.blog-details-page__social -->
                             </div><!-- /.blog-details-page__social-box -->
                             <div class="blog-details-page__pagination">
+                                {% if previous_post %}
                                 <div class="blog-details-page__prev-box">
-                                    <a href="#" class="blog-details-page__prev-icon">
+                                    <a href="{% url 'blog' slug=previous_post.Sluglink %}" class="blog-details-page__prev-icon">
                                         <i class="fas fa-arrow-left"></i>
                                     </a>
-                                    
+                                   
                                     <div class="blog-details-page__prev-content">
                                         <h3 class="blog-details-page__prev-title">Previous post</h3>
-                                        <p class="blog-details-page__prev-text">{{selectpost.Title}}</p>
+                                        <p class="blog-details-page__prev-text"> {{ previous_post.Title }}</p>
                                     </div>
-                                   
+                                  
                                 </div><!-- /.blog-details-page__prev-box -->
+                                {% endif %}
+                                {% if next_post %}
                                 <div class="blog-details-page__next-box">
                                     <div class="blog-details-page__next-content">
                                         <h3 class="blog-details-page__next-title">Next post</h3>
-                                        <p class="blog-details-page__next-text">{{selectpost.Title}}</p>
+                                        <p class="blog-details-page__next-text"> {{ next_post.Title }}</p>
                                     </div>
-                                    <a href="#" class="blog-details-page__next-icon">
+                                    <a href="{% url 'blog' slug=next_post.Sluglink %}" class="blog-details-page__next-icon">
                                         <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div><!-- /.blog-details-page__next-box -->
+                                {% endif %}
                             </div><!-- /.blog-details-page__pagination -->
                             
                          
@@ -108,58 +109,35 @@
                             <div class="page-sidebar__category page-sidebar__single wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="page-sidebar__category-title page-sidebar__title">Category</h3>
                                 <ul class="page-sidebar__category-list">
-                                    {% for category in categories %}
+                                    {% for category in totalcategories %}
                                     
                                     
                                     <li class="page-sidebar__category-item">
-                                        <a href="#" class="page-sidebar__category-link"><span>{{ category.Name }}</span> <span>05</span></a>
+                                        <a href="#" class="page-sidebar__category-link"><span>{{ category.Name }}</span> <span>{{ post_count }}</span></a>
                                     </li>
+                                  
                                     {% endfor %}
-                                    <li class="page-sidebar__category-item">
-                                        <a href="#" class="page-sidebar__category-link"><span>Social Media seo</span> <span>11</span></a>
-                                    </li>
-                                    <li class="page-sidebar__category-item">
-                                        <a href="#" class="page-sidebar__category-link"><span>Content Marketing</span> <span>15</span></a>
-                                    </li>
-                                    <li class="page-sidebar__category-item">
-                                        <a href="#" class="page-sidebar__category-link"><span>Technology Solutions</span> <span>20</span></a>
-                                    </li>
+                                    
                                 </ul><!-- /.page-sidebar__category-list -->
                             </div><!-- /.page-sidebar__category -->
                            
                             <div class="page-sidebar__line page-sidebar__single"></div><!-- /.page-sidebar__line -->
                             <div class="page-sidebar__post page-sidebar__single wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="page-sidebar__post-title page-sidebar__title">Recent post</h3>
+                                {% for blogitem in blog_list %} 
+                              
                                 <div class="page-sidebar__post-box">
                                     <a href="blog-details.html" class="page-sidebar__post-img-box">
-                                        <img src="assets/images/blog/blog-post-1.jpg" alt="post" class="page-sidebar__post-img">
+                                        <img src="/media/{{blogitem.Image1}}" alt="post" class="page-sidebar__post-img">
                                         <span class="page-sidebar__post-plus icon-plus"></span>
                                     </a><!-- /.page-sidebar__post-img-box -->
                                     <div class="page-sidebar__post-content">
-                                        <p class="page-sidebar__post-date"><span>Creativity .</span> <span>28th February 2022</span></p>
-                                        <a href="blog-details.html" class="page-sidebar__post-title-link">Making creativity the heart of tech</a>
+                                        <p class="page-sidebar__post-date"><span>{{blogitem.Category}}</span> <span>{{blogitem.Create_at}}</span></p>
+                                        <a href="blog-details.html" class="page-sidebar__post-title-link">{{blogitem.Title}}</a>
                                     </div><!-- /.page-sidebar__post-content -->
                                 </div><!-- /.page-sidebar__post-box -->
-                                <div class="page-sidebar__post-box">
-                                    <a href="blog-details.html" class="page-sidebar__post-img-box">
-                                        <img src="assets/images/blog/blog-post-2.jpg" alt="post" class="page-sidebar__post-img">
-                                        <span class="page-sidebar__post-plus icon-plus"></span>
-                                    </a><!-- /.page-sidebar__post-img-box -->
-                                    <div class="page-sidebar__post-content">
-                                        <p class="page-sidebar__post-date"><span>Creativity .</span> <span>28th February 2022</span></p>
-                                        <a href="blog-details.html" class="page-sidebar__post-title-link">Bringing your brand to life in the digital</a>
-                                    </div><!-- /.page-sidebar__post-content -->
-                                </div><!-- /.page-sidebar__post-box -->
-                                <div class="page-sidebar__post-box">
-                                    <a href="blog-details.html" class="page-sidebar__post-img-box">
-                                        <img src="assets/images/blog/blog-post-3.jpg" alt="post" class="page-sidebar__post-img">
-                                        <span class="page-sidebar__post-plus icon-plus"></span>
-                                    </a><!-- /.page-sidebar__post-img-box -->
-                                    <div class="page-sidebar__post-content">
-                                        <p class="page-sidebar__post-date"><span>Creativity .</span> <span>28th February 2022</span></p>
-                                        <a href="blog-details.html" class="page-sidebar__post-title-link">Aliquam eros just posuere loboviverr lao</a>
-                                    </div><!-- /.page-sidebar__post-content -->
-                                </div><!-- /.page-sidebar__post-box -->
+                              
+                                {% endfor %}
                             </div><!-- /.page-sidebar__post -->
                             <div class="page-sidebar__line page-sidebar__single"></div><!-- /.page-sidebar__line -->
                             <div class="page-sidebar__offer page-sidebar__single wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
@@ -173,7 +151,7 @@
                             <div class="page-sidebar__tag page-sidebar__single wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="page-sidebar__tag-title page-sidebar__title">Tags</h3>
                                 <div class="page-sidebar__tag-box">
-                                    <!-- <a href="#" class="page-sidebar__tag-btn">{{selectpost.Tags}}</a> -->
+                                    <a href="#" class="page-sidebar__tag-btn">{{selectpost.Tags}}</a>
                                   
                                 </div><!-- /.page-sidebar__tag-box -->
                             </div><!-- /.page-sidebar__tag -->

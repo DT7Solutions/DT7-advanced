@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.core.mail import send_mail,EmailMessage
 from django.contrib import messages
+from django.db import models
 # Create your views here.
 
 def Home(request):
@@ -22,15 +23,45 @@ def Blog(request):
     posts = paginator.get_page(page)
     return render(request, 'uifiles/blog.html',{'blog':posts,'posts':posts,'page':page})
 def Blogdetails(request,slug):
+    blog_list = BlogPost.objects.filter().order_by('-Id')[:3]
     selectpost = BlogPost.objects.get(Sluglink=slug)
+    totalcategories = Category.objects.all()
+    all_posts = BlogPost.objects.order_by('Id')
+
+    selected_index = None
+    for i, post in enumerate(all_posts):
+        if post == selectpost:
+            selected_index = i
+            break
+
+    # Initialize previous and next posts
+    previous_post = None
+    next_post = None
+
+    if selected_index is not None:
+        # Find the previous post
+        if selected_index > 0:
+            previous_post = all_posts[selected_index - 1]
+        else:
+            # If the selected post is the first post, set previous post to the last post
+            previous_post = all_posts.last()
+
+        # Find the next post
+        if selected_index < len(all_posts) - 1:
+            next_post = all_posts[selected_index + 1]
+        else:
+            # If the selected post is the last post, set next post to the first post
+            next_post = all_posts.first()
     
-    # previous_post = BlogPost.objects.filter(id__lt=selectpost.id).order_by('-id').first()
-    
-    
-    # next_post = BlogPost.objects.filter(id__gt=selectpost.id).first()
-    return render(request, 'uifiles/blogdetails.html',{'selectpost':selectpost})    
+    context =  {'selectpost':selectpost,'totalcategories':totalcategories,'blog_list':blog_list,'previous_post': previous_post,
+        'next_post': next_post}
+    print(next_post,previous_post)
+
+    return render(request, 'uifiles/blogdetails.html',context)    
 def Solutions(request):
     return render(request, 'uifiles/service.html',{'navbar':'Solutions'})   
+def Solutiondetails(request):
+    return render(request, 'uifiles/services-details.html',{'navbar':'Solutions'})   
 def Projects(request):
     return render(request, 'uifiles/projects.html' ,{'navbar':'Projects'})
 def Projectdetails(request):

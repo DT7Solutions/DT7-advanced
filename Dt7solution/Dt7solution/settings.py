@@ -123,16 +123,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-UPLOAD_URL ='uploads'
+UPLOAD_URL ='uploads/'
 
 if DEBUG:
     STATICFILES_DIRS = [STATIC_DIR,]
 else:
     STATIC_ROOT = os.path.join(BASE_DIR,'static')
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    UPLOAD_ROOT = os.path.join(BASE_DIR, 'upload')
+   
 
-CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+UPLOAD_ROOT = os.path.join(BASE_DIR, 'upload')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

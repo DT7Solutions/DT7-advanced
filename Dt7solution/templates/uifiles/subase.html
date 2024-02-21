@@ -195,7 +195,7 @@
                     <div class="col-xl-4 col-lg-7 wow animated fadeInUp" data-wow-delay="0.7s" data-wow-duration="1500ms">
                         <div class="footer-one__newsletter-box">
                             <h3 class="footer-one__title">Newsletter</h3>
-                            <form action="#" data-url="MAILCHIMP_FORM_URL" class="footer-one__newsletter-form-box mc-form">
+                            <form action="#" data-url="https://vsbsurfaces.us21.list-manage.com/subscribe/post?u=7f1c22c90c12768cd13b815e0&amp;id=e0c90c4c5d&amp;f_id=000be9e6f0" class="footer-one__newsletter-form-box mc-form">
                                 <div class="footer-one__newsletter-form">
                                     <input type="email" name="EMAIL" id="footer-one-newsletter" placeholder="Your Email" class="footer-one__newsletter-input">
                                     <button type="submit" class="footer-one__newsletter-btn digihub-btn">Subscribe <span></span><span></span><span></span><span></span></button>
@@ -333,7 +333,24 @@
           });
         });
       </script>
+       <script>
+        document.getElementById('share-page').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Page shared successfully.');
+                }).catch((error) => {
+                    console.error('Error sharing page:', error);
+                });
+            } else {
+                console.error('Web Share API not supported.');
+            }
+        });
+        </script>
         
+            
 </body>
 
 </html>
