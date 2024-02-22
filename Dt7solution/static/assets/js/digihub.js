@@ -661,6 +661,54 @@
       });
     }
   });
+//  popup form 
+
+
+$(document).ready(function () {
+  $('#submitBtn').click(function (event) {
+      event.preventDefault();
+      debugger;
+
+      // Collect data from form fields
+      let name = $('#exampleInputName').val();
+      let email = $('#exampleInputEmail').val();
+      let phone = $('#exampleInputPhone').val();
+      let service = $('#exampleSelectService').val();
+      let message = $('#exampleInputMessage').val();
+
+      // Create FormData object and append form data
+      let formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("phone", phone);
+      formData.append("service", service);
+      formData.append("message", message);
+
+      // AJAX request
+      $.ajax({
+          type: 'POST',
+          url: '/', // URL to submit form data
+          data: formData,
+          dataType: 'json',
+          processData: false, // Prevent jQuery from converting the data to a query string
+          contentType: false, // Prevent jQuery from setting the content type
+          encode: true,
+          success:function(data, status,xhr){
+            $('#submitBtn')[0].reset();
+            if(data.success === true){
+                alert('Your Request submited sucessfully!')
+            }else{
+                alert(data.error)
+                window.location.href = '/'
+            }
+        },
+        error:function(data){
+            alert("fail, submitted data")
+        }
+      });
+  });
+});
+
 
   // window scroll event
   $(window).on("scroll", function () {

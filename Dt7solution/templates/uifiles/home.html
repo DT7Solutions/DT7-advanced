@@ -551,34 +551,36 @@
     </section>
        <!-- Quote section end  -->
 
-       <div class="modal fade blog-details-page__comment-form" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Form</h1>
+              <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body comment-form">
-                <form class="comment-form__form container-fluid">
-                    <div class="row  comment-form__form-row mb-3">
-                      <div class="col-md-6 comment-form__form-input-box">
-                        <label for="exampleInputName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+            <div class="modal-body ">
+                <form class=" container-fluid"  id="enquiryForm">
+                    
+                    <div class="row   mb-3">
+                      <div class="col-md-6 ">
+                       
+                        <input type="text" class=" comment-form__form-input " id="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
                       </div>
                       <div class="col-md-6">
-                        <label for="exampleInputPhone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="exampleInputPhone">
+                       
+                        <input type="tel" class=" comment-form__form-input" id="exampleInputPhone" placeholder="Phonenumber" >
                       </div>
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-6">
-                        <label for="exampleInputEmail" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                      
+                        <input type="email" class=" comment-form__form-input" id="exampleInputEmail" placeholder="Email" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text"></div>
                       </div>
                       <div class="col-md-6">
-                        <label for="exampleSelectService" class="form-label">Type of Service</label>
-                        <select class="form-select" id="exampleSelectService">
+                       
+                        <select class=" comment-form__form-input" id="exampleSelectService" placeholder=" Select Type of Service">
+                          <option value="">Select Type of Service</option>
                           <option value="digital_marketing">Digital Marketing</option>
                           <option value="email Marketing">Email Marketing</option>
                           <option value="logo_and_branding">Logo and Branding</option>
@@ -588,16 +590,13 @@
                       </div>
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputMessage" class="form-label">Message</label>
-                      <textarea class="form-control" id="exampleInputMessage" rows="3"></textarea>
+           
+                      <textarea class="comment-form__form-input popup-messsge"  id="exampleInputMessage" placeholder="Enter your messege" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit"  id="submitBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
                   </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+           
           </div>
         </div>
       </div>

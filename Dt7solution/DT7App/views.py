@@ -8,9 +8,35 @@ from django.core.mail import send_mail,EmailMessage
 from django.contrib import messages
 from django.db import models
 # Create your views here.
+from django.views.decorators.csrf import csrf_exempt
 
+
+@csrf_exempt
 def Home(request):
+    if request.method == 'POST':
+        # Retrieve data from the POST request
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        service = request.POST.get('service')
+        message = request.POST.get('message')
+
+        # Here you can process the data as needed, such as saving it to a database
+        
+        # For example, you could print the data to the console
+        print("Name:", name)
+        print("Email:", email)
+        print("Phone:", phone)
+        print("Service:", service)
+        print("Message:", message)
+        return JsonResponse ({'success': True })
+
+        # Assuming the data is processed successfully, you can return a JSON response
     return render(request, 'uifiles/home.html',{'navbar':'Home'})
+   
+        # If the request method is not POST, return an error response
+        
+    
 
 def About(request):
     return render(request, 'uifiles/about.html',{'navbar':'About'})

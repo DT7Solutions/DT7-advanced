@@ -295,16 +295,16 @@
 .digihub-btn {
   border: 0;
   outline: 0;
-  position: relative;
-  display: inline-block;
-  padding: 15.5px 31px;
-  font-family: var(--heading-font, "Plus Jakarta Sans", sans-serif);
-  font-size: var(--digihub-size-md);
-  text-align: center;
+  position: relative!important;
+  display: inline-block ;
+  padding: 15.5px 31px !important;
+  font-family: var(--heading-font, "Plus Jakarta Sans", sans-serif)!important;
+  font-size: var(--digihub-size-md)!important;
+  text-align: center!important;
   color: var(--digihub-white, #FFFFFF);
-  font-weight: 600;
+  font-weight: 600!important;
   line-height: 1.5;
-  text-transform: capitalize;
+  text-transform: capitalize!important;
   z-index: 1;
   transition: 0.5s;
   overflow: hidden;
@@ -327,7 +327,7 @@
   background-color: var(--digihub-base, #EA4723);
 }
 .digihub-btn--secondary {
-  background-color: var(--digihub-base, #EA4723);
+  background-color: var(--digihub-base, #EA4723)!important;
 }
 .digihub-btn--secondary span {
   background-color: var(--digihub-special, #8EC557);
@@ -1272,14 +1272,17 @@ i {
   margin-bottom: 0;
 }
 .comment-form__form-input {
-  border: 0;
-  outline: 0;
-  padding: 20px;
-  height: 68px;
-  width: 100%;
-  background-color: var(--digihub-white3, #F6F6F6);
-  border: 1px solid transparent;
-  transition: border 0.3s ease-in-out;
+  border: 0!important;
+  outline: 0!important;
+  padding: 20px!important;
+  height: 68px!important;
+  width: 100%!important;
+  background-color: var(--digihub-white3, #F6F6F6)!important;
+  border: 1px solid transparent!important;
+  transition: border 0.3s ease-in-out!important;
+}
+input, textarea {
+  color: var(--digihub-primary, #1A1A1A)!important;
 }
 .comment-form__form-input:focus {
   border-color: var(--digihub-base, #EA4723);
@@ -1287,13 +1290,17 @@ i {
 .comment-form__form-message {
   min-height: 203px;
 }
+.popup-messsge{
+  min-height: 103px!important;
+
+}
 .comment-form__form-btn {
-  border: 0;
-  outline: 0;
-  /* width: 100%; */
-  overflow: hidden;
-  z-index: 1;
-  transition: all 0.5s ease;
+  border: 0!important;
+  outline: 0!important;
+  width: 100%!important;
+  overflow: hidden!important;
+  z-index: 1!important;
+  transition: all 0.5s ease!important;
 }
 .comment-form__form-btn::after {
   position: absolute;
