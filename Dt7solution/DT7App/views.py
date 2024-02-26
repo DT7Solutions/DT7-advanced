@@ -14,12 +14,14 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def Home(request):
     if request.method == 'POST':
-        # Retrieve data from the POST request
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        service = request.POST.get('service')
-        message = request.POST.get('message')
+       
+        name = request.POST.get('exampleInputName')
+        email = request.POST.get('exampleInputEmail')
+        phone = request.POST.get('exampleInputPhone')
+        service = request.POST.get('exampleSelectService')
+        message = request.POST.get('exampleInputMessageinfo')
+
+        
 
         # Here you can process the data as needed, such as saving it to a database
         
@@ -29,10 +31,27 @@ def Home(request):
         print("Phone:", phone)
         print("Service:", service)
         print("Message:", message)
-        return JsonResponse ({'success': True })
 
-        # Assuming the data is processed successfully, you can return a JSON response
-    return render(request, 'uifiles/home.html',{'navbar':'Home'})
+
+        try:
+
+            send_mail(
+                'New Contact Form Submission',  # Subject
+                f'Email : {email}\nMessage: {message}\nPhone:{phone}\nServices Interested In: {", ".join(service)}',  # Message
+                'manideepmadhuri456@gmail.com',  # Sender's email
+                ['manideep723@gmail.com'],  # Recipient list
+                fail_silently=False,  # Raise exception if sending fails
+            )
+            messages.success(request, 'Message has been successfully sent.')
+           
+        except Exception as e:
+            messages.error(request, f'Failed to send message. Error: {e}')
+            print("Error")
+
+        return render(request, 'uifiles/home.html',{'navbar':'Home'})  
+
+    else:
+        return render(request, 'uifiles/home.html',{'navbar':'Home'})
    
         # If the request method is not POST, return an error response
         
