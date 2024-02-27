@@ -4061,6 +4061,10 @@ input, textarea {
 .service-two__icon-box--three {
   background-color: var(--digihub-primary, #1A1A1A);
 }
+.service-two__icon-box--four {
+  background-color:#F99E1F;
+}
+
 .service-two__icon {
   font-size: 65px;
   color: var(--digihub-white, #FFFFFF);
@@ -4116,6 +4120,9 @@ input, textarea {
 .service-two__content--three::after {
   background-color: var(--digihub-primary, #1A1A1A);
 }
+.service-two__content--four::after {
+  background-color:#F99E1F;
+}
 .service-two__title {
   font-size: var(--digihub-size-5xl);
   text-transform: capitalize;
@@ -4141,6 +4148,9 @@ input, textarea {
 .service-two__single:hover .service-two__icon--three {
   color: var(--digihub-primary, #1A1A1A);
 }
+.service-two__single:hover .service-two__icon--four {
+  color: #F99E1F;
+}
 .service-two__single:hover .service-two__number--one {
   -webkit-text-stroke-color: var(--digihub-special, #8EC557);
 }
@@ -4149,6 +4159,9 @@ input, textarea {
 }
 .service-two__single:hover .service-two__number--three {
   -webkit-text-stroke-color: var(--digihub-primary, #1A1A1A);
+}
+.service-two__single:hover .service-two__number--four {
+  -webkit-text-stroke-color: #F99E1F;
 }
 .service-two__single:hover .service-two__content::after {
   left: 0;
@@ -9138,4 +9151,7 @@ a.nav-btn.active {
 .portfolio-two__img-box:hover{
 box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
  
+}
+.text-alignment{
+  text-align:justify;
 }

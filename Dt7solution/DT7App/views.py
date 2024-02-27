@@ -66,7 +66,7 @@ def Blog(request):
     paginator = Paginator(blog, 9) 
     page = request.GET.get('page')
     posts = paginator.get_page(page)
-    return render(request, 'uifiles/blog.html',{'blog':posts,'posts':posts,'page':page})
+    return render(request, 'uifiles/blog.html',{'blog':posts,'posts':posts,'page':page,'navbar':'Blog'})
 def Blogdetails(request,slug):
     blog_list = BlogPost.objects.filter().order_by('-Id')[:3]
     selectpost = BlogPost.objects.get(Sluglink=slug)
@@ -99,7 +99,7 @@ def Blogdetails(request,slug):
             next_post = all_posts.first()
     
     context =  {'selectpost':selectpost,'totalcategories':totalcategories,'blog_list':blog_list,'previous_post': previous_post,
-        'next_post': next_post}
+        'next_post': next_post,'navbar':'Blog'}
     print(next_post,previous_post)
 
     return render(request, 'uifiles/blogdetails.html',context)    
@@ -111,30 +111,22 @@ def Projects(request):
     return render(request, 'uifiles/projects.html' ,{'navbar':'Projects'})
 def Projectdetails(request):
     return render(request, 'uifiles/projects-details.html' ,{'navbar':'Projects'})
-# def Contact(request):
-#     if request.method == "POST":
-#         first_name = request.POST.get('firstName',"")
-#         last_name = request.POST.get('lastName',"")
-#         email = request.POST.get('email',"")
-#         services_interested = request.POST.getlist('servicesInterestedIn',"")
-#         message = request.POST.get('message',"")
-#         terms_and_conditions = request.POST.get('termsAndConditions',"")
+def Digitalpromotions(request):
+    return render(request, 'uifiles/services-details.html' ,{'navbar':'Solutions'})
+def Webdesgin(request):
+    return render(request, 'uifiles/webdesgin.html' ,{'navbar':'Solutions'})
+def Brandidentity(request):
+    return render(request, 'uifiles/brandidentity.html' ,{'navbar':'Solutions'})
+def WhatsAppPromotion(request):
+    return render(request, 'uifiles/whatsapppromotion.html' ,{'navbar':'Solutions'})
+def EmailMarketing(request):
+    return render(request, 'uifiles/emailmarketing.html' ,{'navbar':'Solutions'})
+def EcommerceListing(request):
+    return render(request, 'uifiles/ecommercelisting.html' ,{'navbar':'Solutions'})
+def PaidAdvertising(request):
+    return render(request, 'uifiles/paidmarketing.html' ,{'navbar':'Solutions'})
 
-      
-#         form_data = FormsData.objects.create(
-#             first_name=first_name,
-#             last_name=last_name,
-#             Name = first_name + last_name,
-#             email=email,
-#             services_interested=', '.join(services_interested),
-#             message=message,
-#             terms_and_conditions=terms_and_conditions
-#         )
-#         form_data.save()
-#         return render(request, 'uifiles/contact.html')  
-        
-#     else:
-#        return render(request, 'uifiles/contact.html')  
+
 def Contact(request):
     if request.method == "POST":
         first_name = request.POST.get('firstName', "")

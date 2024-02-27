@@ -68,15 +68,16 @@
                         </li>
                         <li >
                             <a  class=" nav-btn {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/">Solutions </a>
-                            <!-- <ul>
+                            <ul>
                                 
-                                <li><a href="web-genius.html">Web Genius</a></li>
-                                <li><a href="social-boost.html">Social Boost</a></li>
-                                <li><a href="data-sprint.html">Data Sprint</a></li>
-                                <li><a href="creative-agency.html">Creative Agency</a></li>
-                                <li><a href="brand-max.html">Brand Max</a></li>
-                                <li><a href="tech-secure.html">Tech Secure</a></li>
-                            </ul> -->
+                                <li><a href="/digitalpromotions/">Digital Promotions</a></li>
+                                <li><a href="/webdesgin/">Web Desgin</a></li>
+                                <li><a href="/brandidentity/">Brand Identity</a></li>
+                                <li><a href="/paidadvertising/">Paid Advertising</a></li>
+                                <li><a href="/whatsAppPromotion/">WhatsApp Promotion</a></li>
+                                <li><a href="/emailMarketing/">Email Marketing</a></li>
+                                <li><a href="/ecommerceListing/">Ecommerce Listing</a></li>
+                            </ul>
                         </li>
                         <!-- <li class="dropdown">
                             <a href="#">Projects <i class="fas fa-angle-down"></i></a>
@@ -89,11 +90,11 @@
                         <!-- <li >
                             <a href="/projects/">Portfolio</a>
                        
-                        </li>
-                        <li class="dropdown">
-                            <a href="/blog/">Blogs</a>
-                            
                         </li> -->
+                    
+                        <li >
+                            <a class="nav-btn {% if navbar == 'Blog' %} active {% endif %}" href="/blog/">Blogs</a>
+                        </li>
                        
                         <li >
                             <a class="nav-btn {% if navbar == 'Contact' %} active {% endif %}" href="/contact/">Contact</a>
@@ -106,7 +107,7 @@
                             <span class="mobile-nav__toggler-bars"></span>
                         </button>
                         <!-- <a href="#" class="main-menu-one__search search-toggler"><i class="fa fa-search"></i></a> -->
-                        <a href="/contact/" class="main-menu-one__btn digihub-btn digihub-btn--secondary">Get In Touch <span></span><span></span><span></span><span></span></a>
+                        <a href="/contact/" class="main-menu-one__btn digihub-btn digihub-btn--secondary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Get In Touch <span></span><span></span><span></span><span></span></a>
                     </div><!-- /.main-menu-one__right -->
                 </div><!-- /.container -->
             </nav>
@@ -324,6 +325,19 @@
         // Example form validation using jQuery
         $(document).ready(function () {
           $('#myForm').submit(function (event) {
+            var form = $(this);
+            if (form[0].checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.addClass('was-validated');
+          });
+        });
+      </script>
+      <script>
+        // Example form validation using jQuery
+        $(document).ready(function () {
+          $('#popreset').submit(function (event) {
             var form = $(this);
             if (form[0].checkValidity() === false) {
               event.preventDefault();

@@ -16,7 +16,55 @@
             </div><!-- /.container -->
         </section><!-- /.page-header -->
         <!-- Page Header End -->
-    
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body ">
+                  <form action="#" id="popreset" method="POST" class=" container-fluid"  >
+                      {% csrf_token %}
+                      <div class="row   mb-3">
+                        <div class="col-md-6 ">
+                         
+                          <input type="text" class=" comment-form__form-input " id="exampleInputName"  name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
+                        </div>
+                        <div class="col-md-6">
+                         
+                          <input type="tel" class=" comment-form__form-input" id="exampleInputPhone" name="exampleInputPhone" placeholder="Phonenumber" >
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-md-6">
+                        
+                          <input type="email" class=" comment-form__form-input" id="exampleInputEmail"  name="exampleInputEmail"  placeholder="Email" aria-describedby="emailHelp">
+                          <div id="emailHelp" class="form-text"></div>
+                        </div>
+                        <div class="col-md-6">
+                         
+                          <select class=" comment-form__form-input" id="exampleSelectService" name="exampleSelectService" placeholder="Select Type of Service">
+                              <option value="">Select Type of Service</option>
+                              <option value="digital_marketing">Digital Marketing</option>
+                              <option value="email Marketing">Email Marketing</option>
+                              <option value="logo_and_branding">Logo and Branding</option>
+                              <option value="web_development">Web Development</option>
+                              <option value="ecommercelisting">Ecommerce Listing</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+             
+                        <textarea class="comment-form__form-input popup-messsge"  id="exampleInputMessageinfo" name="exampleInputMessageinfo" placeholder="Enter your messege" rows="3"></textarea>
+                      </div>
+                      <button type="submit"  id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
+                    </form>
+              </div>
+             
+            </div>
+          </div>
+        </div>
         <!-- Contact Page Start -->
         <section class="contact-page">
             <div class="container">
