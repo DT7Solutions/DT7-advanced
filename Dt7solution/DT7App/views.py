@@ -13,6 +13,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def Home(request):
+    
     if request.method == 'POST':
        
         name = request.POST.get('exampleInputName')
@@ -47,11 +48,12 @@ def Home(request):
         except Exception as e:
             messages.error(request, f'Failed to send message. Error: {e}')
             print("Error")
-
-        return render(request, 'uifiles/home.html',{'navbar':'Home'})  
+        latest_blogs = BlogPost.objects.filter().order_by('-Id')[:2]
+        return render(request, 'uifiles/home.html',{'navbar':'Home','latest_blogs':latest_blogs})  
 
     else:
-        return render(request, 'uifiles/home.html',{'navbar':'Home'})
+        latest_blogs = BlogPost.objects.filter().order_by('-Id')[:2]
+        return render(request, 'uifiles/home.html',{'navbar':'Home','latest_blogs':latest_blogs})
    
         # If the request method is not POST, return an error response
         
@@ -125,6 +127,10 @@ def EcommerceListing(request):
     return render(request, 'uifiles/ecommercelisting.html' ,{'navbar':'Solutions'})
 def PaidAdvertising(request):
     return render(request, 'uifiles/paidmarketing.html' ,{'navbar':'Solutions'})
+def Privacypolicy(request):
+    return render(request, 'uifiles/privacy-policy.html' ,{'navbar':'Home'})
+def Termsandconditions(request):
+    return render(request, 'uifiles/termsconditions.html')
 
 
 def Contact(request):

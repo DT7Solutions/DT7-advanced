@@ -1,0 +1,127 @@
+
+<title> ProjectDetails | Dt7solutions </title>  
+{% extends 'uifiles/subase.html' %}
+{% load static %}
+{% block content %}
+    
+
+        
+        
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <h2 class="page-header__title wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">Projects Details</h2>
+                    <ul class="digihub-breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li>/</li>
+                        <li><span>Projects Details</span></li>
+                    </ul><!-- /.thm-breadcrumb list-unstyled -->
+                </div><!-- /.page-header__content -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+        <!-- Page Header End -->
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <form action="#" id="popreset" method="POST" class=" container-fluid"  >
+                        {% csrf_token %}
+                        <div class="row   mb-3">
+                          <div class="col-md-6 ">
+                           
+                            <input type="text" class=" comment-form__form-input " id="exampleInputName"  name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
+                          </div>
+                          <div class="col-md-6">
+                           
+                            <input type="tel" class=" comment-form__form-input" id="exampleInputPhone" name="exampleInputPhone" placeholder="Phonenumber" >
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-md-6">
+                          
+                            <input type="email" class=" comment-form__form-input" id="exampleInputEmail"  name="exampleInputEmail"  placeholder="Email" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text"></div>
+                          </div>
+                          <div class="col-md-6">
+                           
+                            <select class=" comment-form__form-input" id="exampleSelectService" name="exampleSelectService" placeholder="Select Type of Service">
+                                <option value="">Select Type of Service</option>
+                                <option value="digital_marketing">Digital Marketing</option>
+                                <option value="email Marketing">Email Marketing</option>
+                                <option value="logo_and_branding">Logo and Branding</option>
+                                <option value="web_development">Web Development</option>
+                                <option value="ecommercelisting">Ecommerce Listing</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+               
+                          <textarea class="comment-form__form-input popup-messsge"  id="exampleInputMessageinfo" name="exampleInputMessageinfo" placeholder="Enter your messege" rows="3"></textarea>
+                        </div>
+                        <button type="submit"  id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
+                      </form>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        <!-- Projects Details Page Start -->
+        <section class="projects-details-page">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-xl-12">
+                        <div class="projects-details-page__title-box">
+                            <h3 class="projects-details-page__title">Introduction</h3>
+                            <p class="projects-details-page__desc">
+                                Welcome to dt.agency, a leading digital agency providing a wide range of services including digital promotions, WhatsApp marketing, logo and branding, paid advertising, email marketing, and ecommerce listing. We are committed to protecting the privacy and security of our users' personal information. This Privacy Policy outlines how we collect, use, and protect your data when you visit our website.</p>
+                                <h3 class="projects-details-page__title">Information We Collect</h3>
+                            <p class="projects-details-page__desc"> Personal Information: We may collect personal information such as your name and email address when you contact us </p>
+                            <p class="projects-details-page__desc"> Usage Data: We automatically collect information about your usage of our website, including your IP address, browser type, and device information. </p>
+                        </div><!-- /.projects-details-page__title-box -->
+                        <div class="col-lg-12 mt-3">
+                          <div class="projects-details-page__bottom-info-box">
+                              <div class="projects-details-page__bottom-info wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                  <h3 class="projects-details-page__bottom-info-title">Third-Party Access</h3>
+                                  <p class="projects-details-page__bottom-info-desc">We do not allow third parties to access our website for the purpose of processing data.</p>
+                              </div><!-- /.projects-details-page__bottom-info -->
+                              <div class="projects-details-page__bottom-info wow animated fadeInUp" data-wow-delay="0.2s" data-wow-duration="1500ms">
+                                  <h3 class="projects-details-page__bottom-info-title">Data Security</h3>
+                                  <p class="projects-details-page__bottom-info-desc">We do not allow third parties to access our website for the purpose of processing data.</p>
+                              </div><!-- /.projects-details-page__bottom-info -->
+                              <div class="projects-details-page__bottom-info wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                                  <h3 class="projects-details-page__bottom-info-title">Contact Us</h3>
+                                  <p class="projects-details-page__bottom-info-desc">If you have any questions or concerns about our Privacy Policy, please contact us at DT7.agency.</p>
+                              </div><!-- /.projects-details-page__bottom-info -->
+                          </div><!-- /.projects-details-page__bottom-info-box -->
+                      </div>
+                        
+                       
+                        
+                        </div><!-- /.projects-details-page__title-box -->
+                    </div>
+                
+                    
+                   
+                 
+                   
+                   
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.projects-details-page -->
+        <!-- Projects Details Page End -->
+        <!-- Footer Three Start -->
+      
+     
+
+    
+
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-long-arrow-alt-up"></i></a>
+
+
+    {% endblock %}

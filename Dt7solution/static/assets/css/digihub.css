@@ -9156,3 +9156,11 @@ box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 .text-alignment{
   text-align:justify;
 }
+.heading-custom{
+  font-size: 19px;
+  font-weight: 700!important;
+  color:
+  rgb(33, 37, 41);
+
+
+}

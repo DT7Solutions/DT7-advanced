@@ -559,27 +559,27 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
-                <form action="#" method="POST" class=" container-fluid"  >
+                <form action="#" method="POST" class=" container-fluid"   >
                     
                     <div class="row   mb-3">
                       <div class="col-md-6 ">
                        
-                        <input type="text" class=" comment-form__form-input " id="exampleInputName"  name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
+                        <input type="text" class=" comment-form__form-input " id="exampleInputName"  name="exampleInputName" required  placeholder="Your Name" aria-describedby="nameHelp">
                       </div>
                       <div class="col-md-6">
                        
-                        <input type="tel" class=" comment-form__form-input" id="exampleInputPhone" name="exampleInputPhone" placeholder="Phonenumber" >
+                        <input type="tel" class=" comment-form__form-input"   id="exampleInputPhone" name="exampleInputPhone"  required placeholder="Phonenumber" >
                       </div>
                     </div>
                     <div class="row mb-3">
                       <div class="col-md-6">
                       
-                        <input type="email" class=" comment-form__form-input" id="exampleInputEmail"  name="exampleInputEmail"  placeholder="Email" aria-describedby="emailHelp">
+                        <input type="email" class=" comment-form__form-input" id="exampleInputEmail"  name="exampleInputEmail"   required  placeholder="Email" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text"></div>
                       </div>
                       <div class="col-md-6">
                        
-                        <select class=" comment-form__form-input" id="exampleSelectService" name="exampleSelectService" placeholder="Select Type of Service">
+                        <select class=" comment-form__form-input" id="exampleSelectService" name="exampleSelectService"  required  placeholder="Select Type of Service">
                             <option value="">Select Type of Service</option>
                             <option value="digital_marketing">Digital Marketing</option>
                             <option value="email Marketing">Email Marketing</option>
@@ -600,91 +600,48 @@
           </div>
         </div>
       </div>
-      
-        <!-- Blog One Start -->
-        <section class="blog-one  padding-top-thirty">
-            <div class="container">
-                <div class="blog-one__sec-title sec-title wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                    <p class="sec-title__top">OUR LATEST BLOGS</p>
-                    <h2 class="blog-one__heading sec-title__heading">Discover Our Latest Posts</h2>
-                </div><!-- /.blog-one__sec-title -->
-                <div class="row">
-                    <div class="col-xl-4 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                        <div class="blog-one__card">
-                            <a href="blog-details.html" data-hover-image="{% static 'assets/images/shapes/hover-one.jpg' %}" class="blog-one__img-box digihub-image-hover">
-                                <img src="{% static 'assets/images/counter/blog-one.png' %}" alt="blog" class="blog-one__img">
-                                <img src="{% static 'assets/images/counter/blog-one.png' %}" alt="blog" class="blog-one__img">
-                                <div class="blog-one__date-box">
-                                    <h3 class="blog-one__date">23</h3>
-                                    <h3 class="blog-one__date">NOV</h3>
-                                </div><!-- /.blog-one__date-box -->
-                            </a><!-- /.blog-one__img-box -->
-                            <div class="blog-one__info-box">
-                                <ul class="blog-one__comment-box">
-                                    <li>
-                                        <i class="far fa-user"></i>
-                                        <span>By DT7Solutions</span>
-                                    </li>
-                                   
-                                </ul><!-- /.blog-one__comment-box -->
-                                <h3 class="blog-one__title"><a href="/">Exploring the Power of Design Thinking: A Guide for Budding Innovators.</a></h3>
-                                <a href="/" class="blog-one__btn digihub-btn digihub-btn--border-one">READ MORE
-                                    <span></span><span></span><span></span><span></span></a>
-                            </div><!-- /.blog-one__info-box -->
-                        </div><!-- /.blog-one__card -->
+       <!-- Blog One Start -->
+       <section class="blog-one pt-5">
+        <div class="container">
+            <div class="blog-one__sec-title sec-title wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                <p class="sec-title__top">Discover Our Latest Posts</p>
+                <h2 class="blog-one__heading sec-title__heading">Expert Strategies for Online Success</h2>
+            </div><!-- /.blog-one__sec-title -->
+            <div class="row">
+                {% for blogitem in latest_blogs %} 
+                <div class="col-xl-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                    <div class="blog-page__blog">
+                        <div class="blog-page__blog-img-box">
+                            <img src="/media/{{blogitem.Image1}}" alt="blog" class="blog-page__blog-img">
+                            <span class="blog-page__plus icon-plus"></span>
+                        </div>
+                        <div class="blog-page__blog-content">
+                            <ul class="blog-page__blog-info">
+                                <li>
+                                    <i class="far fa-user"></i>
+                                    <span>{{blogitem.CreatedName}}</span>
+                                </li>
+                                <li>
+                                    <i class="far fa-calendar-alt"></i>
+                                    <span>{{blogitem.Create_at}}</span>
+                                </li>
+                                
+                            </ul>
+                            <a href="/blog/{{blogitem.Sluglink}}" class="blog-page__blog-title mb-3">{{blogitem.Title}} </a>
+                            <!-- <p class="blog-page__blog-desc">Aliquam eros justo, posuere loborti viverra lao ullamcorper posuere viverra .Aliquam eros justo, posuere lobortis non, viverra </p> -->
+                            <a href="/blog/{{blogitem.Sluglink}}" class="blog-page__blog-btn digihub-btn digihub-btn--secondary">READ MORE <span></span><span></span><span></span><span></span></a>
+                        </div>
                     </div>
-                    <div class="col-xl-4 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
-                        <div class="blog-one__card">
-                            <a href="blog-details.html" data-hover-image="{% static 'assets/images/shapes/hover-two.jpg'%}" class="blog-one__img-box digihub-image-hover">
-                                <img src="{% static 'assets/images/counter/blog-two.png' %}" alt="blog" class="blog-one__img">
-                                <img src="{% static 'assets/images/counter/blog-two.png' %}" alt="blog" class="blog-one__img">
-                                <div class="blog-one__date-box">
-                                    <h3 class="blog-one__date">24</h3>
-                                    <h3 class="blog-one__date">Feb</h3>
-                                </div><!-- /.blog-one__date-box -->
-                            </a><!-- /.blog-one__img-box -->
-                            <div class="blog-one__info-box">
-                                <ul class="blog-one__comment-box">
-                                    <li>
-                                        <i class="far fa-user"></i>
-                                        <span>By DT7Solutions</span>
-                                    </li>
-                                   
-                                </ul><!-- /.blog-one__comment-box -->
-                                <h3 class="blog-one__title"><a href="/">Best Web Desgin Company in Guntur </a></h3>
-                                <a href="/" class="blog-one__btn digihub-btn digihub-btn--border-one">READ MORE
-                                    <span></span><span></span><span></span><span></span></a>
-                            </div><!-- /.blog-one__info-box -->
-                        </div><!-- /.blog-one__card -->
-                    </div>
-                    <div class="col-xl-4 col-md-6 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
-                        <div class="blog-one__card">
-                            <a href="blog-details.html" data-hover-image="{% static 'assets/images/shapes/hover-three.jpg'%}" class="blog-one__img-box digihub-image-hover">
-                                <img src="{% static 'assets/images/counter/blog-three.png' %}" alt="blog" class="blog-one__img">
-                                <img src="{% static 'assets/images/blog/blog-three.png' %}" alt="blog" class="blog-one__img">
-                                <div class="blog-one__date-box">
-                                    <h3 class="blog-one__date">28</h3>
-                                    <h3 class="blog-one__date">Feb</h3>
-                                </div><!-- /.blog-one__date-box -->
-                            </a><!-- /.blog-one__img-box -->
-                            <div class="blog-one__info-box">
-                                <ul class="blog-one__comment-box">
-                                    <li>
-                                        <i class="far fa-user"></i>
-                                        <span>By DT7Solutions</span>
-                                    </li>
-                                   
-                                </ul><!-- /.blog-one__comment-box -->
-                                <h3 class="blog-one__title"><a href="/">Eight Characteristics of a user-friendly website</a></h3>
-                                <a href="/" class="blog-one__btn digihub-btn digihub-btn--border-one">READ MORE
-                                    <span></span><span></span><span></span><span></span></a>
-                            </div><!-- /.blog-one__info-box -->
-                        </div><!-- /.blog-one__card -->
-                    </div>
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.blog-one -->
-        <!-- Blog One End -->
+                </div>
+                {% endfor %}
+               
+                
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.blog-one -->
+    <!-- Blog One End -->
+   
+       
         <!-- <div id="mc_embed_signup">
             <form action="https://vsbsurfaces.us21.list-manage.com/subscribe/post?u=7f1c22c90c12768cd13b815e0&amp;id=e0c90c4c5d&amp;f_id=000be9e6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                 <div id="mc_embed_signup_scroll"><h2>Subscribe</h2>
