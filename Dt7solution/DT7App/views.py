@@ -158,7 +158,7 @@ def Contact(request):
                 'New Contact Form Submission',  # Subject
                 f'Email : {email}\nMessage: {message}\nServices Interested In: {", ".join(services_interested)}',  # Message
                 'noreplaybadugudinesh94@gmail.com',  # Sender's email
-                ['manideep723@gmail.com'],  # Recipient list
+                ['dt7solutions@gmail.com'],  # Recipient list
                 fail_silently=False,  # Raise exception if sending fails
             )
             messages.success(request, 'Message has been successfully sent.')
