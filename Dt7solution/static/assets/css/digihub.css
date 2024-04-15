@@ -1119,6 +1119,7 @@ i {
 .team-card {
   position: relative;
   display: flex;
+  flex-direction:column;
   align-items: center;
   gap: 50px;
   padding: 40px;
