@@ -19,7 +19,7 @@ def Home(request):
         name = request.POST.get('exampleInputName')
         email = request.POST.get('exampleInputEmail')
         phone = request.POST.get('exampleInputPhone')
-        service = request.POST.get('exampleSelectService')
+        services_interested = request.POST.getlist('servicesInterestedIn', [])
         message = request.POST.get('exampleInputMessageinfo')
 
         
@@ -30,7 +30,7 @@ def Home(request):
         print("Name:", name)
         print("Email:", email)
         print("Phone:", phone)
-        print("Service:", service)
+        print("Service:", services_interested)
         print("Message:", message)
 
 
@@ -38,7 +38,7 @@ def Home(request):
 
             send_mail(
                 'New Contact Form Submission',  # Subject
-                f'Email : {email}\nMessage: {message}\nPhone:{phone}\nServices Interested In: {", ".join(service)}',  # Message
+                f'Email : {email}\nMessage: {message}\nPhone:{phone}\nServices Interested In: {", ".join(services_interested)}',  # Message
                 'manideepmadhuri456@gmail.com',  # Sender's email
                 ['manideep723@gmail.com'],  # Recipient list
                 fail_silently=False,  # Raise exception if sending fails
