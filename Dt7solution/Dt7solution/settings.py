@@ -40,8 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'DT7App',
-    'ckeditor'
+    'ckeditor',
+    'django.contrib.sites',
+    'cms',
+    'menus',
+    'treebeard',
+    'django_check_seo',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
