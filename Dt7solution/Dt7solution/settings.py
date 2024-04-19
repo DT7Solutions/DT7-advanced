@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'DT7App',
     'ckeditor',
     'django.contrib.sites',
+    'django.contrib.sitemaps',
     'cms',
     'menus',
     'treebeard',
