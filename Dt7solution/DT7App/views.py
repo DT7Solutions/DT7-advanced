@@ -133,6 +133,9 @@ def Privacypolicy(request):
     return render(request, 'uifiles/privacy-policy.html' ,{'navbar':'Home'})
 def Termsandconditions(request):
     return render(request, 'uifiles/termsconditions.html')
+def Privacypolicy(request):
+    return render(request, 'uifiles/privacy-policy.html')
+
 
 
 def Contact(request):
