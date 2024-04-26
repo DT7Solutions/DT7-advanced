@@ -127,6 +127,8 @@ def EcommerceListing(request):
     return render(request, 'uifiles/ecommercelisting.html' ,{'navbar':'Solutions'})
 def PaidAdvertising(request):
     return render(request, 'uifiles/paidmarketing.html' ,{'navbar':'Solutions'})
+def Seo(request):
+    return render(request, 'uifiles/seo.html' ,{'navbar':'Solutions'})
 def Privacypolicy(request):
     return render(request, 'uifiles/privacy-policy.html' ,{'navbar':'Home'})
 def Termsandconditions(request):

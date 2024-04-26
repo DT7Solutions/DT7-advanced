@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Projectdetails,Digitalpromotions,Webdesgin,PaidAdvertising,Brandidentity,WhatsAppPromotion,EmailMarketing,EcommerceListing,Privacypolicy,Termsandconditions
+from .views import Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Projectdetails,Digitalpromotions,Webdesgin,PaidAdvertising,Brandidentity,WhatsAppPromotion,EmailMarketing,EcommerceListing,Privacypolicy,Termsandconditions,Seo
 
 
 
@@ -11,6 +11,7 @@ urlpatterns = [
     path('blog/', Blog , name='blog'),
     path('solutions/', Solutions , name='solutions'),
     path('digitalpromotions/', Digitalpromotions , name='digitalpromotions'),
+    path('unbeatable-local-seo-services-in-guntur-best-provider/',Seo, name='seo'),
     path('webdesgin/', Webdesgin , name='webdesgin'),
     path('brandidentity/', Brandidentity , name='brandidentity'),
     path('paidadvertising/', PaidAdvertising , name='paidadvertising'),
