@@ -1,0 +1,129 @@
+
+<title> Mobile Privacy Policy | Dt7solutions </title>  
+{% extends 'uifiles/subase.html' %}
+{% load static %}
+{% block content %}
+    
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <h2 class="page-header__title wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">Mobile Privacy Policy</h2>
+                    <ul class="digihub-breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li>/</li>
+                        <li><span>Mobile Privacy Policy</span></li>
+                    </ul><!-- /.thm-breadcrumb list-unstyled -->
+                </div><!-- /.page-header__content -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+        <!-- Page Header End -->
+        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <form action="#" id="popreset" method="POST" class=" container-fluid"  >
+                        {% csrf_token %}
+                        <div class="row   mb-3">
+                          <div class="col-md-6 ">
+                           
+                            <input type="text" class=" comment-form__form-input " id="exampleInputName"  name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
+                          </div>
+                          <div class="col-md-6">
+                           
+                            <input type="tel" class=" comment-form__form-input" id="exampleInputPhone" name="exampleInputPhone" placeholder="Phonenumber" >
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-md-6">
+                          
+                            <input type="email" class=" comment-form__form-input" id="exampleInputEmail"  name="exampleInputEmail"  placeholder="Email" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text"></div>
+                          </div>
+                          <div class="col-md-6">
+                           
+                            <select class=" comment-form__form-input" id="exampleSelectService" name="exampleSelectService" placeholder="Select Type of Service">
+                                <option value="">Select Type of Service</option>
+                                <option value="digital_marketing">Digital Marketing</option>
+                                <option value="email Marketing">Email Marketing</option>
+                                <option value="logo_and_branding">Logo and Branding</option>
+                                <option value="web_development">Web Development</option>
+                                <option value="ecommercelisting">Ecommerce Listing</option>
+                              </select>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+               
+                          <textarea class="comment-form__form-input popup-messsge"  id="exampleInputMessageinfo" name="exampleInputMessageinfo" placeholder="Enter your messege" rows="3"></textarea>
+                        </div>
+                        <button type="submit"  id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
+                      </form>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        <!-- Projects Details Page Start -->
+        <section class="projects-details-page">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-xl-12">
+                        <div class="projects-details-page__title-box">
+                            <h3 class="projects-details-page__title">1. Overview</h3>
+                            <p class="projects-details-page__desc">
+                                Connect app can make a connection between what's app and unknown number without saving contact.
+                            </p>
+                        </div><!-- /.projects-details-page__title-box -->
+                        <div class="projects-details-page__title-box mt-3">
+                            <h3 class="projects-details-page__title">2. Personal Information</h3>
+                            <p class="projects-details-page__desc">
+                                For a better experience while using our Service, we may require you to provide us with certain 
+                                personally identifiable information like mobile number.
+                            </p>
+                        </div><!-- /.projects-details-page__title-box -->
+                        <div class="projects-details-page__title-box mt-3">
+                            <h3 class="projects-details-page__title">3. Sharing Of Information</h3>
+                            <p class="projects-details-page__desc">
+                                We value your trust in providing us your Personal Information, thus we are striving to use commercially 
+                                acceptable means of protecting it. We do not share personally identifiable information (such as name, address, 
+                                email or phone) with other companies and third party services. But remember that there is no method of 
+                                transmission over the internet.
+                            </p>
+                        </div><!-- /.projects-details-page__title-box -->
+                        <div class="projects-details-page__title-box mt-3">
+                            <h3 class="projects-details-page__title">4. When You Request Support, You May Send Us Email</h3>
+                            <p class="projects-details-page__desc">
+                                We allow users to contact us if they have questions about use of our connect app. If you submit a support request, 
+                                we may receive your email address and other information you provide related to your support request. We use Support 
+                                Information only to provide support to you.
+                            </p>
+                        </div><!-- /.projects-details-page__title-box -->
+                        <div class="projects-details-page__title-box mt-3">                   
+                            <h3 class="projects-details-page__title">5. Contact Us</h3>
+                            <p class="projects-details-page__desc">
+                                Our app does not collect or use any of your personal information
+                            </p>
+                        </div><!-- /.projects-details-page__title-box -->
+                        <div class="projects-details-page__title-box mt-3">                   
+                            <h5 class="projects-details-page__desc">
+                                If you have any questions or concerns about this Privacy Policy, please <a href="/contact/">Contact Us</a> at:
+                                <p class="projects-details-page__desc mt-3"> 
+                                    <b>Email:</b> hello@dt7.agency
+                                </p>
+                            </h5>
+                        </div><!-- /.projects-details-page__title-box -->
+                    </div>
+                  
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.projects-details-page -->
+        <!-- Projects Details Page End -->
+        <!-- Footer Three Start -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-long-arrow-alt-up"></i></a>
+
+    {% endblock %}

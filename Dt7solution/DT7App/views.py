@@ -131,10 +131,14 @@ def Seo(request):
     return render(request, 'uifiles/seo.html' ,{'navbar':'Solutions'})
 def Privacypolicy(request):
     return render(request, 'uifiles/privacy-policy.html' ,{'navbar':'Home'})
+def MobilePrivacypolicy(request):
+    return render(request, 'uifiles/mobile-privacy-policy.html' ,{'navbar':'Home'})
 def Termsandconditions(request):
     return render(request, 'uifiles/termsconditions.html')
 def Privacypolicy(request):
     return render(request, 'uifiles/privacy-policy.html')
+def Mobileprivacypolicy(request):
+    return render(request, 'uifiles/mobile-privacy-policy.html')
 
 
 

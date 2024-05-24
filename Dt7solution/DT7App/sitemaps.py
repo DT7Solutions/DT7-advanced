@@ -20,6 +20,7 @@ class PostSitemap(Sitemap):
             'projects',
             'contact',
             'privacypolicy',
+            'mobileprivacypolicy',
             'termsandconditions',
             
         ]
