@@ -529,7 +529,7 @@
                         <div class="col-lg-3 col-sm-6 wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="counter-one__count-box counter-one__count-box-two">
                                 <div class="counter-one__count-box-inner sec-title count-box">
-                                    <h3 class="sec-title__heading count-text" data-stop="2" data-speed="1500">00</h3>
+                                    <h3 class="sec-title__heading count-text" data-stop="3" data-speed="1500">00</h3>
                                     <h3 class="sec-title__heading">+</h3>
                                 </div><!-- /.counter-one__count-box-inner -->
                                 <p class="counter-one__count-title"><br> Awards</p>
@@ -584,8 +584,8 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
-                <form action="#" method="POST" class=" container-fluid"   >
-                    
+                <form action="#" id="popForm" method="POST" class=" container-fluid"   >
+                    {% csrf_token %}
                     <div class="row   mb-3">
                       <div class="col-md-6 ">
                        

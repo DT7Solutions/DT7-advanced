@@ -4391,7 +4391,8 @@ input, textarea {
   justify-content: space-between;
   gap: 15px;
   padding: 19px 30px 19px 20px;
-  background-color: var(--digihub-white3, #F6F6F6);
+  color: var(--digihub-white, #FFFFFF);
+  background-color: var(--digihub-base, #EA4723);
   overflow: hidden;
   z-index: 1;
   transition: all 0.5s ease;
@@ -4405,7 +4406,7 @@ input, textarea {
   content: "";
   width: 2px;
   height: calc(100% - 38px);
-  background-color: var(--digihub-special, #8EC557);
+  /* background-color: var(--digihub-special, #8EC557); */
   position: absolute;
   top: 50%;
   left: 0;
@@ -4429,14 +4430,14 @@ input, textarea {
   font-family: var(--digihub-font, "DM Sans", sans-serif);
   font-size: var(--digihub-size-xl);
   font-weight: 400;
-  color: var(--digihub-secondary, #656565);
+  color: var(--digihub-white, #FFFFFF);
   text-transform: capitalize;
   line-height: 1.588;
   letter-spacing: 0.1px;
 }
 .service-details-page__download-pdf {
   font-size: 30px;
-  color: var(--digihub-base, #EA4723);
+  color: var(--digihub-white, #FFFFFF);
 }
 .service-details-page__download:hover::before {
   background-color: transparent;

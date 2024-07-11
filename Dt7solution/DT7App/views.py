@@ -16,11 +16,11 @@ def Home(request):
     
     if request.method == 'POST':
        
-        name = request.POST.get('exampleInputName')
-        email = request.POST.get('exampleInputEmail')
-        phone = request.POST.get('exampleInputPhone')
+        name = request.POST.get('exampleInputName', "")
+        email = request.POST.get('exampleInputEmail', "")
+        phone = request.POST.get('exampleInputPhone', "")
         services_interested = request.POST.getlist('servicesInterestedIn', [])
-        message = request.POST.get('exampleInputMessageinfo')
+        message = request.POST.get('exampleInputMessageinfo', "")
 
         
 
@@ -167,7 +167,7 @@ def Contact(request):
                 'New Contact Form Submission',  # Subject
                 f'Email : {email}\nMessage: {message}\nServices Interested In: {", ".join(services_interested)}',  # Message
                 'noreplaybadugudinesh94@gmail.com',  # Sender's email
-                ['dt7solutions@gmail.com'],  # Recipient list
+                ['hello@dt7.agency'],  # Recipient list
                 fail_silently=False,  # Raise exception if sending fails
             )
             messages.success(request, 'Message has been successfully sent.')
