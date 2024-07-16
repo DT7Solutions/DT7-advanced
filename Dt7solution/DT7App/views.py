@@ -100,7 +100,9 @@ def Blogdetails(request,slug):
             # If the selected post is the last post, set next post to the first post
             next_post = all_posts.first()
     
-    context =  {'selectpost':selectpost,'totalcategories':totalcategories,'blog_list':blog_list,'previous_post': previous_post,
+    context =  {'selectpost':selectpost,'totalcategories':totalcategories,'blog_list':blog_list, 'meta_title': selectpost.MetaTitle,
+        'meta_description': selectpost.MetaDescription,
+        'meta_tags': selectpost.MetaKeywords,'previous_post': previous_post,
         'next_post': next_post,'navbar':'Blog'}
     print(next_post,previous_post)
 

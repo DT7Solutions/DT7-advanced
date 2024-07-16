@@ -1,7 +1,17 @@
-<title>Dt7solutions | Blogdetails</title> 
-{% extends 'uifiles/subase.html' %}
+
+{% extends 'uifiles/blogbase.html' %}
+{% block title %}{{ meta_title }}{% endblock %}
 {% load static %}
 {% block content %}
+
+<meta name="title" content="{{ meta_title }}">
+<meta name="description" content="{{ meta_description }}">
+<meta name="keywords" content="{{ meta_keywords }}">
+<meta name="googlebot" content="index, follow">
+
+  
+
+
 
         <!-- Page Header Start -->
         <section class="page-header">

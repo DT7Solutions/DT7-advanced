@@ -47,6 +47,9 @@ class BlogPost(models.Model):
     CreatedName =  models.CharField(max_length=100)
     Create_at = models.DateTimeField(default=datetime.now)
     status = models.IntegerField(choices=STATUS, default=0)
+    MetaTitle = models.CharField(max_length=255, blank=True,default="", null=True)
+    MetaDescription = models.CharField(max_length=255, blank=True,default="", null=True)
+    MetaKeywords = models.CharField(max_length=255, blank=True,default="", null=True)
 
     class Meta:
         ordering = ['-Create_at']
