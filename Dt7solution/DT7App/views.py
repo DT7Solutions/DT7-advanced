@@ -104,7 +104,7 @@ def Blogdetails(request,slug):
         'meta_description': selectpost.MetaDescription,
         'meta_tags': selectpost.MetaKeywords,'previous_post': previous_post,
         'next_post': next_post,'navbar':'Blog'}
-    print(next_post,previous_post)
+    print(selectpost.MetaKeywords)
 
     return render(request, 'uifiles/blogdetails.html',context)    
 def Solutions(request):
@@ -142,7 +142,8 @@ def Privacypolicy(request):
 def Mobileprivacypolicy(request):
     return render(request, 'uifiles/mobile-privacy-policy.html')
 
-
+def productshoot(request):
+    return render(request, 'uifiles/Product-shoot.html')
 
 def Contact(request):
     if request.method == "POST":
