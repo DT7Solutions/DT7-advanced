@@ -223,13 +223,13 @@
                                 {% for blogitem in blog_list %} 
                               
                                 <div class="page-sidebar__post-box">
-                                    <a href="blog-details.html" class="page-sidebar__post-img-box">
+                                    <a href="/blog/{{blogitem.Sluglink}}" class="page-sidebar__post-img-box">
                                         <img src="/media/{{blogitem.Image1}}" alt="post" class="page-sidebar__post-img">
                                         <span class="page-sidebar__post-plus icon-plus"></span>
                                     </a><!-- /.page-sidebar__post-img-box -->
                                     <div class="page-sidebar__post-content">
                                         <p class="page-sidebar__post-date"><span>{{blogitem.Category}}</span> <span>{{blogitem.Create_at}}</span></p>
-                                        <a href="blog-details.html" class="page-sidebar__post-title-link">{{blogitem.Title}}</a>
+                                        <a href="/blog/{{blogitem.Sluglink}}" class="page-sidebar__post-title-link">{{blogitem.Title}}</a>
                                     </div><!-- /.page-sidebar__post-content -->
                                 </div><!-- /.page-sidebar__post-box -->
                               
