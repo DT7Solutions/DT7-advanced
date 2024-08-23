@@ -145,6 +145,9 @@ def Mobileprivacypolicy(request):
 def productshoot(request):
     return render(request, 'uifiles/Product-shoot.html')
 
+def page_not_found_view(request, exception):
+    return render(request, 'uifiles/404.html', status=404)
+
 def Contact(request):
     if request.method == "POST":
         first_name = request.POST.get('firstName', "")

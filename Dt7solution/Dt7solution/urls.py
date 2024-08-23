@@ -19,6 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap 
 from DT7App.sitemaps import  PostSitemap
+from DT7App import views
 
 sitemaps={
     'posts': PostSitemap(),
@@ -31,3 +32,5 @@ urlpatterns = [
     path('', include('DT7App.urls')),
     path ('sitemap.xml',sitemap,{'sitemaps':sitemaps}, name= 'django.contrib.sitemaps.views.sitemap')
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.UPLOAD_URL, document_root=settings.UPLOAD_URL)
+
+handler404 = 'DT7App.views.page_not_found_view'

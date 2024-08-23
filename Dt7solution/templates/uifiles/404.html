@@ -1,0 +1,528 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Leading Software Development Company In Guntur | DT7solutions</title> -->
+    <!-- favicons Icons -->
+    <!-- <title>{% block title %}Default Title{% endblock %}</title> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/dt7-132x132.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/dt7-40x40.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/dt7-16X16.png'%}">
+    <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest'%}">
+    <!-- <meta name="description" content="DT7solutions"> -->
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/digihub-icons/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/jarallax/jarallax.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.pips.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/notfound.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/tiny-slider/tiny-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.theme.default.min.css' %}">
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/digihub.css' %}">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0X90KPHTQR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0X90KPHTQR');
+</script>
+</head>
+
+<body class="custom-cursor">
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+    <!-- /.Custom Cursor -->
+
+    <div class="preloader">
+        <img class="preloader__image"  src="{% static '/assets/images/logoblack.png' %}" alt="DT7">
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+        <header class="main-header">
+            <nav class="main-menu-one main-menu">
+                <div class="container">
+                    <div class="main-menu-one__left">
+                        <div class="main-menu-one__logo">
+                            <a href="/" class="main-menu-one__logo-box">
+                                <img src="{% static 'assets/images/logoblack.png' %}"   alt="logo-dark">
+                            </a>
+                        </div><!-- /.main-menu-one__logo -->
+                       
+                    </div><!-- /.main-menu-one__left -->
+                    <ul class="main-menu__list black">
+                        <li >
+                            <a class="nav-btn {% if navbar == 'Home' %} active {% endif %}" href="/">Home </a>
+                           
+                        </li>
+                        <li >
+                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" href="/about/">About</a>
+                        </li>
+                        <li class="dropdown">
+                            <a  class=" nav-btn {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/">Solutions </a>
+                            <ul>
+                                
+                                <li><a href="/digital-marketing-services-in-guntur/">Digital Promotions</a></li>
+                                <li><a href="/website-services-in-guntur/">Web Desgin</a></li>
+                                <li><a href="/brandidentity/">Brand Identity</a></li>
+                                <li><a href="/paidadvertising/">Paid Advertising</a></li>
+                                <li><a href="/whatsAppPromotion/">WhatsApp Promotion</a></li>
+                                <li><a href="/emailMarketing/">Email Marketing</a></li>
+                                <li><a href="/ecommerceListing/">Ecommerce Listing</a></li>
+                                <li><a href="/unbeatable-local-seo-services-in-guntur-best-provider/">Seo Optimization</a></li>
+                                <li><a href="/productshoot/">Productshoot</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="dropdown">
+                            <a href="#">Projects <i class="fas fa-angle-down"></i></a>
+                            <ul>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="projects-carousel.html">Projects Carousel</a></li>
+                                <li><a href="projects-details.html">Projects Details</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li >
+                            <a href="/projects/">Portfolio</a>
+                       
+                        </li> -->
+                    
+                        <li >
+                            <a class="nav-btn {% if navbar == 'Blog' %} active {% endif %}" href="/blog/">Blogs</a>
+                        </li>
+                       
+                        <li >
+                            <a class="nav-btn {% if navbar == 'Contact' %} active {% endif %}" href="/contact/">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="main-menu-one__right black">
+                        <button type="button" class="main-menu-one__bar mobile-nav__toggler">
+                            <span class="mobile-nav__toggler-bars"></span>
+                            <span class="mobile-nav__toggler-bars"></span>
+                            <span class="mobile-nav__toggler-bars"></span>
+                        </button>
+                        <!-- <a href="#" class="main-menu-one__search search-toggler"><i class="fa fa-search"></i></a> -->
+                        <a href="/contact/" class="main-menu-one__btn digihub-btn digihub-btn--secondary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Get In Touch <span></span><span></span><span></span><span></span></a>
+                    </div><!-- /.main-menu-one__right -->
+                </div><!-- /.container -->
+            </nav>
+            <!-- /.main-menu-one -->
+        </header>
+        <div class="stricky-header stricky-header-four stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+   
+        <section class="page-header">
+
+
+    
+            <div class="container">
+                <div class="page-header__content">
+                   
+                  
+                </div><!-- /.page-header__content -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+         <!-- Projects Details Page Start -->
+   <section class="projects-details-page ">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="projects-details-page__inner-container container-fluid">
+                    <div class="projects-details-page__bottom-info-box">
+                        <div class="projects-details-page__bottom-info wow animated fadeInUp mb-5" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                            
+                        </div><!-- /.projects-details-page__bottom-info -->
+                       
+                        
+                    </div><!-- /.projects-details-page__bottom-info-box -->
+                  
+                </div><!-- /.container-fluid -->
+            </div>
+           
+           
+          
+           
+            <div class="col-xl-12 col-lg-12 wow animated fadeInUp pt-250 " data-wow-delay="0.5s" data-wow-duration="1500ms">
+                <div class="pt-mob">
+                
+                  
+                        <div class=" box">
+                            <div class="box__ghost">
+                              <div class="symbol"></div>
+                              <div class="symbol"></div>
+                              <div class="symbol"></div>
+                              <div class="symbol"></div>
+                              <div class="symbol"></div>
+                              <div class="symbol"></div>
+                          
+                              <div class="box__ghost-container">
+                                <div class="box__ghost-eyes">
+                                  <div class="box__eye-left"></div>
+                                  <div class="box__eye-right"></div>
+                                </div>
+                                <div class="box__ghost-bottom">
+                                  <div></div>
+                                  <div></div>
+                                  <div></div>
+                                  <div></div>
+                                  <div></div>
+                                </div>
+                              </div>
+                              <div class="box__ghost-shadow"></div>
+                            </div>
+                          
+                            <div class="box__description">
+                              <div class="box__description-container">
+                                <div class="box__description-title">Whoops!</div>
+                                <div class="box__description-text">It seems like we couldn't find the page you were looking for</div>
+                              </div>
+                          
+                              <a href="/"  class="box__button">Go back</a>
+                          
+                            </div>
+                          
+                          </div>
+                    
+                </div><!-- /.service-two__single -->
+            </div>
+           
+        
+           
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.projects-details-page -->
+<!-- Projects Details Page End -->
+   <section class="projects-details-page">
+    <div class="container">
+        <div class="row">
+            <div class="projects-details-page__inner-container container-fluid projects-details-page__bottom-info-box col-12">
+                
+            </div>
+           
+           
+           
+           
+        
+           
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.projects-details-page -->
+<!-- Projects Details Page End -->
+
+        <footer class="footer-one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-md-5 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                        <div class="footer-one__about-box">
+                            <div class="footer-one__logo-box">
+                                <a href="/">
+                                    <img src="{% static 'assets/images/logowhite.png' %}" alt="logo-dark" class="footer-one__logo">
+                                </a>
+                            </div><!-- /.footer-one__logo-box -->
+                            <p class="footer-one__about-text">Are you looking to take your online presence to the next level? Look no further than Dt7.Agency.</p>
+                            <ul class="footer-one__social">
+                                <li class="footer-one__social-item">
+                                    <a href="https://www.facebook.com/dt7agency/" target="_blank" class="footer-one__social-link">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="footer-one__social-item">
+                                    <a href="https://www.instagram.com/dt7agency/"  target="_blank" class="footer-one__social-link">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="footer-one__social-item">
+                                    <a href="https://twitter.com/Dt7agency"  target="_blank" class="footer-one__social-link">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                            </ul><!-- /.footer-one__socila -->
+                        </div><!-- /.footer-one__about -->
+                    </div>
+                    <div class="col-xl-2 col-md-3 col-sm-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                        <div class="footer-one__link-box footer-one__link-box-one">
+                            <h3 class="footer-one__title">Solutions</h3>
+                            <ul class="footer-one__link-list">
+                                <li class="footer-one__link-item">
+                                    <a href="/" class="footer-one__link">Digital Marketing</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/" class="footer-one__link">Web Desgin</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/" class="footer-one__link">logo and branding</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/" class="footer-one__link">WhatsApp Marketing</a>
+                                </li>
+                            </ul><!-- /.footer-one__link-list -->
+                        </div><!-- /.footer-one__link-box -->
+                    </div>
+                    <div class="col-xl-3 col-md-4 col-sm-6 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
+                        <div class="footer-one__link-box footer-one__link-box-two">
+                            <h3 class="footer-one__title">Quick Links</h3>
+                            <ul class="footer-one__link-list">
+                                <li class="footer-one__link-item">
+                                    <a href="/" class="footer-one__link">Home</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/about/" class="footer-one__link">About</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/" class="footer-one__link">Blogs</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/" class="footer-one__link">Portfolio</a>
+                                </li>
+                            </ul><!-- /.footer-one__link-list -->
+                        </div><!-- /.footer-one__link-box -->
+                    </div>
+                    <div class="col-xl-4 col-lg-7 wow animated fadeInUp" data-wow-delay="0.7s" data-wow-duration="1500ms">
+                        <div class="footer-one__newsletter-box">
+                            <h3 class="footer-one__title">Newsletter</h3>
+                            <form action="#" data-url="https://vsbsurfaces.us21.list-manage.com/subscribe/post?u=7f1c22c90c12768cd13b815e0&amp;id=e0c90c4c5d&amp;f_id=000be9e6f0" class="footer-one__newsletter-form-box mc-form">
+                                <div class="footer-one__newsletter-form">
+                                    <input type="email" name="EMAIL" id="footer-one-newsletter" placeholder="Your Email" class="footer-one__newsletter-input">
+                                    <button type="submit" class="footer-one__newsletter-btn digihub-btn">Subscribe <span></span><span></span><span></span><span></span></button>
+                                </div>
+                                <div class="footer-one__checkbox">
+                                    <input type="checkbox" id="footer-one-newsletter-check" class="footer-one__checkbox-input">
+                                    <label for="footer-one-newsletter-check" class="footer-one__checkbox-text">I agree to my email being stored</label>
+                                </div>
+                            </form><!-- /.footer-one__newsletter-form -->
+                            <div class="mc-form__response"></div><!-- /.mc-form__response -->
+                        </div><!-- /.footer-one__newsletter -->
+                        <div class="service-details-page__download-box">
+                           
+                            <a href="../../static/assets/pdf/dt7portfolio.pdf" class="service-details-page__download wow animated fadeInRight animated " data-wow-delay="0.2s" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.2s; animation-name: fadeInRight;">
+                                <span class="service-details-page__download-title">Download Our Portfolio</span>
+                                <span class="service-details-page__download-pdf icon-pdf"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+                <div class="footer-one__bottom container-fluid @@extraClassName">
+                    <div class="row">
+                        <div class="footer-one__bottom-col-one col-lg-5">
+                            <div class="footer-one__copyright">
+                                <p class="footer-one__copyright-text">&copy; Copyrights  2024 | Desgined by <a href="https://dt7.agency" target="_blank" ><b>Dt7.Agency</b></a></p>
+                            </div><!-- /.footer__copyright -->
+                        </div>
+                        <div class="footer-one__bottom-col-two col-lg-7">
+                            <div class="footer-one__bottom-link-box">
+                                <a href="/termsandconditions/" class="footer-one__bottom-link">Terms & Conditions</a>
+                                <a href="/" class="footer-one__bottom-link">Privacy Policy</a>
+                                <a href="/mobileprivacypolicy/" class="footer-one__bottom-link">Mobile Privacy Policy</a>
+                            </div><!-- /.footer__bottom-link-box -->
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.footer__bottom -->
+            </div><!-- /.container -->
+        </footer><!-- /.footer-one -->
+    </div><!-- /.page-wrapper -->
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="index.html" aria-label="logo image"><img src="{% static 'assets/images/DT7-logo-light.png' %}"  alt="digihub"></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:digihub@envato.com">info@dt7solutions.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone"></i>
+                    <a href="tel: +91 738 249 4888"> +91 738 249 4888</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <ul class="mobile-nav__social">
+                <li>
+                    <a href="https://www.facebook.com/dt7agency/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/Dt7agency" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/company/dt7-solutions/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/dt7agency/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+            </ul><!-- /.mobile-nav__social -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form role="search" method="get" class="search-popup__form" action="#">
+                <input type="text" id="search" placeholder="Search Here...">
+                <button type="submit" aria-label="search submit" class="search-popup__form__btn">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-long-arrow-alt-up"></i></a>
+
+
+    <script src="{% static 'assets/vendors/jquery/jquery-3.7.0.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jarallax/jarallax.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-appear/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-validate/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/nouislider/nouislider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/tiny-slider/tiny-slider.js' %}"></script>
+    <script src="{% static 'assets/vendors/wnumb/wNumb.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/owl-carousel/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+    <script src="{% static 'assets/vendors/tilt/tilt.jquery.js' %}"></script>
+    <script src="{% static 'assets/vendors/isotope/isotope.js' %}"></script>
+    <script src="{% static 'assets/vendors/gsap/gsap.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/gsap/three.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/gsap/hover.js' %}"></script>
+    <script src="{% static 'assets/vendors/countdown/countdown.min.js' %}"></script>
+
+    <!-- template js -->
+    <script src="{% static 'assets/js/digihub.js' %}"></script>
+    <script src="{% static 'assets/js/Contact.js' %}"></script>
+    <script>
+        // Check if the URL contains a success message parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const successMessage = urlParams.get('success');
+        if (successMessage === 'true') {
+            alert('Message has been successfully sent.');  // Display an alert message
+        }
+    </script>
+    <script>
+        // Example form validation using jQuery
+        $(document).ready(function () {
+          $('#myForm').submit(function (event) {
+            var form = $(this);
+            if (form[0].checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.addClass('was-validated');
+          });
+        });
+      </script>
+      <script>
+        // Example form validation using jQuery
+        $(document).ready(function () {
+          $('#popreset').submit(function (event) {
+            var form = $(this);
+            if (form[0].checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.addClass('was-validated');
+          });
+        });
+      </script>
+       <script>
+        document.getElementById('share-page').addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Page shared successfully.');
+                }).catch((error) => {
+                    console.error('Error sharing page:', error);
+                });
+            } else {
+                console.error('Web Share API not supported.');
+            }
+        });
+        </script>
+        
+            <script>
+                //based on https://dribbble.com/shots/3913847-404-page
+
+var pageX = $(document).width();
+var pageY = $(document).height();
+var mouseY = 0;
+var mouseX = 0;
+
+$(document).mousemove(function (event) {
+  //verticalAxis
+  mouseY = event.pageY;
+  yAxis = ((pageY / 2 - mouseY) / pageY) * 300;
+  //horizontalAxis
+  mouseX = event.pageX / -pageX;
+  xAxis = -mouseX * 100 - 100;
+
+  $(".box__ghost-eyes").css({
+    transform: "translate(" + xAxis + "%,-" + yAxis + "%)"
+  });
+
+  //console.log('X: ' + xAxis);
+});
+
+            </script>
+</body>
+
+</html>
+
+   
+
+      
+
+   
+      
+       
+
+
+    
+
+
+  
+        
+      
+       
+      
+
+
+
+ 
+ 
+    
