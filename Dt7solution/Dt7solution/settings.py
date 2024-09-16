@@ -47,9 +47,11 @@ INSTALLED_APPS = [
     'menus',
     'treebeard',
     'django_check_seo',
+    
 ]
 
 SITE_ID = 1
+CMS_CONFIRM_VERSION4 = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
