@@ -39,8 +39,8 @@ def Home(request):
             send_mail(
                 'New Contact Form Submission',  # Subject
                 f'Email : {email}\nMessage: {message}\nPhone:{phone}\nServices Interested In: {", ".join(services_interested)}',  # Message
-                'manideepmadhuri456@gmail.com',  # Sender's email
-                ['manideep723@gmail.com'],  # Recipient list
+                'info@dt7solutions.com',  # Sender's email
+                ['dt7solutions@gmail.com'],  # Recipient list
                 fail_silently=False,  # Raise exception if sending fails
             )
             messages.success(request, 'Message has been successfully sent.')
