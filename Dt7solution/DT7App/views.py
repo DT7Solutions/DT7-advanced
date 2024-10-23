@@ -9,11 +9,11 @@ from django.contrib import messages
 from django.db import models
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
-
+from .context_processors import location_data
 
 @csrf_exempt
 def Home(request):
-    
+    # location_data(request)
     if request.method == 'POST':
        
         name = request.POST.get('exampleInputName', "")
@@ -60,10 +60,10 @@ def Home(request):
     
 
 def About(request):
-    return render(request, 'uifiles/about.html',{'navbar':'About us'})
+    return render(request, 'uifiles/about.html',{'navbar':'About'})
 
 def hyd_About(request):
-    return render(request, 'uifiles/hyd-about.html',{'navbar':'About us'})
+    return render(request, 'uifiles/hyd-about.html',{'navbar':'About1'})
 
 def Blog(request):
     blog = BlogPost.objects.filter().order_by('-Id')
@@ -190,3 +190,33 @@ def Contact(request):
 
     else:
         return render(request, 'uifiles/contact.html',{'navbar':'Contact'})
+    
+    # views.py
+from django.shortcuts import render
+import requests
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+def get_geolocation(ip):
+    url = f'http://ip-api.com/json/{ip}'
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()
+    return None
+
+def my_view(request):
+    user_ip = get_client_ip(request)
+    location_data = get_geolocation(user_ip)
+
+    city = 'Unknown'
+    if location_data:
+        city = location_data.get('city', 'Unknown')
+
+    # Pass the city to the context, which will be inherited by base.html
+    return render(request, 'some_template.html', {'city': city})

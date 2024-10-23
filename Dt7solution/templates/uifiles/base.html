@@ -75,11 +75,10 @@
                            
                         </li>
                         <li>
-                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" id="aboutLink">About</a>
+                            <a id="aboutLink" href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}">
+                                About
+                            </a>
                         </li>
-                        <!-- <li >
-                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" href="/guntur/about/">About</a>
-                        </li> -->
                         <li class="dropdown" >
                             <a  class="nav-btn  {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/">Solutions </a>
                             <ul>
@@ -384,6 +383,7 @@
         // Call the function when the page loads
         window.onload = setLocationBasedURL;
     </script>
+    
     <script>
         // Function to check if a cookie exists
         function getCookie(name) {
