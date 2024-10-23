@@ -74,9 +74,12 @@
                             <a class="nav-btn {% if navbar == 'Home' %} active {% endif %}" href="/">Home </a>
                            
                         </li>
-                        <li >
-                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" href="/about/">About</a>
+                        <li>
+                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" id="aboutLink">About</a>
                         </li>
+                        <!-- <li >
+                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" href="/guntur/about/">About</a>
+                        </li> -->
                         <li class="dropdown" >
                             <a  class="nav-btn  {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/">Solutions </a>
                             <ul>
@@ -196,9 +199,10 @@
                                 <li class="footer-one__link-item">
                                     <a href="/" class="footer-one__link">Home</a>
                                 </li>
-                                <li class="footer-one__link-item">
-                                    <a href="/about/" class="footer-one__link">About</a>
+                                <li class="footer-one__link-item" >
+                                    <a class="footer-one__link"  href="/guntur/about">About</a>
                                 </li>
+                                
                                 <li class="footer-one__link-item">
                                     <a href="/blog/" class="footer-one__link">Blogs</a>
                                 </li>
@@ -306,6 +310,11 @@
         <!-- /.search-popup__content -->
     </div>
     <!-- /.search-popup -->
+    <div id="cookieConsent" style="display:none; position: fixed; bottom: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 15px;">
+        <p style="color: #f1f1f1;">We use cookies to ensure you get the best experience on our website. <a href="/privacy-policy" ></a></p>
+        <button id="acceptCookies" style="background-color: #ea4723; color: white; padding: 10px 20px; border: none; cursor: pointer;">Accept</button>
+    </div>
+    
 <!-- mailchimp -->
 <!-- <div id="mc_embed_shell">
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
@@ -354,7 +363,67 @@
     <!-- template js -->
     <script src="{% static 'assets/js/digihub.js' %}"></script>
     <script src="{% static 'assets/js/Contact.js' %}"></script>
-   
+    <script>
+        function setLocationBasedURL() {
+            fetch('http://ip-api.com/json')
+            .then(response => response.json())
+            .then(data => {
+                const userCity = data.city.toLowerCase();
+                const cityToURLMap = {
+                    "hyderabad": "/hyderabad/about/",
+                    "vijayawada": "/guntur/about/",
+                    // Add other cities as needed
+                };
+                // Set the URL based on the user's city
+                const cityURL = cityToURLMap[userCity] || "/guntur/about/"; 
+                document.getElementById("aboutLink").href = cityURL;
+            })
+            .catch(error => console.error('Error fetching location:', error));
+        }
+    
+        // Call the function when the page loads
+        window.onload = setLocationBasedURL;
+    </script>
+    <script>
+        // Function to check if a cookie exists
+        function getCookie(name) {
+            const value = "; " + document.cookie;
+            const parts = value.split("; " + name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+    
+        // Function to set a cookie
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+    
+        // Show cookie consent banner if not accepted
+        window.onload = function() {
+            if (!getCookie("cookieConsent")) {
+                document.getElementById("cookieConsent").style.display = "block";
+            }
+        };
+    
+        // Accept cookies and hide the banner
+        document.getElementById("acceptCookies").onclick = function() {
+            setCookie("cookieConsent", "true", 365); // Set cookie for 1 year
+            document.getElementById("cookieConsent").style.display = "none";
+        };
+    </script>
+    <style>
+        #cookieConsent {
+            font-family: Arial, sans-serif;
+            z-index: 9999;
+          }
+          
+          #cookieConsent button {
+            margin-left: 20px;
+            border-radius: 5px;
+          }
+    </style>
 </body>
 
 </html>

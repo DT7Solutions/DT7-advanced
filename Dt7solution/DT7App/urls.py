@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Privacypolicy,Projectdetails,Digitalmarketing,Webdesgin,PaidAdvertising,Brandidentity,WhatsAppPromotion,EmailMarketing,EcommerceListing,Privacypolicy,productshoot,Mobileprivacypolicy,Termsandconditions,Seo
+from .views import ( Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Privacypolicy,Projectdetails,Digitalmarketing,
+                    Webdesgin,PaidAdvertising,Brandidentity,WhatsAppPromotion,EmailMarketing,EcommerceListing,Privacypolicy,
+                    productshoot,Mobileprivacypolicy,Termsandconditions,Seo, hyd_About )
 
 
 
@@ -7,7 +9,8 @@ from .views import Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Privac
 
 urlpatterns = [
     path('', Home , name='home'),
-    path('about/', About , name='about'),
+    path('guntur/about/', About , name='about'),
+    path('hyderabad/about/', hyd_About, name='about'),
     path('blog/', Blog , name='blog'),
     path('solutions/', Solutions , name='solutions'),
     path('digital-marketing-services-in-guntur/', Digitalmarketing , name='digital-marketing-services-in-guntur'),

@@ -72,8 +72,8 @@
                             <a class="nav-btn {% if navbar == 'Home' %} active {% endif %}" href="/">Home </a>
                            
                         </li>
-                        <li >
-                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" href="/about/">About</a>
+                        <li>
+                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" id="aboutLink">About</a>
                         </li>
                         <li class="dropdown">
                             <a  class=" nav-btn {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/">Solutions </a>
@@ -193,7 +193,7 @@
                                     <a href="/" class="footer-one__link">Home</a>
                                 </li>
                                 <li class="footer-one__link-item">
-                                    <a href="/about/" class="footer-one__link">About</a>
+                                    <a href="/guntur/about/" class="footer-one__link">About</a>
                                 </li>
                                 <li class="footer-one__link-item">
                                     <a href="/blog/" class="footer-one__link">Blogs</a>
@@ -382,7 +382,27 @@
             }
         });
         </script>
+        <script>
+            function setLocationBasedURL() {
+                fetch('http://ip-api.com/json')
+                .then(response => response.json())
+                .then(data => {
+                    const userCity = data.city.toLowerCase();
+                    const cityToURLMap = {
+                        "hyderabad": "/hyderabad/about/",
+                        "vijayawada": "/guntur/about/",
+                        // Add other cities as needed
+                    };
+                    // Set the URL based on the user's city
+                    const cityURL = cityToURLMap[userCity] || "/guntur/about/"; 
+                    document.getElementById("aboutLink").href = cityURL;
+                })
+                .catch(error => console.error('Error fetching location:', error));
+            }
         
+            // Call the function when the page loads
+            window.onload = setLocationBasedURL;
+        </script>
             
 </body>
 
