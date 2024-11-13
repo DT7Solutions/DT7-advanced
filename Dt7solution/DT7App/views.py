@@ -63,7 +63,7 @@ def About(request):
     return render(request, 'uifiles/about.html',{'navbar':'About'})
 
 def hyd_About(request):
-    return render(request, 'uifiles/hyd-about.html',{'navbar':'About1'})
+    return render(request, 'uifiles/hyd-about.html',{'navbar':'About'})
 
 def Blog(request):
     blog = BlogPost.objects.filter().order_by('-Id')

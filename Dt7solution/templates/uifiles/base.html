@@ -75,7 +75,7 @@
                            
                         </li>
                         <li>
-                            <a id="aboutLink" href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}">
+                            <a id="aboutLink" class=" nav-btn {% if navbar == 'About' %} active {% endif %}"  href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}">
                                 About
                             </a>
                         </li>

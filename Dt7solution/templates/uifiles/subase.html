@@ -73,7 +73,10 @@
                            
                         </li>
                         <li>
-                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" id="aboutLink">About</a>
+                            <a class=" nav-btn {% if navbar == 'About' %} active {% endif %}" id="aboutLink"  href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}">
+                                About
+                            </a>
+                            <!-- <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" id="aboutLink">About</a> -->
                         </li>
                         <li class="dropdown">
                             <a  class=" nav-btn {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/">Solutions </a>

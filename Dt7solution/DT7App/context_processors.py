@@ -14,8 +14,15 @@ def get_geolocation(ip):
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
-        city = data['city']
-        return city
+        # city = data['city']
+        # return city
+        city = data.get('city')  # Use .get() to handle missing keys
+        if city:
+            return city
+        else:
+            return "City not found"  # Default message if 'city' is missing
+    else:
+        return f"Error: {response.status_code}" 
 
 
 def location_data(request):
