@@ -25,6 +25,7 @@ $(document).ready(function(){
         servicesInterestedIn.forEach((service) => {
             data.append('servicesInterestedIn', service);
         });
+        
 
         $.ajax({
             type: 'POST',
