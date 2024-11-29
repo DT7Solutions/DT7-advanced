@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic import TemplateView
 from .views import ( Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Privacypolicy,Projectdetails,Digitalmarketing,
                     Webdesgin,PaidAdvertising,Brandidentity,WhatsAppPromotion,EmailMarketing,EcommerceListing,Privacypolicy,
                     productshoot,Mobileprivacypolicy,Termsandconditions,Seo, hyd_About )
@@ -10,6 +11,8 @@ from .views import ( Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Priv
 urlpatterns = [
     path('', Home , name='home'),
     path('guntur/about/', About , name='about'),
+    path('robots.txt', TemplateView.as_view(template_name="uifiles/robots.txt", content_type="text/plain"), name='robots.txt'),
+    path('sitemap.xml', TemplateView.as_view(template_name="uifiles/sitemap.xml", content_type="text/xml"), name='sitemap.xml'),
     path('hyderabad/about/', hyd_About, name='about'),
     path('blog/', Blog , name='blog'),
     path('solutions/', Solutions , name='solutions'),
