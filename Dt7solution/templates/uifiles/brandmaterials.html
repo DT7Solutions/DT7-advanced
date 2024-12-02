@@ -1,0 +1,108 @@
+
+{% extends 'uifiles/subase.html' %}
+{% load static %}
+{% block content %}
+   
+        <!-- Page Header Start -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <h2 class="page-header__title wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">brandmaterials</h2>
+                    <ul class="digihub-breadcrumb">
+                        <li><a href="/">Home</a></li>
+                        <li>/</li>
+                        <li><span>brandmaterials</span></li>
+                    </ul><!-- /.thm-breadcrumb list-unstyled -->
+                </div><!-- /.page-header__content -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+        <!-- Page Header End -->
+        <!-- Projects Page Start -->
+        <section class="team-two team-two--one">
+            <div class="container">
+                <div class="team-two__sec-title sec-title wow animated fadeIn animated" data-wow-delay="0.1s" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.1s; animation-name: fadeIn;">
+                    <p class="sec-title__top">DT7</p>
+                    <h2 class="team-two__heading sec-title__heading">Brand Materials</h2>
+                </div><!-- /.team-two__sec-title -->
+                <div class="row">
+                    <div class="col-md-4 wow animated fadeInUp animated" data-wow-delay="0.1s" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.1s; animation-name: fadeInUp;">
+                        <div class="team-card">
+                            <div class="team-card__img-box-2">
+                                <img src="{% static 'assets/images/team/dt7agency-brand.png' %}"alt="logo-dark" >
+                            </div><!-- /.team-card__img-box -->
+                            <div class="team-card__info brand">
+                                <h4 class="team-card__name"><a href="team-single.html" >Logos</a></h4>
+                                
+                                <a  class=" digihub-btn digihub-btn--secondary mt-3"  data-bs-toggle="modal" data-bs-target="#logoModal">Download <span></span><span></span><span></span><span></span></a>
+                            </div><!-- /.team-card__info -->
+                        </div><!-- /.team-card -->
+                    </div>
+                   
+                    <div class="col-md-4 wow animated fadeInUp animated" data-wow-delay="0.1s" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.1s; animation-name: fadeInUp;">
+                        <div class="team-card">
+                            <div class="team-card__img-box-2">
+                                <img src="{% static 'assets/images/team/guidelines.svg' %}" alt="team" class="team-card__img-2">
+                            </div><!-- /.team-card__img-box -->
+                            <div class="team-card__info brand">
+                                <h4 class="team-card__name"><a href="team-single.html">Brand Guidelines</a></h4>
+                               
+                                <a href="{% static 'assets/images/resources/DT7-brand-guidelines.pdf' %}"  download  class=" digihub-btn digihub-btn--secondary mt-3">Download <span></span><span></span><span></span><span></span></a>
+                            </div><!-- /.team-card__info -->
+                        </div><!-- /.team-card -->
+                    </div>
+                    <div class="col-md-4 wow animated fadeInUp animated" data-wow-delay="0.3s" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <div class="team-card">
+                            <div class="team-card__img-box-2">
+                                <img src="{% static 'assets/images/team/visting-card.svg' %}" alt="team" class="team-card__img-2">
+                            </div><!-- /.team-card__img-box -->
+                            <div class="team-card__info brand">
+                                <h4 class="team-card__name"><a href="team-single.html">Visting Card</a></h4>
+                              
+                                <a href="/contact/" class=" digihub-btn digihub-btn--secondary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Download <span></span><span></span><span></span><span></span></a>
+                            </div><!-- /.team-card__info -->
+                        </div><!-- /.team-card -->
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section>
+        <!-- Footer Three Start -->
+        <div class="modal fade " id="logoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Dt7 Logos</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div class="row">
+                        <div class="col-md-6 pop-up-item" data-wow-delay="0.1s" data-wow-duration="1500ms" >
+                            <div class="team-card ">
+                                <div class="team-card__img-box-2">
+                                    <img src="{% static 'assets/images/logoblack.png' %}" alt="logo-dark">
+                                </div><!-- /.team-card__img-box -->
+                                <div class="team-card__info brand">
+                                    <h4 class="team-card__name"><a href="team-single.html">Dt7 Black Logo</a></h4>
+                                    
+                                    <a  href="{% static 'assets/images/team/Dt7-logo-black.psd' %}"  download  class=" digihub-btn digihub-btn--secondary mt-3" >Download <span></span><span></span><span></span><span></span></a>
+                                </div><!-- /.team-card__info -->
+                            </div><!-- /.team-card -->
+                        </div>
+                        <div class="col-md-6 pop-up-item" >
+                            <div class="team-card ">
+                                <div class="team-card__img-box-2">
+                                    <img src="{% static 'assets/images/logoblack.png' %}" alt="logo-dark">
+                                </div><!-- /.team-card__img-box -->
+                                <div class="team-card__info brand">
+                                    <h4 class="team-card__name"><a href="team-single.html">Dt7 White Logo</a></h4>
+                                    
+                                    <a  href="{% static 'assets/images/team/Dt7-logo-white.psd' %}"  download  class=" digihub-btn digihub-btn--secondary mt-3" >Download <span></span><span></span><span></span><span></span></a>
+                                </div><!-- /.team-card__info -->
+                            </div><!-- /.team-card -->
+                        </div>
+                    </div>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+ {% endblock %}
