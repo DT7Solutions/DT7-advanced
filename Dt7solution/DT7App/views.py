@@ -155,45 +155,88 @@ def productshoot(request):
 
 def page_not_found_view(request, exception):
     return render(request, 'uifiles/404.html', status=404)
+    
+# @csrf_exempt
+# def Contact(request):
+#     if request.method == "POST":
+#         first_name = request.POST.get('FirstName', "")
+#         last_name = request.POST.get('LastName', "")
+#         email = request.POST.get('Email', "")
+#         services_interested = request.POST.getlist('ServicesInterestedIn', [])
+#         message = request.POST.get('Message', "")
+#         terms_and_conditions = request.POST.get('TermsAndConditions', "")
+        
 
+       
+#         form_data = FormsData.objects.create(
+#             Name=first_name + ' ' + last_name,
+#             email=email,
+#             services_interested=', '.join(services_interested),
+#             message=message,
+#             terms_and_conditions=terms_and_conditions
+#         )
+#         form_data.save()
+
+      
+#         try:
+#             send_mail(
+#                 'New Contact Form Submission', 
+#                 f'Email : {email}\nMessage: {message}\nServices Interested In: {", ".join(services_interested)}',  
+#                 'noreplaybadugudinesh94@gmail.com',  
+#                 ['manideep723@gmail.com'],  
+#                 fail_silently=False,  
+#             )
+#             messages.success(request, 'Message has been successfully sent.')
+           
+#         except Exception as e:
+#             messages.error(request, f'Failed to send message. Error: {e}')
+#             print("Error")
+
+#         return render(request, 'uifiles/contact.html',{'navbar':'Contact'})  
+
+#     else:
+#         return render(request, 'uifiles/contact.html',{'navbar':'Contact'})
+
+@csrf_exempt
 def Contact(request):
     if request.method == "POST":
-        first_name = request.POST.get('firstName', "")
-        last_name = request.POST.get('lastName', "")
-        email = request.POST.get('email', "")
-        services_interested = request.POST.getlist('servicesInterestedIn', [])
-        message = request.POST.get('message', "")
-        terms_and_conditions = request.POST.get('termsAndConditions', "")
-
-        # Save form data to the model
-        form_data = FormsData.objects.create(
-            Name=first_name + ' ' + last_name,
-            email=email,
-            services_interested=', '.join(services_interested),
-            message=message,
-            terms_and_conditions=terms_and_conditions
-        )
-        form_data.save()
-
-        # Send email
         try:
+            first_name = request.POST.get('FirstName', "").strip()
+            last_name = request.POST.get('LastName', "").strip()
+            email = request.POST.get('Email', "").strip()
+            services_interested = request.POST.getlist('ServicesInterestedIn', [])
+            message = request.POST.get('Message', "").strip()
+            terms_and_conditions = request.POST.get('TermsAndConditions', "").strip()
+
+            # Save form data
+            form_data = FormsData.objects.create(
+                Name=f"{first_name} {last_name}",
+                email=email,
+                services_interested=', '.join(services_interested),
+                message=message,
+                terms_and_conditions=terms_and_conditions
+            )
+            print(f"Form saved successfully with ID {form_data.id}")
+
+            # Send email
             send_mail(
-                'New Contact Form Submission',  # Subject
-                f'Email : {email}\nMessage: {message}\nServices Interested In: {", ".join(services_interested)}',  # Message
-                'noreplaybadugudinesh94@gmail.com',  # Sender's email
-                ['hello@dt7.agency'],  # Recipient list
-                fail_silently=False,  # Raise exception if sending fails
+                'New Contact Form Submission', 
+                f'Email : {email}\nMessage: {message}\nServices Interested In: {", ".join(services_interested)}',  
+                'noreplaybadugudinesh94@gmail.com',  
+                ['manideep723@gmail.com'],  
+                fail_silently=False,  
             )
             messages.success(request, 'Message has been successfully sent.')
-           
+
         except Exception as e:
-            messages.error(request, f'Failed to send message. Error: {e}')
-            print("Error")
+            print(f"Error: {e}")
+            messages.error(request, 'An error occurred. Please try again.')
 
-        return render(request, 'uifiles/contact.html',{'navbar':'Contact'})  
-
+        return render(request, 'uifiles/contact.html', {'navbar': 'Contact'})
     else:
-        return render(request, 'uifiles/contact.html',{'navbar':'Contact'})
+        return render(request, 'uifiles/contact.html', {'navbar': 'Contact'})
+
+
     
     # views.py
 from django.shortcuts import render

@@ -97,6 +97,11 @@
              
                         <textarea class="comment-form__form-input popup-messsge" required  id="exampleInputMessageinfo" name="exampleInputMessageinfo" placeholder="Enter your messege" rows="3"></textarea>
                       </div>
+                      <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">                                        
+                        <div class="form-group ">
+                            <div class="g-recaptcha" id="recaptcha" required  data-sitekey="6LcY2pAqAAAAACPtFkPBjgD-s1xNhajcTxvQK8KQ"></div>
+                        </div>
+                    </div>
                       <button type="submit"  id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
                     </form>
               </div>
@@ -180,21 +185,21 @@
                                 <div class="comment-form__form-row row">
                                   <div class="col-md-6 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                     <div class="form-group comment-form__form-input-box">
-                                      <label for="firstName">First Name</label>
-                                      <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                      <label for="FirstName">First Name</label>
+                                      <input type="text" class="form-control" id="FirstName" name="FirstName" required>
                                     </div>
                                   </div>
                                   <div class="col-md-6 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                     <div class="form-group comment-form__form-input-box">
-                                      <label for="lastName">Last Name</label>
-                                      <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                      <label for="LastName">Last Name</label>
+                                      <input type="text" class="form-control" id="LastName" name="LastName" required>
                                     </div>
                                   </div>
                                 </div>
                                 <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <div class="form-group">
-                                  <label for="email">Email</label>
-                                  <input type="email" class="form-control" id="email"  name="email" required>
+                                  <label for="Email">Email</label>
+                                  <input type="email" class="form-control" id="Email"  name="Email" required>
                                 </div>
                             </div>
                             <div class="col-md-12 mb-2 wow animated fadeInUp " data-wow-delay="0.1s" data-wow-duration="1500ms">
@@ -204,12 +209,12 @@
                                 <div class="form-group">
                                  
                                   <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="digitalMarketing" name="servicesInterestedIn" value="Digital Marketing">
+                                    <input class="form-check-input" type="checkbox" id="digitalMarketing" name="ServicesInterestedIn" value="Digital Marketing">
                                     <label class="form-check-label" for="digitalMarketing">Digital Marketing</label>
                                   </div>
                                
                                   <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="whatsappMarketing" name="servicesInterestedIn" value="Digital Marketing">
+                                    <input class="form-check-input" type="checkbox" id="whatsappMarketing" name="ServicesInterestedIn" value="Digital Marketing">
                                     <label class="form-check-label" for="whatsappMarketing">WhatsApp Marketing</label>
                                   </div>
                                   <div class="form-check form-check-inline">
@@ -217,7 +222,7 @@
                                     <label class="form-check-label" for="logoBranding">Logo Branding</label>
                                   </div>
                                   <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="emailMarketing" name="servicesInterestedIn" value="emailMarketing">
+                                    <input class="form-check-input" type="checkbox" id="emailMarketing" name="ServicesInterestedIn" value="emailMarketing">
                                     <label class="form-check-label" for="emailMarketing">Email Marketing</label>
                                   </div>
                                 </div>
@@ -225,15 +230,15 @@
                             <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <div class="form-group">
                                   <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="webDesigning" name="servicesInterestedIn" value="webDesigning">
+                                    <input class="form-check-input" type="checkbox" id="webDesigning" name="ServicesInterestedIn" value="webDesigning">
                                     <label class="form-check-label" for="webDesigning">Web Designing (UI/UX)</label>
                                   </div>
                                   <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="thirdPartyListing" name="servicesInterestedIn" value="thirdPartyListing">
+                                    <input class="form-check-input" type="checkbox" id="thirdPartyListing" name="ServicesInterestedIn" value="thirdPartyListing">
                                     <label class="form-check-label" for="thirdPartyListing">3rd Party Listing</label>
                                   </div>
                                   <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="onlinePaidMarketing" name="servicesInterestedIn" value="onlinePaidMarketing">
+                                    <input class="form-check-input" type="checkbox" id="onlinePaidMarketing" name="ServicesInterestedIn" value="onlinePaidMarketing">
                                     <label class="form-check-label" for="onlinePaidMarketing">Online Paid Marketing</label>
                                   </div>
                                   
@@ -243,17 +248,25 @@
                         </div>
                             <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <div class="form-group">
-                                  <label for="message">Message</label>
-                                  <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                                  <label for="Message">Message</label>
+                                  <textarea class="form-control" id="Message" name="Message" rows="3"></textarea>
                                 </div>
                             </div>
+                            <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">                                        
+                              <div class="form-group ">
+                                  <div class="g-recaptcha" id="recaptcha"  data-sitekey="6LcY2pAqAAAAACPtFkPBjgD-s1xNhajcTxvQK8KQ"></div>
+                              </div>
+                          </div>
                                 <div class="form-check">
-                                  <input type="checkbox" class="form-check-input" id="termsAndConditions" name="termsAndConditions" required>
-                                  <label class="form-check-label" for="termsAndConditions">I agree to the Terms and Conditions</label>
+                                  <input type="checkbox" class="form-check-input" id="TermsAndConditions" name="TermsAndConditions" required>
+                                  <label class="form-check-label" for="TermsAndConditions">I agree to the Terms and Conditions</label>
                                 </div>
                                 <button type="submit" id="submitBtn" class="comment-form__form-btn digihub-btn digihub-btn--secondary mt-3">Submit</button>
                               </form>
                         </div><!-- /.comment-form -->
+                        <div class="loading" style="display: none;">Loading...</div>
+                        <div class="error-message" style="display: none; color: red;">Error submitting the form.</div>
+                        <div class="sent-message" style="display: none; color: green;">Your message has been sent successfully!</div>
                     </div>
                 </div><!-- /.row -->
             </div><!-- /.container -->
