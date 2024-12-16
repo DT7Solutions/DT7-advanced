@@ -9,6 +9,21 @@
     <!-- <title>Leading Software Development Company In Guntur | DT7solutions</title> -->
     <!-- favicons Icons -->
     <title>{% block title %}Default Title{% endblock %}</title>
+    <!-- Dynamic Meta Description -->
+    {% block meta_description %}
+    <meta name="description" content="Default meta description">
+    {% endblock %}
+   
+    <!-- Dynamic Meta Keywords -->
+    {% block meta_tags %}
+    <meta name="keywords" content="Default, Keywords">
+    {% endblock %}
+
+    <!-- Dynamic Canonical Link -->
+    {% block canonical_url %}
+    <link rel="canonical" href="https://www.default-url.com">
+    {% endblock %}
+    <meta name="googlebot" content="index, follow">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/dt7-132x132.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/dt7-40x40.png'%}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/dt7-16X16.png'%}">

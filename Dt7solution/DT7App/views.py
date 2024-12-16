@@ -110,7 +110,7 @@ def Blogdetails(request,slug):
     
     context =  {'selectpost':selectpost,'totalcategories':totalcategories,'blog_list':blog_list, 'meta_title': selectpost.MetaTitle,
         'meta_description': selectpost.MetaDescription,
-        'meta_tags': selectpost.MetaKeywords,'previous_post': previous_post,
+        'meta_tags': selectpost.MetaKeywords,'previous_post': previous_post,'canonical_url':selectpost.Sluglink,
         'next_post': next_post,'navbar':'Blog'}
     print(selectpost.MetaKeywords)
 
