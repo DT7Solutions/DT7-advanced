@@ -8320,7 +8320,7 @@ input, textarea {
 }
 .footer-one__about-text {
   color: var(--digihub-white, #FFFFFF);
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 .footer-one__social {
   margin: 0;
@@ -9243,4 +9243,11 @@ dialog p a:visited {
   padding: 35px;
   min-width: 200px;
   gap: 35px;
+}
+
+.bg-theme-color{
+  border:2px solid #ea4723;
+  background-color: #ffff!important;
+  border-radius: 5px;
+ 
 }
