@@ -2,7 +2,7 @@ from django.urls import path
 from django.views.generic import TemplateView
 from .views import ( Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Privacypolicy,Projectdetails,Digitalmarketing,
                     Webdesgin,PaidAdvertising,Brandidentity,WhatsAppPromotion,EmailMarketing,EcommerceListing,Privacypolicy,
-                    productshoot,Mobileprivacypolicy,Termsandconditions,Seo, hyd_About,brandmaterials )
+                    productshoot,Mobileprivacypolicy,Termsandconditions,Seo, hyd_About,brandmaterials,logos )
 
 
 
@@ -34,5 +34,6 @@ urlpatterns = [
     path('Privacypolicy/', Privacypolicy , name='Privacypolicy'),
     path('mobileprivacypolicy/', Mobileprivacypolicy , name='Mobileprivacypolicy'),
     path('brandmaterials/', brandmaterials , name='brandmaterials'),
+    path('logos/', logos , name='logos'),
 ]
 

@@ -61,6 +61,8 @@ def Home(request):
 
 def About(request):
     return render(request, 'uifiles/about.html',{'navbar':'About'})
+def logos(request):
+    return render(request, 'uifiles/logos.html')
 
 def hyd_About(request):
     return render(request, 'uifiles/hyd-about.html',{'navbar':'About'})
