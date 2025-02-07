@@ -225,7 +225,7 @@ def Contact(request):
                 'New Contact Form Submission', 
                 f'Email : {email}\nMessage: {message}\nServices Interested In: {", ".join(services_interested)}',  
                 'noreplaybadugudinesh94@gmail.com',  
-                ['manideep723@gmail.com'],  
+                ['dt7solutions@gmail.com'],  
                 fail_silently=False,  
             )
             messages.success(request, 'Message has been successfully sent.')
