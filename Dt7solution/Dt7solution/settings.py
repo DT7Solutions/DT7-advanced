@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'cms',
     'menus',
     'treebeard',
-    'django_check_seo',
+
     
 ]
 
