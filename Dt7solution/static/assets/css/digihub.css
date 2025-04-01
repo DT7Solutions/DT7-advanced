@@ -9260,3 +9260,71 @@ dialog p a:visited {
   border-radius: 5px;
  
 }
+
+/* scroll css */
+.btn-visit {
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  background-color:#ea4723;
+  color: #f3f3f3;
+  padding: 0.5rem 1.5rem;
+  border-radius: .5rem;
+  transition: bottom 1s ease-in-out;
+  z-index: 10;
+}
+
+.scroll-img {
+  position: relative;
+  /* width: 430px; */
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  /* background: url("../images/portfolio/swethatelugufoodswebsite.png") no-repeat; */
+  background-size: cover;
+  background-position-y: 0%;
+  transition: background 3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+
+
+.scroll-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(to right, #fff, #fd3f00);
+  transition: all 3s ease-in-out;
+}
+
+.scroll-img::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.scroll-img:hover {
+  background-position-y: 100%;
+}
+
+.scroll-img:hover::before {
+  width: 100%;
+}
+
+.scroll-img:hover::after {
+  background: linear-gradient(to bottom, transparent 70%, #3434349b);
+}
+
+.scroll-img:hover .btn-visit{
+    bottom: 2rem;
+}

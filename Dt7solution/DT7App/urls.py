@@ -2,7 +2,7 @@ from django.urls import path
 from django.views.generic import TemplateView
 from .views import ( Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Privacypolicy,Projectdetails,Digitalmarketing,
                     Webdesgin,PaidAdvertising,Brandidentity,WhatsAppPromotion,EmailMarketing,EcommerceListing,Privacypolicy,
-                    productshoot,Mobileprivacypolicy,Termsandconditions,Seo, hyd_About,brandmaterials,logos )
+                    productshoot,Mobileprivacypolicy,Termsandconditions,Seo, hyd_About,brandmaterials,logos,web_designing_in_vijayawada,web_designing_in_guntur,web_development_in_hyderabad )
 
 
 
@@ -35,5 +35,8 @@ urlpatterns = [
     path('mobileprivacypolicy/', Mobileprivacypolicy , name='Mobileprivacypolicy'),
     path('brandmaterials/', brandmaterials , name='brandmaterials'),
     path('logos/', logos , name='logos'),
+    path('web-development-company-in-hyderabad/', web_development_in_hyderabad , name='web-development-company-in-hyderabad'),
+    path('web-designing-company-in-guntur/', web_designing_in_guntur , name='web-designing-company-in-guntur'),
+    path('web-designing-company-in-vijayawada/', web_designing_in_vijayawada , name='web-designing-company-in-vijayawada'),
 ]
 

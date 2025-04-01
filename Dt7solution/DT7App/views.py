@@ -66,7 +66,12 @@ def logos(request):
 
 def hyd_About(request):
     return render(request, 'uifiles/hyd-about.html',{'navbar':'About'})
-
+def web_designing_in_guntur(request):
+    return render(request, 'uifiles/web-designing-company-in-guntur.html')
+def  web_development_in_hyderabad(request):
+    return render(request, 'uifiles/web-development-company-in-hyderabad.html')
+def web_designing_in_vijayawada(request):
+    return render(request, 'uifiles/web-designing-company-in-vijayawada.html')
 
 def brandmaterials(request):
     return render(request, 'uifiles/brandmaterials.html',{'navbar':'About'})

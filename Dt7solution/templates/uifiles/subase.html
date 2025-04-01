@@ -412,7 +412,24 @@
             // Call the function when the page loads
             window.onload = setLocationBasedURL;
         </script>
+       
             
+  <script>
+    $(document).ready(function(){
+        var owl = $(".digihub-owl__carousel");
+       
+    
+        // Manually stop autoplay on hover
+        owl.on("mouseenter", function() {
+            owl.trigger("stop.owl.autoplay");
+        });
+    
+        // Resume autoplay when mouse leaves
+        owl.on("mouseleave", function() {
+            owl.trigger("play.owl.autoplay", [8000]); // Resume with slow speed
+        });
+    });
+    </script>
 </body>
 
 </html>
