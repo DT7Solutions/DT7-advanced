@@ -9328,3 +9328,9 @@ dialog p a:visited {
 .scroll-img:hover .btn-visit{
     bottom: 2rem;
 }
+.service-two__content .call-ph{
+color:#656565;
+}
+.service-two__content:hover .call-ph{
+  color:#fff;
+  }
