@@ -27,7 +27,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body ">
-                  <form action="#" id="popreset" method="POST" class=" container-fluid"  >
+                  <form id="popreset">
                       {% csrf_token %}
                       <div class="row   mb-3">
                         <div class="col-md-6 ">
@@ -327,5 +327,27 @@
   </section><!-- /.blog-one -->
  
         <!-- Our Locations end  -->
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+          (function(){
+            emailjs.init("wRPE21SpUBhUxwat8"); 
+          })();
+        </script>
+
+        <script>
+          document.getElementById("popreset").addEventListener("submit", function(e) {
+            e.preventDefault();
+        
+            emailjs.sendForm('service_z75h2ia', 'template_bgn290x', this)
+              .then(function(response) {
+                 alert("Message sent successfully!");
+                 document.getElementById("popreset").reset(); 
+              }, function(error) {
+                 alert("Failed to send message. Please try again.");
+              });
+          });
+        </script>
+        
+        
 
 {% endblock %}
