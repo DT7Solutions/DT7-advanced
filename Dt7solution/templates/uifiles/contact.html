@@ -327,26 +327,7 @@
   </section><!-- /.blog-one -->
  
         <!-- Our Locations end  -->
-        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-        <script type="text/javascript">
-          (function(){
-            emailjs.init("wRPE21SpUBhUxwat8"); 
-          })();
-        </script>
-
-        <script>
-          document.getElementById("popreset").addEventListener("submit", function(e) {
-            e.preventDefault();
-        
-            emailjs.sendForm('service_z75h2ia', 'template_bgn290x', this)
-              .then(function(response) {
-                 alert("Message sent successfully!");
-                 document.getElementById("popreset").reset(); 
-              }, function(error) {
-                 alert("Failed to send message. Please try again.");
-              });
-          });
-        </script>
+       
         
         
 
