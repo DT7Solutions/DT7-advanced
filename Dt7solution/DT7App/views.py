@@ -132,7 +132,7 @@ def Projectdetails(request):
     return render(request, 'uifiles/projects-details.html' ,{'navbar':'Projects'})
 def Digitalmarketing(request):
     return render(request, 'uifiles/digital-marketing-services-in-guntur.html' ,{'navbar':'Solutions'})
-def Webdesgin(request):
+def websitedesign(request):
     return render(request, 'uifiles/webdesgin.html' ,{'navbar':'Solutions'})
 def Brandidentity(request):
     return render(request, 'uifiles/brandidentity.html' ,{'navbar':'Solutions'})

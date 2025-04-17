@@ -1,7 +1,7 @@
 from django.urls import path
 from django.views.generic import TemplateView
 from .views import ( Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Privacypolicy,Projectdetails,Digitalmarketing,
-                    Webdesgin,PaidAdvertising,Brandidentity,WhatsAppPromotion,EmailMarketing,EcommerceListing,Privacypolicy,
+                    websitedesign,PaidAdvertising,Brandidentity,WhatsAppPromotion,EmailMarketing,EcommerceListing,Privacypolicy,
                     productshoot,Mobileprivacypolicy,Termsandconditions,Seo, hyd_About,brandmaterials,logos,web_designing_in_vijayawada,web_designing_in_guntur,web_development_in_hyderabad )
 
 
@@ -18,7 +18,7 @@ urlpatterns = [
     path('solutions/', Solutions , name='solutions'),
     path('digital-marketing-services-in-guntur/', Digitalmarketing , name='digital-marketing-services-in-guntur'),
     path('unbeatable-local-seo-services-in-guntur-best-provider/',Seo, name='seo'),
-    path('website-services-in-guntur/', Webdesgin , name='website-services-in-guntur'),
+    path('websitedesign/', websitedesign , name='websitedesign'),
     path('brandidentity/', Brandidentity , name='brandidentity'),
     path('paidadvertising/', PaidAdvertising , name='paidadvertising'),
     path('whatsAppPromotion/',WhatsAppPromotion , name='whatsApp Promotion'),

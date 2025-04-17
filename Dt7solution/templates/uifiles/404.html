@@ -75,7 +75,7 @@
                            
                         </li>
                         <li >
-                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" href="/about/">About</a>
+                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}">About</a>
                         </li>
                         <li class="dropdown">
                             <a  class=" nav-btn {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/">Solutions </a>
@@ -285,7 +285,7 @@
                                     <a href="/" class="footer-one__link">Home</a>
                                 </li>
                                 <li class="footer-one__link-item">
-                                    <a href="/about/" class="footer-one__link">About</a>
+                                    <a href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}" class="footer-one__link">About</a>
                                 </li>
                                 <li class="footer-one__link-item">
                                     <a href="/" class="footer-one__link">Blogs</a>

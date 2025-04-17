@@ -20,7 +20,7 @@
                         <div class="main-slider__right">
                             <p class="main-slider__desc wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms"> Struggling with digital growth? Don't worry, we've got your back! Let's tackle your challenges and boost your online success together! </p>
                             <div class="main-slider__btn-group wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
-                                <a href="/guntur/about/" class="digihub-btn digihub-btn--primary">Learn More <span></span><span></span><span></span><span></span></a>
+                                <a href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}" class="digihub-btn digihub-btn--primary">Learn More <span></span><span></span><span></span><span></span></a>
                                 <a href="https://www.youtube.com/watch?v=CbP5Oku3MuM" class="main-slider__border-btn digihub-btn digihub-btn--border-two video-popup d-lg-block d-none ">Watch Our Video <span></span><span></span><span></span><span></span></a>
                             </div>
                         </div>
