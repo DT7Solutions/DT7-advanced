@@ -362,6 +362,30 @@
     });
 });
 </script>
+<script>
+    document.getElementById("myForm").addEventListener("submit", function(e) {
+     e.preventDefault();
+     const recaptchaValue = grecaptcha.getResponse();
+    if (!recaptchaValue) {
+      alert("Please complete the reCAPTCHA.");
+      return;
+    }
+     
+     emailjs.sendForm('service_1uf441k', 'template_gespujh', this)
+       .then(function(response) {
+         alert("Message sent successfully!");
+         document.getElementById("myForm").reset();
+         grecaptcha.reset();
+        
+         var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+         modal.hide();
+       }, function(error) {
+         alert("Failed to send message. Please try again.");
+       });
+   });
+   </script>
+  
+  
     <script src="{% static 'assets/js/Contact.js' %}"></script>
     <script>
         // Check if the URL contains a success message parameter

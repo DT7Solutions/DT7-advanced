@@ -211,7 +211,7 @@ def Contact(request):
             first_name = request.POST.get('FirstName', "").strip()
             last_name = request.POST.get('LastName', "").strip()
             email = request.POST.get('Email', "").strip()
-            services_interested = request.POST.getlist('ServicesInterestedIn', [])
+            services_interested = request.POST.getlist('ServicesInterestedIncontact', [])
             message = request.POST.get('Message', "").strip()
             terms_and_conditions = request.POST.get('TermsAndConditions', "").strip()
 
