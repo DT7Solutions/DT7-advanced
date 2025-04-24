@@ -365,17 +365,17 @@
 <script>
     document.getElementById("myForm").addEventListener("submit", function(e) {
      e.preventDefault();
-     const recaptchaValue = grecaptcha.getResponse();
-    if (!recaptchaValue) {
-      alert("Please complete the reCAPTCHA.");
-      return;
-    }
+    //  const recaptchaValue = grecaptcha.getResponse();
+    // if (!recaptchaValue) {
+    //   alert("Please complete the reCAPTCHA.");
+    //   return;
+    // }
      
      emailjs.sendForm('service_1uf441k', 'template_gespujh', this)
        .then(function(response) {
          alert("Message sent successfully!");
          document.getElementById("myForm").reset();
-         grecaptcha.reset();
+        //  grecaptcha.reset();
         
          var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
          modal.hide();
