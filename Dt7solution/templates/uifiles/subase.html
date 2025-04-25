@@ -363,22 +363,14 @@
 });
 </script>
 <script>
-    let recaptchaWidgetId;
+   
 
-window.onload = function () {
-  recaptchaWidgetId = grecaptcha.render('recaptcha-container', {
-    'sitekey': '6LcY2pAqAAAAACPtFkPBjgD-s1xNhajcTxvQK8KQ'
-  });
-};
+
     document.getElementById("myForm").addEventListener("submit", function(e) {
      e.preventDefault();
-     const recaptchaValue = grecaptcha.getResponse(recaptchaWidgetId);
+  
 
-     if (!recaptchaValue) {
-      alert("Please complete the reCAPTCHA.");
-      return;
-    }
-
+    
 
 
     
@@ -389,7 +381,8 @@ window.onload = function () {
        .then(function(response) {
          alert("Message sent successfully!");
          document.getElementById("myForm").reset();
-         grecaptcha.reset(recaptchaWidgetId);
+         window.location.reload();
+        
         
          var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
          modal.hide();
