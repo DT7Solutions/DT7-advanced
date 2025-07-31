@@ -1,0 +1,18 @@
+/* Whatsapp float icon  */
+.whatsapp-icon a {
+    position: fixed !important;
+    width: 50px !important;
+    height: 50px !important;
+    bottom: 17% !important;
+    right: 2.9% !important;
+    background-color: #25d366 !important;
+    color: #FFF !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+    font-size: 32px !important;
+    box-shadow: 2px 2px 3px #999 !important;
+    z-index: 10001 !important;
+}
+.my-float{
+    margin-top: 8px;
+}
