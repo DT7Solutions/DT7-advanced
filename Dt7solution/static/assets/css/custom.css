@@ -16,3 +16,16 @@
 .my-float{
     margin-top: 8px;
 }
+.active>.page-link, .page-link.active {
+  background-color: #EA4723!important;
+  border-color: #EA4723!important;
+}
+.disabled>.page-link, .page-link.disabled {
+    background-color: rgba(var(--digihub-base-rgb, 234, 71, 35), 0.1);
+}
+.page-item .page-link {
+    color:#000;
+}
+ .active .page-link{
+    color:#fff!important;
+}

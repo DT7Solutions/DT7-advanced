@@ -111,7 +111,9 @@
                            
                         </li>
                         <li >
-                            <a class="nav-btn {% if navbar == 'About' %} active {% endif %}" href="/about/">About</a>
+                           <a id="aboutLink" class=" nav-btn {% if navbar == 'About' %} active {% endif %}"  href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}">
+                                About
+                            </a>
                         </li>
                         <li class="dropdown">
                             <a  class=" nav-btn {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/">Solutions </a>
@@ -202,7 +204,7 @@
                                     </a>
                                 </li>
                             </ul><!-- /.footer-one__socila -->
-                            <div class="clutch-widget bg-theme-color mt-3"  data-url="https://widget.clutch.co" data-widget-type="7" data-height="65" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2202862"></div>
+                            <div class="clutch-widget bg-theme-color mt-3"  data-url="https://widget.clutch.co" data-widget-type="7" data-height="45" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2202862"></div>
                         </div><!-- /.footer-one__about -->
                     </div>
                     <div class="col-xl-2 col-md-3 col-sm-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">

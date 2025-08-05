@@ -155,7 +155,48 @@
         </section><!-- /.blog-one -->
         <!-- Blog One End -->
        
-     
+     <div class="pagination-wrapper pt-5  pb-5 text-center" style="background-color: #f6f6f6;">
+    <ul class="pagination justify-content-center" style="margin-bottom: 0rem;">
+
+        {% if blog.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ blog.previous_page_number }}" aria-label="Previous">
+                &laquo; Previous
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <span class="page-link">&laquo; Previous</span>
+        </li>
+        {% endif %}
+
+        {% for num in blog.paginator.page_range %}
+            {% if blog.number == num %}
+            <li class="page-item active">
+                <span class="page-link">{{ num }}</span>
+            </li>
+            {% else %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+            </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if blog.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ blog.next_page_number }}" aria-label="Next">
+                Next &raquo;
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <span class="page-link">Next &raquo;</span>
+        </li>
+        {% endif %}
+
+    </ul>
+</div>
+
 
   
     
