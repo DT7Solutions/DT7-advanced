@@ -14,44 +14,8 @@ from .context_processors import location_data
 @csrf_exempt
 def Home(request):
     # location_data(request)
-    if request.method == 'POST':
+    
        
-        name = request.POST.get('exampleInputName', "")
-        email = request.POST.get('exampleInputEmail', "")
-        phone = request.POST.get('exampleInputPhone', "")
-        services_interested = request.POST.getlist('servicesInterestedIn', [])
-        message = request.POST.get('exampleInputMessageinfo', "")
-
-        
-
-        # Here you can process the data as needed, such as saving it to a database
-        
-        # For example, you could print the data to the console
-        print("Name:", name)
-        print("Email:", email)
-        print("Phone:", phone)
-        print("Service:", services_interested)
-        print("Message:", message)
-
-
-        try:
-
-            send_mail(
-                'New Contact Form Submission',  # Subject
-                f'Email : {email}\nMessage: {message}\nPhone:{phone}\nServices Interested In: {", ".join(services_interested)}',  # Message
-                'info@dt7solutions.com',  # Sender's email
-                ['dt7solutions@gmail.com'],  # Recipient list
-                fail_silently=False,  # Raise exception if sending fails
-            )
-            messages.success(request, 'Message has been successfully sent.')
-           
-        except Exception as e:
-            messages.error(request, f'Failed to send message. Error: {e}')
-            print("Error")
-        latest_blogs = BlogPost.objects.filter().order_by('-Id')[:2]
-        return render(request, 'uifiles/home.html',{'navbar':'Home','latest_blogs':latest_blogs})  
-
-    else:
         latest_blogs = BlogPost.objects.filter().order_by('-Id')[:2]
         return render(request, 'uifiles/home.html',{'navbar':'Home','latest_blogs':latest_blogs})
    

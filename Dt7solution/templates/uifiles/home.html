@@ -578,35 +578,35 @@
     </section>
        <!-- Quote section end  -->
 
-       <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body ">
-                <form action="#" id="popForm" method="POST" class=" container-fluid"   >
-                    {% csrf_token %}
-                    <div class="row   mb-3">
-                      <div class="col-md-6 ">
-                       
-                        <input type="text" class=" comment-form__form-input " id="exampleInputName"  name="exampleInputName" required  placeholder="Your Name" aria-describedby="nameHelp">
+             <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body ">
+                  <form action="#" id="popresetting" method="POST" class=" container-fluid">
+                      {% csrf_token %}
+                      <div class="row   mb-3">
+                        <div class="col-md-6 ">
+                         
+                          <input type="text" class=" comment-form__form-input " required id="exampleInputName"  name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
+                        </div>
+                        <div class="col-md-6">
+                         
+                          <input type="tel" class=" comment-form__form-input" required id="exampleInputPhone" name="exampleInputPhone" placeholder="Phone number" >
+                        </div>
                       </div>
-                      <div class="col-md-6">
-                       
-                        <input type="tel" class=" comment-form__form-input"   id="exampleInputPhone" name="exampleInputPhone"  required placeholder="Phonenumber" >
+                      <div class="row mb-3">
+                        <div class="col-md-12">
+                        
+                          <input type="email" class=" comment-form__form-input" required id="exampleInputEmail"  name="exampleInputEmail"  placeholder="Email" aria-describedby="emailHelp">
+                          <div id="emailHelp" class="form-text"></div>
+                        </div>
+                        
                       </div>
-                    </div>
-                    <div class="row mb-3">
-                      <div class="col-md-12">
-                      
-                        <input type="email" class=" comment-form__form-input" id="exampleInputEmail"  name="exampleInputEmail"   required  placeholder="Email" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text"></div>
-                      </div>
-                    
-                    </div>
-                    <div class="col-md-12 mb-3">
+                      <div class="col-md-12 mb-3">
                        
                         <div class="col-md-12 mb-2 wow animated fadeInUp " data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <label>Services Interested In:</label><br>
@@ -653,23 +653,18 @@
                         </div>
                     </div>
                       </div>
+                      <div class="mb-3">
+             
+                        <textarea class="comment-form__form-input popup-messsge" required  id="exampleInputMessageinfo" name="exampleInputMessageinfo" placeholder="Enter your messege" rows="3"></textarea>
+                      </div>
                       
-                    <div class="mb-3">
-           
-                      <textarea class="comment-form__form-input popup-messsge"  id="exampleInputMessageinfo" name="exampleInputMessageinfo" required placeholder="Enter your messege" rows="3"></textarea>
-                    </div>
-                    <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">                                        
-                        <div class="form-group ">
-                            <div class="g-recaptcha" id="recaptcha"  data-sitekey="6LcY2pAqAAAAACPtFkPBjgD-s1xNhajcTxvQK8KQ"></div>
-                        </div>
-                    </div>
-                    <button type="submit"  id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
-                  </form>
+                      <button type="submit"  id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
+                    </form>
+              </div>
+             
             </div>
-           
           </div>
         </div>
-      </div>
        <!-- Blog One Start -->
        <section class="blog-one pt-5">
         <div class="container">
