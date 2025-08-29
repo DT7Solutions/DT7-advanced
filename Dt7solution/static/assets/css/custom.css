@@ -29,3 +29,29 @@
  .active .page-link{
     color:#fff!important;
 }
+.blog-one .blog-page__blog-title {
+    min-height: 125px;
+}
+.mfp-image-holder .mfp-content {
+    top: 0% !important;
+}
+.mfp-title {
+    text-align: center;
+}
+.footer-one__newsletter-input ,
+.subscribe-one__input {
+    color: var(--digihub-white, #FFFFFF) !important;
+}
+.mc-form__response {
+    background-color: var(--digihub-white, #FFFFFF) !important;
+    text-align: center !important;
+    max-width: 800px !important;
+    margin: auto !important;
+    border-radius: 6px !important;
+}
+.mc-form__response.successed p {
+    color: green !important;
+}
+.mc-form__response.errored p {
+    color: red !important;
+}

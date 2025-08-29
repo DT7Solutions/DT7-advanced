@@ -1278,8 +1278,8 @@ i {
 .comment-form__form-input {
   border: 0!important;
   outline: 0!important;
-  padding: 20px!important;
-  height: 68px!important;
+  padding: 10px 20px !important;
+  height: 45px!important;
   width: 100%!important;
   background-color: var(--digihub-white3, #F6F6F6)!important;
   border: 1px solid transparent!important;
@@ -1295,7 +1295,7 @@ input, textarea {
   min-height: 203px;
 }
 .popup-messsge{
-  min-height: 103px!important;
+  min-height: 150px!important;
 
 }
 .comment-form__form-btn {
@@ -4392,8 +4392,8 @@ input, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
-  padding: 19px 30px 19px 20px;
+  gap: 10px;
+  padding: 19px 20px 19px 15px;
   color: var(--digihub-white, #FFFFFF);
   background-color: var(--digihub-base, #EA4723);
   overflow: hidden;
@@ -5328,7 +5328,7 @@ input, textarea {
   max-width: 816px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
   border-bottom: 1px solid var(--digihub-white, #FFFFFF);
   margin-bottom: 120px;
 }
@@ -8366,16 +8366,16 @@ input, textarea {
   }
 }
 .footer-one__link-box-two {
-  padding-left: 74px;
+  padding-left: 20px;
 }
 @media (max-width: 1399px) {
   .footer-one__link-box-two {
-    padding-left: 60px;
+    padding-left: 0px;
   }
 }
 @media (max-width: 991px) {
   .footer-one__link-box-two {
-    padding-left: 40px;
+    padding-left: 0px;
   }
 }
 @media (max-width: 767px) {
