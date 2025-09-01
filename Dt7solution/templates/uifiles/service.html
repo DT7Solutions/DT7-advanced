@@ -4,318 +4,333 @@
 <meta property="og:title" content="Top Digital Marketing Agency in Andhra Pradesh">
 <meta property="og:description" content="Discover Dt7 Agency, the leading digital marketing agency in Andhra Pradesh. Enhance your online presence with our expert services in Guntur.">
 <meta property="og:type" content="website">
+<link rel="canonical" href="https://dt7.agency/solutions/" />
 
 {% extends 'uifiles/subase.html' %}
 {% load static %}
 {% block content %}
 
-
-
         <!-- Page Header Start -->
-        <section class="page-header">
+        <section class="page-header" aria-label="Services Header">
             <div class="container">
                 <div class="page-header__content">
-                    <h2>Service</h2>
+                    <h2 class="page-header__title">Services</h2>
                     <ul class="digihub-breadcrumb">
-                        <li><a href="/">Home</a></li>
-                        <li>/</li>
-                        <li><span>Service</span></li>
-                    </ul><!-- /.thm-breadcrumb list-unstyled -->
-                </div><!-- /.page-header__content -->
-            </div><!-- /.container -->
-        </section><!-- /.page-header -->
+                        <li><a href="/" title="Go to Home Page">Home</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li><span aria-current="page">Services</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
         <!-- Page Header End -->
 
-        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel">Enquiry Form</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body ">
-                    <form action="#" id="popreset" method="POST" class=" container-fluid"  >
-                        {% csrf_token %}
-                        <div class="row   mb-3">
-                          <div class="col-md-6 ">
-                           
-                            <input type="text" class=" comment-form__form-input "  required id="exampleInputName"  name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
-                          </div>
-                          <div class="col-md-6">
-                           
-                            <input type="tel" class=" comment-form__form-input" required  id="exampleInputPhone" name="exampleInputPhone" placeholder="Phonenumber" >
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-12">
-                          
-                            <input type="email" class=" comment-form__form-input" required  id="exampleInputEmail"  name="exampleInputEmail"  placeholder="Email" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text"></div>
-                          </div>
-                         
-                        </div>
-                        <div class="col-md-12 mb-3">
-                       
-                            <div class="col-md-12 mb-2 wow animated fadeInUp " data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <label>Services Interested In:</label><br>
-                                <div class="d-flex">
-                                <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <div class="form-group">
-                                 
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="digitalMarketingone" name="servicesInterestedIn" value="Digital Marketing">
-                                    <label class="form-check-label" for="digitalMarketingone">Digital Marketing</label>
-                                  </div>
-                               
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="whatsappMarketingone" name="servicesInterestedIn" value="whatsappMarketing">
-                                    <label class="form-check-label" for="whatsappMarketingone">WhatsApp Marketing</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="logoBrandingone" name="servicesInterestedIn" value="logoBranding">
-                                    <label class="form-check-label" for="logoBrandingone">Logo Branding</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="emailMarketingone" name="servicesInterestedIn" value="emailMarketing">
-                                    <label class="form-check-label" for="emailMarketingone">Email Marketing</label>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <div class="form-group">
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="webDesigningone" name="servicesInterestedIn" value="webDesigning">
-                                    <label class="form-check-label" for="webDesigningone">Web Designing (UI/UX)</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="thirdPartyListingone" name="servicesInterestedIn" value="thirdPartyListing">
-                                    <label class="form-check-label" for="thirdPartyListingone">3rd Party Listing</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="onlinePaidMarketingone" name="servicesInterestedIn" value="onlinePaidMarketing">
-                                    <label class="form-check-label" for="onlinePaidMarketingone">Online Paid Marketing</label>
-                                  </div>
-                                  
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                          </div>
-                        <div class="mb-3">
-               
-                          <textarea class="comment-form__form-input popup-messsge" required  id="exampleInputMessageinfo" name="exampleInputMessageinfo" placeholder="Enter your messege" rows="3"></textarea>
-                        </div>
-                        <button type="submit"  id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
-                      </form>
-                </div>
-               
-              </div>
-            </div>
-          </div>
-
-
-
+        <!-- About DT7Agency Start -->
         <section class="about-three about-three--one">
             <div class="container">
                 <div class="about-three__row row">
                     <div class="col-lg-6">
                         <div class="about-three__content sec-title">
-                            <p class="sec-title__top wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">Know
-                                About Us</p>
+                            <p class="sec-title__top wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">Know About Us</p>
                             <h2 class="about-three__heading sec-title__heading wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">Unlocking the power of digital imagination</h2>
-                            <p class="about-three__desc wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                Creativity, Passion, Innovation, Reliability, and Trust lies at the heart of our ethos. With a relentless focus on customer satisfaction and accountability, we're committed to exceeding expectations. Through our dedication, we unlock transformative services and results, ensuring our customers are consistently delighted with their experience."</p>
-                            
-                        </div><!-- /.about-three__content -->
+                            <p class="about-three__desc wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">Creativity, Passion, Innovation, Reliability, and Trust lies at the heart of our ethos. With a relentless focus on customer satisfaction and accountability, we're committed to exceeding expectations. Through our dedication, we unlock transformative services and results, ensuring our customers are consistently delighted with their experience."</p>
+                        </div>
                     </div>
                     <div class="col-lg-6 wow animated fadeInRight" data-wow-delay="0.1s" data-wow-duration="1500ms">
                         <div class="about-three__img-box">
                             <div class="about-three__img-box-inner">
                                 <div class="digihub-tilt" data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 4, "speed": 700, "scale": 1 }'>
-                                    <img src="{% static 'assets/images/about/social-media-marketing-agency-in-guntur.jpg' %}" alt="about image" class="about-three__img">
-                                </div>
-                                
-                                       
-                            </div><!-- /.about-three__img-box-inner -->
-                          
-                        </div><!-- /.about-three__img-box -->
+                                    <img src="{% static 'assets/images/about/social-media-marketing-agency-in-guntur.webp' %}" alt="DT7 Agency - Best Social Media Marketing & Digital Marketing Services in Guntur" title="DT7 Agency - Leading Digital Marketing & Social Media Marketing Company in Guntur" class="about-three__img">
+                                </div>       
+                            </div>
+                        </div>
                     </div>
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.about-three -->
+                </div>
+            </div>
+        </section>
+        <!-- About DT7Agency End -->
+
         <!-- Service One Start -->
-        <section class="service-one pt5  @@extraClassName">
+        <section class="service-one padding-top-thirty py-5 @@extraClassName">
             <div class="container">
                 <div class="service-one__sec-title sec-title wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">
                     <p class="sec-title__top">EXPLORE OUR SOLUTIONS</p>
                     <h2 class="service-one__heading sec-title__heading mb-3">7 Essential Solutions <br> We Offer </h2>
-                     
-                </div><!-- /.service-one__sec-title -->
-                <div class="service-one__item  container-fluid">
+                </div>
+
+                <div class="service-one__item hover-item container-fluid">
                     <div class="row">
                         <div class="col-lg-4 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="service-one__img-box">
-                                <span class="service-one__icon icon-marketing-2"></span>
-                                <h3 class="service-one__title">Digital Promotions</h3>
-                            </div><!-- /.service-one__img-box -->
+                                <span class="service-one__icon icon-marketing-2" title="Digital Promotions Solutions"></span>
+                                <h3 class="service-one__title" title="Digital Promotions Solutions">Digital Promotions</h3>
+                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-5 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="service-one__text-box">
-                                <p class="service-one__text">Unlock the potential of your online presence with tailored digital marketing solutions that drive engagement and growth.</p>
-                            </div><!-- /.service-one__text-box -->
+                                <p class="service-one__text">DT7.Agency is here to help businesses shine in the digital world. With our expert marketing services, we make it easier for companies of all sizes to connect with their customers and grow online</p>
+                            </div>
                         </div>
                         <div class="col-xl-2 col-lg-3 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
                             <div class="service-one__btn-box">
-                                <a href="/digital-marketing-services-in-guntur/" class="digihub-btn digihub-btn--border-one">READ MORE <span></span><span></span><span></span><span></span></a>
-                            </div><!-- /.service-one__btn-box -->
+                                <a href="/digital-marketing-services-in-guntur/" class="digihub-btn digihub-btn--border-one" title="Read More About Digital Promotions Solutions">READ MORE <span></span><span></span><span></span><span></span></a>
+                            </div>
                         </div>
                         <div class="hover-item__box">
-                            <img src="{% static 'assets/images/service/service-1-1.png ' %}" alt="team-item-hover" class=" hover-item__box-img">
-                        </div><!-- /.hover-item__box -->
-                    </div><!-- /.row -->
-                </div><!-- /.service-one__item -->
-                <div class="service-one__item  container-fluid">
+                            <img src="{% static 'assets/images/about/digital promotions icon.png' %}" alt="Digital Promotions Solutions - DT7 Agency" title="Digital Promotions Solutions - DT7 Agency" class=" hover-item__box-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-one__item  hover-item container-fluid">
                     <div class="row">
                         <div class="col-lg-4 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="service-one__img-box">
-                                <span class="service-one__icon icon-connection"></span>
-                                <h3 class="service-one__title">Web Design(UX/UI)</h3>
-                            </div><!-- /.service-one__img-box -->
+                                <span class="service-one__icon icon-connection" title="Web Design(UX/UI) Solutions"></span>
+                                <h3 class="service-one__title" title="Web Design(UX/UI) Solutions">Web Design(UX/UI)</h3>
+                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-5 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="service-one__text-box">
-                                <p class="service-one__text">Craft intuitive and visually captivating digital experiences with our expert web crafting services, seamlessly blending UI/UX design to elevate user engagement.</p>
-                            </div><!-- /.service-one__text-box -->
+                                <p class="service-one__text">DT7.Agency is here to help your business shine online with our web design and development services. Whether you're a small startup or a big company, we create stunning websites that attract customers and make them feel at home.</p>
+                            </div>
                         </div>
                         <div class="col-xl-2 col-lg-3 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
                             <div class="service-one__btn-box">
-                                <a href="/website-services-in-guntur/" class="digihub-btn digihub-btn--border-one">READ MORE <span></span><span></span><span></span><span></span></a>
-                            </div><!-- /.service-one__btn-box -->
+                                <a href="/website-services-in-guntur/" class="digihub-btn digihub-btn--border-one" title="Read More About Web Design(UI/UX) Solutions">READ MORE <span></span><span></span><span></span><span></span></a>
+                            </div>
                         </div>
                         <div class="hover-item__box">
-                            <img src="{% static 'assets/images/service/service-1-1.png' %}" alt="team-item-hover" class=" hover-item__box-img">
-                        </div><!-- /.hover-item__box -->
-                    </div><!-- /.row -->
-                </div><!-- /.service-one__item -->
-                <div class="service-one__item  container-fluid">
+                            <img src="{% static 'assets/images/about/web design icon.png' %}" alt="Web Design(UI/UX) Solutions - DT7 Agency" title="Web Design(UI/UX) Solutions - DT7 Agency" class="hover-item__box-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-one__item hover-item  container-fluid">
                     <div class="row">
                         <div class="col-lg-4 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="service-one__img-box">
-                                <span class="service-one__icon icon-search"></span>
-                                <h3 class="service-one__title">Brand Identity</h3>
-                            </div><!-- /.service-one__img-box -->
+                                <span class="service-one__icon icon-search" title="Brand Identity Solutions"></span>
+                                <h3 class="service-one__title" title="Brand Identity Solutions">Brand Identity</h3>
+                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-5 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="service-one__text-box">
-                                <p class="service-one__text">Define your brand identity and leave a lasting impression with our comprehensive branding solutions tailored to resonate with your audience.</p>
-                            </div><!-- /.service-one__text-box -->
+                                <p class="service-one__text">DT7.Agency knows that every business tells its own story, and we help shape that story into a powerful brand identity. With our creative approach we work to make vision come alive, so you can stand out in a marketplace</p>
+                            </div>
                         </div>
                         <div class="col-xl-2 col-lg-3 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
                             <div class="service-one__btn-box">
-                                <a href="/brandidentity/" class="digihub-btn digihub-btn--border-one">READ MORE <span></span><span></span><span></span><span></span></a>
-                            </div><!-- /.service-one__btn-box -->
+                                <a href="/brandidentity/" class="digihub-btn digihub-btn--border-one" title="Read More About Brand Identity Solutions">READ MORE <span></span><span></span><span></span><span></span></a>
+                            </div>
                         </div>
                         <div class="hover-item__box">
-                            <img src="{% static 'assets/images/service/service-1-2.png ' %}" alt="team-item-hover" class=" hover-item__box-img">
-                        </div><!-- /.hover-item__box -->
-                    </div><!-- /.row -->
-                </div><!-- /.service-one__item -->
-                <div class="service-one__item  container-fluid">
+                            <img src="{% static 'assets/images/about/vectorbrand.png' %}" alt="Brand Identity Solutions - DT7 Agency" title="Brand Identity Solutions - DT7 Agency" class=" hover-item__box-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-one__item hover-item container-fluid">
                     <div class="row">
                         <div class="col-lg-4 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="service-one__img-box">
-                                <span class="service-one__icon icon-content-marketing"></span>
-                                <h3 class="service-one__title">Paid Advertising</h3>
-                            </div><!-- /.service-one__img-box -->
+                                <span class="service-one__icon icon-content-marketing" title="Paid Advertising Solutions"></span>
+                                <h3 class="service-one__title" title="Paid Advertising Solutions">Paid Advertising</h3>
+                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-5 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="service-one__text-box">
-                                <p class="service-one__text">Reach your target audience effectively with our strategic and results-driven online paid Advertising solutions. </p>
-                            </div><!-- /.service-one__text-box -->
+                                <p class="service-one__text">DT7.Agency offers paid advertising services that help businesses shine in a crowded market. We understand the challenges you face, and our goal is to create ads that not only grab attention but also bring real results for your company. </p>
+                            </div>
                         </div>
                         <div class="col-xl-2 col-lg-3 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
                             <div class="service-one__btn-box">
-                                <a href="/paidadvertising/" class="digihub-btn digihub-btn--border-one">READ MORE <span></span><span></span><span></span><span></span></a>
-                            </div><!-- /.service-one__btn-box -->
+                                <a href="/paidadvertising/" class="digihub-btn digihub-btn--border-one" title="Read More About Paid Advertising Solutions">READ MORE <span></span><span></span><span></span><span></span></a>
+                            </div>
                         </div>
                         <div class="hover-item__box">
-                            <img src="{% static 'assets/images/service/service-1-3.png ' %}" alt="team-item-hover" class=" hover-item__box-img">
-                        </div><!-- /.hover-item__box -->
-                    </div><!-- /.row -->
-                </div><!-- /.service-one__item -->
-                <div class="service-one__item  container-fluid">
+                            <img src="{% static 'assets/images/about/marketingvector.png' %}" alt="Paid Advertising Solutions - DT7 Agency" title="Paid Advertising Solutions - DT7 Agency" class=" hover-item__box-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-one__item  hover-item container-fluid">
                     <div class="row">
                         <div class="col-lg-4 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="service-one__img-box">
-                                <span class="service-one__icon icon-chat-message"></span>
-                                <h3 class="service-one__title">WhatsApp Promotion</h3>
-                            </div><!-- /.service-one__img-box -->
+                                <span class="service-one__icon icon-chat-message" title="WhatsappPromotion Solutions"></span>
+                                <h3 class="service-one__title" title="WhatsappPromotion Solutions">WhatsApp Promotion</h3>
+                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-5 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="service-one__text-box">
-                                <p class="service-one__text">Harness the power of direct and personalized communication with your audience through our innovative WhatsApp marketing strategies. </p>
-                            </div><!-- /.service-one__text-box -->
+                                <p class="service-one__text">DT7.Agency is here to help businesses connect with their customers in a fun and way through WhatsApp marketing. With our services, you can send messages that grab attention and keep your audience engaged, making it simple for your business to grow and thrive! </p>
+                            </div>
                         </div>
                         <div class="col-xl-2 col-lg-3 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
                             <div class="service-one__btn-box">
-                                <a href="/whatsAppPromotion/" class="digihub-btn digihub-btn--border-one">READ MORE <span></span><span></span><span></span><span></span></a>
-                            </div><!-- /.service-one__btn-box -->
+                                <a href="/whatsAppPromotion/" class="digihub-btn digihub-btn--border-one" title="Read More About WhatsappPromotion Solutions">READ MORE <span></span><span></span><span></span><span></span></a>
+                            </div>
                         </div>
                         <div class="hover-item__box">
-                            <img src="{% static 'assets/images/service/service-1-3.png ' %}" alt="team-item-hover" class=" hover-item__box-img">
-                        </div><!-- /.hover-item__box -->
-                    </div><!-- /.row -->
-                </div><!-- /.service-one__item -->
-                <div class="service-one__item  container-fluid">
+                            <img src="{% static 'assets/images/about/whatsappicon.png' %}" alt="WhatsappPromotion Solutions - DT7 Agency" title="WhatsappPromotion Solutions - DT7 Agency" class=" hover-item__box-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-one__item  hover-item container-fluid">
                     <div class="row">
                         <div class="col-lg-4 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="service-one__img-box">
-                                <span class="service-one__icon icon-report-business"></span>
-                                <h3 class="service-one__title">Email Marketing</h3>
-                            </div><!-- /.service-one__img-box -->
+                                <span class="service-one__icon icon-report-business" title="Email Marketing Solutions"></span>
+                                <h3 class="service-one__title" title="Email Marketing Solutions">Email Marketing</h3>
+                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-5 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="service-one__text-box">
-                                <p class="service-one__text">Maximize your outreach and cultivate meaningful connections with our dynamic email marketing solutions tailored to engage and convert your audience effectively.</p>
-                            </div><!-- /.service-one__text-box -->
+                                <p class="service-one__text">At DT7.Agency, we know that every business has a unique story to tell. Our email marketing services are designed to help you with your audience in a meaningful way, ensuring your message reaches the right people at just the right time.</p>
+                            </div>
                         </div>
                         <div class="col-xl-2 col-lg-3 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
                             <div class="service-one__btn-box">
-                                <a href="/emailMarketing/" class="digihub-btn digihub-btn--border-one">READ MORE <span></span><span></span><span></span><span></span></a>
-                            </div><!-- /.service-one__btn-box -->
+                                <a href="/emailMarketing/" class="digihub-btn digihub-btn--border-one" title="Read More About Email Marketing Solutions">READ MORE <span></span><span></span><span></span><span></span></a>
+                            </div>
                         </div>
                         <div class="hover-item__box">
-                            <img src="{% static 'assets/images/service/service-1-3.png ' %}" alt="team-item-hover" class=" hover-item__box-img">
-                        </div><!-- /.hover-item__box -->
-                    </div><!-- /.row -->
-                </div><!-- /.service-one__item -->
-                <div class="service-one__item  container-fluid">
+                            <img src="{% static 'assets/images/about/emailicon.png' %}" alt="Email Marketing Solutions - DT7 Agency" title="Email Marketing Solutions - DT7 Agency" class=" hover-item__box-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-one__item hover-item  container-fluid">
                     <div class="row">
                         <div class="col-lg-4 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="service-one__img-box">
-                                <span class="service-one__icon icon-online-shop"></span>
-                                <h3 class="service-one__title"> Ecommerce Listing</h3>
-                            </div><!-- /.service-one__img-box -->
+                                <span class="service-one__icon icon-online-shop" title="Ecommerce Listing Solutions"></span>
+                                <h3 class="service-one__title" title="Ecommerce Listing Solutions">Ecommerce Listing</h3>
+                            </div>
                         </div>
                         <div class="col-xl-6 col-lg-5 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="service-one__text-box">
                                 <p class="service-one__text">Experience listing success in the ever-evolving world of ecommerce with our tailored solutions designed to drive growth and enhance customer retention.</p>
-                            </div><!-- /.service-one__text-box -->
+                            </div>
                         </div>
                         <div class="col-xl-2 col-lg-3 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
                             <div class="service-one__btn-box">
-                                <a href="/ecommerceListing/" class="digihub-btn digihub-btn--border-one">READ MORE <span></span><span></span><span></span><span></span></a>
-                            </div><!-- /.service-one__btn-box -->
+                                <a href="/ecommerceListing/" class="digihub-btn digihub-btn--border-one" title="Read More About Ecommerce Listing Solutions">READ MORE <span></span><span></span><span></span><span></span></a>
+                            </div>
                         </div>
                         <div class="hover-item__box">
-                            <img src="{% static 'assets/images/service/service-1-3.png ' %}" alt="team-item-hover" class=" hover-item__box-img">
-                        </div><!-- /.hover-item__box -->
-                    </div><!-- /.row -->
-                </div><!-- /.service-one__item -->
-            </div><!-- /.container -->
-        </section><!-- /.service-one -->
-   
+                            <img src="{% static 'assets/images/about/mobilevector.png' %}" alt="Ecommerce Listing Solutions - DT7 Agency" title="Digital Promotions Solutions - DT7 Agency" class=" hover-item__box-img">
+                        </div>
+                    </div>
+                </div>
 
-  
+                <div class="service-one__item hover-item  container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                            <div class="service-one__img-box">
+                                <span class="service-one__icon icon-browser" title="SEO Optimization Solutions"></span>
+                                <h3 class="service-one__title" title="SEO Optimization Solutions">Seo Optimization</h3>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-5 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                            <div class="service-one__text-box">
+                                <p class="service-one__text">DT7.Agency understands how important it is for businesses to be seen online. With our SEO Optimization services, we help your website climb the search engine ranks, making it easier for customers to find you and choose products or services.</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
+                            <div class="service-one__btn-box">
+                                <a href="/ecommerceListing/" class="digihub-btn digihub-btn--border-one" title="Read More About SEO Optimization Solutions">READ MORE <span></span><span></span><span></span><span></span></a>
+                            </div>
+                        </div>
+                        <div class="hover-item__box">
+                            <img src="{% static 'assets/images/about/seoicon.png' %}" alt="SEO Optimization Solutions - DT7 Agency" title="SEO Optimization Solutions - DT7 Agency" class=" hover-item__box-img">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Service One End -->   
+
+        <!--Enquiry Form Popup section start -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+                        <form action="#" id="popresetting" method="POST" class="container-fluid">
+                            {% csrf_token %}
+                            <div class="row   mb-3">
+                                <div class="col-md-6 ">
+                                    <input type="text" class="comment-form__form-input " required id="exampleInputName" name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" class="comment-form__form-input" required id="exampleInputPhone" name="exampleInputPhone" placeholder="Phone number">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <input type="email" class="comment-form__form-input" required id="exampleInputEmail" name="exampleInputEmail" placeholder="Email" aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2 " data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                    <label>Services Interested In:</label><br>
+                                    <div class="d-flex">
+                                        <div class="col-md-6" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                            <div class="form-group">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="digitalMarketingone" name="servicesInterestedIn" value="Digital Marketing">
+                                                    <label class="form-check-label" for="digitalMarketingone">Digital Marketing</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="whatsappMarketingone" name="servicesInterestedIn" value="whatsappMarketing">
+                                                    <label class="form-check-label" for="whatsappMarketingone">WhatsApp Marketing</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="logoBrandingone" name="servicesInterestedIn" value="logoBranding">
+                                                    <label class="form-check-label" for="logoBrandingone">Logo Branding</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="emailMarketingone" name="servicesInterestedIn" value="emailMarketing">
+                                                    <label class="form-check-label" for="emailMarketingone">Email Marketing</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                            <div class="form-group">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="webDesigningone" name="servicesInterestedIn" value="webDesigning">
+                                                    <label class="form-check-label" for="webDesigningone">Web Designing (UI/UX)</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="thirdPartyListingone" name="servicesInterestedIn" value="thirdPartyListing">
+                                                    <label class="form-check-label" for="thirdPartyListingone">3rd Party Listing</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="onlinePaidMarketingone" name="servicesInterestedIn" value="onlinePaidMarketing">
+                                                    <label class="form-check-label" for="onlinePaidMarketingone">Online Paid Marketing</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="comment-form__form-input popup-messsge" required id="exampleInputMessageinfo" name="exampleInputMessageinfo" placeholder="Enter your messege" rows="3"></textarea>
+                            </div>
+                            <button type="submit" id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Enquiry Form Popup section end -->
 
 {% endblock %}

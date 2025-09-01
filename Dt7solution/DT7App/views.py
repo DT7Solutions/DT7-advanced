@@ -44,7 +44,7 @@ def Blog(request):
     blog = BlogPost.objects.filter().order_by('-Id')
     
     # allposts = BlogPost.objects.all()
-    paginator = Paginator(blog, 9) 
+    paginator = Paginator(blog, 10) 
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'uifiles/blog.html',{'blog':posts,'posts':posts,'page':page,'navbar':'Blog'})

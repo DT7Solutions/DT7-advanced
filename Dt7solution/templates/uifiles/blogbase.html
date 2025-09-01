@@ -6,36 +6,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Leading Software Development Company In Guntur | DT7solutions</title> -->
-    <!-- favicons Icons -->
+
+    <!-- Dynamic Meta Title -->
     <title>{% block title %}Default Title{% endblock %}</title>
     <!-- Dynamic Meta Description -->
-    {% block meta_description %}
-    <meta name="description" content="Default meta description">
-    {% endblock %}
-   
+    {% block meta_description %}<meta name="description" content="Default meta description">{% endblock %}
     <!-- Dynamic Meta Keywords -->
-    {% block meta_tags %}
-    <meta name="keywords" content="Default, Keywords">
-    {% endblock %}
-
+    {% block meta_tags %}<meta name="keywords" content="Default, Keywords">{% endblock %}
     <!-- Dynamic Canonical Link -->
-    {% block canonical_url %}
-    <link rel="canonical" href="https://www.default-url.com">
-    {% endblock %}
-    <meta name="googlebot" content="index, follow">
+    {% block canonical_url %}<link rel="canonical" href="https://www.default-url.com">{% endblock %}
+    <!-- Other Meta Tags -->
+    <meta name="author" content="DT7Agency">
+    <meta name="publisher" content="DT7Agency">
+    <meta name="robots" content="index, follow">
+
+    <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/dt7-132x132.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/dt7-40x40.png'%}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/dt7-16X16.png'%}">
     <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest'%}">
-    <!-- <meta name="description" content="DT7solutions"> -->
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}">
@@ -53,316 +48,289 @@
     <link rel="stylesheet" href="{% static 'assets/css/digihub.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0X90KPHTQR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-0X90KPHTQR');
-</script>
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function(){
-    emailjs.init("rTBlN3RKunurTmvyP"); 
-  })();
-</script>
+        gtag('config', 'G-0X90KPHTQR');
+    </script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("rTBlN3RKunurTmvyP");
+        })();
+    </script>
 
-<script>
-    document.getElementById("popreset").addEventListener("submit", function(e) {
-     e.preventDefault();
-     emailjs.sendForm('service_dshik0y', 'template_5l9u29w', this)
-       .then(function(response) {
-         alert("Message sent successfully!");
-         document.getElementById("popreset").reset();
-         // Close the modal
-         var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-         modal.hide();
-       }, function(error) {
-         alert("Failed to send message. Please try again.");
-       });
-   });
-   </script>
+    <script>
+        document.getElementById("popreset").addEventListener("submit", function (e) {
+            e.preventDefault();
+            emailjs.sendForm('service_dshik0y', 'template_5l9u29w', this)
+                .then(function (response) {
+                    alert("Message sent successfully!");
+                    document.getElementById("popreset").reset();
+                    // Close the modal
+                    var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+                    modal.hide();
+                }, function (error) {
+                    alert("Failed to send message. Please try again.");
+                });
+        });
+    </script>
 </head>
 
 <body class="custom-cursor">
+
+    <!-- Custom Cursor -->
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
-    <!-- /.Custom Cursor -->
+    <!-- End Custom Cursor -->
 
+    <!-- Preloader Start -->
     <div class="preloader">
-        <img class="preloader__image"  src="{% static '/assets/images/logoblack.png' %}" alt="DT7">
+       <img class="preloader__image" src="{% static 'assets/images/logoblack.png' %}" alt="DT7Agency Logo - Digital Marketing and Web Development Company" title="DT7Agency | Leading Digital Marketing and Web Development Company">
     </div>
-    <!-- /.preloader -->
+    <!-- Preloader End -->
+
     <div class="page-wrapper">
+
+        <!-- Main Header Start -->
         <header class="main-header">
             <nav class="main-menu-one main-menu">
                 <div class="container">
                     <div class="main-menu-one__left">
                         <div class="main-menu-one__logo">
-                            <a href="/" class="main-menu-one__logo-box">
-                                <img src="{% static 'assets/images/logoblack.png' %}"   alt="logo-dark">
+                            <a href="/" class="main-menu-one__logo-box" title="DT7Agency - Digital Marketing & Web Development">
+                                <img src="{% static 'assets/images/logoblack.png' %}" alt="DT7Agency Logo - Digital Marketing, Web Design, SEO Services" title="DT7Agency | Digital Marketing & Web Development Company">
                             </a>
-                        </div><!-- /.main-menu-one__logo -->
-                       
-                    </div><!-- /.main-menu-one__left -->
+                        </div>
+                    </div>
                     <ul class="main-menu__list black">
-                        <li >
-                            <a class="nav-btn {% if navbar == 'Home' %} active {% endif %}" href="/">Home </a>
-                           
-                        </li>
-                        <li >
-                           <a id="aboutLink" class=" nav-btn {% if navbar == 'About' %} active {% endif %}"  href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}">
-                                About
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a  class=" nav-btn {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/">Solutions </a>
+                        <li><a class="nav-btn {% if navbar == 'Home' %} active {% endif %}" href="/" title="Go to Home Page">Home</a></li>
+                        <li><a id="aboutLink" class=" nav-btn {% if navbar == 'About' %} active {% endif %}" href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}" title="Learn more About DT7.Agency">About</a></li>
+                        <li class="dropdown"><a class="nav-btn {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/" title="Explore Our Solutions">Solutions</a>
                             <ul>
-                                
-                                <li><a href="/digital-marketing-services-in-guntur/">Digital Promotions</a></li>
-                                <li><a href="/websitedesign/">Web Design</a></li>
-                                <li><a href="/brandidentity/">Brand Identity</a></li>
-                                <li><a href="/paidadvertising/">Paid Advertising</a></li>
-                                <li><a href="/whatsAppPromotion/">WhatsApp Promotion</a></li>
-                                <li><a href="/emailMarketing/">Email Marketing</a></li>
-                                <li><a href="/ecommerceListing/">Ecommerce Listing</a></li>
-                                <li><a href="/unbeatable-local-seo-services-in-guntur-best-provider/">Seo Optimization</a></li>
+                                <li><a href="/digital-marketing-services-in-guntur/" title="Digital Promotions Services">Digital Promotions</a></li>
+                                <li><a href="/websitedesign/" title="Professional Web Design Services">Web Design</a></li>
+                                <li><a href="/brandidentity/" title="Build Your Brand Identity">Brand Identity</a></li>
+                                <li><a href="/paidadvertising/" title="Paid Advertising Campaigns">Paid Advertising</a></li>
+                                <li><a href="/whatsAppPromotion/" title="WhatsApp Promotion Services">WhatsApp Promotion</a></li>
+                                <li><a href="/emailMarketing/" title="Email Marketing Services">Email Marketing</a></li>
+                                <li><a href="/ecommerceListing/" title="Ecommerce Product Listing Services">Ecommerce Listing</a></li>
+                                <li><a href="/unbeatable-local-seo-services-in-guntur-best-provider/" title="SEO Optimization Services">SEO Optimization</a></li>
+                                <li><a href="/productshoot/" title="Professional Product Shoot Services">Productshoot</a></li>
                             </ul>
                         </li>
-                        <!-- <li class="dropdown">
-                            <a href="#">Projects <i class="fas fa-angle-down"></i></a>
-                            <ul>
-                                <li><a href="projects.html">Projects</a></li>
-                                <li><a href="projects-carousel.html">Projects Carousel</a></li>
-                                <li><a href="projects-details.html">Projects Details</a></li>
-                            </ul>
-                        </li> -->
-                        <!-- <li >
-                            <a href="/projects/">Portfolio</a>
-                       
-                        </li> -->
-                    
-                        <li >
-                            <a class="nav-btn {% if navbar == 'Blog' %} active {% endif %}" href="/blog/">Blogs</a>
-                        </li>
-                       
-                        <li >
-                            <a class="nav-btn {% if navbar == 'Contact' %} active {% endif %}" href="/contact/">Contact</a>
-                        </li>
+                        <li><a class="nav-btn {% if navbar == 'Blog' %} active {% endif %}" href="/blog/" title="Read Our Latest Blogs">Blogs</a></li>
+                        <li><a class="nav-btn {% if navbar == 'Contact' %} active {% endif %}" href="/contact/" title="Contact DT7.Agency">Contact</a></li>
                     </ul>
                     <div class="main-menu-one__right black">
-                        <button type="button" class="main-menu-one__bar mobile-nav__toggler">
+                        <button type="button" class="main-menu-one__bar mobile-nav__toggler" aria-label="Toggle mobile navigation menu">
                             <span class="mobile-nav__toggler-bars"></span>
                             <span class="mobile-nav__toggler-bars"></span>
                             <span class="mobile-nav__toggler-bars"></span>
                         </button>
-                        <!-- <a href="#" class="main-menu-one__search search-toggler"><i class="fa fa-search"></i></a> -->
-                        <a href="/contact/" class="main-menu-one__btn digihub-btn digihub-btn--secondary"  data-bs-toggle="modal" data-bs-target="#exampleModal">Get In Touch <span></span><span></span><span></span><span></span></a>
-                    </div><!-- /.main-menu-one__right -->
-                </div><!-- /.container -->
+                        <a href="/contact/" type="button" class="main-menu-one__btn digihub-btn digihub-btn--secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Get in Touch with DT7.Agency - Contact Us">Get In Touch <span></span><span></span><span></span><span></span></a> 
+                    </div>
+                </div>
             </nav>
-            <!-- /.main-menu-one -->
         </header>
+        <!-- Main Header End -->
+
+        <!-- Sticky Header  -->
         <div class="stricky-header stricky-header-four stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
+            <div class="sticky-header__content"></div>
+        </div>
+        <!-- End Sticky Header  -->
 
         {% block content %}
     
         {% endblock %}
-        <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script> 
+
+        <!-- Footer One Start -->
         <footer class="footer-one">
+            <!-- Footer  Widgets -->
             <div class="container">
                 <div class="row">
                     <div class="col-xl-3 col-md-5 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                         <div class="footer-one__about-box">
                             <div class="footer-one__logo-box">
-                                <a href="/">
-                                    <img src="{% static 'assets/images/logowhite.png' %}" alt="logo-dark" class="footer-one__logo">
+                                <a href="/" title="DT7Agency - Digital Marketing & Web Development">
+                                    <img src="{% static 'assets/images/logowhite.png' %}" alt="DT7Agency Logo - Digital Marketing, Web Design & SEO Services" title="DT7Agency | Leading Digital Marketing & Web Development Agency" class="footer-one__logo">
                                 </a>
-                            </div><!-- /.footer-one__logo-box -->
+                            </div>
                             <p class="footer-one__about-text">Are you looking to take your online presence to the next level? Look no further than Dt7.Agency.</p>
-                            <ul class="footer-one__social">
+                            <ul class="footer-one__social mb-3">
                                 <li class="footer-one__social-item">
-                                    <a href="https://www.facebook.com/dt7agency/" target="_blank" class="footer-one__social-link">
-                                        <i class="fab fa-facebook-f"></i>
+                                    <a href="https://www.facebook.com/dt7agency/" target="_blank" class="footer-one__social-link" title="Follow DT7.Agency on Facebook" aria-label="DT7.Agency Facebook Page">
+                                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
                                     </a>
                                 </li>
                                 <li class="footer-one__social-item">
-                                    <a href="https://www.instagram.com/dt7agency/"  target="_blank" class="footer-one__social-link">
-                                        <i class="fab fa-instagram"></i>
+                                    <a href="https://www.instagram.com/dt7agency/" target="_blank" class="footer-one__social-link" title="Follow DT7.Agency on Instagram" aria-label="DT7.Agency Instagram Profile">
+                                        <i class="fab fa-instagram" aria-hidden="true"></i>
                                     </a>
                                 </li>
                                 <li class="footer-one__social-item">
-                                    <a href="https://twitter.com/Dt7agency"  target="_blank" class="footer-one__social-link">
-                                        <i class="fab fa-twitter"></i>
+                                    <a href="https://twitter.com/Dt7agency" target="_blank" class="footer-one__social-link" title="Follow DT7.Agency on Twitter" aria-label="DT7.Agency Twitter Profile">
+                                        <i class="fab fa-twitter" aria-hidden="true"></i>
                                     </a>
                                 </li>
                                 <li class="footer-one__social-item">
-                                    <a href="https://www.linkedin.com/company/dt7agency/" class="footer-one__social-link">
-                                        <i class="fab fa-linkedin-in"></i>
+                                    <a href="https://www.linkedin.com/company/dt7agency/" target="_blank" class="footer-one__social-link" title="Connect with DT7.Agency on LinkedIn" aria-label="DT7.Agency LinkedIn Page">
+                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                     </a>
                                 </li>
-                            </ul><!-- /.footer-one__socila -->
-                            <div class="clutch-widget bg-theme-color mt-3"  data-url="https://widget.clutch.co" data-widget-type="7" data-height="45" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2202862"></div>
-                        </div><!-- /.footer-one__about -->
+                            </ul>
+                            <div class="clutch-widget bg-theme-color" data-url="https://widget.clutch.co" data-widget-type="7" data-height="45" data-nofollow="true" data-expandifr="true" data-scale="100" data-clutchcompany-id="2202862" title="DT7.Agency Clutch Rating Widget" aria-label="DT7.Agency Clutch Rating Widget"></div>
+                        </div>
                     </div>
-                    <div class="col-xl-2 col-md-3 col-sm-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                    <div class="col-xl-3 col-md-3 col-sm-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                         <div class="footer-one__link-box footer-one__link-box-one">
                             <h3 class="footer-one__title">Solutions</h3>
                             <ul class="footer-one__link-list">
                                 <li class="footer-one__link-item">
-                                    <a href="/" class="footer-one__link">Digital Marketing</a>
+                                    <a href="/digital-marketing-services-in-guntur/" class="footer-one__link" title="Digital Promotions Services">Digital Promotions</a>
                                 </li>
                                 <li class="footer-one__link-item">
-                                    <a href="/" class="footer-one__link">Web Design</a>
+                                    <a href="/websitedesign/" class="footer-one__link" title="Professional Web Design Services">Web Design</a>
                                 </li>
                                 <li class="footer-one__link-item">
-                                    <a href="/" class="footer-one__link">Logo and Branding</a>
+                                    <a href="/brandidentity/" class="footer-one__link" title="Build Your Brand Identity">Brand Identity</a>
                                 </li>
                                 <li class="footer-one__link-item">
-                                    <a href="/" class="footer-one__link">WhatsApp Marketing</a>
+                                    <a href="/paidadvertising/" class="footer-one__link" title="Paid Advertising Campaigns">Paid Advertising</a>
                                 </li>
-                            </ul><!-- /.footer-one__link-list -->
-                        </div><!-- /.footer-one__link-box -->
+                                <li class="footer-one__link-item">
+                                    <a href="/whatsAppPromotion/" class="footer-one__link" title="WhatsApp Promotion Services">WhatsApp Promotion</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/emailMarketing/" class="footer-one__link" title="Email Marketing Services">Email Marketing</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/ecommerceListing/" class="footer-one__link" title="Ecommerce Product Listing Services">Ecommerce Listing</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/unbeatable-local-seo-services-in-guntur-best-provider/" class="footer-one__link" title="SEO Optimization Services">SEO Optimization</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/productshoot/" class="footer-one__link" title="Professional Product Shoot Services">Productshoot</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-xl-3 col-md-4 col-sm-6 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
+                    <div class="col-xl-2 col-md-4 col-sm-6 wow animated fadeInUp" data-wow-delay="0.5s" data-wow-duration="1500ms">
                         <div class="footer-one__link-box footer-one__link-box-two">
                             <h3 class="footer-one__title">Quick Links</h3>
                             <ul class="footer-one__link-list">
                                 <li class="footer-one__link-item">
-                                    <a href="/" class="footer-one__link">Home</a>
-                                </li>
-                                <li class="footer-one__link-item" >
-                                    <a class="footer-one__link"  href="/guntur/about">Guntur</a>
-                                </li>
-                                <li class="footer-one__link-item" >
-                                    <a class="footer-one__link"  href="/hyderabad/about">Hyderabad</a>
+                                    <a href="/" class="footer-one__link" title="Home Page">Home</a>
                                 </li>
                                 <li class="footer-one__link-item">
-                                    <a href="/" class="footer-one__link">Blogs</a>
+                                    <a href="/guntur/about" class="footer-one__link" title="About DT7.Agency Guntur">Guntur</a>
                                 </li>
-                                <!-- <li class="footer-one__link-item">
-                                    <a href="/" class="footer-one__link">Portfolio</a>
-                                </li> -->
-                            </ul><!-- /.footer-one__link-list -->
-                        </div><!-- /.footer-one__link-box -->
+                                <li class="footer-one__link-item">
+                                    <a href="/hyderabad/about" class="footer-one__link" title="About DT7.Agency Hyderabad">Hyderabad</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/blog/" class="footer-one__link" title="Latest Blog Posts">Blogs</a>
+                                </li>
+                                <li class="footer-one__link-item">
+                                    <a href="/contact/" class="footer-one__link" title="Contact DT7.Agency">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-xl-4 col-lg-7 wow animated fadeInUp" data-wow-delay="0.7s" data-wow-duration="1500ms">
+                    <div class="col-xl-4 col-md-6 wow animated fadeInUp" data-wow-delay="0.7s" data-wow-duration="1500ms">
                         <div class="footer-one__newsletter-box">
                             <h3 class="footer-one__title">Newsletter</h3>
-                            <form action="#" data-url="https://vsbsurfaces.us21.list-manage.com/subscribe/post?u=7f1c22c90c12768cd13b815e0&amp;id=e0c90c4c5d&amp;f_id=000be9e6f0" class="footer-one__newsletter-form-box mc-form">
+                            <form action="#" data-url="https://vsbsurfaces.us21.list-manage.com/subscribe/post?u=7f1c22c90c12768cd13b815e0&amp;id=e0c90c4c5d&amp;f_id=000be9e6f0" class="footer-one__newsletter-form-box mc-form" title="Subscribe to our newsletter">
                                 <div class="footer-one__newsletter-form">
-                                    <input type="email" name="EMAIL" id="footer-one-newsletter" placeholder="Your Email" class="footer-one__newsletter-input">
-                                    <button type="submit" class="footer-one__newsletter-btn digihub-btn">Subscribe <span></span><span></span><span></span><span></span></button>
+                                    <input type="email" name="EMAIL" id="footer-one-newsletter" placeholder="Your Email" class="footer-one__newsletter-input" aria-label="Enter your email to subscribe to newsletter">
+                                    <button type="submit" class="footer-one__newsletter-btn digihub-btn" title="Subscribe to newsletter">Subscribe <span></span><span></span><span></span><span></span></button>
                                 </div>
                                 <div class="footer-one__checkbox">
                                     <input type="checkbox" id="footer-one-newsletter-check" class="footer-one__checkbox-input">
                                     <label for="footer-one-newsletter-check" class="footer-one__checkbox-text">I agree to my email being stored</label>
                                 </div>
-                            </form><!-- /.footer-one__newsletter-form -->
-                            <div class="mc-form__response"></div><!-- /.mc-form__response -->
-                        </div><!-- /.footer-one__newsletter -->
-                        <div class="service-details-page__download-box">
-                           
-                            <a href="../../static/assets/pdf/DT7-AGENCY-Portfolio.pdf" class="service-details-page__download wow animated fadeInRight animated " data-wow-delay="0.2s" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.2s; animation-name: fadeInRight;">
+                            </form>
+                            <div class="mc-form__response"></div>
+                        </div>
+                        <div class="service-details-page__download-box my-3">
+                            <a href="../../static/assets/pdf/DT7-AGENCY-Portfolio.pdf" class="service-details-page__download wow animated fadeInRight" data-wow-delay="0.2s" data-wow-duration="1500ms"style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.2s; animation-name: fadeInRight;"title="Download DT7.Agency Portfolio PDF">
                                 <span class="service-details-page__download-title">Download Our Portfolio</span>
-                                <span class="service-details-page__download-pdf icon-pdf"></span>
+                                <span class="service-details-page__download-pdf icon-pdf" aria-hidden="true"></span>
                             </a>
                         </div>
                     </div>
-                </div><!-- /.row -->
+                </div>
                 <div class="footer-one__bottom container-fluid @@extraClassName">
                     <div class="row">
                         <div class="footer-one__bottom-col-one col-lg-5">
                             <div class="footer-one__copyright">
-                                <p class="footer-one__copyright-text">&copy; Copyrights  2025 | Designed by <a href="https://dt7.agency" target="_blank" ><b>Dt7.Agency</b></a></p>
-                            </div><!-- /.footer__copyright -->
+                                <p class="footer-one__copyright-text">&copy; Copyrights  2025 | Designed by <a href="https://dt7.agency" target="_blank" rel="noopener noreferrer" title="Visit DT7.Agency Official Website"><b>Dt7.Agency</b></a></p>
+                            </div>
                         </div>
                         <div class="footer-one__bottom-col-two col-lg-7">
                             <div class="footer-one__bottom-link-box">
-                                <a href="/termsandconditions/" class="footer-one__bottom-link">Terms & Conditions</a>
-                                <a href="/Privacypolicy/" class="footer-one__bottom-link">Privacy Policy</a>
-                                <a href="/mobileprivacypolicy/" class="footer-one__bottom-link">Mobile Privacy Policy</a>
-                            </div><!-- /.footer__bottom-link-box -->
+                                <a href="/termsandconditions/" class="footer-one__bottom-link" title="Read our Terms & Conditions">Terms & Conditions</a>
+                                <a href="/Privacypolicy/" class="footer-one__bottom-link" title="Read our Privacy Policy">Privacy Policy</a>
+                                <a href="/mobileprivacypolicy/" class="footer-one__bottom-link" title="Read our Mobile Privacy Policy">Mobile Privacy Policy</a>
+                            </div>
                         </div>
-                    </div><!-- /.row -->
-                </div><!-- /.footer__bottom -->
-            </div><!-- /.container -->
-        <!-- Whatsapp float icon -->
-        <div class="whatsapp-icon">
-            <a href="https://api.whatsapp.com/send?phone=917382494888&amp;text=Hi!%20I%20need%20Assistance" class="float" target="_blank">
-        <i class="fab fa-whatsapp my-float"></i>
-        </a>
-        </div>
-        <!-- Whatsapp float icon -->
-        </footer>
-        <!-- /.footer-one -->
-
-    </div><!-- /.page-wrapper -->
-    
-
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="{% static 'assets/images/DT7-logo-light.png' %}"  alt="digihub"></a>
+                    </div>
+                </div>
             </div>
-            <!-- /.logo-box -->
-            <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
+            <!-- Footer  Widgets -->
 
+            <!-- Whatsapp float icon -->
+            <div class="whatsapp-icon">
+                <a href="https://api.whatsapp.com/send?phone=917382494888&amp;text=Hi!%20I%20need%20Assistance" class="float" target="_blank" title="Chat with us on WhatsApp" aria-label="Chat with DT7.Agency on WhatsApp">
+                    <i class="fab fa-whatsapp my-float" aria-hidden="true"></i>
+                </a>
+            </div>
+            <!-- Whatsapp float icon -->
+        </footer>
+        <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script> 
+        <!-- Footer One End -->
+    </div>
+
+    <!-- Mobile Nav Start -->
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler" aria-label="Close mobile menu overlay"></div>
+        <div class="mobile-nav__content" role="navigation" aria-label="Mobile Navigation Menu">
+            <span class="mobile-nav__close mobile-nav__toggler" aria-label="Close Mobile Menu">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+            <div class="logo-box">
+                <a href="/" title="DT7.Agency Logo" aria-label="DT7.Agency Home"><img src="{% static 'assets/images/logowhite.png' %}" alt="DT7.Agency Logo" title="DT7.Agency Home"></a>
+            </div>
+            <div class="mobile-nav__container"></div>
             <ul class="mobile-nav__contact">
                 <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:digihub@envato.com">info@dt7solutions.com</a>
+                    <i class="fa fa-envelope" aria-hidden="true"></i><a target="_blank" href="mailto:hello@dt7.agency" title="Email DT7.Agency">hello@dt7.agency</a>
                 </li>
                 <li>
-                    <i class="fa fa-phone"></i>
-                    <a href="tel: +91 738 249 4888"> +91 738 249 4888</a>
+                    <i class="fa fa-phone" aria-hidden="true"></i><a href="tel:+917382494888" title="Call DT7.Agency">+91 738 249 4888</a>
                 </li>
-            </ul><!-- /.mobile-nav__contact -->
+            </ul>
             <ul class="mobile-nav__social">
-                <li>
-                    <a href="https://www.facebook.com/dt7agency/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/Dt7agency" target="_blank"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/company/dt7-solutions/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/dt7agency/" target="_blank"><i class="fab fa-instagram"></i></a>
-                </li>
-            </ul><!-- /.mobile-nav__social -->
+                <li><a href="https://www.facebook.com/dt7agency/" target="_blank" title="DT7.Agency on Facebook" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/Dt7agency" target="_blank" title="DT7.Agency on Twitter" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/dt7-solutions/" target="_blank" title="DT7.Agency on LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/dt7agency/" target="_blank" title="DT7.Agency on Instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+            </ul>
         </div>
-        <!-- /.mobile-nav__content -->
     </div>
-    <!-- /.mobile-nav__wrapper -->
+    <!-- End Mobile Nav End -->
 
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <!-- /.search-popup__overlay -->
-        <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="#">
-                <input type="text" id="search" placeholder="Search Here...">
-                <button type="submit" aria-label="search submit" class="search-popup__form__btn">
-                    <i class="fa fa-search"></i>
-                </button>
-            </form>
-        </div>
-        <!-- /.search-popup__content -->
-    </div>
-    <!-- /.search-popup -->
+    <!-- Scroll to top -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top" title="Scroll to top" aria-label="Scroll to top">
+        <i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i>
+    </a>
+    <!-- Scroll to top End-->
 
-
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fas fa-long-arrow-alt-up"></i></a>
-
-
+    <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
     <script src="{% static 'assets/vendors/jquery/jquery-3.7.0.min.js' %}"></script>
     <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.js' %}"></script>
@@ -398,31 +366,31 @@
     <script>
         // Example form validation using jQuery
         $(document).ready(function () {
-          $('#myForm').submit(function (event) {
-            var form = $(this);
-            if (form[0].checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.addClass('was-validated');
-          });
+            $('#myForm').submit(function (event) {
+                var form = $(this);
+                if (form[0].checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.addClass('was-validated');
+            });
         });
-      </script>
-      <script>
+    </script>
+    <script>
         // Example form validation using jQuery
         $(document).ready(function () {
-          $('#popreset').submit(function (event) {
-            var form = $(this);
-            if (form[0].checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.addClass('was-validated');
-          });
+            $('#popreset').submit(function (event) {
+                var form = $(this);
+                if (form[0].checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.addClass('was-validated');
+            });
         });
-      </script>
-       <script>
-        document.getElementById('share-page').addEventListener('click', function() {
+    </script>
+    <script>
+        document.getElementById('share-page').addEventListener('click', function () {
             if (navigator.share) {
                 navigator.share({
                     title: document.title,
@@ -436,9 +404,7 @@
                 console.error('Web Share API not supported.');
             }
         });
-        </script>
-        
-            
+    </script>
 </body>
 
 </html>

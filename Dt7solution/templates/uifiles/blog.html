@@ -2,12 +2,11 @@
 <meta name="description" content="Explore Dt7, the top custom web development agency in Guntur & Hyderabad. Get tailored solutions that elevate your online presence.">
 <meta name="keywords" content="Custom Web Development Agency,Custom Web Development Agency in guntur, Custom Web Development Agency in hyderabad">
 <link rel="canonical" href="https://dt7.agency/blog/">
+
 {% extends 'uifiles/subase.html' %}
 {% load static %}
 {% block content %}
 
-
-   
     <!-- /.preloader -->
     <div class="page-wrapper">
         
@@ -24,183 +23,163 @@
                     </ul><!-- /.thm-breadcrumb list-unstyled -->
                 </div><!-- /.page-header__content -->
             </div><!-- /.container -->
-        </section><!-- /.page-header -->
+        </section>
         <!-- Page Header End -->
 
-        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- Blog One Start -->
+        <section class="blog-one pt-5"> 
+          <div class="container">
+            <div class="blog-one__sec-title sec-title wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">
+              <p class="sec-title__top">Discover Our Latest Posts</p>
+              <h2 class="blog-one__heading sec-title__heading">Expert Strategies for Online Success</h2>
+            </div>
+            <div class="row">
+              {% for blogitem in blog %}
+              <div class="col-xl-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                <div class="blog-page__blog">
+                  <div class="blog-page__blog-img-box">
+                    <a href="/blog/{{ blogitem.Sluglink }}" title="Read more about {{ blogitem.Title }}">
+                      <img src="/media/{{ blogitem.Image1 }}" alt="{{ blogitem.Title }} - Blog Image" class="blog-page__blog-img" loading="lazy">
+                    </a>
+                    <span class="blog-page__plus icon-plus" title="Expand {{ blogitem.Title }}"></span>
+                  </div>
+                  <div class="blog-page__blog-content">
+                    <ul class="blog-page__blog-info">
+                      <li><i class="far fa-user"></i><span title="Author">{{ blogitem.CreatedName }}</span></li>
+                      <li><i class="far fa-calendar-alt"></i><span title="Published on">{{ blogitem.Create_at }}</span></li>
+                    </ul>
+                    <a href="/blog/{{ blogitem.Sluglink }}" class="blog-page__blog-title mb-3" title="Read full article: {{ blogitem.Title }}">{{ blogitem.Title }}</a>
+                    <a href="/blog/{{ blogitem.Sluglink }}" class="blog-page__blog-btn digihub-btn digihub-btn--secondary" title="Read More about {{ blogitem.Title }}">READ MORE <span></span><span></span><span></span><span></span></a>
+                  </div>
                 </div>
-                <div class="modal-body ">
-                    <form action="#" id="popreset" method="POST" class=" container-fluid"  >
-                        {% csrf_token %}
-                        <div class="row   mb-3">
-                          <div class="col-md-6 ">
-                           
-                            <input type="text" class=" comment-form__form-input " required id="exampleInputName"  required name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
-                          </div>
-                          <div class="col-md-6">
-                           
-                            <input type="tel" class=" comment-form__form-input" required  id="exampleInputPhone"  required name="exampleInputPhone" placeholder="Phone number" >
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-12">
-                          
-                            <input type="email" class=" comment-form__form-input" required  id="exampleInputEmail"  required  name="exampleInputEmail"  placeholder="Email" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text"></div>
-                          </div>
-                         
-                        </div>
-                        <div class="col-md-12 mb-3">
-                       
-                          <div class="col-md-12 mb-2 wow animated fadeInUp " data-wow-delay="0.1s" data-wow-duration="1500ms">
-                              <label>Services Interested In:</label><br>
-                              <div class="d-flex">
-                              <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                              <div class="form-group">
-                               
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="digitalMarketingone" name="servicesInterestedIn" value="Digital Marketing">
-                                  <label class="form-check-label" for="digitalMarketingone">Digital Marketing</label>
-                                </div>
-                             
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="whatsappMarketingone" name="servicesInterestedIn" value="whatsappMarketing">
-                                  <label class="form-check-label" for="whatsappMarketingone">WhatsApp Marketing</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="logoBrandingone" name="servicesInterestedIn" value="logoBranding">
-                                  <label class="form-check-label" for="logoBrandingone">Logo Branding</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="emailMarketingone" name="servicesInterestedIn" value="emailMarketing">
-                                  <label class="form-check-label" for="emailMarketingone">Email Marketing</label>
-                                </div>
-                              </div>
-                          </div>
-                          <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                              <div class="form-group">
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="webDesigningone" name="servicesInterestedIn" value="webDesigning">
-                                  <label class="form-check-label" for="webDesigningone">Web Designing (UI/UX)</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="thirdPartyListingone" name="servicesInterestedIn" value="thirdPartyListing">
-                                  <label class="form-check-label" for="thirdPartyListingone">3rd Party Listing</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                  <input class="form-check-input" type="checkbox" id="onlinePaidMarketingone" name="servicesInterestedIn" value="onlinePaidMarketing">
-                                  <label class="form-check-label" for="onlinePaidMarketingone">Online Paid Marketing</label>
-                                </div>
-                                
-                              </div>
-                          </div>
-                          </div>
-                      </div>
-                        </div>
-                        <div class="mb-3">
-               
-                          <textarea class="comment-form__form-input popup-messsge" required  id="exampleInputMessageinfo"  name="exampleInputMessageinfo" placeholder="Enter your messege" rows="3"></textarea>
-                        </div>
-                        <button type="submit"  id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
-                      </form>
-                </div>
-               
               </div>
+              {% endfor %}        
             </div>
           </div>
-
-         <!-- Blog One Start -->
-         <section class="blog-one pt-5">
-            <div class="container">
-                <div class="blog-one__sec-title sec-title wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                    <p class="sec-title__top">Discover Our Latest Posts</p>
-                    <h2 class="blog-one__heading sec-title__heading">Expert Strategies for Online Success</h2>
-                </div><!-- /.blog-one__sec-title -->
-                <div class="row">
-                    {% for blogitem in blog %} 
-                    <div class="col-xl-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                        <div class="blog-page__blog">
-                            <div class="blog-page__blog-img-box">
-                                <img src="/media/{{blogitem.Image1}}" alt="blog" class="blog-page__blog-img">
-                                <span class="blog-page__plus icon-plus"></span>
-                            </div>
-                            <div class="blog-page__blog-content">
-                                <ul class="blog-page__blog-info">
-                                    <li>
-                                        <i class="far fa-user"></i>
-                                        <span>{{blogitem.CreatedName}}</span>
-                                    </li>
-                                    <li>
-                                        <i class="far fa-calendar-alt"></i>
-                                        <span>{{blogitem.Create_at}}</span>
-                                    </li>
-                                    
-                                </ul>
-                                <a href="/blog/{{blogitem.Sluglink}}" class="blog-page__blog-title mb-3">{{blogitem.Title}} </a>
-                                <!-- <p class="blog-page__blog-desc">Aliquam eros justo, posuere loborti viverra lao ullamcorper posuere viverra .Aliquam eros justo, posuere lobortis non, viverra </p> -->
-                                <a href="/blog/{{blogitem.Sluglink}}" class="blog-page__blog-btn digihub-btn digihub-btn--secondary">READ MORE <span></span><span></span><span></span><span></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                   
-                    
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.blog-one -->
+        </section>
         <!-- Blog One End -->
        
-     <div class="pagination-wrapper pt-5  pb-5 text-center" style="background-color: #f6f6f6;">
-    <ul class="pagination justify-content-center" style="margin-bottom: 0rem;">
+        <!-- Pagination Start -->
+        <div class="pagination-wrapper pt-5 pb-5 text-center" style="background-color: #f6f6f6;">
+            <ul class="pagination justify-content-center" style="margin-bottom: 0rem;">
 
-        {% if blog.has_previous %}
-        <li class="page-item">
-            <a class="page-link" href="?page={{ blog.previous_page_number }}" aria-label="Previous">
-                &laquo; Previous
-            </a>
-        </li>
-        {% else %}
-        <li class="page-item disabled">
-            <span class="page-link">&laquo; Previous</span>
-        </li>
-        {% endif %}
+                {% if blog.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ blog.previous_page_number }}" aria-label="Previous Page" title="Go to Previous Page">
+                        &laquo; Previous
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-disabled="true" title="No Previous Page">&laquo; Previous</span>
+                </li>
+                {% endif %}
 
-        {% for num in blog.paginator.page_range %}
-            {% if blog.number == num %}
-            <li class="page-item active">
-                <span class="page-link">{{ num }}</span>
-            </li>
-            {% else %}
-            <li class="page-item">
-                <a class="page-link" href="?page={{ num }}">{{ num }}</a>
-            </li>
-            {% endif %}
-        {% endfor %}
+                {% for num in blog.paginator.page_range %}
+                {% if blog.number == num %}
+                <li class="page-item active" aria-current="page">
+                    <span class="page-link" title="Current Page {{ num }}">{{ num }}</span>
+                </li>
+                {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ num }}" title="Go to Page {{ num }}">{{ num }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
 
-        {% if blog.has_next %}
-        <li class="page-item">
-            <a class="page-link" href="?page={{ blog.next_page_number }}" aria-label="Next">
-                Next &raquo;
-            </a>
-        </li>
-        {% else %}
-        <li class="page-item disabled">
-            <span class="page-link">Next &raquo;</span>
-        </li>
-        {% endif %}
+                {% if blog.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ blog.next_page_number }}" aria-label="Next Page" title="Go to Next Page">
+                        Next &raquo;
+                    </a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-disabled="true" title="No Next Page">Next &raquo;</span>
+                </li>
+                {% endif %}
 
-    </ul>
-</div>
+            </ul>
+        </div>
+        <!-- Pagination End -->
 
-
-  
-    
-
-   
+        <!--Enquiry Form Popup section start -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+                        <form action="#" id="popresetting" method="POST" class="container-fluid">
+                            {% csrf_token %}
+                            <div class="row   mb-3">
+                                <div class="col-md-6 ">
+                                    <input type="text" class="comment-form__form-input " required id="exampleInputName" name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" class="comment-form__form-input" required id="exampleInputPhone" name="exampleInputPhone" placeholder="Phone number">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <input type="email" class="comment-form__form-input" required id="exampleInputEmail" name="exampleInputEmail" placeholder="Email" aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2 " data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                    <label>Services Interested In:</label><br>
+                                    <div class="d-flex">
+                                        <div class="col-md-6" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                            <div class="form-group">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="digitalMarketingone" name="servicesInterestedIn" value="Digital Marketing">
+                                                    <label class="form-check-label" for="digitalMarketingone">Digital Marketing</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="whatsappMarketingone" name="servicesInterestedIn" value="whatsappMarketing">
+                                                    <label class="form-check-label" for="whatsappMarketingone">WhatsApp Marketing</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="logoBrandingone" name="servicesInterestedIn" value="logoBranding">
+                                                    <label class="form-check-label" for="logoBrandingone">Logo Branding</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="emailMarketingone" name="servicesInterestedIn" value="emailMarketing">
+                                                    <label class="form-check-label" for="emailMarketingone">Email Marketing</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                            <div class="form-group">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="webDesigningone" name="servicesInterestedIn" value="webDesigning">
+                                                    <label class="form-check-label" for="webDesigningone">Web Designing (UI/UX)</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="thirdPartyListingone" name="servicesInterestedIn" value="thirdPartyListing">
+                                                    <label class="form-check-label" for="thirdPartyListingone">3rd Party Listing</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="onlinePaidMarketingone" name="servicesInterestedIn" value="onlinePaidMarketing">
+                                                    <label class="form-check-label" for="onlinePaidMarketingone">Online Paid Marketing</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="comment-form__form-input popup-messsge" required id="exampleInputMessageinfo" name="exampleInputMessageinfo" placeholder="Enter your messege" rows="3"></textarea>
+                            </div>
+                            <button type="submit" id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Enquiry Form Popup section end -->
 
 {% endblock %}

@@ -2,332 +2,309 @@
 <meta name="description" content="Grow your business with DT7.Agency! Expert SEO, web design, social media, & paid ads. Tailored strategies for traffic, conversions & branding. Contact us now!">
 <meta name="keywords" content="Website Design,social media,paid ads">
 <link rel="canonical" href="https://dt7.agency/contact/">
+
 {% extends 'uifiles/subase.html' %}
 {% load static %}
 {% block content %}
 
-        <section class="page-header">
+        <!-- Page Header Start -->
+        <section class="page-header" aria-label="Contact Us Header">
             <div class="container">
                 <div class="page-header__content">
-                    <h2 class="page-header__title wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">Contact Us</h2>
+                    <h2 class="page-header__title">Contact Us</h2>
                     <ul class="digihub-breadcrumb">
-                      <li><a href="/">Home</a></li>
-                        <li>/</li>
-                        <li><span>Contact Us</span></li>
-                    </ul><!-- /.thm-breadcrumb list-unstyled -->
-                </div><!-- /.page-header__content -->
-            </div><!-- /.container -->
-        </section><!-- /.page-header -->
-        <!-- Page Header End -->
-        <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body ">
-                  <form id="popreset">
-                      {% csrf_token %}
-                      <div class="row   mb-3">
-                        <div class="col-md-6 ">
-                         
-                          <input type="text" class=" comment-form__form-input " required id="exampleInputName"  name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
-                        </div>
-                        <div class="col-md-6">
-                         
-                          <input type="tel" class=" comment-form__form-input" required id="exampleInputPhone" name="exampleInputPhone" placeholder="Phone number" >
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col-md-12">
-                        
-                          <input type="email" class=" comment-form__form-input" required id="exampleInputEmail"  name="exampleInputEmail"  placeholder="Email" aria-describedby="emailHelp">
-                          <div id="emailHelp" class="form-text"></div>
-                        </div>
-                        
-                      </div>
-                      <div class="col-md-12 mb-3">
-                       
-                        <div class="col-md-12 mb-2 wow animated fadeInUp " data-wow-delay="0.1s" data-wow-duration="1500ms">
-                            <label>Services Interested In:</label><br>
-                            <div class="d-flex">
-                            <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                            <div class="form-group">
-                             
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="digitalMarketingone" name="servicesInterestedIn" value="Digital Marketing">
-                                <label class="form-check-label" for="digitalMarketingone">Digital Marketing</label>
-                              </div>
-                           
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="whatsappMarketingone" name="servicesInterestedIn" value="whatsappMarketing">
-                                <label class="form-check-label" for="whatsappMarketingone">WhatsApp Marketing</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="logoBrandingone" name="servicesInterestedIn" value="logoBranding">
-                                <label class="form-check-label" for="logoBrandingone">Logo Branding</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="emailMarketingone" name="servicesInterestedIn" value="emailMarketing">
-                                <label class="form-check-label" for="emailMarketingone">Email Marketing</label>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                            <div class="form-group">
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="webDesigningone" name="servicesInterestedIn" value="webDesigning">
-                                <label class="form-check-label" for="webDesigningone">Web Designing (UI/UX)</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="thirdPartyListingone" name="servicesInterestedIn" value="thirdPartyListing">
-                                <label class="form-check-label" for="thirdPartyListingone">3rd Party Listing</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="onlinePaidMarketingone" name="servicesInterestedIn" value="onlinePaidMarketing">
-                                <label class="form-check-label" for="onlinePaidMarketingone">Online Paid Marketing</label>
-                              </div>
-                              
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                      </div>
-                      <div class="mb-3">
-             
-                        <textarea class="comment-form__form-input popup-messsge" required  id="exampleInputMessageinfo" name="exampleInputMessageinfo" placeholder="Enter your messege" rows="3"></textarea>
-                      </div>
-                     
-                      <button type="submit"  id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
-                    </form>
-              </div>
-             
+                        <li><a href="/" title="Go to Home Page">Home</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li><span aria-current="page">Contact Us</span></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
+        </section>
+        <!-- Page Header End -->
+
         <!-- Contact Page Start -->
-        <section class="contact-page">
+        <section class="contact-page" aria-labelledby="contact-title">
             <div class="container">
                 <div class="row">
-                  
-                    <div class="col-lg-6 ">
-                        <div class="contact-page__info container-fluid ">
+                    <!-- Contact Information -->
+                    <div class="col-lg-6">
+                        <div class="contact-page__info container-fluid">
                             <div class="row alignments-two">
+                                <!-- Guntur Office -->
                                 <div class="col-sm-6 col-xl-12 margin-bottom">
-                                  <div class="service-two__single contact-height" >
-                                    <div class="service-two__icon-box service-two__icon-box--two">
-                                        <span class="service-two__icon service-two__icon--two lnr lnr-apartment"></span>
-                                     
-                                        <h3 class="service-two__number service-two__number--two">01</h3>
-                                    </div><!-- /.service-two__icon-box -->
-                                    <div class="service-two__content service-two__content--two">
-                                        <h3 class="service-two__title">Guntur</h3>
-                                       
-                                        <p class="service-two__desc mb-2"><i class="fas fa-phone-alt"></i><a class="call-ph" href="tel:+91 738 249 4888" target="_blank"> +91 738 249 4888</a></p>
-                                        <p class="service-two__desc mb-2"><i class="far fa-envelope"></i>  hello@dt7.agency</p>
-                                        <p class="service-two__desc"><i class="fas fa-map-marker-alt"></i> First Floor, D.NO. 2-126/1, Zero line, Lakshmipuram, Chandramouli Nagar, Guntur, Andhra Pradesh 522006</p>
-                                    </div><!-- /.service-two__content -->
-                                </div><!-- /.service-two__single -->
-                               
+                                    <div class="service-two__single contact-height">
+                                        <div class="service-two__icon-box service-two__icon-box--two">
+                                            <span class="service-two__icon service-two__icon--two lnr lnr-apartment" aria-hidden="true"></span>
+                                            <h3 class="service-two__number service-two__number--two">01</h3>
+                                        </div>
+                                        <div class="service-two__content service-two__content--two">
+                                            <h3 class="service-two__title">Guntur</h3>
+                                            <p class="service-two__desc mb-2">
+                                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                                                <a class="call-ph" href="tel:+917382494888" title="Call Guntur Office">+91 738 249 4888</a>
+                                            </p>
+                                            <p class="service-two__desc mb-2">
+                                                <i class="far fa-envelope" aria-hidden="true"></i>
+                                                <a href="mailto:hello@dt7.agency" title="Email Guntur Office">hello@dt7.agency</a>
+                                            </p>
+                                            <p class="service-two__desc">
+                                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                                <a href="https://maps.app.goo.gl/wdsKJXuiFjPtVhv36" target="_blank" title="View on Google Maps">
+                                                    First Floor, D.NO. 2-126/1, Zero line, Lakshmipuram, Chandramouli Nagar, Guntur, Andhra Pradesh 522006
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <!-- Hyderabad Office -->
                                 <div class="col-sm-6 col-xl-12 margin-top">
-                                  <div class="service-two__single contact-height" >
-                                    <div class="service-two__icon-box service-two__icon-box--three">
-                                        <span class="service-two__icon service-two__icon--three lnr lnr-apartment"></span>
-                                         
-                                        <h3 class="service-two__number service-two__number--three">02</h3>
-                                    </div><!-- /.service-two__icon-box -->
-                                    <div class="service-two__content service-two__content--three">
-                                      
-                                        <h3 class="service-two__title">Hyderabad</h3>
-                                        <p class="service-two__desc mb-2"><i class="fas fa-phone-alt"></i><a class="call-ph" href="tel:+91 738 249 4888" target="_blank"> +91 738 249 4888</a></p>
-                                        <p class="service-two__desc mb-2"><i class="far fa-envelope"></i>  hello@dt7.agency</p>
-                                        <p class="service-two__desc "><i class="fas fa-map-marker-alt"></i> plot no-60, 3rd floor, kavuri hills, Hyderabad 500081.</p>
-                                    </div><!-- /.service-two__content -->
-                                </div><!-- /.service-two__single -->
-                                </div>
-                            </div><!-- /.contact-page__info-row -->
-                        </div><!-- /.contact-page__info -->
-                    </div>
-                    <div class="col-lg-6 ">
-                        <div class="comment-form">
-                           
-                            <!-- <form class="comment-form__form container-fluid">
-                                <div class="comment-form__form-row row">
-                                    <div class="col-xl-6 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                        <div class="comment-form__form-input-box">
-                                            <input type="text" name="comment-form-form-name" id="comment-form-form-name" placeholder="Your Name" class="comment-form__form-input">
+                                    <div class="service-two__single contact-height">
+                                        <div class="service-two__icon-box service-two__icon-box--three">
+                                            <span class="service-two__icon service-two__icon--three lnr lnr-apartment" aria-hidden="true"></span>
+                                            <h3 class="service-two__number service-two__number--three">02</h3>
                                         </div>
-                                    </div>
-                                    <div class="col-xl-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
-                                        <div class="comment-form__form-input-box">
-                                            <input type="email" name="comment-form-form-email" id="comment-form-form-email" placeholder="Your Email" class="comment-form__form-input">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                        <div class="comment-form__form-input-box">
-                                            <textarea name="comment-form-form-message" id="comment-form-form-message" placeholder="Write your messege" cols="30" rows="10" class="comment-form__form-message comment-form__form-input"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                        <div class="comment-form__form-input-box">
-                                            <button type="submit" class="comment-form__form-btn digihub-btn digihub-btn--secondary">Submit Now</button>
+                                        <div class="service-two__content service-two__content--three">
+                                            <h3 class="service-two__title">Hyderabad</h3>
+                                            <p class="service-two__desc mb-2">
+                                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                                                <a class="call-ph" href="tel:+917382494888" title="Call Hyderabad Office">+91 738 249 4888</a>
+                                            </p>
+                                            <p class="service-two__desc mb-2">
+                                                <i class="far fa-envelope" aria-hidden="true"></i>
+                                                <a href="mailto:hello@dt7.agency" title="Email Hyderabad Office">hello@dt7.agency</a>
+                                            </p>
+                                            <p class="service-two__desc">
+                                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                                <a href="https://maps.app.goo.gl/Tzk8zgXqfSR8eU8N9" target="_blank" title="View on Google Maps">
+                                                    Plot no-60, 3rd floor, Kavuri Hills, Hyderabad 500081.
+                                                </a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                            </form> -->
-                            <form id="myForm" action="#" method="POST" class="comment-form__form container-fluid form-back">
-                              {% csrf_token %}
-                                <div class="comment-form__form-row row">
-                                  <div class="col-md-6 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                    <div class="form-group comment-form__form-input-box">
-                                      <label for="FirstName">First Name</label>
-                                      <input type="text" class="form-control" id="FirstName" name="FirstName" required>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-6 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                    <div class="form-group comment-form__form-input-box">
-                                      <label for="LastName">Last Name</label>
-                                      <input type="text" class="form-control" id="LastName" name="LastName" required>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <div class="form-group">
-                                  <label for="Email">Email</label>
-                                  <input type="email" class="form-control" id="Email"  name="Email" required>
-                                </div>
-                            </div>
-                            <div class="col-md-12 mb-2 wow animated fadeInUp " data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <label>Services Interested In:</label><br>
-                                <div class="d-flex">
-                                <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <div class="form-group">
-                                 
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="digitalMarketing" name="ServicesInterestedIncontact" value="Digital Marketing">
-                                    <label class="form-check-label" for="digitalMarketing">Digital Marketing</label>
-                                  </div>
-                               
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="whatsappMarketing" name="ServicesInterestedIncontact" value="Digital Marketing">
-                                    <label class="form-check-label" for="whatsappMarketing">WhatsApp Marketing</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="logoBranding" name="servicesInterestedIncontact" value="logoBranding">
-                                    <label class="form-check-label" for="logoBranding">Logo Branding</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="emailMarketing" name="ServicesInterestedIncontact" value="emailMarketing">
-                                    <label class="form-check-label" for="emailMarketing">Email Marketing</label>
-                                  </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <div class="form-group">
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="webDesigning" name="ServicesInterestedIncontact" value="webDesigning">
-                                    <label class="form-check-label" for="webDesigning">Web Designing (UI/UX)</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="thirdPartyListing" name="ServicesInterestedIncontact" value="thirdPartyListing">
-                                    <label class="form-check-label" for="thirdPartyListing">3rd Party Listing</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="onlinePaidMarketing" name="ServicesInterestedIncontact" value="onlinePaidMarketing">
-                                    <label class="form-check-label" for="onlinePaidMarketing">Online Paid Marketing</label>
-                                  </div>
-                                  
-                                </div>
-                            </div>
                             </div>
                         </div>
-                            <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                    </div>
+                    <!-- Contact Form -->
+                    <div class="col-lg-6">
+                        <div class="comment-form">
+                            <form id="myForm" action="#" method="POST" class="comment-form__form container-fluid form-back">
+                              {% csrf_token %}
+                              <div class="comment-form__form-row row">
+                                <div class="col-md-6 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                  <div class="form-group comment-form__form-input-box">
+                                    <label for="FirstName">First Name</label>
+                                    <input type="text" class="form-control" id="FirstName" name="FirstName" required>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                  <div class="form-group comment-form__form-input-box">
+                                    <label for="LastName">Last Name</label>
+                                    <input type="text" class="form-control" id="LastName" name="LastName" required>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <div class="form-group">
+                                  <label for="Email">Email</label>
+                                  <input type="email" class="form-control" id="Email" name="Email" required>
+                                </div>
+                              </div>
+                              <div class="col-md-12 mb-2 wow animated fadeInUp " data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <label>Services Interested In:</label><br>
+                                <div class="d-flex">
+                                  <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                    <div class="form-group">
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="digitalMarketing" name="ServicesInterestedIncontact"
+                                          value="Digital Marketing">
+                                        <label class="form-check-label" for="digitalMarketing">Digital Marketing</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="whatsappMarketing" name="ServicesInterestedIncontact"
+                                          value="Digital Marketing">
+                                        <label class="form-check-label" for="whatsappMarketing">WhatsApp Marketing</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="logoBranding" name="servicesInterestedIncontact"
+                                          value="logoBranding">
+                                        <label class="form-check-label" for="logoBranding">Logo Branding</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="emailMarketing" name="ServicesInterestedIncontact"
+                                          value="emailMarketing">
+                                        <label class="form-check-label" for="emailMarketing">Email Marketing</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6  wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                    <div class="form-group">
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="webDesigning" name="ServicesInterestedIncontact"
+                                          value="webDesigning">
+                                        <label class="form-check-label" for="webDesigning">Web Designing (UI/UX)</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="thirdPartyListing" name="ServicesInterestedIncontact"
+                                          value="thirdPartyListing">
+                                        <label class="form-check-label" for="thirdPartyListing">3rd Party Listing</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="onlinePaidMarketing" name="ServicesInterestedIncontact"
+                                          value="onlinePaidMarketing">
+                                        <label class="form-check-label" for="onlinePaidMarketing">Online Paid Marketing</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <div class="form-group">
                                   <label for="Message">Message</label>
                                   <textarea class="form-control" required id="Message" name="Message" rows="3"></textarea>
                                 </div>
-                            </div>
-                            <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">                                        
-                              <div class="form-group ">
-                                  <div class="g-recaptcha" id="recaptcha-container"  data-sitekey="6LcY2pAqAAAAACPtFkPBjgD-s1xNhajcTxvQK8KQ" ></div>
                               </div>
-                              <!-- <div class="form-group ">
-                                <div class="g-recaptcha" id="recaptcha" data-sitekey="6LcY2pAqAAAAACPtFkPBjgD-s1xNhajcTxvQK8KQ"></div>
-                                <div class="error-message" id="recaptcha-error" style="display: none; color: red;">Please verify you're not a robot.</div>
-                            </div> -->
-                          </div>
-                                {% comment %} <div class="form-check">
-                                  <input type="checkbox" class="form-check-input" id="TermsAndConditions" name="TermsAndConditions" required>
-                                  <label class="form-check-label" for="TermsAndConditions">I agree to the Terms and Conditions</label>
-                                </div> {% endcomment %}
-                                <button type="submit" id="submitBtn" class="comment-form__form-btn digihub-btn digihub-btn--secondary mt-3">Submit</button>
-                              </form>
-                        </div><!-- /.comment-form -->
+                              <div class="col-md-12 mb-2 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <div class="form-group">
+                                  <div class="g-recaptcha" id="recaptcha" data-sitekey="6LcY2pAqAAAAACPtFkPBjgD-s1xNhajcTxvQK8KQ"></div>
+                                  <div class="error-message" id="recaptcha-error" style="display: none; color: red;">Please verify you're not a robot.</div>
+                                </div>
+                              </div>
+                              {% comment %} <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="TermsAndConditions" name="TermsAndConditions" required>
+                                <label class="form-check-label" for="TermsAndConditions">I agree to the Terms and Conditions</label>
+                              </div> {% endcomment %}
+                              <button type="submit" id="submitBtn"
+                                class="comment-form__form-btn digihub-btn digihub-btn--secondary mt-3">Submit</button>
+                            </form>
+                        </div>
                         <div class="loading" style="display: none;">Loading...</div>
                         <div class="error-message" style="display: none; color: red;">Error submitting the form.</div>
                         <div class="sent-message" style="display: none; color: green;">Your message has been sent successfully!</div>
                     </div>
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.contact-page -->
+                </div>
+            </div>
+        </section>
         <!-- Contact Page End -->
      
-   
         <!-- Our Locations -->
-
-    
-    <section class="blog-one pt-5">
-      <div class="container">
-          <div class="blog-one__sec-title sec-title wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">
-            
+        <section class="blog-one pt-5">
+          <div class="container">
+            <div class="blog-one__sec-title sec-title wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">
               <h2 class="blog-one__heading sec-title__heading">Our Locations</h2>
-          </div><!-- /.blog-one__sec-title -->
-          <div class="row">
-            <div class="col-xl-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
-              <div class="blog-one__card">
-                  <a  data-hover-image="assets/images/shapes/hover-two.jpg" class="blog-one__img-box digihub-image-hover">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1914.6004294497063!2d80.4271966888429!3d16.312678096100683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a358be086d986d3%3A0x258611ac392f948e!2sDT7%20Agency!5e0!3m2!1sen!2sus!4v1732690154317!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                     
+            </div>
+            <div class="row">
+              <!-- Guntur Location -->
+              <div class="col-xl-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                <div class="blog-one__card">
+                  <a data-hover-image="assets/images/shapes/hover-two.jpg" class="blog-one__img-box digihub-image-hover" title="DT7 Agency Location - Guntur" aria-label="DT7 Agency Guntur Location">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1914.6004294497063!2d80.4271966888429!3d16.312678096100683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a358be086d986d3%3A0x258611ac392f948e!2sDT7%20Agency!5e0!3m2!1sen!2sus!4v1732690154317!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Map showing DT7 Agency Guntur Location"></iframe>
                   </a>
                   <div class="blog-one__info-box locations">
-                     
-                      <h3 class="blog-one__title">Guntur</h3>
-                      <p> <i class="fas fa-phone-alt"></i> +91 738 249 4888</p>
-                      
-                      <p ><i class="fas fa-map-marker-alt"></i> First Floor, D.NO. 2-126/1, Zero line, Lakshmipuram, Chandramouli Nagar, Guntur, Andhra Pradesh 522006 </p>
-                      <a href="https://www.google.com/maps/place/DT7+Agency/@16.334629,80.443974,16z/data=!4m6!3m5!1s0x3a358be086d986d3:0x258611ac392f948e!8m2!3d16.3346288!4d80.4439737!16s%2Fg%2F11nms65x09?hl=en&entry=ttu&g_ep=EgoyMDI0MDkyNC4wIKXMDSoASAFQAw%3D%3D" class="blog-one__btn digihub-btn digihub-btn--border-one">Get Directions
-                          <span></span><span></span><span></span><span></span></a>
-                  </div><!-- /.blog-one__info-box -->
-              </div><!-- /.blog-one__card -->
-          </div>
-          <div class="col-xl-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
-            <div class="blog-one__card">
-                <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4604299226908!2d78.397756175245!3d17.437663183458127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91463b7ebb4b%3A0x16a4ba4ed2262687!2sRd%20Number%2036%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1727431069607!5m2!1sen!2sin" data-hover-image="assets/images/shapes/hover-two.jpg" class="blog-one__img-box digihub-image-hover">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4604299226908!2d78.397756175245!3d17.437663183458127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91463b7ebb4b%3A0x16a4ba4ed2262687!2sRd%20Number%2036%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1727431069607!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                   
-                </a><!-- /.blog-one__img-box -->
-                <div class="blog-one__info-box locations">
-                    
-                    <h3 class="blog-one__title"> Hyderabad</h3>
+                    <h3 class="blog-one__title">Guntur</h3>
                     <p><i class="fas fa-phone-alt"></i> +91 738 249 4888</p>
-                    <p ><i class="fas fa-map-marker-alt"></i> plot no-60, 3rd floor, kavuri hills, Hyderabad 500081.</p>
-                    <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4604299226908!2d78.397756175245!3d17.437663183458127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91463b7ebb4b%3A0x16a4ba4ed2262687!2sRd%20Number%2036%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1727431069607!5m2!1sen!2sin" class="blog-one__btn digihub-btn digihub-btn--border-one">Get Directions
-                        <span></span><span></span><span></span><span></span></a>
-                </div><!-- /.blog-one__info-box -->
-            </div><!-- /.blog-one__card -->
-        </div>
-             
-              
-              
-          </div><!-- /.row -->
-      </div><!-- /.container -->
-  </section><!-- /.blog-one -->
- 
+                    <p><i class="fas fa-map-marker-alt"></i> First Floor, D.NO. 2-126/1, Zero line, Lakshmipuram, Chandramouli Nagar, Guntur, Andhra Pradesh 522006</p>
+                    <a href="https://www.google.com/maps/place/DT7+Agency/@16.334629,80.443974,16z/data=!4m6!3m5!1s0x3a358be086d986d3:0x258611ac392f948e!8m2!3d16.3346288!4d80.4439737!16s%2Fg%2F11nms65x09?hl=en&entry=ttu&g_ep=EgoyMDI0MDkyNC4wIKXMDSoASAFQAw%3D%3D" class="blog-one__btn digihub-btn digihub-btn--border-one" title="Get Directions to DT7 Agency Guntur">Get Directions<span></span><span></span><span></span><span></span></a>
+                  </div>
+                </div>
+              </div>
+              <!-- Hyderabad Location -->
+              <div class="col-xl-6 col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
+                <div class="blog-one__card">
+                  <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4604299226908!2d78.397756175245!3d17.437663183458127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91463b7ebb4b%3A0x16a4ba4ed2262687!2sRd%20Number%2036%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1727431069607!5m2!1sen!2sin" data-hover-image="assets/images/shapes/hover-two.jpg" class="blog-one__img-box digihub-image-hover" title="DT7 Agency Location - Hyderabad" aria-label="DT7 Agency Hyderabad Location">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4604299226908!2d78.397756175245!3d17.437663183458127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91463b7ebb4b%3A0x16a4ba4ed2262687!2sRd%20Number%2036%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1727431069607!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Map showing DT7 Agency Hyderabad Location"></iframe>
+                  </a>
+                  <div class="blog-one__info-box locations">
+                    <h3 class="blog-one__title">Hyderabad</h3>
+                    <p><i class="fas fa-phone-alt"></i> +91 738 249 4888</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Plot no-60, 3rd floor, Kavuri Hills, Hyderabad 500081.</p>
+                    <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4604299226908!2d78.397756175245!3d17.437663183458127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91463b7ebb4b%3A0x16a4ba4ed2262687!2sRd%20Number%2036%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1727431069607!5m2!1sen!2sin" class="blog-one__btn digihub-btn digihub-btn--border-one" title="Get Directions to DT7 Agency Hyderabad"> Get Directions <span></span><span></span><span></span><span></span> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <!-- Our Locations end  -->
        
-        
-        
+        <!--Enquiry Form Popup section start -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body ">
+                        <form action="#" id="popresetting" method="POST" class="container-fluid">
+                            {% csrf_token %}
+                            <div class="row   mb-3">
+                                <div class="col-md-6 ">
+                                    <input type="text" class="comment-form__form-input " required id="exampleInputName" name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" class="comment-form__form-input" required id="exampleInputPhone" name="exampleInputPhone" placeholder="Phone number">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-12">
+                                    <input type="email" class="comment-form__form-input" required id="exampleInputEmail" name="exampleInputEmail" placeholder="Email" aria-describedby="emailHelp">
+                                    <div id="emailHelp" class="form-text"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <div class="col-md-12 mb-2 " data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                    <label>Services Interested In:</label><br>
+                                    <div class="d-flex">
+                                        <div class="col-md-6" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                            <div class="form-group">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="digitalMarketingone" name="servicesInterestedIn" value="Digital Marketing">
+                                                    <label class="form-check-label" for="digitalMarketingone">Digital Marketing</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="whatsappMarketingone" name="servicesInterestedIn" value="whatsappMarketing">
+                                                    <label class="form-check-label" for="whatsappMarketingone">WhatsApp Marketing</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="logoBrandingone" name="servicesInterestedIn" value="logoBranding">
+                                                    <label class="form-check-label" for="logoBrandingone">Logo Branding</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="emailMarketingone" name="servicesInterestedIn" value="emailMarketing">
+                                                    <label class="form-check-label" for="emailMarketingone">Email Marketing</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                            <div class="form-group">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="webDesigningone" name="servicesInterestedIn" value="webDesigning">
+                                                    <label class="form-check-label" for="webDesigningone">Web Designing (UI/UX)</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="thirdPartyListingone" name="servicesInterestedIn" value="thirdPartyListing">
+                                                    <label class="form-check-label" for="thirdPartyListingone">3rd Party Listing</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="onlinePaidMarketingone" name="servicesInterestedIn" value="onlinePaidMarketing">
+                                                    <label class="form-check-label" for="onlinePaidMarketingone">Online Paid Marketing</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="comment-form__form-input popup-messsge" required id="exampleInputMessageinfo" name="exampleInputMessageinfo" placeholder="Enter your messege" rows="3"></textarea>
+                            </div>
+                            <button type="submit" id="popupBtn" class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Enquiry Form Popup section end -->
 
 {% endblock %}

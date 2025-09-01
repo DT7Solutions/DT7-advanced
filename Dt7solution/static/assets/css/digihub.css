@@ -4172,8 +4172,10 @@ input, textarea {
   width: 100%;
 }
 .service-two__single:hover .service-two__title,
-.service-two__single:hover .service-two__desc {
-  color: var(--digihub-white, #FFFFFF);
+.service-two__single:hover .service-two__desc,
+.service-two__single:hover .service-two__desc a,
+.service-two__single:hover .service-two__content .fa-map-marker-alt {
+  color: var(--digihub-white, #FFFFFF) !important;
 }
 
 /*-------------------------------------

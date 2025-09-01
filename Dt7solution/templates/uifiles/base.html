@@ -6,25 +6,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/dt7-132x132.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/dt7-40x40.png'%}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/dt7-16X16.png'%}">
-    <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest'%}">
-    
+
+    <!-- Other Meta Tags -->
     <meta name="author" content="DT7Agency">
     <meta name="publisher" content="DT7Agency">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://dt7.agency/">
 
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/dt7-132x132.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/dt7-40x40.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/dt7-16X16.png'%}">
+    <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest'%}">
+
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}">
@@ -41,44 +39,44 @@
     <link rel="stylesheet" href="{% static 'assets/css/digihub.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0X90KPHTQR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0X90KPHTQR"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-0X90KPHTQR');
-</script>
+    gtag('config', 'G-0X90KPHTQR');
+    </script>
 
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  emailjs.init("rTBlN3RKunurTmvyP");
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    emailjs.init("rTBlN3RKunurTmvyP");
 
-  document.getElementById("popresetting").addEventListener("submit", function(e) {
-    e.preventDefault();
+    document.getElementById("popresetting").addEventListener("submit", function(e) {
+        e.preventDefault();
 
-    emailjs.sendForm('service_dshik0y', 'template_5l9u29w', this)
-      .then(function(response) {
-        alert("Message sent successfully!");
-        document.getElementById("popresetting").reset();
-        var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-        modal.hide();
-      }, function(error) {
-        alert("Failed to send message. Please try again.");
-        console.error("EmailJS error:", error);
-      });
-  });
-});
-</script>
+        emailjs.sendForm('service_dshik0y', 'template_5l9u29w', this)
+        .then(function(response) {
+            alert("Message sent successfully!");
+            document.getElementById("popresetting").reset();
+            var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+            modal.hide();
+        }, function(error) {
+            alert("Failed to send message. Please try again.");
+            console.error("EmailJS error:", error);
+        });
+    });
+    });
+    </script>
 
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "p7koenxcyk");
-</script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "p7koenxcyk");
+    </script>
 
 </head>
 
@@ -124,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                 <li><a href="/productshoot/" title="Professional Product Shoot Services">Productshoot</a></li>
                             </ul>
                         </li>
-                        <li><a href="/blog/" title="Read Our Latest Blogs">Blogs</a></li>
+                        <li><a class="nav-btn {% if navbar == 'Blog' %} active {% endif %}" href="/blog/" title="Read Our Latest Blogs">Blogs</a></li>
                         <li><a class="nav-btn {% if navbar == 'Contact' %} active {% endif %}" href="/contact/" title="Contact DT7.Agency">Contact</a></li>
                     </ul>
                     <div class="main-menu-one__right">
@@ -259,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             </form>
                             <div class="mc-form__response"></div>
                         </div>
-                        <div class="service-details-page__download-box">
+                        <div class="service-details-page__download-box my-3">
                             <a href="../../static/assets/pdf/DT7-AGENCY-Portfolio.pdf" class="service-details-page__download wow animated fadeInRight" data-wow-delay="0.2s" data-wow-duration="1500ms"style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.2s; animation-name: fadeInRight;"title="Download DT7.Agency Portfolio PDF">
                                 <span class="service-details-page__download-title">Download Our Portfolio</span>
                                 <span class="service-details-page__download-pdf icon-pdf" aria-hidden="true"></span>
@@ -298,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <!-- Footer One End -->
     </div>
     
-    <!-- Mobile Nav -->
+    <!-- Mobile Nav Start -->
     <div class="mobile-nav__wrapper">
         <div class="mobile-nav__overlay mobile-nav__toggler" aria-label="Close mobile menu overlay"></div>
         <div class="mobile-nav__content" role="navigation" aria-label="Mobile Navigation Menu">
@@ -306,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <i class="fa fa-times" aria-hidden="true"></i>
             </span>
             <div class="logo-box">
-                <a href="/" title="DT7.Agency Logo" aria-label="DT7.Agency Home"><img src="{% static 'assets/images/DT7-logo-light.png' %}" alt="DT7.Agency Logo" title="DT7.Agency Home"></a>
+                <a href="/" title="DT7.Agency Logo" aria-label="DT7.Agency Home"><img src="{% static 'assets/images/logowhite.png' %}" alt="DT7.Agency Logo" title="DT7.Agency Home"></a>
             </div>
             <div class="mobile-nav__container"></div>
             <ul class="mobile-nav__contact">
@@ -325,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </ul>
         </div>
     </div>
-    <!-- End Mobile Nav -->
+    <!-- End Mobile Nav End -->
 
     <!-- Cookies Consents -->
     <div id="cookieConsent" style="display:none; position: fixed; bottom: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 15px;">
