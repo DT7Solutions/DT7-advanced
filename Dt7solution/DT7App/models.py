@@ -35,6 +35,8 @@ STATUS = (
 )
 
 
+
+
 class BlogPost(models.Model):
     Id = models.AutoField(primary_key=True)
     Category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name='categories')
@@ -50,11 +52,27 @@ class BlogPost(models.Model):
     MetaTitle = models.CharField(max_length=255, blank=True,default="", null=True)
     MetaDescription = models.CharField(max_length=255, blank=True,default="", null=True)
     MetaKeywords = models.CharField(max_length=255, blank=True,default="", null=True)
+   
 
     class Meta:
         ordering = ['-Create_at']
 
     def __str__(self):
             return self.Title
+    
+
+class BlogFAQ(models.Model):
+    blog = models.ForeignKey(
+        BlogPost,
+        on_delete=models.CASCADE,
+        related_name='faqs',
+        blank=True,
+        null=True
+    )
+    question = models.CharField(max_length=255)
+    answer = models.TextField()
+
+    def __str__(self):
+        return f"{self.blog.Title} - {self.question}"
    
     

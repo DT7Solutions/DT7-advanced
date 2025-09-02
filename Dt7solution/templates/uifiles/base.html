@@ -387,6 +387,14 @@
     <!-- template js -->
     <script src="{% static 'assets/js/digihub.js' %}"></script>
     <script src="{% static 'assets/js/Contact.js' %}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://manideepdt7.app.n8n.cloud/webhook/9e800a58-2d92-4ca3-ac24-a20b5652f480/chat'
+	});
+</script>
     <script>
         function setLocationBasedURL() {
             fetch('http://ip-api.com/json')

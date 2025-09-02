@@ -8952,3 +8952,13 @@ i {
 .footer-three .footer-one__bottom-link:hover {
   color: var(--digihub-base, #EA4723);
 }
+.bg-faq:not(.collapsed) {
+    color: #EA4723!important;
+    background-color: rgba(var(--digihub-base-rgb, 234, 71, 35), 0.1)!important;
+}
+.accordion-button:not(.collapsed)::after {
+  color: #EA4723!important;
+}
+.widgets_wrapper .content {
+ max-width:150px!important;
+}

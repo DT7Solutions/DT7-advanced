@@ -53,6 +53,7 @@ def Blogdetails(request,slug):
     selectpost = BlogPost.objects.get(Sluglink=slug)
     totalcategories = Category.objects.all()
     all_posts = BlogPost.objects.order_by('Id')
+    faqs = selectpost.faqs.all()  # Get related FAQs
 
     selected_index = None
     for i, post in enumerate(all_posts):
@@ -82,7 +83,7 @@ def Blogdetails(request,slug):
     context =  {'selectpost':selectpost,'totalcategories':totalcategories,'blog_list':blog_list, 'meta_title': selectpost.MetaTitle,
         'meta_description': selectpost.MetaDescription,
         'meta_tags': selectpost.MetaKeywords,'previous_post': previous_post,'canonical_url':selectpost.Sluglink,
-        'next_post': next_post,'navbar':'Blog'}
+        'next_post': next_post,'navbar':'Blog', 'faqs': faqs}
     print(selectpost.MetaKeywords)
 
     return render(request, 'uifiles/blogdetails.html',context)    
