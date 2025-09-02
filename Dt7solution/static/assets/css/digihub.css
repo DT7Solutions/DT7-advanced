@@ -6045,8 +6045,8 @@ input, textarea {
 # Portfolio Page
 -------------------------------------*/
 .portfolio-page {
-  padding-top: 80px;
-  padding-bottom: 120px;
+  padding-top: 60px;
+  padding-bottom: 80px;
   background-color: var(--digihub-white, #FFFFFF);
 }
 @media (max-width: 991px) {
@@ -7060,8 +7060,8 @@ input, textarea {
 # Projects Details Page
 -------------------------------------*/
 .projects-details-page {
-  padding-top: 80px;
-  padding-bottom: 120px;
+  padding-top: 60px;
+  padding-bottom: 80px;
   background-color: var(--digihub-white, #FFFFFF);
 }
 @media (max-width: 991px) {
