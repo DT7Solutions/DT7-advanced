@@ -123,7 +123,7 @@ def Mobileprivacypolicy(request):
     return render(request, 'uifiles/mobile-privacy-policy.html')
 
 def productshoot(request):
-    return render(request, 'uifiles/Product-shoot.html')
+    return render(request, 'uifiles/Product-shoot.html',{'navbar':'Solutions'})
 
 def page_not_found_view(request, exception):
     return render(request, 'uifiles/404.html', status=404)
