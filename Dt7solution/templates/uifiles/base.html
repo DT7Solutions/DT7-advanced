@@ -23,51 +23,67 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendors/digihub-icons/style.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendors/jarallax/jarallax.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.pips.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendors/tiny-slider/tiny-slider.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.theme.default.min.css' %}">
+    <!-- stylesheets -->
+    <link rel="preload" href="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/vendors/animate/animate.min.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/vendors/digihub-icons/style.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/vendors/jarallax/jarallax.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/vendors/nouislider/nouislider.min.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/vendors/nouislider/nouislider.pips.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/vendors/tiny-slider/tiny-slider.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/vendors/owl-carousel/css/owl.carousel.min.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/vendors/owl-carousel/css/owl.theme.default.min.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/css/digihub.css' %}" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="{% static 'assets/css/custom.css' %}" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <!-- Fallback for browsers without JS -->
+        <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/digihub-icons/style.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/jarallax/jarallax.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/nouislider/nouislider.pips.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/tiny-slider/tiny-slider.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.theme.default.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/digihub.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    </noscript>
+
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <!-- template styles -->
-    <link rel="stylesheet" href="{% static 'assets/css/digihub.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0X90KPHTQR"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-0X90KPHTQR');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0X90KPHTQR');
     </script>
 
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    emailjs.init("rTBlN3RKunurTmvyP");
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init("rTBlN3RKunurTmvyP");
 
-    document.getElementById("popresetting").addEventListener("submit", function(e) {
-        e.preventDefault();
+            document.getElementById("popresetting").addEventListener("submit", function (e) {
+                e.preventDefault();
 
-        emailjs.sendForm('service_dshik0y', 'template_5l9u29w', this)
-        .then(function(response) {
-            alert("Message sent successfully!");
-            document.getElementById("popresetting").reset();
-            var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-            modal.hide();
-        }, function(error) {
-            alert("Failed to send message. Please try again.");
-            console.error("EmailJS error:", error);
+                emailjs.sendForm('service_dshik0y', 'template_5l9u29w', this)
+                    .then(function (response) {
+                        alert("Message sent successfully!");
+                        document.getElementById("popresetting").reset();
+                        var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+                        modal.hide();
+                    }, function (error) {
+                        alert("Failed to send message. Please try again.");
+                        console.error("EmailJS error:", error);
+                    });
+            });
         });
-    });
-    });
     </script>
 
     <script type="text/javascript">
@@ -77,7 +93,6 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "p7koenxcyk");
     </script>
-
 </head>
 
 <body class="custom-cursor">
@@ -102,7 +117,7 @@
                     <div class="main-menu-one__left">
                         <div class="main-menu-one__logo">
                             <a href="/" class="main-menu-one__logo-box" title="DT7Agency - Digital Marketing & Web Development">
-                                <img src="{% static 'assets/images/logowhite.png' %}" alt="DT7Agency Logo - Digital Marketing, Web Design, SEO Services" title="DT7Agency | Digital Marketing & Web Development Company">
+                                <img loading="lazy" src="{% static 'assets/images/logowhite.png' %}" alt="DT7Agency Logo - Digital Marketing, Web Design, SEO Services" title="DT7Agency | Digital Marketing & Web Development Company">
                             </a>
                         </div>
                     </div>
@@ -157,7 +172,7 @@
                         <div class="footer-one__about-box">
                             <div class="footer-one__logo-box">
                                 <a href="/" title="DT7Agency - Digital Marketing & Web Development">
-                                    <img src="{% static 'assets/images/logowhite.png' %}" alt="DT7Agency Logo - Digital Marketing, Web Design & SEO Services" title="DT7Agency | Leading Digital Marketing & Web Development Agency" class="footer-one__logo">
+                                    <img loading="lazy" src="{% static 'assets/images/logowhite.png' %}" alt="DT7Agency Logo - Digital Marketing, Web Design & SEO Services" title="DT7Agency | Leading Digital Marketing & Web Development Agency" class="footer-one__logo">
                                 </a>
                             </div>
                             <p class="footer-one__about-text">Are you looking to take your online presence to the next level? Look no further than Dt7.Agency.</p>
@@ -304,7 +319,7 @@
                 <i class="fa fa-times" aria-hidden="true"></i>
             </span>
             <div class="logo-box">
-                <a href="/" title="DT7.Agency Logo" aria-label="DT7.Agency Home"><img src="{% static 'assets/images/logowhite.png' %}" alt="DT7.Agency Logo" title="DT7.Agency Home"></a>
+                <a href="/" title="DT7.Agency Logo" aria-label="DT7.Agency Home"><img loading="lazy" src="{% static 'assets/images/logowhite.png' %}" alt="DT7.Agency Logo" title="DT7.Agency Home"></a>
             </div>
             <div class="mobile-nav__container"></div>
             <ul class="mobile-nav__contact">
@@ -351,104 +366,91 @@
 
 <!-- end -->
 
-    <script>
-        $(document).ready(function () {
-            // Add click event handler to the "Home" navigation item
+    <!-- jQuery first (deferred) -->
+    <script src="{% static 'assets/vendors/jquery/jquery-3.7.0.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/jarallax/jarallax.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/jquery-appear/jquery.appear.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/jquery-validate/jquery.validate.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/nouislider/nouislider.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/tiny-slider/tiny-slider.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/wnumb/wNumb.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/owl-carousel/js/owl.carousel.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/wow/wow.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/tilt/tilt.jquery.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/isotope/isotope.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/gsap/gsap.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/gsap/three.min.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/gsap/hover.js' %}" defer></script>
+    <script src="{% static 'assets/vendors/countdown/countdown.min.js' %}" defer></script>
+    
+    <!-- Template JS -->
+    <script src="{% static 'assets/js/digihub.js' %}" defer></script>
+    <script src="{% static 'assets/js/Contact.js' %}" defer></script>
+    
+    <!-- N8N Chat -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.js" defer></script>
+    
+    <!-- Custom Inline Scripts -->
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Navigation Active State
             $('nav.main-menu-one ul.main-menu__list li:nth-child(1) a').click(function () {
-                // Remove 'active' class from all navigation items
                 $('nav.main-menu-one ul.main-menu__list li a').removeClass('active');
-                // Add 'active' class to the clicked navigation item
                 $(this).addClass('active');
             });
-        });
-    </script>
-
-    <script src="{% static 'assets/vendors/jquery/jquery-3.7.0.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/jarallax/jarallax.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/jquery-appear/jquery.appear.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/jquery-validate/jquery.validate.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/nouislider/nouislider.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/tiny-slider/tiny-slider.js' %}"></script>
-    <script src="{% static 'assets/vendors/wnumb/wNumb.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/owl-carousel/js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
-    <script src="{% static 'assets/vendors/tilt/tilt.jquery.js' %}"></script>
-    <script src="{% static 'assets/vendors/isotope/isotope.js' %}"></script>
-    <script src="{% static 'assets/vendors/gsap/gsap.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/gsap/three.min.js' %}"></script>
-    <script src="{% static 'assets/vendors/gsap/hover.js' %}"></script>
-    <script src="{% static 'assets/vendors/countdown/countdown.min.js' %}"></script>
-
-    <!-- template js -->
-    <script src="{% static 'assets/js/digihub.js' %}"></script>
-    <script src="{% static 'assets/js/Contact.js' %}"></script>
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-    <script>
-        function setLocationBasedURL() {
-            fetch('http://ip-api.com/json')
-            .then(response => response.json())
-            .then(data => {
-                const userCity = data.city.toLowerCase();
-                const cityToURLMap = {
-                    "hyderabad": "/hyderabad/about/",
-                    "vijayawada": "/guntur/about/",
-                    // Add other cities as needed
-                };
-                // Set the URL based on the user's city
-                const cityURL = cityToURLMap[userCity] || "/guntur/about/"; 
-                document.getElementById("aboutLink").href = cityURL;
-            })
-            .catch(error => console.error('Error fetching location:', error));
-        }
-    
-        // Call the function when the page loads
-        window.onload = setLocationBasedURL;
-    </script>
-    
-    <script>
-        // Function to check if a cookie exists
-        function getCookie(name) {
-            const value = "; " + document.cookie;
-            const parts = value.split("; " + name + "=");
-            if (parts.length === 2) return parts.pop().split(";").shift();
-        }
-    
-        // Function to set a cookie
-        function setCookie(name, value, days) {
-            const date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            const expires = "expires=" + date.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";path=/";
-        }
-    
-        // Show cookie consent banner if not accepted
-        window.onload = function() {
-            if (!getCookie("cookieConsent")) {
-                document.getElementById("cookieConsent").style.display = "block";
+            // Location-based URL
+            function setLocationBasedURL() {
+                fetch('https://ip-api.com/json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const userCity = data.city.toLowerCase();
+                        const cityToURLMap = {
+                            "hyderabad": "/hyderabad/about/",
+                            "vijayawada": "/guntur/about/"
+                        };
+                        const cityURL = cityToURLMap[userCity] || "/guntur/about/";
+                        const aboutLink = document.getElementById("aboutLink");
+                        if (aboutLink) aboutLink.href = cityURL;
+                    })
+                    .catch(error => console.error('Error fetching location:', error));
             }
-        };
-    
-        // Accept cookies and hide the banner
-        document.getElementById("acceptCookies").onclick = function() {
-            setCookie("cookieConsent", "true", 365); // Set cookie for 1 year
-            document.getElementById("cookieConsent").style.display = "none";
-        };
+            setLocationBasedURL();
+
+            // Cookie Consent
+            function getCookie(name) {
+                const value = "; " + document.cookie;
+                const parts = value.split("; " + name + "=");
+                if (parts.length === 2) return parts.pop().split(";").shift();
+            }
+            function setCookie(name, value, days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                document.cookie = name + "=" + value + ";expires=" + date.toUTCString() + ";path=/";
+            }
+            const cookieBanner = document.getElementById("cookieConsent");
+            if (!getCookie("cookieConsent") && cookieBanner) cookieBanner.style.display = "block";
+            const acceptBtn = document.getElementById("acceptCookies");
+            if (acceptBtn) acceptBtn.onclick = function () {
+                setCookie("cookieConsent", "true", 365);
+                if (cookieBanner) cookieBanner.style.display = "none";
+            };
+        });
     </script>
     <style>
         #cookieConsent {
             font-family: Arial, sans-serif;
             z-index: 9999;
-          }
-          
-          #cookieConsent button {
+        }
+        #cookieConsent button {
             margin-left: 20px;
             border-radius: 5px;
-          }
+        }
     </style>
 </body>
 

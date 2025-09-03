@@ -8952,6 +8952,9 @@ input, textarea {
   }
 }
 @media (max-width: 991px) {
+  .black .mobile-nav__toggler-bars {
+    background-color:var(--digihub-primary, #1A1A1A)!important;
+  }
   .footer-three__info-box {
     padding-left: 0px;
   }
