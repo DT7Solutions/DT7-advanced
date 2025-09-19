@@ -11,6 +11,7 @@ from .views import ( Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Priv
 urlpatterns = [
     path('', Home , name='home'),
     path('guntur/about/', About , name='about'),
+    path('llms.txt', TemplateView.as_view(template_name="uifiles/llms.txt", content_type="text/plain"), name='llms.txt'),
     path('robots.txt', TemplateView.as_view(template_name="uifiles/robots.txt", content_type="text/plain"), name='robots.txt'),
     path('sitemap.xml', TemplateView.as_view(template_name="uifiles/sitemap.xml", content_type="text/xml"), name='sitemap.xml'),
     path('hyderabad/about/', hyd_About, name='about'),
