@@ -68,3 +68,8 @@
     color: #EA4723!important;
     background-color: rgba(var(--digihub-base-rgb, 234, 71, 35), 0.1)!important;
 }
+.cta-two {
+    position: relative;
+    background-color: #ea4723;
+    padding: 20px 0 20px;
+}

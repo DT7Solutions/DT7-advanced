@@ -117,8 +117,8 @@ def MobilePrivacypolicy(request):
     return render(request, 'uifiles/mobile-privacy-policy.html' ,{'navbar':'Home'})
 def Termsandconditions(request):
     return render(request, 'uifiles/termsconditions.html')
-def Privacypolicy(request):
-    return render(request, 'uifiles/privacy-policy.html')
+# def Privacypolicy(request):
+#     return render(request, 'uifiles/Privacypolicy.html')
 def Mobileprivacypolicy(request):
     return render(request, 'uifiles/mobile-privacy-policy.html')
 
