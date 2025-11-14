@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse,HttpResponse
-from .models import FormsData,BlogPost,Category
+from .models import *
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.core.paginator import Paginator
@@ -125,6 +125,58 @@ def Mobileprivacypolicy(request):
 def productshoot(request):
     return render(request, 'uifiles/Product-shoot.html',{'navbar':'Solutions'})
 
+# Carrer page views 
+def Carrer(request):
+    jobpost = JobPost.objects.filter(status=1).order_by('-Id')
+    # allposts = BlogPost.objects.all()
+    paginator = Paginator(jobpost, 6) 
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+    return render(request, 'uifiles/carrer.html',{'jobs':posts,'posts':posts,'page':page,'navbar':'Carrer'})
+
+def Carrerdetails(request,id):
+    job_item = JobPost.objects.filter(Id=id).first()
+
+    if not job_item:
+        return HttpResponse("Job Not Found", status=404)
+
+    context = {
+        "job_item": job_item,
+        "meta_title": job_item.MetaTitle,
+        "meta_description": job_item.MetaDescription,
+        "meta_tags": job_item.MetaKeywords,
+        "canonical_url": f"career/{job_item.Id}/"
+    }
+
+    return render(request, "uifiles/carrer-details.html", context)
+
+@csrf_exempt
+def apply_job_ajax(request):
+    if request.method == "POST":
+        full_name = request.POST.get("full_name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
+        job_title = request.POST.get("job_title")
+        resume = request.FILES.get("resume")
+
+        if not resume:
+            return JsonResponse({"status": "error", "message": "Resume is required"}, status=400)
+
+        JobApplication.objects.create(
+            full_name=full_name,
+            email=email,
+            message=message,
+            job_title=job_title,
+            resume=resume
+        )
+
+        return JsonResponse({"status": "success", "message": "Application submitted successfully!"})
+
+    return JsonResponse({"status": "error", "message": "Invalid request"}, status=400)
+
+
+
+
 def page_not_found_view(request, exception):
     return render(request, 'uifiles/404.html', status=404)
     
@@ -239,3 +291,6 @@ def my_view(request):
 
     # Pass the city to the context, which will be inherited by base.html
     return render(request, 'some_template.html', {'city': city})
+
+
+

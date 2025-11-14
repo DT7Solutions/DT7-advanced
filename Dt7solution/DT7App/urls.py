@@ -1,8 +1,9 @@
 from django.urls import path
 from django.views.generic import TemplateView
-from .views import ( Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Privacypolicy,Projectdetails,Digitalmarketing,
-                    websitedesign,PaidAdvertising,Brandidentity,WhatsAppPromotion,EmailMarketing,EcommerceListing,Privacypolicy,
-                    productshoot,Mobileprivacypolicy,Termsandconditions,Seo, hyd_About,brandmaterials,logos,web_designing_in_vijayawada,web_designing_in_guntur,web_development_in_hyderabad )
+from .views import *
+# ( Home,About,Blog,Solutions,Projects,Contact,Blogdetails,Privacypolicy,Projectdetails,Digitalmarketing,
+#                     websitedesign,PaidAdvertising,Brandidentity,WhatsAppPromotion,EmailMarketing,EcommerceListing,Privacypolicy,
+#                     productshoot,Mobileprivacypolicy,Termsandconditions,Seo, hyd_About,brandmaterials,logos,web_designing_in_vijayawada,web_designing_in_guntur,web_development_in_hyderabad )
 
 
 
@@ -16,6 +17,9 @@ urlpatterns = [
     path('sitemap.xml', TemplateView.as_view(template_name="uifiles/sitemap.xml", content_type="text/xml"), name='sitemap.xml'),
     path('hyderabad/about/', hyd_About, name='about'),
     path('blog/', Blog , name='blog'),
+    path('carrer/', Carrer , name='carrer'),
+    path('carrer/<int:id>/', Carrerdetails, name='carrerdetails'),
+    path("apply-job/", apply_job_ajax, name="apply_job_ajax"),
     path('solutions/', Solutions , name='solutions'),
     path('digital-marketing-services-in-guntur/', Digitalmarketing , name='digital-marketing-services-in-guntur'),
     path('unbeatable-local-seo-services-in-guntur-best-provider/',Seo, name='seo'),

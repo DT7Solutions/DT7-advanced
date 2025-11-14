@@ -1,0 +1,314 @@
+<title>Custom Web Development Agency in Guntur & Hyderabad | Dt7 </title>
+<meta name="description"
+    content="Explore Dt7, the top custom web development agency in Guntur & Hyderabad. Get tailored solutions that elevate your online presence.">
+<meta name="keywords"
+    content="Custom Web Development Agency,Custom Web Development Agency in guntur, Custom Web Development Agency in hyderabad">
+<link rel="canonical" href="https://dt7.agency/carrer/">
+
+{% extends 'uifiles/subase.html' %}
+{% load static %}
+{% load time_filters %}
+{% block content %}
+
+<!-- /.preloader -->
+<div class="page-wrapper">
+    <!-- Page Header Start -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header__content">
+                <h1 class="page-header__title wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                    Carrers</h1>
+                <ul class="digihub-breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li>/</li>
+                    <li><span>Carrer</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- Page Header End -->
+
+    <!-- Blog One Start -->
+    <section class="blog-one career-section pt-5 pb-5">
+        <div class="container">
+            <div class="blog-one__sec-title sec-title wow animated fadeIn mb-5" data-wow-delay="0.1s"
+                data-wow-duration="1500ms">
+                <p class="sec-title__top">Join Our Team</p>
+                <h3 class="blog-one__heading sec-title__heading mb-5" style="font-size: 38px;">Explore exciting career
+                    opportunities and grow with us</h3>
+            </div>
+    
+            <div class="main-row">
+                <div class="row justify-content-center">
+                    {% for jobitem in jobs %}
+                    <div class="col-xl-10 col-lg-11 col-md-12 wow animated fadeInUp mb-4" data-wow-delay="0.1s"
+                        data-wow-duration="1500ms">
+                        <div class="career-card">
+                            <div class="career-card__header">
+                                <div class="career-card__logo">
+                                    <img src="{% static 'assets/images/logowhite.png' %}" alt="Company Logo"
+                                        class="career-logo">
+                                </div>
+                                <div class="career-card__meta">
+                                    <span class="career-badge career-badge--new">New</span>
+                                    <span class="career-date">
+                                        <i class="far fa-calendar-alt"></i> {{ jobitem.PostedDate|time_ago }}
+                                    </span>
+                                </div>
+                            </div>
+    
+                            <div class="career-card__body">
+                                <h4 class="career-card__title">{{ jobitem.Title }}</h4>
+                                <p>{{ jobitem.ShortDescription }}</p>
+    
+                                <div class="career-card__details">
+                                    <div class="career-detail-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>{{ jobitem.Location }}</span>
+                                    </div>
+                                    <div class="career-detail-item">
+                                        <i class="fas fa-solid fa-laptop-code"></i>
+                                        <span class="salary-amount">{{ jobitem.Department }} | {{ jobitem.JobType}}</span>
+                                    </div>
+                                    <div class="career-detail-item career-salary">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <span class="salary-amount">{{ jobitem.Salary }}</span>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="career-card__footer">
+                                <div class="career-author">
+                                    <i class="far fa-user"></i>
+                                    <span>Posted by {{ jobitem.PostedBy }}</span>
+                                </div>
+                                <div class="career-actions">
+                                    <a href="/carrer/{{ jobitem.Id }}/"
+                                        class="blog-page__blog-btn digihub-btn digihub-btn--secondary"
+                                        title="Learn more about {{ jobitem.Title }}">
+                                        Browse Job <span></span><span></span><span></span><span></span>
+                                    </a>
+                                    <!-- <a href="/blog/{{ jobitem.Sluglink }}" class="blog-page__blog-btn digihub-btn digihub-btn--secondary"
+                                                                                title="Read More about {{ jobitem.Title }}">Apply
+                                                                                <span></span><span></span><span></span><span></span></a> -->
+                                    <a href="#" class="blog-page__blog-btn digihub-btn digihub-btn--secondary"
+                                        data-bs-toggle="modal" data-bs-target="#applyJobModal"
+                                        data-jobtitle="{{ jobitem.Title }}">
+                                        Apply Now <span></span><span></span><span></span><span></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- apply job popup model  -->
+                    <div class="modal fade" id="applyJobModal" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+    
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="applyJobModalTitle">Apply for</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+    
+                                <div class="modal-body">
+                                    <form id="applyForm" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+    
+                                        <!-- Hidden values to send -->
+                                        <input type="hidden" id="jobTitleField" name="job_title">
+    
+                                        <div class="mb-3">
+                                            <label>Your Name</label>
+                                            <input type="text" id="full_name" class="job-form__form-input form-control" required
+                                                name="full_name" placeholder="Your Name">
+                                        </div>
+    
+                                        <div class="mb-3">
+                                            <label>Email Address</label>
+                                            <input type="email" id="email" class="job-form__form-input form-control" required
+                                                name="email" placeholder="Email Address">
+                                        </div>
+    
+                                        <div class="mb-3">
+                                            <label>Message</label>
+                                            <textarea name="message" id="message" required class="job-form__form-input form-control"
+                                                rows="4" placeholder="Message sent to the employer"></textarea>
+                                        </div>
+    
+                                        <div class="mb-3">
+                                            <label>Upload Resume</label>
+                                            <input type="file" required name="resume" id="resume_file" class="form-control">
+                                        </div>
+    
+                                        <button type="button" class="btn btn-sm digihub-btn digihub-btn--secondary"
+                                            onclick="jobapplication('{{ jobitem.Title }}')">
+                                            Submit Your Application <span></span><span></span><span></span><span></span>
+                                        </button>
+                                    </form>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end apply jon poup model -->
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Pagination Start -->
+    <div class="pagination-wrapper pt-5 pb-5 text-center" style="background-color: #f6f6f6;">
+        <ul class="pagination justify-content-center" style="margin-bottom: 0rem;">
+
+            {% if jobs.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ jobs.previous_page_number }}" aria-label="Previous Page"
+                    title="Go to Previous Page">
+                    &laquo; Previous
+                </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <span class="page-link" aria-disabled="true" title="No Previous Page">&laquo; Previous</span>
+            </li>
+            {% endif %}
+
+            {% for num in jobs.paginator.page_range %}
+            {% if jobs.number == num %}
+            <li class="page-item active" aria-current="page">
+                <span class="page-link" title="Current Page {{ num }}">{{ num }}</span>
+            </li>
+            {% else %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ num }}" title="Go to Page {{ num }}">{{ num }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+            {% if jobs.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ blog.next_page_number }}" aria-label="Next Page"
+                    title="Go to Next Page">
+                    Next &raquo;
+                </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <span class="page-link" aria-disabled="true" title="No Next Page">Next &raquo;</span>
+            </li>
+            {% endif %}
+
+        </ul>
+    </div>
+    <!-- Pagination End -->
+
+    <!--Enquiry Form Popup section start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title fs-5 " style="text-align:center;" id="exampleModalLabel"> Enquiry Form</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <form action="#" id="popresetting" method="POST" class="container-fluid">
+                        {% csrf_token %}
+                        <div class="row   mb-3">
+                            <div class="col-md-6 ">
+                                <input type="text" class="comment-form__form-input " required id="exampleInputName"
+                                    name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" class="comment-form__form-input" required id="exampleInputPhone"
+                                    name="exampleInputPhone" placeholder="Phone number">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <input type="email" class="comment-form__form-input" required id="exampleInputEmail"
+                                    name="exampleInputEmail" placeholder="Email" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="col-md-12 mb-2 " data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <label>Services Interested In:</label><br>
+                                <div class="d-flex">
+                                    <div class="col-md-6" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                        <div class="form-group">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="digitalMarketingone"
+                                                    name="servicesInterestedIn" value="Digital Marketing">
+                                                <label class="form-check-label" for="digitalMarketingone">Digital
+                                                    Marketing</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox"
+                                                    id="whatsappMarketingone" name="servicesInterestedIn"
+                                                    value="whatsappMarketing">
+                                                <label class="form-check-label" for="whatsappMarketingone">WhatsApp
+                                                    Marketing</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="logoBrandingone"
+                                                    name="servicesInterestedIn" value="logoBranding">
+                                                <label class="form-check-label" for="logoBrandingone">Logo
+                                                    Branding</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="emailMarketingone"
+                                                    name="servicesInterestedIn" value="emailMarketing">
+                                                <label class="form-check-label" for="emailMarketingone">Email
+                                                    Marketing</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                        <div class="form-group">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="webDesigningone"
+                                                    name="servicesInterestedIn" value="webDesigning">
+                                                <label class="form-check-label" for="webDesigningone">Web Designing
+                                                    (UI/UX)</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox"
+                                                    id="thirdPartyListingone" name="servicesInterestedIn"
+                                                    value="thirdPartyListing">
+                                                <label class="form-check-label" for="thirdPartyListingone">3rd Party
+                                                    Listing</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox"
+                                                    id="onlinePaidMarketingone" name="servicesInterestedIn"
+                                                    value="onlinePaidMarketing">
+                                                <label class="form-check-label" for="onlinePaidMarketingone">Online Paid
+                                                    Marketing</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="comment-form__form-input popup-messsge" required
+                                id="exampleInputMessageinfo" name="exampleInputMessageinfo"
+                                placeholder="Enter your messege" rows="3"></textarea>
+                        </div>
+                        <button type="submit" id="popupBtn"
+                            class="comment-form__form-btn btn btn-sm digihub-btn digihub-btn--secondary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Enquiry Form Popup section end -->
+
+
+
+
+    {% endblock %}

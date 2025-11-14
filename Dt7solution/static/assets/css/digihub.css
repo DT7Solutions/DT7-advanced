@@ -297,7 +297,7 @@
   outline: 0;
   position: relative!important;
   display: inline-block ;
-  padding: 15.5px 31px !important;
+  padding: 13px 31px !important;
   font-family: var(--heading-font, "Plus Jakarta Sans", sans-serif)!important;
   font-size: var(--digihub-size-md)!important;
   text-align: center!important;
@@ -2697,7 +2697,7 @@ input, textarea {
 # Page Header
 --------------------------------------------------------------*/
 .page-header {
-  padding: 261px 0 150px;
+  padding: 150px 0 150px !important;
   position: relative;
   background: linear-gradient(180deg, rgba(var( --digihub-base-rgb, 142, 197, 87), 0.33) 0%, rgba(var( --digihub-base-rgb, 142, 197, 87), 0) 100%);
 }
