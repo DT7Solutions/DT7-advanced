@@ -83,6 +83,7 @@ STATUS = (
 DEPARTMENT_CHOICES = [
     ('Web Design and Development', 'Web Design and Development'),
     ('Designers', 'Designers'),
+    ('Mobile App Developer', 'Mobile App Developer'),
     ('Social Media Marketing', 'Social Media Marketing'),
     ('E-commerce', 'E-commerce'),
     ('Email Marketing', 'Email Marketing'),

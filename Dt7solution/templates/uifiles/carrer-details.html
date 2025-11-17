@@ -198,7 +198,7 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h4 class="modal-title" id="applyJobModalTitle">Apply for {{ job_item.Title }}</h4>
+                    <h4 class="modal-title" id="applyJobModalTitle1">Apply for {{ job_item.Title }}</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
@@ -208,10 +208,9 @@
 
                         <!-- Hidden values to send -->
                         <input type="hidden" id="jobTitleField" name="job_title">
-                        <input type="hidden" id="jobSlugField" name="job_slug">
 
                         <div class="mb-3">
-                            <label>Your Name {{ job_item.Title }}</label>
+                            <label>Your Name</label>
                             <input type="text" class="job-form__form-input form-control" required name="full_name" id="full_name"
                                 placeholder="Your Name">
                         </div>
