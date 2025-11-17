@@ -43,5 +43,6 @@ urlpatterns = [
     path('web-development-company-in-hyderabad/', web_development_in_hyderabad , name='web-development-company-in-hyderabad'),
     path('web-designing-company-in-guntur/', web_designing_in_guntur , name='web-designing-company-in-guntur'),
     path('web-designing-company-in-vijayawada/', web_designing_in_vijayawada , name='web-designing-company-in-vijayawada'),
+    path('rss/', rss , name='rss'),
 ]
 

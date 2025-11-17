@@ -174,7 +174,8 @@ def apply_job_ajax(request):
 
     return JsonResponse({"status": "error", "message": "Invalid request"}, status=400)
 
-
+def rss(request):
+    return render(request, 'uifiles/rss.html')
 
 
 def page_not_found_view(request, exception):
