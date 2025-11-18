@@ -27,7 +27,6 @@ function jobapplication(jobtitle){
     formData.append("job_title", jobtitle);
     formData.append("resume", resume);;
 
-    alert('application submited sucessfully !')
     fetch("/apply-job/", {
         method: "POST",
         body: formData,
