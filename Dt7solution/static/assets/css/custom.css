@@ -363,3 +363,51 @@
   }
 }
 
+/* Requirements/Skills Badges */
+.career-card__requirements {
+    padding-top: 12px;
+    margin-top: 12px;
+}
+
+.career-card__requirements h6 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.skills-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.skill-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #ea4723; /* default color */
+    color: #fff;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.skill-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* Optional: alternate colors for better visual separation */
+.skill-badge:nth-child(4n+1) { background-color: #ea4723; }
+.skill-badge:nth-child(4n+2) { background-color: #ea4723 }
+.skill-badge:nth-child(4n+3) { background-color: #ea4723; }
+.skill-badge:nth-child(4n+4) { background-color: #ea4723; }
+
+@media (max-width: 768px) {
+    .skill-badge { font-size: 11px; padding: 4px 10px; }
+}
+
+

@@ -48,5 +48,9 @@ function jobapplication(jobtitle){
         alert("Something went wrong!");
     });
 }
+// phone validation in jobform 
+document.getElementById("phone").addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, "");
+});
 
 

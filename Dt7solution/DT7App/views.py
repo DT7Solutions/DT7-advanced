@@ -129,6 +129,8 @@ def productshoot(request):
 def Carrer(request):
     jobpost = JobPost.objects.filter(status=1).order_by('-Id')
     # allposts = BlogPost.objects.all()
+    for post in jobpost:
+        post.skills_list = [skill.strip() for skill in (post.Requirements or "").split(",") if skill.strip()]
     paginator = Paginator(jobpost, 6) 
     page = request.GET.get('page')
     posts = paginator.get_page(page)
@@ -149,6 +151,7 @@ def Carrerdetails(request,id):
     }
 
     return render(request, "uifiles/carrer-details.html", context)
+
 
 @csrf_exempt
 def apply_job_ajax(request):

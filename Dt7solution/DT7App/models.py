@@ -92,6 +92,7 @@ DEPARTMENT_CHOICES = [
     ('Performance Marketing', 'Performance Marketing'),
     ('Full Stack Developer', 'Full Stack Developer'),
 ]
+
 class JobPost(models.Model):
     Id = models.AutoField(primary_key=True)
     Title = models.CharField(max_length=225, default="Job Title")
@@ -106,7 +107,7 @@ class JobPost(models.Model):
         ('Internship', 'Internship'),
         ('Contract', 'Contract'),
     ], default='Full Time')
-    
+    Requirements = models.TextField(blank=True, null=True)
     Body = RichTextField(blank=True, null=True) 
     PostedBy = models.CharField(max_length=100, blank=True, null=True)
     PostedDate = models.DateTimeField(default=datetime.now)
@@ -128,6 +129,7 @@ class JobPost(models.Model):
 class JobApplication(models.Model):
     full_name = models.CharField(max_length=200)
     email = models.EmailField()
+    phone = models.CharField(max_length=13,null=True,default="")
     message = models.TextField()
     resume = models.FileField(upload_to='resumes/')
     job_title = models.CharField(max_length=250)

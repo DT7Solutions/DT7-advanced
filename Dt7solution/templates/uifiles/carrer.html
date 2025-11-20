@@ -38,123 +38,141 @@
                     opportunities and grow with us</h3>
             </div>
     
-            <div class="main-row">
-                <div class="row justify-content-center">
-                    {% for jobitem in jobs %}
-                    <div class="col-xl-10 col-lg-11 col-md-12 wow animated fadeInUp mb-4" data-wow-delay="0.1s"
-                        data-wow-duration="1500ms">
-                        <div class="career-card">
-                            <div class="career-card__header">
-                                <div class="career-card__logo">
-                                    <img src="{% static 'assets/images/logowhite.png' %}" alt="Company Logo"
-                                        class="career-logo">
-                                </div>
-                                <div class="career-card__meta">
-                                    <span class="career-badge career-badge--new">New</span>
-                                    <span class="career-date">
-                                        <i class="far fa-calendar-alt"></i> {{ jobitem.PostedDate|time_ago }}
-                                    </span>
-                                </div>
-                            </div>
-    
-                            <div class="career-card__body">
-                                <h4 class="career-card__title">{{ jobitem.Title }}</h4>
-                                <p>{{ jobitem.ShortDescription }}</p>
-    
-                                <div class="career-card__details">
-                                    <div class="career-detail-item">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <span>{{ jobitem.Location }}</span>
+                <div class="main-row">
+                    <div class="row justify-content-center">
+                        {% for jobitem in jobs %}
+                        <div class="col-xl-10 col-lg-11 col-md-12 wow animated fadeInUp mb-4" data-wow-delay="0.1s"
+                            data-wow-duration="1500ms">
+                            <div class="career-card">
+                                <div class="career-card__header">
+                                    <div class="career-card__logo">
+                                        <img src="{% static 'assets/images/logowhite.png' %}" alt="Company Logo" class="career-logo">
                                     </div>
-                                    <div class="career-detail-item">
-                                        <i class="fas fa-solid fa-laptop-code"></i>
-                                        <span class="salary-amount">{{ jobitem.Department }} | {{ jobitem.JobType}}</span>
-                                    </div>
-                                    <div class="career-detail-item career-salary">
-                                        <i class="fas fa-dollar-sign"></i>
-                                        <span class="salary-amount">{{ jobitem.Salary }}</span>
+                                    <div class="career-card__meta">
+                                        <span class="career-badge career-badge--new">New</span>
+                                        <span class="career-date">
+                                            <i class="far fa-calendar-alt"></i> {{ jobitem.PostedDate|time_ago }}
+                                        </span>
                                     </div>
                                 </div>
-                            </div>
-    
-                            <div class="career-card__footer">
-                                <div class="career-author">
-                                    <i class="far fa-user"></i>
-                                    <span>Posted by {{ jobitem.PostedBy }}</span>
+                
+                                <div class="career-card__body">
+                                    <h4 class="career-card__title">{{ jobitem.Title }}</h4>
+                                    <p>{{ jobitem.ShortDescription }}</p>
+                
+                                    <div class="career-card__details">
+                                        <div class="career-detail-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>{{ jobitem.Location }}</span>
+                                        </div>
+                                        <div class="career-detail-item">
+                                            <i class="fas fa-solid fa-laptop-code"></i>
+                                            <span class="salary-amount">{{ jobitem.Department }} | {{ jobitem.JobType}}</span>
+                                        </div>
+                                        <div class="career-detail-item career-salary">
+                                            <i class="fas fa-rupee-sign"></i>
+                                            <span class="salary-amount">{{ jobitem.Salary }}</span>
+                                        </div>
+                                    </div>
+                
+                                    <!-- Separate Required Skills Section -->
+                                    {% if jobitem.skills_list %}
+                                    <div class="career-card__requirements">
+                                        <h6>Required Skills:</h6>
+                                        <div class="skills-badges">
+                                            {% for skill in jobitem.skills_list %}
+                                            <span class="skill-badge">{{ skill }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
                                 </div>
-                                <div class="career-actions">
-                                    <a href="/career/{{ jobitem.Id }}/"
-                                        class="blog-page__blog-btn digihub-btn digihub-btn--secondary"
-                                        title="Learn more about {{ jobitem.Title }}">
-                                        Browse Job <span></span><span></span><span></span><span></span>
-                                    </a>
-                                    <!-- <a href="/blog/{{ jobitem.Sluglink }}" class="blog-page__blog-btn digihub-btn digihub-btn--secondary"
-                                                                                title="Read More about {{ jobitem.Title }}">Apply
-                                                                                <span></span><span></span><span></span><span></span></a> -->
-                                    <a href="#" class="blog-page__blog-btn digihub-btn digihub-btn--secondary"
-                                        data-bs-toggle="modal" data-bs-target="#applyJobModal"
-                                        data-jobtitle="{{ jobitem.Title }}">
-                                        Apply Now <span></span><span></span><span></span><span></span>
-                                    </a>
+                
+                
+                                <div class="career-card__footer ">
+                                    <div class="career-author">
+                                        <i class="far fa-user"></i>
+                                        <span>Posted by {{ jobitem.PostedBy }}</span>
+                                    </div>
+                                    <div class="career-actions">
+                                        <a href="/career/{{ jobitem.Id }}/"
+                                            class="blog-page__blog-btn digihub-btn digihub-btn--secondary"
+                                            title="Learn more about {{ jobitem.Title }}">
+                                            Browse Job <span></span><span></span><span></span><span></span>
+                                        </a>
+                                        <!-- <a href="/blog/{{ jobitem.Sluglink }}" class="blog-page__blog-btn digihub-btn digihub-btn--secondary"
+                                                                                                title="Read More about {{ jobitem.Title }}">Apply
+                                                                                                <span></span><span></span><span></span><span></span></a> -->
+                                        <a href="#" class="blog-page__blog-btn digihub-btn digihub-btn--secondary"
+                                            data-bs-toggle="modal" data-bs-target="#applyJobModal" data-jobtitle="{{ jobitem.Title }}">
+                                            Apply Now <span></span><span></span><span></span><span></span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-    
-                    <!-- apply job popup model  -->
-                    <div class="modal fade" id="applyJobModal" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-    
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id="applyJobModalTitle">Apply for</h4>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                
+                        <!-- apply job popup model  -->
+                        <div class="modal fade" id="applyJobModal" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="applyJobModalTitle">Apply for</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                
+                                    <div class="modal-body">
+                                        <form id="applyForm" method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                
+                                            <!-- Hidden values to send -->
+                                            <input type="hidden" id="jobTitleField" name="job_title">
+                
+                                            <div class="mb-3">
+                                                <label>Your Name</label>
+                                                <input type="text" id="full_name" class="job-form__form-input form-control" required
+                                                    name="full_name" placeholder="Your Name">
+                                            </div>
+                
+                                            <div class="mb-3">
+                                                <label>Email Address</label>
+                                                <input type="email" id="email" class="job-form__form-input form-control" required
+                                                    name="email" placeholder="Email Address">
+                                            </div>
+                
+                                            <div class="mb-3">
+                                                <label>Phone Number</label>
+                                                <input type="tel" id="phone" class="job-form__form-input form-control" required
+                                                    name="phone" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10"
+                                                    title="Enter 10-digit phone number">
+                                            </div>
+                
+                                            <div class="mb-3">
+                                                <label>Message</label>
+                                                <textarea name="message" id="message" required class="job-form__form-input form-control"
+                                                    rows="4" placeholder="Message sent to the employer"></textarea>
+                                            </div>
+                
+                                            <div class="mb-3">
+                                                <label>Upload Resume</label>
+                                                <input type="file" required name="resume" id="resume_file" class="form-control">
+                                            </div>
+                
+                                            <button type="button" class="btn btn-sm digihub-btn digihub-btn--secondary"
+                                                onclick="jobapplication('{{ jobitem.Title }}')">
+                                                Submit Your Application <span></span><span></span><span></span><span></span>
+                                            </button>
+                                        </form>
+                                    </div>
+                
                                 </div>
-    
-                                <div class="modal-body">
-                                    <form id="applyForm" method="POST" enctype="multipart/form-data">
-                                        {% csrf_token %}
-    
-                                        <!-- Hidden values to send -->
-                                        <input type="hidden" id="jobTitleField" name="job_title">
-    
-                                        <div class="mb-3">
-                                            <label>Your Name</label>
-                                            <input type="text" id="full_name" class="job-form__form-input form-control" required
-                                                name="full_name" placeholder="Your Name">
-                                        </div>
-    
-                                        <div class="mb-3">
-                                            <label>Email Address</label>
-                                            <input type="email" id="email" class="job-form__form-input form-control" required
-                                                name="email" placeholder="Email Address">
-                                        </div>
-    
-                                        <div class="mb-3">
-                                            <label>Message</label>
-                                            <textarea name="message" id="message" required class="job-form__form-input form-control"
-                                                rows="4" placeholder="Message sent to the employer"></textarea>
-                                        </div>
-    
-                                        <div class="mb-3">
-                                            <label>Upload Resume</label>
-                                            <input type="file" required name="resume" id="resume_file" class="form-control">
-                                        </div>
-    
-                                        <button type="button" class="btn btn-sm digihub-btn digihub-btn--secondary"
-                                            onclick="jobapplication('{{ jobitem.Title }}')">
-                                            Submit Your Application <span></span><span></span><span></span><span></span>
-                                        </button>
-                                    </form>
-                                </div>
-    
                             </div>
                         </div>
+                        <!-- end apply jon poup model -->
+                        {% endfor %}
                     </div>
-                    <!-- end apply jon poup model -->
-                    {% endfor %}
                 </div>
-            </div>
         </div>
     </section>
 

@@ -28,7 +28,7 @@ class BlogFAQAdmin(admin.ModelAdmin):
     list_display = ('blog', 'question', 'answer')
 admin.site.register(BlogFAQ, BlogFAQAdmin)
 
-    
+  
 class AdminHappyJobPost(admin.ModelAdmin):
     list_display=('Id','Title','Location','Experience','PostedDate','status')
     list_filter = ["PostedDate",'status']
