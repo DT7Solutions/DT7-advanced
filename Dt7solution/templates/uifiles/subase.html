@@ -100,7 +100,7 @@
                         </li>
                         <li><a class="nav-btn {% if navbar == 'Blog' %} active {% endif %}" href="/blog/" title="Read Our Latest Blogs">Blogs</a></li>
                         <li><a class="nav-btn {% if navbar == 'Contact' %} active {% endif %}" href="/contact/" title="Contact DT7.Agency">Contact</a></li>
-                        <li><a class="nav-btn {% if navbar == 'Careers' %} active {% endif %}" href="/career/" title="Contact DT7.Agency">Careers</a></li>
+                        <li><a class="nav-btn {% if navbar == 'Careers' %} active {% endif %}" href="/careers/" title="Contact DT7.Agency">Careers</a></li>
                     </ul>
                     <div class="main-menu-one__right black">
                         <button type="button" class="main-menu-one__bar mobile-nav__toggler" aria-label="Toggle mobile navigation menu">
@@ -217,7 +217,7 @@
                                     <a href="/contact/" class="footer-one__link" title="Contact DT7.Agency">Contact</a>
                                 </li>
                                 <li class="footer-one__link-item">
-                                    <a href="/career/" class="footer-one__link" title="Contact DT7.Agency">Career</a>
+                                    <a href="/careers/" class="footer-one__link" title="Contact DT7.Agency">Careers</a>
                                 </li>
                             </ul>
                         </div>
@@ -345,7 +345,7 @@
         ✔ EmailJS Public Key & Form-based integration is used
             → EmailJS Public Key:
                 rTBlN3RKunurTmvyP
-            → popreset form
+            → popresetting form
                 - Purpose: Modal-based reset / popup form
                 - Service ID: service_dshik0y
                 - Template ID: template_5l9u29w
@@ -368,12 +368,12 @@
         })();
     </script>
     <script>
-        document.getElementById("popreset").addEventListener("submit", function (e) {
+        document.getElementById("popresetting").addEventListener("submit", function (e) {
             e.preventDefault();
             emailjs.sendForm('service_dshik0y', 'template_5l9u29w', this)
                 .then(function (response) {
                     alert("Message sent successfully!");
-                    document.getElementById("popreset").reset();
+                    document.getElementById("popresetting").reset();
                     // Close the modal
                     var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
                     modal.hide();
@@ -424,7 +424,7 @@
     <script>
         // Example form validation using jQuery
         $(document).ready(function () {
-            $('#popreset').submit(function (event) {
+            $('#popresetting').submit(function (event) {
                 var form = $(this);
                 if (form[0].checkValidity() === false) {
                     event.preventDefault();

@@ -64,19 +64,18 @@
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function () {
             emailjs.init("rTBlN3RKunurTmvyP");
-            var form = document.getElementById("popreset");
+            var form = document.getElementById("popresetting");
             if (form) {
                 form.addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    emailjs.sendForm('service_dshik0y', 'template_5l9u29w', this)
-                        .then(function (response) {
-                            alert("Message sent successfully!");
-                            form.reset();
-                            var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-                            if (modal) modal.hide();
-                        }, function (error) {
-                            alert("Failed to send message. Please try again.");
-                        });
+                    e.preventDefault(); // stop temporarily
+                    var currentForm = this;
+                    emailjs.sendForm( 'service_dshik0y', 'template_5l9u29w', currentForm ).then(function () {
+                        // After EmailJS success → submit to Django
+                        currentForm.submit();
+                    }, function (error) {
+                        alert("Failed to send message. Please try again.");
+                        console.error(error);
+                    });
                 });
             }
         });
@@ -127,7 +126,7 @@
                         </li>
                         <li><a class="nav-btn {% if navbar == 'Blog' %} active {% endif %}" href="/blog/" title="Read Our Latest Blogs">Blogs</a></li>
                         <li><a class="nav-btn {% if navbar == 'Contact' %} active {% endif %}" href="/contact/" title="Contact DT7.Agency">Contact</a></li>
-                        <li><a class="nav-btn {% if navbar == 'Careers' %} active {% endif %}" href="/career/" title="Contact DT7.Agency">Careers</a></li>
+                        <li><a class="nav-btn {% if navbar == 'Careers' %} active {% endif %}" href="/careers/" title="Contact DT7.Agency">Careers</a></li>
                     </ul>
                     <div class="main-menu-one__right black">
                         <button type="button" class="main-menu-one__bar mobile-nav__toggler" aria-label="Toggle mobile navigation menu">
@@ -244,7 +243,7 @@
                                     <a href="/contact/" class="footer-one__link" title="Contact DT7.Agency">Contact</a>
                                 </li>
                                 <li class="footer-one__link-item">
-                                    <a href="/career/" class="footer-one__link" title="Contact DT7.Agency">Career</a>
+                                    <a href="/careers/" class="footer-one__link" title="Contact DT7.Agency">Careers</a>
                                 </li>
                             </ul>
                         </div>
@@ -388,7 +387,7 @@
     <script>
         // Example form validation using jQuery
         $(document).ready(function () {
-            $('#popreset').submit(function (event) {
+            $('#popresetting').submit(function (event) {
                 var form = $(this);
                 if (form[0].checkValidity() === false) {
                     event.preventDefault();

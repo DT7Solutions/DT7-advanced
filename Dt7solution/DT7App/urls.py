@@ -17,7 +17,7 @@ urlpatterns = [
     path('sitemap.xml', TemplateView.as_view(template_name="uifiles/sitemap.xml", content_type="text/xml"), name='sitemap.xml'),
     path('hyderabad/about/', hyd_About, name='about'),
     path('blog/', Blog , name='blog'),
-    path('career/', Carrer , name='career'),
+    path('careers/', Carrers , name='careers'),
     path('career/<int:id>/', Carrerdetails, name='carrerdetails'),
     path("apply-job/", apply_job_ajax, name="apply_job_ajax"),
     path('solutions/', Solutions , name='solutions'),

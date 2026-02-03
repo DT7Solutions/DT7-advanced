@@ -126,7 +126,7 @@ def productshoot(request):
     return render(request, 'uifiles/Product-shoot.html',{'navbar':'Solutions'})
 
 # Carrer page views 
-def Carrer(request):
+def Carrers(request):
     jobpost = JobPost.objects.filter(status=1).order_by('-Id')
     # allposts = BlogPost.objects.all()
     for post in jobpost:
@@ -134,7 +134,7 @@ def Carrer(request):
     paginator = Paginator(jobpost, 6) 
     page = request.GET.get('page')
     posts = paginator.get_page(page)
-    return render(request, 'uifiles/carrer.html',{'jobs':posts,'posts':posts,'page':page,'navbar':'Carrer'})
+    return render(request, 'uifiles/carrers.html',{'jobs':posts,'posts':posts,'page':page,'navbar':'Carrers'})
 
 def Carrerdetails(request,id):
     job_item = JobPost.objects.filter(Id=id).first()
@@ -225,7 +225,7 @@ def page_not_found_view(request, exception):
 #     else:
 #         return render(request, 'uifiles/contact.html',{'navbar':'Contact'})
 
-@csrf_exempt
+# @csrf_exempt
 def Contact(request):
     if request.method == "POST":
         try:
