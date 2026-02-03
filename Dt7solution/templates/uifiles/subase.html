@@ -249,7 +249,7 @@
                     <div class="row">
                         <div class="footer-one__bottom-col-one col-lg-5">
                             <div class="footer-one__copyright">
-                                <p class="footer-one__copyright-text">&copy; Copyrights  2025 | Designed by <a href="https://dt7.agency" target="_blank" rel="noopener noreferrer" title="Visit DT7.Agency Official Website"><b>Dt7.Agency</b></a></p>
+                                <p class="footer-one__copyright-text">&copy; Copyrights <script>document.write(new Date().getFullYear());</script> | Designed by <a href="https://dt7.agency" target="_blank" rel="noopener noreferrer" title="Visit DT7.Agency Official Website"><b>Dt7.Agency</b></a></p>
                             </div>
                         </div>
                         <div class="footer-one__bottom-col-two col-lg-7">
@@ -336,6 +336,31 @@
     <!-- template js -->
     <script src="{% static 'assets/js/digihub.js' %}"></script>
 
+    <!-- =========================================================
+        EMAILJS INTEGRATION NOTE (IMPORTANT)
+        ---------------------------------------------------------
+        ✔ Email service is configured using EmailJS
+        ✔ All emails are delivered to: dt7.agency@gmail.com
+        ✔ Two separate EmailJS services & templates are used
+        ✔ EmailJS Public Key & Form-based integration is used
+            → EmailJS Public Key:
+                rTBlN3RKunurTmvyP
+            → popreset form
+                - Purpose: Modal-based reset / popup form
+                - Service ID: service_dshik0y
+                - Template ID: template_5l9u29w
+            → myForm form
+                - Purpose: Main contact / submission form
+                - Service ID: service_1uf441k
+                - Template ID: template_gespujh
+        ---------------------------------------------------------
+        NOTE:
+        If email stops working in future:
+        - Check EmailJS dashboard
+        - Verify dt7.agency@gmail.com is still connected
+        - Ensure service & template IDs are unchanged
+    ========================================================== -->
+
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
@@ -372,6 +397,7 @@
                 });
         });
     </script>
+
     <script src="{% static 'assets/js/Contact.js' %}"></script>
     <script src="{% static 'assets/js/jobapplication.js' %}"></script>
     <script>
