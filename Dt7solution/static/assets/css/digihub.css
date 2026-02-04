@@ -8013,10 +8013,10 @@ input, textarea {
 .blog-details-page__social-link--fb svg path:nth-child(4) {
   fill: var(--digihub-white, #FFFFFF);
 }
-.blog-details-page__social-link--twitter svg path:first-child {
+.blog-details-page__social-link--x svg path:first-child {
   fill: var(--digihub-special, #8EC557);
 }
-.blog-details-page__social-link--twitter svg path:nth-child(2) {
+.blog-details-page__social-link--x svg path:nth-child(2) {
   fill: var(--digihub-white, #FFFFFF);
 }
 .blog-details-page__social-link:hover {
