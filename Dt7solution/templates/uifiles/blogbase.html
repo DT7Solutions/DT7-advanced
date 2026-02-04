@@ -50,6 +50,9 @@
     <link rel="stylesheet" href="{% static 'assets/vendors/owl-carousel/css/owl.theme.default.min.css' %}" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}" media="print" onload="this.media='all'">
 
+    <!-- Calendly Widget CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0X90KPHTQR"></script>
     <script>
@@ -331,6 +334,25 @@
     </div>
     <!-- End Mobile Nav End -->
 
+    <!-- Mobile Footer Menu -->
+    <div class="mobile-footer-menu">
+        <div class="mobile-footer-menu__container">
+            <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dt7-agency'});return false;" class="mobile-footer-menu__item" aria-label="Book 1:1 Consultation">
+                <i class="far fa-calendar-check mobile-footer-menu__icon"></i>
+                <span class="mobile-footer-menu__text">Book 1:1 <br> Consultation</span>
+            </a>
+            <a href="tel:+917382494888" class="mobile-footer-menu__item mobile-footer-menu__item--center" aria-label="Talk to Expert">
+                <i class="fas fa-phone-alt mobile-footer-menu__icon"></i>
+                <span class="mobile-footer-menu__text mt-4">Talk to an Expert</span>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=918885782778&text=Hi!%20I%20need%20Assistance" target="_blank" class="mobile-footer-menu__item" aria-label="Chat on WhatsApp">
+                <i class="fab fa-whatsapp mobile-footer-menu__icon"></i>
+                <span class="mobile-footer-menu__text">Chat On <br> WhatsApp</span>
+            </a>
+        </div>
+    </div>
+    <!-- End Mobile Footer Menu -->
+
     <!-- Scroll to top -->
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top" title="Scroll to top" aria-label="Scroll to top">
         <i class="fas fa-long-arrow-alt-up" aria-hidden="true"></i>
@@ -358,6 +380,9 @@
     <script src="{% static 'assets/vendors/gsap/three.min.js' %}"></script>
     <script src="{% static 'assets/vendors/gsap/hover.js' %}"></script>
     <script src="{% static 'assets/vendors/countdown/countdown.min.js' %}"></script>
+
+    <!-- Calendly Widget Script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
     <!-- template js -->
     <script src="{% static 'assets/js/digihub.js' %}"></script>

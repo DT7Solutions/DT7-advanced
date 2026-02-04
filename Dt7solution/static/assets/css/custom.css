@@ -410,4 +410,80 @@
     .skill-badge { font-size: 11px; padding: 4px 10px; }
 }
 
-
+/*  Mobile Footer Menu Bar CSS*/
+.mobile-footer-menu { 
+    display: none; 
+    position: fixed; 
+    bottom: 1%; 
+    left: 2.5%; 
+    right: 2.5%; 
+    z-index: 9998; 
+}
+.mobile-footer-menu__container {
+    background: rgba(18, 18, 18, 0.75);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 25px;
+    padding: 12px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.08);
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+}
+.mobile-footer-menu__item {
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+.mobile-footer-menu__icon {
+    font-size: 26px;
+    transition: all 0.3s ease;
+}
+.mobile-footer-menu__text {
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.85;
+}
+.mobile-footer-menu__item:hover .mobile-footer-menu__icon {
+    transform: translateY(-4px) scale(1.1);
+    color: #ff6a3d;
+}
+.mobile-footer-menu__item:hover .mobile-footer-menu__text {
+    opacity: 1;
+}
+.mobile-footer-menu__item--center i {
+    background: linear-gradient(135deg, #ff6a3d, #ff3d6a);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 15px 40px rgba(255, 80, 80, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+@media (max-width: 991px) {
+    .scroll-to-top { bottom: 10% !important; right: 2.9% !important; }
+    .mobile-footer-menu__text br { display: none !important;}
+    .mobile-footer-menu { display: block; }
+    .mobile-footer-menu__text { font-size: 14px; }
+}
+@media (max-width:767px) {
+    .whatsapp-icon, .scroll-to-top  { display: none !important;}
+    .mobile-footer-menu__item--center i { top: -125%;}
+    .mobile-footer-menu__text { font-size: 13px; }
+}
