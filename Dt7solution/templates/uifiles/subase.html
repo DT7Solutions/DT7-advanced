@@ -361,68 +361,6 @@
     <!-- template js -->
     <script src="{% static 'assets/js/digihub.js' %}"></script>
 
-    <!-- =========================================================
-        EMAILJS INTEGRATION NOTE (IMPORTANT)
-        ---------------------------------------------------------
-        ✔ Email service is configured using EmailJS
-        ✔ All emails are delivered to: dt7.agency@gmail.com
-        ✔ Two separate EmailJS services & templates are used
-        ✔ EmailJS Public Key & Form-based integration is used
-            → EmailJS Public Key:
-                rTBlN3RKunurTmvyP
-            → popresetting form
-                - Purpose: Modal-based reset / popup form
-                - Service ID: service_dshik0y
-                - Template ID: template_5l9u29w
-            → myForm form
-                - Purpose: Main contact / submission form
-                - Service ID: service_1uf441k
-                - Template ID: template_gespujh
-        ---------------------------------------------------------
-        NOTE:
-        If email stops working in future:
-        - Check EmailJS dashboard
-        - Verify dt7.agency@gmail.com is still connected
-        - Ensure service & template IDs are unchanged
-    ========================================================== -->
-
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("rTBlN3RKunurTmvyP");
-        })();
-    </script>
-    <script>
-        document.getElementById("popresetting").addEventListener("submit", function (e) {
-            e.preventDefault();
-            emailjs.sendForm('service_dshik0y', 'template_5l9u29w', this)
-                .then(function (response) {
-                    alert("Message sent successfully!");
-                    document.getElementById("popresetting").reset();
-                    // Close the modal
-                    var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-                    modal.hide();
-                }, function (error) {
-                    alert("Failed to send message. Please try again.");
-                });
-        });
-    </script>
-    <script>
-        document.getElementById("myForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            emailjs.sendForm('service_1uf441k', 'template_gespujh', this)
-                .then(function (response) {
-                    alert("Message sent successfully!");
-                    document.getElementById("myForm").reset();
-                    window.location.reload();
-                    var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
-                    modal.hide();
-                }, function (error) {
-                    alert("Failed to send message. Please try again.");
-                });
-        });
-    </script>
-
     <script src="{% static 'assets/js/Contact.js' %}"></script>
     <script src="{% static 'assets/js/jobapplication.js' %}"></script>
     <script>
@@ -433,32 +371,7 @@
             alert('Message has been successfully sent.');  // Display an alert message
         }
     </script>
-    <script>
-        // Example form validation using jQuery
-        $(document).ready(function () {
-            $('#myForm').submit(function (event) {
-                var form = $(this);
-                if (form[0].checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.addClass('was-validated');
-            });
-        });
-    </script>
-    <script>
-        // Example form validation using jQuery
-        $(document).ready(function () {
-            $('#popresetting').submit(function (event) {
-                var form = $(this);
-                if (form[0].checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.addClass('was-validated');
-            });
-        });
-    </script>
+
     <script>
         document.getElementById('share-page').addEventListener('click', function () {
             if (navigator.share) {
@@ -510,6 +423,121 @@
             owl.on("mouseleave", function () {
                 owl.trigger("play.owl.autoplay", [8000]); // Resume with slow speed
             });
+        });
+    </script>
+
+    <!-- =========================================================
+        EMAILJS + DJANGO FORM INTEGRATION NOTE (IMPORTANT)
+        ---------------------------------------------------------
+        ✔ Forms save data to Django database first (POST: /contact/)
+        ✔ On success → EmailJS sends email
+        ✔ All emails delivered to:
+            dt7.agency@gmail.com
+            CC: dt7solutions@gmail.com
+        ✔ Two separate EmailJS services & templates are used
+        ✔ EmailJS Public Key:
+            rTBlN3RKunurTmvyP
+
+            → popresetting form
+                - Purpose: Modal / Enquiry form
+                - Django Type: ENQUIRY_FORM
+                - Service ID: service_dshik0y
+                - Template ID: template_5l9u29w
+
+            → myForm form
+                - Purpose: Main Contact form
+                - Django Type: CONTACT_FORM
+                - Service ID: service_1uf441k
+                - Template ID: template_gespujh
+        ---------------------------------------------------------
+        NOTE:
+        - method="POST" required
+        - action="#" (handled via JS fetch)
+        - If JSON appears on screen, JS is not loaded properly
+        - Check EmailJS dashboard if mail fails
+    ========================================================== -->
+    <script>
+        // Example form validation using jQuery
+        $(document).ready(function () {
+            $('#myForm').submit(function (event) {
+                var form = $(this);
+                if (form[0].checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.addClass('was-validated');
+            });
+        });
+    </script>
+    <script>
+        // Example form validation using jQuery
+        $(document).ready(function () {
+            $('#popresetting').submit(function (event) {
+                var form = $(this);
+                if (form[0].checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.addClass('was-validated');
+            });
+        });
+    </script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init("rTBlN3RKunurTmvyP");
+            // -------- POPRESETTING FORM --------
+            const enquiryForm = document.getElementById("popresetting");
+            if (enquiryForm) {
+                enquiryForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    const formData = new FormData(this);
+                    // Save to Django
+                    fetch("/contact/", {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === "success") {
+                            // Send EmailJS
+                            emailjs.sendForm('service_dshik0y', 'template_5l9u29w', enquiryForm)
+                            .then(function () {
+                                alert("Message sent successfully!");
+                                enquiryForm.reset();
+                                var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+                                if (modal) modal.hide();
+                            });
+                        }
+                    });
+                });
+            }
+            // -------- MYFORM (CONTACT FORM) --------
+            const contactForm = document.getElementById("myForm");
+            if (contactForm) {
+                contactForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    const formData = new FormData(this);
+                    // Save to Django
+                    fetch("/contact/", {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === "success") {
+                            // Send EmailJS
+                            emailjs.sendForm('service_1uf441k', 'template_gespujh', contactForm)
+                            .then(function () {
+                                alert("Message sent successfully!");
+                                contactForm.reset();
+                                window.location.reload();
+                            });
+
+                        }
+                    });
+                });
+            }
         });
     </script>
 </body>

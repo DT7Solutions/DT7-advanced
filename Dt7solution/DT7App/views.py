@@ -226,44 +226,78 @@ def page_not_found_view(request, exception):
 #         return render(request, 'uifiles/contact.html',{'navbar':'Contact'})
 
 # @csrf_exempt
+# def Contact(request):
+#     if request.method == "POST":
+#         try:
+#             first_name = request.POST.get('FirstName', "").strip()
+#             last_name = request.POST.get('LastName', "").strip()
+#             email = request.POST.get('Email', "").strip()
+#             services_interested = request.POST.getlist('ServicesInterestedIncontact', [])
+#             message = request.POST.get('Message', "").strip()
+#             terms_and_conditions = request.POST.get('TermsAndConditions', "").strip()
+
+#             # Save form data
+#             form_data = FormsData.objects.create(
+#                 Name=f"{first_name} {last_name}",
+#                 email=email,
+#                 services_interested=', '.join(services_interested),
+#                 message=message,
+#                 terms_and_conditions=terms_and_conditions
+#             )
+#             print(f"Form saved successfully with ID {form_data.id}")
+
+#             # Send email
+#             send_mail(
+#                 'New Contact Form Submission', 
+#                 f'Email : {email}\nMessage: {message}\nServices Interested In: {", ".join(services_interested)}',  
+#                 'noreplaybadugudinesh94@gmail.com',  
+#                 ['dt7solutions@gmail.com'],  
+#                 fail_silently=False,  
+#             )
+#             messages.success(request, 'Message has been successfully sent.')
+
+#         except Exception as e:
+#             print(f"Error: {e}")
+#             messages.error(request, 'An error occurred. Please try again.')
+
+#         return render(request, 'uifiles/contact.html', {'navbar': 'Contact'})
+#     else:
+#         return render(request, 'uifiles/contact.html', {'navbar': 'Contact'})
+
+@csrf_exempt
 def Contact(request):
     if request.method == "POST":
-        try:
-            first_name = request.POST.get('FirstName', "").strip()
-            last_name = request.POST.get('LastName', "").strip()
-            email = request.POST.get('Email', "").strip()
-            services_interested = request.POST.getlist('ServicesInterestedIncontact', [])
-            message = request.POST.get('Message', "").strip()
-            terms_and_conditions = request.POST.get('TermsAndConditions', "").strip()
+        # -------- Detect which form --------
+        if request.POST.get("FirstName"):
+            form_type = "CONTACT_FORM"
+            first_name = request.POST.get("FirstName", "").strip()
+            last_name = request.POST.get("LastName", "").strip()
+            email = request.POST.get("Email", "").strip()
+            message = request.POST.get("Message", "").strip()
+            services = request.POST.getlist("ServicesInterestedIncontact")
+        else:
+            form_type = "ENQUIRY_FORM"
+            first_name = request.POST.get("exampleInputName", "").strip()
+            last_name = ""   # enquiry form has no last name
+            email = request.POST.get("exampleInputEmail", "").strip()
+            message = request.POST.get("exampleInputMessageinfo", "").strip()
+            services = request.POST.getlist("servicesInterestedIn")
 
-            # Save form data
-            form_data = FormsData.objects.create(
-                Name=f"{first_name} {last_name}",
-                email=email,
-                services_interested=', '.join(services_interested),
-                message=message,
-                terms_and_conditions=terms_and_conditions
-            )
-            print(f"Form saved successfully with ID {form_data.id}")
+        # -------- Join services --------
+        services_value = form_type
+        if services:
+            services_value = form_type + " | " + ", ".join(services)
 
-            # Send email
-            send_mail(
-                'New Contact Form Submission', 
-                f'Email : {email}\nMessage: {message}\nServices Interested In: {", ".join(services_interested)}',  
-                'noreplaybadugudinesh94@gmail.com',  
-                ['dt7solutions@gmail.com'],  
-                fail_silently=False,  
-            )
-            messages.success(request, 'Message has been successfully sent.')
-
-        except Exception as e:
-            print(f"Error: {e}")
-            messages.error(request, 'An error occurred. Please try again.')
-
-        return render(request, 'uifiles/contact.html', {'navbar': 'Contact'})
-    else:
-        return render(request, 'uifiles/contact.html', {'navbar': 'Contact'})
-
+        # -------- Save to DB --------
+        FormsData.objects.create(
+            Name=f"{first_name} {last_name}".strip(),
+            email=email,
+            services_interested=services_value,
+            message=message,
+            terms_and_conditions=""
+        )
+        return JsonResponse({"status": "success"})
+    return render(request, "uifiles/contact.html", {"navbar": "Contact"})
 
     
     # views.py

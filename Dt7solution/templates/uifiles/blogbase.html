@@ -61,28 +61,6 @@
         gtag('js', new Date());
         gtag('config', 'G-0X90KPHTQR');
     </script>
-
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js" async></script>
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function () {
-            emailjs.init("rTBlN3RKunurTmvyP");
-            var form = document.getElementById("popresetting");
-            if (form) {
-                form.addEventListener("submit", function (e) {
-                    e.preventDefault(); // stop temporarily
-                    var currentForm = this;
-                    emailjs.sendForm( 'service_dshik0y', 'template_5l9u29w', currentForm ).then(function () {
-                        // After EmailJS success → submit to Django
-                        currentForm.submit();
-                    }, function (error) {
-                        alert("Failed to send message. Please try again.");
-                        console.error(error);
-                    });
-                });
-            }
-        });
-    </script>
 </head>
 
 <body class="custom-cursor">
@@ -397,6 +375,53 @@
         }
     </script>
     <script>
+        document.getElementById('share-page').addEventListener('click', function () {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Page shared successfully.');
+                }).catch((error) => {
+                    console.error('Error sharing page:', error);
+                });
+            } else {
+                console.error('Web Share API not supported.');
+            }
+        });
+    </script>
+
+    <!-- =========================================================
+        EMAILJS + DJANGO FORM INTEGRATION NOTE (IMPORTANT)
+        ---------------------------------------------------------
+        ✔ Forms save data to Django database first (POST: /contact/)
+        ✔ On success → EmailJS sends email
+        ✔ All emails delivered to:
+            dt7.agency@gmail.com
+            CC: dt7solutions@gmail.com
+        ✔ Two separate EmailJS services & templates are used
+        ✔ EmailJS Public Key:
+            rTBlN3RKunurTmvyP
+
+            → popresetting form
+                - Purpose: Modal / Enquiry form
+                - Django Type: ENQUIRY_FORM
+                - Service ID: service_dshik0y
+                - Template ID: template_5l9u29w
+
+            → myForm form
+                - Purpose: Main Contact form
+                - Django Type: CONTACT_FORM
+                - Service ID: service_1uf441k
+                - Template ID: template_gespujh
+        ---------------------------------------------------------
+        NOTE:
+        - method="POST" required
+        - action="#" (handled via JS fetch)
+        - If JSON appears on screen, JS is not loaded properly
+        - Check EmailJS dashboard if mail fails
+    ========================================================== -->
+    <script>
         // Example form validation using jQuery
         $(document).ready(function () {
             $('#myForm').submit(function (event) {
@@ -422,22 +447,65 @@
             });
         });
     </script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        document.getElementById('share-page').addEventListener('click', function () {
-            if (navigator.share) {
-                navigator.share({
-                    title: document.title,
-                    url: window.location.href
-                }).then(() => {
-                    console.log('Page shared successfully.');
-                }).catch((error) => {
-                    console.error('Error sharing page:', error);
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init("rTBlN3RKunurTmvyP");
+            // -------- POPRESETTING FORM --------
+            const enquiryForm = document.getElementById("popresetting");
+            if (enquiryForm) {
+                enquiryForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    const formData = new FormData(this);
+                    // Save to Django
+                    fetch("/contact/", {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === "success") {
+                            // Send EmailJS
+                            emailjs.sendForm('service_dshik0y', 'template_5l9u29w', enquiryForm)
+                            .then(function () {
+                                alert("Message sent successfully!");
+                                enquiryForm.reset();
+                                var modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+                                if (modal) modal.hide();
+                            });
+                        }
+                    });
                 });
-            } else {
-                console.error('Web Share API not supported.');
+            }
+            // -------- MYFORM (CONTACT FORM) --------
+            const contactForm = document.getElementById("myForm");
+            if (contactForm) {
+                contactForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    const formData = new FormData(this);
+                    // Save to Django
+                    fetch("/contact/", {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === "success") {
+                            // Send EmailJS
+                            emailjs.sendForm('service_1uf441k', 'template_gespujh', contactForm)
+                            .then(function () {
+                                alert("Message sent successfully!");
+                                contactForm.reset();
+                                window.location.reload();
+                            });
+
+                        }
+                    });
+                });
             }
         });
     </script>
+
 </body>
 
 </html>
