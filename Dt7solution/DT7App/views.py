@@ -1,3 +1,5 @@
+import json
+import requests
 from django.shortcuts import render
 from django.http import JsonResponse,HttpResponse
 from .models import *
@@ -10,30 +12,33 @@ from django.db import models
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 from .context_processors import location_data
+from .location_utils import get_nearest_city
 
 @csrf_exempt
 def Home(request):
     # location_data(request)
-    
-       
         latest_blogs = BlogPost.objects.filter().order_by('-Id')[:2]
         return render(request, 'uifiles/home.html',{'navbar':'Home','latest_blogs':latest_blogs})
-   
         # If the request method is not POST, return an error response
-        
     
+def City_About(request, city=None):
+    return render(request, 'uifiles/about.html',{'navbar':'About'})
 
 def About(request):
     return render(request, 'uifiles/about.html',{'navbar':'About'})
+
 def logos(request):
     return render(request, 'uifiles/logos.html')
 
 def hyd_About(request):
     return render(request, 'uifiles/hyd-about.html',{'navbar':'About'})
+
 def web_designing_in_guntur(request):
     return render(request, 'uifiles/web-designing-company-in-guntur.html')
+
 def  web_development_in_hyderabad(request):
     return render(request, 'uifiles/web-development-company-in-hyderabad.html')
+
 def web_designing_in_vijayawada(request):
     return render(request, 'uifiles/web-designing-company-in-vijayawada.html')
 
@@ -48,6 +53,7 @@ def Blog(request):
     page = request.GET.get('page')
     posts = paginator.get_page(page)
     return render(request, 'uifiles/blog.html',{'blog':posts,'posts':posts,'page':page,'navbar':'Blog'})
+
 def Blogdetails(request,slug):
     blog_list = BlogPost.objects.filter().order_by('-Id')[:3]
     selectpost = BlogPost.objects.get(Sluglink=slug)
@@ -86,39 +92,56 @@ def Blogdetails(request,slug):
         'next_post': next_post,'navbar':'Blog', 'faqs': faqs}
     print(selectpost.MetaKeywords)
 
-    return render(request, 'uifiles/blogdetails.html',context)    
+    return render(request, 'uifiles/blogdetails.html',context)   
+ 
 def Solutions(request):
     return render(request, 'uifiles/service.html',{'navbar':'Solutions'})   
+
 def Solutiondetails(request):
-    return render(request, 'uifiles/services-details.html',{'navbar':'Solutions'})   
+    return render(request, 'uifiles/services-details.html',{'navbar':'Solutions'}) 
+  
 def Projects(request):
     return render(request, 'uifiles/projects.html' ,{'navbar':'Projects'})
+
 def Projectdetails(request):
     return render(request, 'uifiles/projects-details.html' ,{'navbar':'Projects'})
+
 def Digitalmarketing(request):
     return render(request, 'uifiles/digital-marketing-services-in-guntur.html' ,{'navbar':'Solutions'})
+
 def websitedesign(request):
     return render(request, 'uifiles/webdesgin.html' ,{'navbar':'Solutions'})
+
 def Brandidentity(request):
     return render(request, 'uifiles/brandidentity.html' ,{'navbar':'Solutions'})
+
 def WhatsAppPromotion(request):
     return render(request, 'uifiles/whatsapppromotion.html' ,{'navbar':'Solutions'})
+
 def EmailMarketing(request):
     return render(request, 'uifiles/emailmarketing.html' ,{'navbar':'Solutions'})
+
 def EcommerceListing(request):
     return render(request, 'uifiles/ecommercelisting.html' ,{'navbar':'Solutions'})
+
 def PaidAdvertising(request):
     return render(request, 'uifiles/paidmarketing.html' ,{'navbar':'Solutions'})
+
 def Seo(request):
     return render(request, 'uifiles/seo.html' ,{'navbar':'Solutions'})
+
 def Privacypolicy(request):
     return render(request, 'uifiles/privacy-policy.html' ,{'navbar':'Home'})
+
 def MobilePrivacypolicy(request):
     return render(request, 'uifiles/mobile-privacy-policy.html' ,{'navbar':'Home'})
+
 def Termsandconditions(request):
     return render(request, 'uifiles/termsconditions.html')
+
 # def Privacypolicy(request):
 #     return render(request, 'uifiles/Privacypolicy.html')
+
 def Mobileprivacypolicy(request):
     return render(request, 'uifiles/mobile-privacy-policy.html')
 
@@ -152,7 +175,6 @@ def Carrerdetails(request,id):
 
     return render(request, "uifiles/carrer-details.html", context)
 
-
 @csrf_exempt
 def apply_job_ajax(request):
     if request.method == "POST":
@@ -179,7 +201,6 @@ def apply_job_ajax(request):
 
 def rss(request):
     return render(request, 'uifiles/rss.html')
-
 
 def page_not_found_view(request, exception):
     return render(request, 'uifiles/404.html', status=404)
@@ -298,11 +319,10 @@ def Contact(request):
         )
         return JsonResponse({"status": "success"})
     return render(request, "uifiles/contact.html", {"navbar": "Contact"})
-
     
-    # views.py
-from django.shortcuts import render
-import requests
+#     # views.py
+# from django.shortcuts import render
+# import requests
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -312,23 +332,38 @@ def get_client_ip(request):
         ip = request.META.get('REMOTE_ADDR')
     return ip
 
-def get_geolocation(ip):
-    url = f'http://ip-api.com/json/{ip}'
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.json()
-    return None
+# def get_geolocation(ip):
+#     url = f'http://ip-api.com/json/{ip}'
+#     response = requests.get(url)
+#     if response.status_code == 200:
+#         return response.json()
+#     return None
 
-def my_view(request):
-    user_ip = get_client_ip(request)
-    location_data = get_geolocation(user_ip)
+# def my_view(request):
+#     user_ip = get_client_ip(request)
+#     location_data = get_geolocation(user_ip)
 
-    city = 'Unknown'
-    if location_data:
-        city = location_data.get('city', 'Unknown')
+#     city = 'Unknown'
+#     if location_data:
+#         city = location_data.get('city', 'Unknown')
 
-    # Pass the city to the context, which will be inherited by base.html
-    return render(request, 'some_template.html', {'city': city})
+#     # Pass the city to the context, which will be inherited by base.html
+#     return render(request, 'some_template.html', {'city': city})
 
-
-
+@csrf_exempt
+def set_location(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            lat = data.get("lat")
+            lng = data.get("lng")
+            city = get_nearest_city(lat, lng)
+            response = JsonResponse({"city": city})
+            response.set_cookie( "user_city", city, max_age=60 * 60 * 24 * 30, ) # 30 days
+            return response
+        except Exception:
+            pass
+    # Fallback if geo blocked
+    response = JsonResponse({"city": "guntur"})
+    response.set_cookie("user_city", "guntur", max_age=60 * 60 * 24 * 30, path="/")
+    return response

@@ -219,7 +219,8 @@
                     </div>
                     <ul class="main-menu__list">
                         <li><a class="nav-btn {% if navbar == 'Home' %} active {% endif %}" href="/" title="Go to Home Page">Home</a></li>
-                        <li><a id="aboutLink" class=" nav-btn {% if navbar == 'About' %} active {% endif %}" href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}" title="Learn more About DT7.Agency">About</a></li>
+                        <!-- <li><a id="aboutLink" class=" nav-btn {% if navbar == 'About' %} active {% endif %}" href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}" title="Learn more About DT7.Agency">About</a></li> -->
+                        <li><a class="nav-btn {% if navbar == 'About' %} active {% endif %}" href="/{{ city }}/about/" title="Learn more About DT7.Agency"> About </a></li>
                         <li class="dropdown"><a class="nav-btn {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/" title="Explore Our Solutions">Solutions</a>
                             <ul>
                                 <li><a href="/digital-marketing-services-in-guntur/" title="Digital Promotions Services">Digital Promotions</a></li>
@@ -513,6 +514,8 @@
     <!-- Template JS -->
     <script src="{% static 'assets/js/digihub.js' %}" defer></script>
     <script src="{% static 'assets/js/Contact.js' %}" defer></script>
+    <!-- Geo Location -->
+    <script src="{% static 'assets/js/location.js' %}" defer></script>
     
     <!-- N8N Chat -->
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
@@ -525,24 +528,6 @@
                 $('nav.main-menu-one ul.main-menu__list li a').removeClass('active');
                 $(this).addClass('active');
             });
-            // Location-based URL
-            function setLocationBasedURL() {
-                fetch('https://ip-api.com/json')
-                    .then(response => response.json())
-                    .then(data => {
-                        const userCity = data.city.toLowerCase();
-                        const cityToURLMap = {
-                            "hyderabad": "/hyderabad/about/",
-                            "vijayawada": "/guntur/about/"
-                        };
-                        const cityURL = cityToURLMap[userCity] || "/guntur/about/";
-                        const aboutLink = document.getElementById("aboutLink");
-                        if (aboutLink) aboutLink.href = cityURL;
-                    })
-                    .catch(error => console.error('Error fetching location:', error));
-            }
-            setLocationBasedURL();
-
             // Cookie Consent
             function getCookie(name) {
                 const value = "; " + document.cookie;
@@ -574,7 +559,6 @@
         }
     </style>
 
-    
 </body>
 
 </html>

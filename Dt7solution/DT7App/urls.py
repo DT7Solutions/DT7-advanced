@@ -6,11 +6,9 @@ from .views import *
 #                     productshoot,Mobileprivacypolicy,Termsandconditions,Seo, hyd_About,brandmaterials,logos,web_designing_in_vijayawada,web_designing_in_guntur,web_development_in_hyderabad )
 
 
-
-
-
 urlpatterns = [
     path('', Home , name='home'),
+    path('<str:city>/about/', City_About , name='about'),
     path('guntur/about/', About , name='about'),
     path('llms.txt', TemplateView.as_view(template_name="uifiles/llms.txt", content_type="text/plain"), name='llms.txt'),
     path('robots.txt', TemplateView.as_view(template_name="uifiles/robots.txt", content_type="text/plain"), name='robots.txt'),
@@ -44,5 +42,7 @@ urlpatterns = [
     path('web-designing-company-in-guntur/', web_designing_in_guntur , name='web-designing-company-in-guntur'),
     path('web-designing-company-in-vijayawada/', web_designing_in_vijayawada , name='web-designing-company-in-vijayawada'),
     path('rss/', rss , name='rss'),
+
+    path("set-location/", set_location, name="set_location"),
 ]
 

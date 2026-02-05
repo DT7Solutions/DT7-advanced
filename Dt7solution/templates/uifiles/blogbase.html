@@ -91,7 +91,8 @@
                     </div>
                     <ul class="main-menu__list black">
                         <li><a class="nav-btn {% if navbar == 'Home' %} active {% endif %}" href="/" title="Go to Home Page">Home</a></li>
-                        <li><a id="aboutLink" class=" nav-btn {% if navbar == 'About' %} active {% endif %}" href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}" title="Learn more About DT7.Agency">About</a></li>
+                        <!-- <li><a id="aboutLink" class=" nav-btn {% if navbar == 'About' %} active {% endif %}" href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}" title="Learn more About DT7.Agency">About</a></li> -->
+                        <li><a class="nav-btn {% if navbar == 'About' %} active {% endif %}" href="/{{ city }}/about/" title="Learn more About DT7.Agency"> About </a></li>
                         <li class="dropdown"><a class="nav-btn {% if navbar == 'Solutions' %} active {% endif %}" href="/solutions/" title="Explore Our Solutions">Solutions</a>
                             <ul>
                                 <li><a href="/digital-marketing-services-in-guntur/" title="Digital Promotions Services">Digital Promotions</a></li>
@@ -365,6 +366,8 @@
     <!-- template js -->
     <script src="{% static 'assets/js/digihub.js' %}"></script>
     <script src="{% static 'assets/js/Contact.js' %}"></script>
+    <!-- Geo Location -->
+    <script src="{% static 'assets/js/location.js' %}" defer></script>
     <script src="{% static 'assets/js/jobapplication.js' %}"></script>
     <script>
         // Check if the URL contains a success message parameter
