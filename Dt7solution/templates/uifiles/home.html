@@ -22,7 +22,8 @@
                             </p>
                             <div class="main-slider__btn-group wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                                 <a href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}" class="digihub-btn digihub-btn--primary" title="Learn more about DT7Agency services">Learn More</a>
-                                <a href="https://www.youtube.com/watch?v=CbP5Oku3MuM" class=" main-slider__border-btn digihub-btn digihub-btn--border-two video-popup d-none" title="Watch DT7Agency video">Watch Our Video</a>
+                                <!-- <a href="https://www.youtube.com/watch?v=CbP5Oku3MuM" class=" main-slider__border-btn digihub-btn digihub-btn--border-two video-popup d-lg-block d-none" title="Watch DT7Agency video">Watch Our Video</a> -->
+                                <a href="{% static 'assets/videos/dt7agency-popup-video.mp4' %}" class="main-slider__border-btn digihub-btn digihub-btn--border-two video-popup d-lg-block d-none" title="Watch DT7Agency video"> Watch Our Video </a>
                             </div>
                         </div>
                     </div>
@@ -566,7 +567,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-md-12  wow animated fadeIn" data-wow-delay="0.1s" data-wow-duration="1500ms">
                         <video controls muted autoplay playsinline class="custom-video" title="Our Client Project Video - DT7.Agency" aria-label="Client Project Video showcasing our work">
-                            <source src="{% static 'assets/images/projects/video.mp4' %}" type="video/mp4">
+                            <source src="{% static 'assets/videos/dt7agency-clients-logos-video.mp4' %}" type="video/mp4">
                         </video> 
                     </div>
                 </div>
