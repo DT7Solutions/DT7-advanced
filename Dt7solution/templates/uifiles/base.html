@@ -340,11 +340,14 @@
                                 <li class="footer-one__link-item">
                                     <a href="/" class="footer-one__link" title="Home Page">Home</a>
                                 </li>
-                                <li class="footer-one__link-item">
+                                <!-- <li class="footer-one__link-item">
                                     <a href="/guntur/about" class="footer-one__link" title="About DT7.Agency Guntur">Guntur</a>
                                 </li>
                                 <li class="footer-one__link-item">
                                     <a href="/hyderabad/about" class="footer-one__link" title="About DT7.Agency Hyderabad">Hyderabad</a>
+                                </li> -->
+                                <li>
+                                    <a {% if navbar == 'About' %} class="active" {% endif %} href="/{{ city }}/about/" class="footer-one__link" title="Learn more About DT7.Agency">About</a>
                                 </li>
                                 <li class="footer-one__link-item">
                                     <a href="/blog/" class="footer-one__link" title="Latest Blog Posts">Blogs</a>

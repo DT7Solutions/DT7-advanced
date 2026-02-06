@@ -13,6 +13,14 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://dt7.agency/">
 
+
+    <!-- Dynamic Meta Block for child templates -->
+    {% block meta %}
+    <title>DT7Agency | Digital Marketing & Web Development</title>
+    <meta name="description" content="DT7Agency - Best Digital Marketing and Web Development Company">
+    <meta name="keywords" content="Digital Marketing, Web Design, SEO, Social Media">
+    {% endblock %}
+
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/dt7-132x132.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/dt7-40x40.png'%}">
@@ -208,11 +216,14 @@
                                 <li class="footer-one__link-item">
                                     <a href="/" class="footer-one__link" title="Home Page">Home</a>
                                 </li>
-                                <li class="footer-one__link-item">
+                                <!-- <li class="footer-one__link-item">
                                     <a href="/guntur/about" class="footer-one__link" title="About DT7.Agency Guntur">Guntur</a>
                                 </li>
                                 <li class="footer-one__link-item">
                                     <a href="/hyderabad/about" class="footer-one__link" title="About DT7.Agency Hyderabad">Hyderabad</a>
+                                </li> -->
+                                <li>
+                                    <a {% if navbar == 'About' %} class="active" {% endif %} href="/{{ city }}/about/" class="footer-one__link" title="Learn more About DT7.Agency">About</a>
                                 </li>
                                 <li class="footer-one__link-item">
                                     <a href="/blog/" class="footer-one__link" title="Latest Blog Posts">Blogs</a>

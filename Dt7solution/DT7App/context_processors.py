@@ -24,30 +24,35 @@ def get_lat_lng_from_ip(ip):
         pass
     return None, None
 
+# ----------------------------- Updated list of valid cities for URL slug ----------------------------- #
+VALID_CITIES = [
+    # Andhra Pradesh
+    "visakhapatnam", "vizianagaram", "srikakulam", "vijayawada", "guntur",
+    "amaravathi", "nellore", "tirupati", "kurnool", "anantapur",
+    "rajahmundry", "kakinada", "eluru", "ongole", "kadapa", "chittoor",
+    # Telangana
+    "hyderabad", "secunderabad", "warangal", "nizamabad", "karimnagar",
+    "khammam", "mahbubnagar", "ramagundam", "medak", "nalgonda", "adilabad"
+]
+
 def location_data(request):
     """
     FINAL LOGIC:
     1. Cookie (PRIMARY)
     2. URL slug (SECONDARY)
-    3. IP fallback
-    4. guntur
+    3. IP fallback (with nearest city within 50 km)
+    4. guntur (DEFAULT)
     """
     # 1️⃣ Cookie first
     city = request.COOKIES.get("user_city")
     if city:
         return {"city": city}
-    # 2️⃣ URL slug (ONLY if valid city)
+
+    # 2️⃣ URL slug (only if valid city)
     try:
         path_parts = request.path.strip("/").split("/")
-        if path_parts and path_parts[0] in [
-            "guntur", "hyderabad", "vijayawada",
-            "visakhapatnam", "nellore", "tirupati",
-            "kurnool", "rajahmundry", "kakinada",
-            "eluru", "ongole", "secunderabad",
-            "warangal", "nizamabad", "karimnagar",
-            "khammam", "mahbubnagar"
-        ]:
-            return {"city": path_parts[0]}
+        if path_parts and path_parts[0].lower() in VALID_CITIES:
+            return {"city": path_parts[0].lower()}
     except Exception:
         pass
     # 3️⃣ IP fallback

@@ -21,8 +21,10 @@ def Home(request):
         return render(request, 'uifiles/home.html',{'navbar':'Home','latest_blogs':latest_blogs})
         # If the request method is not POST, return an error response
     
-def City_About(request, city=None):
-    return render(request, 'uifiles/about.html',{'navbar':'About'})
+def City_About(request, city):
+    city_slug = city.lower()
+    city_name = city_slug.replace("-", " ").title()
+    return render(request, 'uifiles/city-about.html',{'navbar':'About','city': city_slug, 'city_name': city_name})
 
 def About(request):
     return render(request, 'uifiles/about.html',{'navbar':'About'})
@@ -204,47 +206,6 @@ def rss(request):
 
 def page_not_found_view(request, exception):
     return render(request, 'uifiles/404.html', status=404)
-    
-# @csrf_exempt
-# def Contact(request):
-#     if request.method == "POST":
-#         first_name = request.POST.get('FirstName', "")
-#         last_name = request.POST.get('LastName', "")
-#         email = request.POST.get('Email', "")
-#         services_interested = request.POST.getlist('ServicesInterestedIn', [])
-#         message = request.POST.get('Message', "")
-#         terms_and_conditions = request.POST.get('TermsAndConditions', "")
-        
-
-       
-#         form_data = FormsData.objects.create(
-#             Name=first_name + ' ' + last_name,
-#             email=email,
-#             services_interested=', '.join(services_interested),
-#             message=message,
-#             terms_and_conditions=terms_and_conditions
-#         )
-#         form_data.save()
-
-      
-#         try:
-#             send_mail(
-#                 'New Contact Form Submission', 
-#                 f'Email : {email}\nMessage: {message}\nServices Interested In: {", ".join(services_interested)}',  
-#                 'noreplaybadugudinesh94@gmail.com',  
-#                 ['manideep723@gmail.com'],  
-#                 fail_silently=False,  
-#             )
-#             messages.success(request, 'Message has been successfully sent.')
-           
-#         except Exception as e:
-#             messages.error(request, f'Failed to send message. Error: {e}')
-#             print("Error")
-
-#         return render(request, 'uifiles/contact.html',{'navbar':'Contact'})  
-
-#     else:
-#         return render(request, 'uifiles/contact.html',{'navbar':'Contact'})
 
 # @csrf_exempt
 # def Contact(request):
@@ -319,10 +280,6 @@ def Contact(request):
         )
         return JsonResponse({"status": "success"})
     return render(request, "uifiles/contact.html", {"navbar": "Contact"})
-    
-#     # views.py
-# from django.shortcuts import render
-# import requests
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -363,7 +320,6 @@ def set_location(request):
             return response
         except Exception:
             pass
-    # Fallback if geo blocked
     response = JsonResponse({"city": "guntur"})
     response.set_cookie("user_city", "guntur", max_age=60 * 60 * 24 * 30, path="/")
     return response
