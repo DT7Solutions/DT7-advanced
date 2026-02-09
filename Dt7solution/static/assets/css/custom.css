@@ -487,3 +487,14 @@
     .mobile-footer-menu__item--center i { top: -125%;}
     .mobile-footer-menu__text { font-size: 13px; }
 }
+
+.footer-one__brand-caption {
+    margin-top: 9px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.3px;
+}
+.footer-one__brand-link {
+    color: #ffffff;
+    text-decoration: none;
+}
