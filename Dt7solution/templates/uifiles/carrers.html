@@ -93,6 +93,9 @@
                                     <div class="career-author">
                                         <i class="far fa-user"></i>
                                         <span>Posted by {{ jobitem.PostedBy }}</span>
+                                        <a href="#" class="share-link ms-2" data-bs-toggle="modal" data-bs-target="#shareJobModal{{ jobitem.Id }}" title="Share this job" style="font-size: 20px;">
+                                            <i class="fas fa-share-alt"></i>
+                                        </a>
                                     </div>
                                     <div class="career-actions">
                                         <a href="/career/{{ jobitem.Id }}/"
@@ -170,6 +173,39 @@
                             </div>
                         </div>
                         <!-- end apply jon poup model -->
+
+                        <!-- Share Job Modal -->
+                        <div class="modal fade" id="shareJobModal{{ jobitem.Id }}" tabindex="-1" aria-labelledby="shareJobModalLabel{{ jobitem.Id }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="shareJobModalLabel{{ jobitem.Id }}">Share this job</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Share "{{ jobitem.Title }}" on social media:</p>
+                                        <div class="d-flex justify-content-start align-items-center gap-2">
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.scheme }}://{{ request.get_host }}/career/{{ jobitem.Id }}/" target="_blank" class="btn btn-outline-primary rounded-circle" title="Share on Facebook" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; padding: 0;">
+                                                <i class="fab fa-facebook-f fa-lg"></i>
+                                            </a>
+                                            <a href="https://x.com/intent/tweet?url={{ request.scheme }}://{{ request.get_host }}/career/{{ jobitem.Id }}/&text={{ jobitem.Title }}" target="_blank" class="btn btn-outline-secondary rounded-circle" title="Share on X" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; padding: 0;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="width: 20px; height: 20px;"><path fill="currentColor" d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z"/></svg>
+                                            </a>
+                                            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ request.scheme }}://{{ request.get_host }}/career/{{ jobitem.Id }}/" target="_blank" class="btn btn-outline-primary rounded-circle" title="Share on LinkedIn" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; padding: 0;">
+                                                <i class="fab fa-linkedin-in fa-lg"></i>
+                                            </a>
+                                            <a href="https://wa.me/?text={{ request.scheme }}://{{ request.get_host }}/career/{{ jobitem.Id }}/" target="_blank" class="btn btn-outline-success rounded-circle" title="Share on WhatsApp" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; padding: 0;">
+                                                <i class="fab fa-whatsapp fa-lg"></i>
+                                            </a>
+                                            <button type="button" class="btn btn-outline-dark rounded-circle" title="Copy link to clipboard" onclick="navigator.clipboard.writeText('{{ request.scheme }}://{{ request.get_host }}/career/{{ jobitem.Id }}/')" style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; padding: 0;">
+                                                <i class="fas fa-copy fa-lg"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Share Job Modal -->
                         {% endfor %}
                     </div>
                 </div>
