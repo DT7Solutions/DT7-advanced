@@ -186,39 +186,41 @@
                                         <p>Share "{{ jobitem.Title }}" on social media:</p>
                                         <div class="d-flex justify-content-start align-items-center gap-2">
                                         
-                                            {% with job_url=request.scheme|add:"://"|add:request.get_host|add:"/career/"|add:jobitem.Id|add:"/" %}
+                                            {% with job_url="https://"|add:request.get_host|add:"/career/"|add:jobitem.Id|add:"/" %}
                                         
+                                            <!-- Facebook -->
                                             <a href="https://www.facebook.com/sharer/sharer.php?u={{ job_url|urlencode }}" target="_blank"
-                                                class="btn btn-outline-primary rounded-circle" title="Share on Facebook"
+                                                class="btn btn-outline-primary rounded-circle"
                                                 style="width:45px;height:45px;display:flex;align-items:center;justify-content:center;padding:0;">
-                                                <i class="fab fa-facebook-f fa-lg"></i>
+                                                <i class="fab fa-facebook-f"></i>
                                             </a>
                                         
+                                            <!-- X -->
                                             <a href="https://x.com/intent/tweet?text={{ jobitem.Title|urlencode }}&url={{ job_url|urlencode }}" target="_blank"
-                                                class="btn btn-outline-secondary rounded-circle" title="Share on X"
+                                                class="btn btn-outline-secondary rounded-circle"
                                                 style="width:45px;height:45px;display:flex;align-items:center;justify-content:center;padding:0;">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="width:20px;height:20px;">
-                                                    <path fill="currentColor"
-                                                        d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z" />
-                                                </svg>
+                                                <i class="fab fa-x-twitter"></i>
                                             </a>
                                         
+                                            <!-- LinkedIn -->
                                             <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ job_url|urlencode }}" target="_blank"
-                                                class="btn btn-outline-primary rounded-circle" title="Share on LinkedIn"
+                                                class="btn btn-outline-primary rounded-circle"
                                                 style="width:45px;height:45px;display:flex;align-items:center;justify-content:center;padding:0;">
-                                                <i class="fab fa-linkedin-in fa-lg"></i>
+                                                <i class="fab fa-linkedin-in"></i>
                                             </a>
                                         
+                                            <!-- WhatsApp -->
                                             <a href="https://wa.me/?text={{ jobitem.Title|urlencode }}%20{{ job_url|urlencode }}" target="_blank"
-                                                class="btn btn-outline-success rounded-circle" title="Share on WhatsApp"
+                                                class="btn btn-outline-success rounded-circle"
                                                 style="width:45px;height:45px;display:flex;align-items:center;justify-content:center;padding:0;">
-                                                <i class="fab fa-whatsapp fa-lg"></i>
+                                                <i class="fab fa-whatsapp"></i>
                                             </a>
                                         
-                                            <button type="button" class="btn btn-outline-dark rounded-circle" title="Copy link"
+                                            <!-- Copy -->
+                                            <button class="btn btn-outline-dark rounded-circle"
                                                 onclick="navigator.clipboard.writeText('{{ job_url }}');alert('Link copied!');"
                                                 style="width:45px;height:45px;display:flex;align-items:center;justify-content:center;padding:0;">
-                                                <i class="fas fa-copy fa-lg"></i>
+                                                <i class="fas fa-copy"></i>
                                             </button>
                                         
                                             {% endwith %}
