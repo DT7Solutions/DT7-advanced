@@ -199,7 +199,10 @@
                                             <a href="https://x.com/intent/tweet?text={{ jobitem.Title|urlencode }}&url={{ job_url|urlencode }}" target="_blank"
                                                 class="btn btn-outline-secondary rounded-circle"
                                                 style="width:45px;height:45px;display:flex;align-items:center;justify-content:center;padding:0;">
-                                                <i class="fab fa-x-twitter"></i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="width:18px;height:18px;">
+                                                    <path fill="currentColor"
+                                                        d="M453.2 112L523.8 112L369.6 288.2L551 528L409 528L297.7 382.6L170.5 528L99.8 528L264.7 339.5L90.8 112L236.4 112L336.9 244.9L453.2 112zM428.4 485.8L467.5 485.8L215.1 152L173.1 152L428.4 485.8z" />
+                                                </svg>
                                             </a>
                                         
                                             <!-- LinkedIn -->
@@ -210,19 +213,18 @@
                                             </a>
                                         
                                             <!-- WhatsApp -->
-                                            <a href="https://wa.me/?text={{ jobitem.Title|urlencode }}%20{{ job_url|urlencode }}" target="_blank"
+                                           <a href="https://api.whatsapp.com/send?text=Job Opening:%20{{ jobitem.Title|urlencode }}%0AApply%20Here:https://dt7.agency/career/{{ jobitem.Id }}/ " target="_blank"
                                                 class="btn btn-outline-success rounded-circle"
                                                 style="width:45px;height:45px;display:flex;align-items:center;justify-content:center;padding:0;">
                                                 <i class="fab fa-whatsapp"></i>
-                                            </a>
+                                                </a>
                                         
                                             <!-- Copy -->
                                             <button class="btn btn-outline-dark rounded-circle"
-                                                onclick="navigator.clipboard.writeText('{{ job_url }}');alert('Link copied!');"
-                                                style="width:45px;height:45px;display:flex;align-items:center;justify-content:center;padding:0;">
+                                                onclick="navigator.clipboard.writeText('https://dt7.agency/career/{{ jobitem.Id }}/').then(()=>alert('Link copied'))"
+                                                style="width:45px;height:45px;display:flex;align-items:center;justify-content:center;">
                                                 <i class="fas fa-copy"></i>
                                             </button>
-                                        
                                             {% endwith %}
                                         
                                         </div>
@@ -386,6 +388,7 @@
         </div>
     </div>
     <!--Enquiry Form Popup section end -->
+   
 
 
 

@@ -13,6 +13,9 @@ from django.db import models
 from django.views.decorators.csrf import csrf_exempt
 from .context_processors import location_data
 from .location_utils import get_nearest_city
+from Dt7solution.settings import DEBUG
+
+
 
 @csrf_exempt
 def Home(request):
@@ -159,7 +162,14 @@ def Carrers(request):
     paginator = Paginator(jobpost, 6) 
     page = request.GET.get('page')
     posts = paginator.get_page(page)
-    return render(request, 'uifiles/carrers.html',{'jobs':posts,'posts':posts,'page':page,'navbar':'Carrers'})
+    if DEBUG:
+        host_url = "http://127.0.0.1:8000"
+        print("DEBUG is False: Using local host URL")
+    else:
+        host_url = "https://dt7.agency"
+        print("DEBUG is True: Using production host URL")
+
+    return render(request, 'uifiles/carrers.html',{'jobs':posts,'posts':posts,'page':page,'navbar':'Carrers','host_url': host_url})
 
 def Carrerdetails(request,id):
     job_item = JobPost.objects.filter(Id=id).first()
