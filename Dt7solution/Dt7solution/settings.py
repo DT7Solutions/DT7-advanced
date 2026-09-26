@@ -27,11 +27,11 @@ SECRET_KEY = 'django-insecure-+jjbhluvqxf1!i5&=3s74e&sq#!v426$0t))5+yf5+g^crfd8x
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# DEBUG = True
-# ALLOWED_HOSTS = ['*']
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
-DEBUG = False
-ALLOWED_HOSTS = ['91.108.110.206','dt7.agency','www.dt7.agency']
+# DEBUG = False
+# ALLOWED_HOSTS = ['91.108.110.206','dt7.agency','www.dt7.agency']
 # '91.108.110.206','dt7.agency','www.dt7.agency'
 
 # Application definition
@@ -59,6 +59,7 @@ CMS_CONFIRM_VERSION4 = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.gzip.GZipMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -100,8 +101,18 @@ DATABASES = {
         "PASSWORD": "Dt7@2026",
         "HOST": "91.108.110.206",
         "PORT": "5432",
+        "CONN_MAX_AGE": 600,
     }
 }
+
+# Caching Configuration
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-dt7agency-cache',
+    }
+}
+
 
 
 

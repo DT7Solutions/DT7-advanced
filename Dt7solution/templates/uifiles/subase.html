@@ -28,14 +28,16 @@
     <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest'%}">
 
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
-    <!-- Critical CSS (Bootstrap core & minimal layout) -->
-    <link rel="preload" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="{% static 'assets/css/digihub.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/digihub.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+
 
     <!-- Non-critical CSS (deferred / media print) -->
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.css' %}" media="print" onload="this.media='all'">
@@ -382,8 +384,10 @@
     <!-- template js -->
     <script src="{% static 'assets/js/digihub.js' %}"></script>
     <script src="{% static 'assets/js/Contact.js' %}"></script>
+    <script src="{% static 'assets/js/anti_spam.js' %}" defer></script>
     <!-- Geo Location -->
     <script src="{% static 'assets/js/location.js' %}" defer></script>
+
 
     <script src="{% static 'assets/js/jobapplication.js' %}"></script>
     <script>
@@ -562,7 +566,9 @@
                 });
             }
         });
-    </script>
+    <!-- Cookies Consent & Visitor Analytics Tracker -->
+    {% include 'uifiles/cookie_tracker.html' %}
 </body>
+
 
 </html>

@@ -1,0 +1,387 @@
+{% load static %}
+
+<!-- Enterprise Cookie Preferences Modal (TrustArc / OneTrust Style) -->
+<div id="cookieConsentModalOverlay" class="cookie-modal-overlay" style="display: none;">
+    <div class="cookie-modal-dialog">
+        <!-- Header & Logo -->
+        <div class="cookie-modal__header">
+            <img src="{% static 'assets/images/logoblack.png' %}" alt="DT7 Agency Logo" class="cookie-modal__logo">
+            <button id="closeCookieModalBtn" type="button" class="cookie-modal__close-x" aria-label="Close">&times;</button>
+        </div>
+
+        <div class="cookie-modal__body">
+            <p class="cookie-modal__intro">
+                Please choose whether this site may use cookies or related technologies such as web beacons, pixel tags, and Flash objects ("Cookies") as described below. You can learn more about how this site uses cookies and related technologies by reading our privacy policy linked below.
+            </p>
+
+            <!-- Card 1: Required Cookies -->
+            <div class="cookie-category-card">
+                <div class="cookie-category-card__head">
+                    <h3 class="cookie-category-card__title">Required Cookies</h3>
+                    <span class="cookie-category-card__status">Always Active</span>
+                </div>
+                <p class="cookie-category-card__desc">
+                    These cookies are necessary to enable the basic features of this site to function, such as providing secure log-in or remembering how far you are through an order.
+                </p>
+                <button type="button" class="cookie-category-card__toggle-details" onclick="toggleCookieDetails('requiredDetails', this)">
+                    &#9654; View Required Cookies
+                </button>
+                <div id="requiredDetails" class="cookie-category-card__details" style="display: none;">
+                    <ul>
+                        <li><strong>sessionid:</strong> Maintains user session state.</li>
+                        <li><strong>csrftoken:</strong> Protects against Cross-Site Request Forgery attacks.</li>
+                        <li><strong>user_city:</strong> Stores selected city location preference.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: Functional Cookies -->
+            <div class="cookie-category-card">
+                <div class="cookie-category-card__head">
+                    <h3 class="cookie-category-card__title">Functional & Performance Cookies</h3>
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="functionalCookiesToggle" checked>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-card__desc">
+                    These cookies allow us to analyze your use of the site to evaluate and improve our performance. They may also be used to provide a better customer experience on this site. For example, remembering your visit count, device type, traffic source, and scroll depth. To disable or opt-out of these cookies, click the toggle switch to the right.
+                </p>
+                <button type="button" class="cookie-category-card__toggle-details" onclick="toggleCookieDetails('functionalDetails', this)">
+                    &#9654; Detailed Settings
+                </button>
+                <div id="functionalDetails" class="cookie-category-card__details" style="display: none;">
+                    <ul>
+                        <li><strong>visitor_id:</strong> Unique anonymous visitor tracking identifier.</li>
+                        <li><strong>visit_count:</strong> Total sessions/pages visited.</li>
+                        <li><strong>scroll_depth:</strong> Max scroll depth percentage achieved.</li>
+                        <li><strong>device_type:</strong> Visitor device classification (Mobile/Desktop/Tablet).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3: Advertising Cookies -->
+            <div class="cookie-category-card">
+                <div class="cookie-category-card__head">
+                    <h3 class="cookie-category-card__title">Advertising & Marketing Cookies</h3>
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="advertisingCookiesToggle" checked>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+                <p class="cookie-category-card__desc">
+                    These cookies are used to show you ads that are more relevant to you and monitor site metrics. We may share this information with advertisers or use it to better understand your interests. For example, Advertising Cookies may be used to share data with advertisers so that the ads you see are more relevant to you. To disable or opt-out of these cookies, click the toggle switch to the right.
+                </p>
+                <button type="button" class="cookie-category-card__toggle-details" onclick="toggleCookieDetails('advertisingDetails', this)">
+                    &#9654; Detailed Settings
+                </button>
+                <div id="advertisingDetails" class="cookie-category-card__details" style="display: none;">
+                    <ul>
+                        <li><strong>utm_campaign / referrer:</strong> Tracks ad campaign referral sources.</li>
+                        <li><strong>social_pixel:</strong> Social media analytics and conversions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="cookie-modal__buttons">
+                <button id="submitCookiePreferencesBtn" type="button" class="cookie-btn cookie-btn--submit">SUBMIT PREFERENCES</button>
+                <button id="acceptAllCookiesBtn" type="button" class="cookie-btn cookie-btn--accept">ACCEPT ALL</button>
+                <button id="declineAllCookiesBtn" type="button" class="cookie-btn cookie-btn--decline">DECLINE ALL</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="cookie-modal__footer">
+            <div class="cookie-modal__footer-left">
+                <a href="/privacypolicy" class="cookie-modal__privacy-link" target="_blank">Privacy Policy</a>
+                <select class="cookie-modal__lang-select">
+                    <option value="en" selected>English</option>
+                </select>
+            </div>
+            <div class="cookie-modal__footer-right">
+                <span>Powered by: <strong>DT7 Agency</strong></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Overlay & Container */
+.cookie-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 15, 30, 0.75);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.cookie-modal-dialog {
+    background: #ffffff;
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #1f2937;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    animation: cookieModalFadeIn 0.3s ease;
+}
+
+@keyframes cookieModalFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.cookie-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px 12px 28px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.cookie-modal__logo {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
+.cookie-modal__close-x {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #6b7280;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+.cookie-modal__close-x:hover { color: #111827; }
+
+/* Body Content */
+.cookie-modal__body {
+    padding: 20px 28px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.cookie-modal__intro {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #4b5563;
+    margin-bottom: 20px;
+}
+
+/* Cards */
+.cookie-category-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    background: #ffffff;
+}
+
+.cookie-category-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.cookie-category-card__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.cookie-category-card__status {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #059669;
+}
+
+.cookie-category-card__desc {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #6b7280;
+    margin: 0 0 10px 0;
+}
+
+.cookie-category-card__toggle-details {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #1e293b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.cookie-category-card__toggle-details:hover { color: #ea4723; }
+
+.cookie-category-card__details {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #e5e7eb;
+}
+.cookie-category-card__details ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 12.5px;
+    color: #4b5563;
+}
+.cookie-category-card__details li {
+    margin-bottom: 4px;
+}
+
+/* Toggle Switch */
+.cookie-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 25px;
+}
+
+.cookie-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.cookie-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #cbd5e1;
+    transition: .3s;
+    border-radius: 25px;
+}
+
+.cookie-slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+input:checked + .cookie-slider {
+    background-color: #0d122b;
+}
+
+input:checked + .cookie-slider:before {
+    transform: translateX(23px);
+}
+
+/* Action Buttons */
+.cookie-modal__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.cookie-btn {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    text-align: center;
+}
+
+.cookie-btn--submit,
+.cookie-btn--accept,
+.cookie-btn--decline {
+    background: #090d23;
+    color: #ffffff;
+}
+
+.cookie-btn--submit:hover,
+.cookie-btn--accept:hover,
+.cookie-btn--decline:hover {
+    background: #ea4723;
+}
+
+/* Footer */
+.cookie-modal__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: #fafafa;
+    border-top: 1px solid #f3f4f6;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.cookie-modal__footer-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cookie-modal__privacy-link {
+    color: #d97706;
+    font-weight: 600;
+    text-decoration: none;
+}
+.cookie-modal__privacy-link:hover { text-decoration: underline; }
+
+.cookie-modal__lang-select {
+    padding: 3px 8px;
+    font-size: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background: #ffffff;
+    color: #374151;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .cookie-modal-dialog { max-height: 95vh; margin: 10px; }
+    .cookie-modal__header, .cookie-modal__body, .cookie-modal__footer { padding-left: 16px; padding-right: 16px; }
+    .cookie-modal__footer { flex-direction: column; gap: 10px; align-items: flex-start; }
+}
+</style>
+
+<script>
+function toggleCookieDetails(id, btn) {
+    var details = document.getElementById(id);
+    if (details.style.display === "none" || !details.style.display) {
+        details.style.display = "block";
+        btn.innerHTML = "&#9660; Hide Details";
+    } else {
+        details.style.display = "none";
+        btn.innerHTML = "&#9654; Detailed Settings";
+    }
+}
+</script>
+
+<script src="{% static 'assets/js/visitor_tracker.js' %}" defer></script>

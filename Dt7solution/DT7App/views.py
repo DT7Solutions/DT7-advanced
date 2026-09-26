@@ -188,14 +188,22 @@ def Carrerdetails(request,id):
 
     return render(request, "uifiles/carrer-details.html", context)
 
+from .anti_spam import is_spam_submission
+
 @csrf_exempt
 def apply_job_ajax(request):
     if request.method == "POST":
-        full_name = request.POST.get("full_name")
-        email = request.POST.get("email")
-        message = request.POST.get("message")
-        job_title = request.POST.get("job_title")
+        full_name = request.POST.get("full_name", "").strip()
+        email = request.POST.get("email", "").strip()
+        message = request.POST.get("message", "").strip()
+        job_title = request.POST.get("job_title", "").strip()
         resume = request.FILES.get("resume")
+
+        # Anti-spam protection check
+        is_spam, reason = is_spam_submission(request, form_name="Job Application", name=full_name, email=email, message=message)
+        if is_spam:
+            # Silently discard spam without alerting bots
+            return JsonResponse({"status": "success", "message": "Application submitted successfully!"})
 
         if not resume:
             return JsonResponse({"status": "error", "message": "Resume is required"}, status=400)
@@ -218,44 +226,6 @@ def rss(request):
 def page_not_found_view(request, exception):
     return render(request, 'uifiles/404.html', status=404)
 
-# @csrf_exempt
-# def Contact(request):
-#     if request.method == "POST":
-#         try:
-#             first_name = request.POST.get('FirstName', "").strip()
-#             last_name = request.POST.get('LastName', "").strip()
-#             email = request.POST.get('Email', "").strip()
-#             services_interested = request.POST.getlist('ServicesInterestedIncontact', [])
-#             message = request.POST.get('Message', "").strip()
-#             terms_and_conditions = request.POST.get('TermsAndConditions', "").strip()
-
-#             # Save form data
-#             form_data = FormsData.objects.create(
-#                 Name=f"{first_name} {last_name}",
-#                 email=email,
-#                 services_interested=', '.join(services_interested),
-#                 message=message,
-#                 terms_and_conditions=terms_and_conditions
-#             )
-#             print(f"Form saved successfully with ID {form_data.id}")
-
-#             # Send email
-#             send_mail(
-#                 'New Contact Form Submission', 
-#                 f'Email : {email}\nMessage: {message}\nServices Interested In: {", ".join(services_interested)}',  
-#                 'noreplaybadugudinesh94@gmail.com',  
-#                 ['dt7solutions@gmail.com'],  
-#                 fail_silently=False,  
-#             )
-#             messages.success(request, 'Message has been successfully sent.')
-
-#         except Exception as e:
-#             print(f"Error: {e}")
-#             messages.error(request, 'An error occurred. Please try again.')
-
-#         return render(request, 'uifiles/contact.html', {'navbar': 'Contact'})
-#     else:
-#         return render(request, 'uifiles/contact.html', {'navbar': 'Contact'})
 
 @csrf_exempt
 def Contact(request):
@@ -276,6 +246,13 @@ def Contact(request):
             message = request.POST.get("exampleInputMessageinfo", "").strip()
             services = request.POST.getlist("servicesInterestedIn")
 
+        # -------- Anti-spam protection check --------
+        full_name = f"{first_name} {last_name}".strip()
+        is_spam, reason = is_spam_submission(request, form_name=form_type, name=full_name, email=email, message=message)
+        if is_spam:
+            # Silently discard spam without alerting bots
+            return JsonResponse({"status": "success"})
+
         # -------- Join services --------
         services_value = form_type
         if services:
@@ -283,7 +260,7 @@ def Contact(request):
 
         # -------- Save to DB --------
         FormsData.objects.create(
-            Name=f"{first_name} {last_name}".strip(),
+            Name=full_name,
             email=email,
             services_interested=services_value,
             message=message,
@@ -291,6 +268,7 @@ def Contact(request):
         )
         return JsonResponse({"status": "success"})
     return render(request, "uifiles/contact.html", {"navbar": "Contact"})
+
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -334,3 +312,137 @@ def set_location(request):
     response = JsonResponse({"city": "guntur"})
     response.set_cookie("user_city", "guntur", max_age=60 * 60 * 24 * 30, path="/")
     return response
+
+import uuid
+
+import datetime
+from django.utils import timezone
+
+@csrf_exempt
+def track_visitor_api(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+        except Exception:
+            data = {}
+
+        visitor_id = data.get("visitor_id") or request.COOKIES.get("visitor_id") or str(uuid.uuid4())
+        current_page = data.get("current_page") or request.META.get("HTTP_REFERER", "/") or "/"
+        page_title = (data.get("page_title") or "")[:250]
+        
+        try:
+            scroll_depth = int(data.get("scroll_depth", 0))
+        except (ValueError, TypeError):
+            scroll_depth = 0
+
+        try:
+            time_spent = int(data.get("time_spent", 0))
+        except (ValueError, TypeError):
+            time_spent = 0
+
+        history_id = data.get("history_id")
+        referrer = data.get("referrer") or request.META.get("HTTP_REFERER", "")
+
+        # Device Type Detection
+        user_agent = request.META.get("HTTP_USER_AGENT", "").lower()
+        if "mobile" in user_agent or "android" in user_agent or "iphone" in user_agent:
+            device_type = "Mobile"
+        elif "ipad" in user_agent or "tablet" in user_agent:
+            device_type = "Tablet"
+        else:
+            device_type = "Desktop"
+
+        # Traffic Source Detection
+        traffic_source = "Direct"
+        if referrer:
+            if "google." in referrer:
+                traffic_source = "Google Organic"
+            elif "bing." in referrer:
+                traffic_source = "Bing Organic"
+            elif "facebook." in referrer or "instagram." in referrer or "linkedin." in referrer:
+                traffic_source = "Social Media"
+            elif "dt7.agency" not in referrer:
+                traffic_source = referrer[:250]
+
+        # IP Address
+        x_forwarded_for = request.META.get("HTTP_X_FORWARDED_FOR")
+        ip = x_forwarded_for.split(",")[0].strip() if x_forwarded_for else request.META.get("REMOTE_ADDR")
+
+        # Get or create Visitor Record
+        visitor, created = VisitorTracking.objects.get_or_create(
+            visitor_id=visitor_id,
+            defaults={
+                "device_type": device_type,
+                "traffic_source": traffic_source,
+                "pages_viewed": [current_page],
+                "exit_page": current_page,
+                "scroll_depth": min(max(scroll_depth, 0), 100),
+                "ip_address": ip,
+                "visit_count": 1,
+            }
+        )
+
+        if not created:
+            pages = list(visitor.pages_viewed or [])
+            if not pages or pages[-1] != current_page:
+                pages.append(current_page)
+                visitor.pages_viewed = pages
+                visitor.visit_count += 1
+
+            visitor.exit_page = current_page
+            if scroll_depth > visitor.scroll_depth:
+                visitor.scroll_depth = min(scroll_depth, 100)
+
+            visitor.device_type = device_type
+            if traffic_source != "Direct" and visitor.traffic_source == "Direct":
+                visitor.traffic_source = traffic_source
+            visitor.ip_address = ip
+            visitor.save()
+
+        # Page-wise Tracking History record
+        history_record = None
+        if history_id:
+            try:
+                history_record = VisitorPageHistory.objects.get(id=history_id, visitor=visitor)
+            except VisitorPageHistory.DoesNotExist:
+                history_record = None
+
+        if not history_record:
+            fifteen_mins_ago = timezone.now() - datetime.timedelta(minutes=15)
+            history_record = VisitorPageHistory.objects.filter(
+                visitor=visitor,
+                page_url=current_page,
+                timestamp__gte=fifteen_mins_ago
+            ).order_by('-timestamp').first()
+
+        if history_record:
+            history_record.scroll_depth = max(history_record.scroll_depth, min(max(scroll_depth, 0), 100))
+            if time_spent > history_record.time_spent:
+                history_record.time_spent = time_spent
+            if page_title and not history_record.page_title:
+                history_record.page_title = page_title
+            history_record.save()
+        else:
+            history_record = VisitorPageHistory.objects.create(
+                visitor=visitor,
+                page_url=current_page,
+                page_title=page_title,
+                scroll_depth=min(max(scroll_depth, 0), 100),
+                time_spent=time_spent,
+                ip_address=ip
+            )
+
+        response = JsonResponse({
+            "status": "success",
+            "visitor_id": visitor_id,
+            "visit_count": visitor.visit_count,
+            "history_id": history_record.id if history_record else None
+        })
+
+        # Set persistent cookies
+        response.set_cookie("visitor_id", visitor_id, max_age=60 * 60 * 24 * 365, path="/")
+        response.set_cookie("cookieConsent", "true", max_age=60 * 60 * 24 * 365, path="/")
+        return response
+
+    return JsonResponse({"status": "error", "message": "Invalid request method"}, status=400)
+

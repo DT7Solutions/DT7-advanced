@@ -5,7 +5,9 @@
 <title>Best Digital Marketing Agency in Guntur | DT7 Agency</title>
 <meta name="description" content="DT7.Agency, the best  digital marketing agency in Guntur, offers web design, branding, paid ads, WhatsApp & email marketing. Hire the best today!">
 <meta name="keywords" content="best digital marketing agency near me, digital marketing in guntur">
+<link rel="preload" as="image" href="{% static 'assets/images/slider/hero-one.webp' %}" fetchpriority="high">
 {% endblock %}
+
 
 {% block content %}
     
@@ -44,13 +46,13 @@
             <!-- Banner Slider -->
             <div class="main-slider__carousel digihub-owl__carousel owl-carousel owl-theme" data-owl-options='{"items": 1,"margin": 0,"loop": true,"smartSpeed": 700,"animateOut": "fadeOut","autoplayTimeout": 5000, "nav": false,"dots": false,"autoplay": true}'>
                 <div class="item">
-                    <div class="main-slider__image" style="background-image: url(../../static/assets/images/slider/hero-one.webp);" title="Grow Your Brand With Our Creative Marketing Solutions" alt="Grow Your Brand With Our Creative Marketing Solutions"></div>
+                    <div class="main-slider__image" style="background-image: url('{% static 'assets/images/slider/hero-one.webp' %}');" title="Grow Your Brand With Our Creative Marketing Solutions" alt="Grow Your Brand With Our Creative Marketing Solutions"></div>
                 </div>
                 <div class="item">
-                    <div class="main-slider__image" style="background-image: url(../../static/assets/images/slider/hero-two.webp);" title="We Create Your Business Growth Strategies" alt="We Create Your Business Growth Strategies"></div>
+                    <div class="main-slider__image" style="background-image: url('{% static 'assets/images/slider/hero-two.webp' %}');" title="We Create Your Business Growth Strategies" alt="We Create Your Business Growth Strategies"></div>
                 </div>
                 <div class="item">
-                    <div class="main-slider__image" style="background-image: url(../../static/assets/images/slider/hero-three.webp);" title="Unleashing the Power of Online Marketing: Impact & Innovation" alt="Unleashing the Power of Online Marketing: Impact & Innovation"></div>
+                    <div class="main-slider__image" style="background-image: url('{% static 'assets/images/slider/hero-three.webp' %}');" title="Unleashing the Power of Online Marketing: Impact & Innovation" alt="Unleashing the Power of Online Marketing: Impact & Innovation"></div>
                 </div>
             </div>
             <!-- Slider Shapes -->

@@ -26,11 +26,13 @@
     <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest'%}">
 
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap">    
     <!-- stylesheets -->
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/digihub.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
     <link rel="preload" href="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.css' %}" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="{% static 'assets/vendors/animate/animate.min.css' %}" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="{% static 'assets/vendors/fontawesome/css/all.min.css' %}" as="style" onload="this.rel='stylesheet'">
@@ -42,8 +44,7 @@
     <link rel="preload" href="{% static 'assets/vendors/tiny-slider/tiny-slider.css' %}" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="{% static 'assets/vendors/owl-carousel/css/owl.carousel.min.css' %}" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="{% static 'assets/vendors/owl-carousel/css/owl.theme.default.min.css' %}" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="{% static 'assets/css/digihub.css' %}" as="style" onload="this.rel='stylesheet'">
-    <link rel="preload" href="{% static 'assets/css/custom.css' %}" as="style" onload="this.rel='stylesheet'">
+
     <noscript>
         <!-- Fallback for browsers without JS -->
         <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-select/bootstrap-select.min.css' %}">
@@ -489,12 +490,9 @@
     </div>
     <!-- End Mobile Footer Menu -->
 
-    <!-- Cookies Consents -->
-    <div id="cookieConsent" style="display:none; position: fixed; bottom: 0; width: 100%; background-color: #333; color: white; text-align: center; padding: 15px;">
-        <p style="color: #f1f1f1;">We use cookies to ensure you get the best experience on our website. <a href="/Privacypolicy/" title="Read our Privacy Policy" style="color: #f1f1f1; text-decoration: underline;">Privacy Policy</a></p>
-        <button id="acceptCookies" style="background-color: #ea4723; color: white; padding: 10px 20px; border: none; cursor: pointer;" aria-label="Accept Cookies">Accept</button>
-    </div>
-    <!-- End Cookies Consents -->
+    <!-- Cookies Consent & Visitor Analytics Tracker -->
+    {% include 'uifiles/cookie_tracker.html' %}
+
 
     <!-- Scroll to top -->
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top" title="Scroll to top" aria-label="Scroll to top">
@@ -543,8 +541,10 @@
     <!-- Template JS -->
     <script src="{% static 'assets/js/digihub.js' %}" defer></script>
     <script src="{% static 'assets/js/Contact.js' %}" defer></script>
+    <script src="{% static 'assets/js/anti_spam.js' %}" defer></script>
     <!-- Geo Location -->
     <script src="{% static 'assets/js/location.js' %}" defer></script>
+
     
     <!-- N8N Chat -->
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />

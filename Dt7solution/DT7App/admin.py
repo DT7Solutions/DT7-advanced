@@ -58,3 +58,53 @@ class AdminHappyJobapplication(admin.ModelAdmin):
     resume_link.short_description = "Resume"
 
 admin.site.register(JobApplication, AdminHappyJobapplication)
+
+
+from .models import VisitorTracking, VisitorPageHistory, SpamSubmissionLog
+
+
+class VisitorPageHistoryInline(admin.TabularInline):
+    model = VisitorPageHistory
+    extra = 0
+    readonly_fields = ('page_url', 'page_title', 'scroll_depth', 'time_spent', 'ip_address', 'timestamp')
+    can_delete = False
+    ordering = ('-timestamp',)
+
+
+class VisitorTrackingAdmin(admin.ModelAdmin):
+    list_display = (
+        'visitor_id',
+        'device_type',
+        'visit_count',
+        'traffic_source',
+        'exit_page',
+        'scroll_depth',
+        'ip_address',
+        'updated_at'
+    )
+    list_filter = ('device_type', 'updated_at', 'created_at')
+    search_fields = ('visitor_id', 'traffic_source', 'exit_page', 'ip_address')
+    readonly_fields = ('created_at', 'updated_at')
+    inlines = [VisitorPageHistoryInline]
+
+admin.site.register(VisitorTracking, VisitorTrackingAdmin)
+
+
+class VisitorPageHistoryAdmin(admin.ModelAdmin):
+    list_display = ('visitor', 'page_url', 'page_title', 'scroll_depth', 'time_spent', 'ip_address', 'timestamp')
+    list_filter = ('timestamp', 'scroll_depth')
+    search_fields = ('visitor__visitor_id', 'page_url', 'page_title', 'ip_address')
+    readonly_fields = ('timestamp',)
+
+admin.site.register(VisitorPageHistory, VisitorPageHistoryAdmin)
+
+
+class SpamSubmissionLogAdmin(admin.ModelAdmin):
+    list_display = ('form_name', 'name', 'email', 'ip_address', 'reason', 'created_at')
+    list_filter = ('form_name', 'reason', 'created_at')
+    search_fields = ('name', 'email', 'ip_address', 'reason', 'submitted_data')
+    readonly_fields = ('created_at',)
+
+admin.site.register(SpamSubmissionLog, SpamSubmissionLogAdmin)
+
+

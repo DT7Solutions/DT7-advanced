@@ -44,5 +44,7 @@ urlpatterns = [
     path('rss/', rss , name='rss'),
 
     path("set-location/", set_location, name="set_location"),
+    path("api/track-visitor/", track_visitor_api, name="track_visitor_api"),
 ]
+
 
