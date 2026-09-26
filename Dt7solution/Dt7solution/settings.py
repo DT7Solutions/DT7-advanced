@@ -27,11 +27,11 @@ SECRET_KEY = 'django-insecure-+jjbhluvqxf1!i5&=3s74e&sq#!v426$0t))5+yf5+g^crfd8x
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# DEBUG = True
-# ALLOWED_HOSTS = ['*']
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
-DEBUG = False
-ALLOWED_HOSTS = ['91.108.110.206','dt7.agency','www.dt7.agency']
+# DEBUG = False
+# ALLOWED_HOSTS = ['91.108.110.206','dt7.agency','www.dt7.agency']
 # '91.108.110.206','dt7.agency','www.dt7.agency'
 
 # Application definition
@@ -93,11 +93,16 @@ WSGI_APPLICATION = 'Dt7solution.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "dt7agencydb",
+        "USER": "dt7agency",
+        "PASSWORD": "Dt7@2026",
+        "HOST": "91.108.110.206",
+        "PORT": "5432",
     }
 }
+
 
 
 # Password validation

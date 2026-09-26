@@ -110,12 +110,26 @@
 
   if ($(".video-popup").length) {
     $(".video-popup").magnificPopup({
-      type: "iframe",
+      type: "inline",
       mainClass: "mfp-fade",
       removalDelay: 160,
       preloader: true,
-
-      fixedContentPos: false
+      fixedContentPos: true,
+      callbacks: {
+        open: function() {
+          var video = $('#video-modal video').get(0);
+          if (video) {
+            video.currentTime = 0;
+            video.play();
+          }
+        },
+        close: function() {
+          var video = $('#video-modal video').get(0);
+          if (video) {
+            video.pause();
+          }
+        }
+      }
     });
   }
 

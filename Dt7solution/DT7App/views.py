@@ -103,7 +103,8 @@ def Solutions(request):
     return render(request, 'uifiles/service.html',{'navbar':'Solutions'})   
 
 def Solutiondetails(request):
-    return render(request, 'uifiles/services-details.html',{'navbar':'Solutions'}) 
+    return render(request, 'uifiles/service.html',{'navbar':'Solutions'})
+ 
   
 def Projects(request):
     return render(request, 'uifiles/projects.html' ,{'navbar':'Projects'})

@@ -1,9 +1,12 @@
+{% extends 'uifiles/base.html' %}
+{% load static %}
+
+{% block meta %}
 <title>Best Digital Marketing Agency in Guntur | DT7 Agency</title>
 <meta name="description" content="DT7.Agency, the best  digital marketing agency in Guntur, offers web design, branding, paid ads, WhatsApp & email marketing. Hire the best today!">
 <meta name="keywords" content="best digital marketing agency near me, digital marketing in guntur">
+{% endblock %}
 
-{% extends 'uifiles/base.html' %}
-{% load static %}
 {% block content %}
     
         <!-- Main Slider Start -->
@@ -23,8 +26,17 @@
                             <div class="main-slider__btn-group wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                                 <a href="{% if city.lower == 'hyderabad' %}/hyderabad/about/{% elif city.lower == 'vijayawada' %}/guntur/about/{% else %}/guntur/about/{% endif %}" class="digihub-btn digihub-btn--primary" title="Learn more about DT7Agency services">Learn More</a>
                                 <!-- <a href="https://www.youtube.com/watch?v=CbP5Oku3MuM" class=" main-slider__border-btn digihub-btn digihub-btn--border-two video-popup d-lg-block d-none" title="Watch DT7Agency video">Watch Our Video</a> -->
-                                <a href="{% static 'assets/videos/dt7agency-popup-video.mp4' %}" class="main-slider__border-btn digihub-btn digihub-btn--border-two video-popup d-lg-block d-none" title="Watch DT7Agency video"> Watch Our Video </a>
+                                <a href="#video-modal" class="main-slider__border-btn digihub-btn digihub-btn--border-two video-popup d-lg-block d-none" title="Watch DT7Agency video"> Watch Our Video </a>
                             </div>
+
+                            <!-- Video Popup Modal -->
+                            <div id="video-modal" class="mfp-hide" style="max-width: 850px; margin: 0 auto; padding: 0; background: transparent; text-align: center; border-radius: 12px; overflow: hidden; position: relative;">
+                                <video controls playsinline style="width: 100%; height: auto; display: block; border-radius: 12px; outline: none; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                                    <source src="{% static 'assets/videos/dt7agency-popup-video.mp4' %}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+
                         </div>
                     </div>
                 </div>

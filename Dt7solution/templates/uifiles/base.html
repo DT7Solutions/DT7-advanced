@@ -10,7 +10,14 @@
     <meta name="author" content="DT7Agency">
     <meta name="publisher" content="DT7Agency">
     <meta name="robots" content="index, follow">
+
+    <!-- Dynamic Meta Block for child templates -->
+    {% block meta %}
+    <title>DT7Agency | Digital Marketing & Web Development</title>
+    <meta name="description" content="DT7Agency - Best Digital Marketing and Web Development Company">
+    <meta name="keywords" content="Digital Marketing, Web Design, SEO, Social Media">
     <link rel="canonical" href="https://dt7.agency/">
+    {% endblock %}
 
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/dt7-132x132.png' %}">
