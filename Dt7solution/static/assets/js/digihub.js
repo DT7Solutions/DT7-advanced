@@ -585,13 +585,28 @@
     });
   }
 
+  // Preloader display timer (Set to 3,000 ms / 3 seconds)
+  var preloaderStartTime = Date.now();
+  var minPreloaderDisplayMs = 3000; // 3 seconds display time
+
+
+  function hidePreloader() {
+    var elapsed = Date.now() - preloaderStartTime;
+    var remaining = Math.max(0, minPreloaderDisplayMs - elapsed);
+    setTimeout(function () {
+      if ($(".preloader").length) {
+        $(".preloader").fadeOut(800);
+      }
+    }, remaining);
+  }
+
   // window load event
   $(window).on("load", function () {
-    if ($(".preloader").length) {
-      $(".preloader").fadeOut();
-    }
+    hidePreloader();
+
     thmOwlInit();
     thmTinyInit();
+
 
     // Image Hover Effect
     Array.from(document.querySelectorAll(".digihub-image-hover")).forEach(

@@ -20,5 +20,6 @@ Allow: /*.css$
 Allow: /*.js$
 Allow: /wp-content/uploads/
 
-# Sitemap for faster indexing
+# Sitemap & LLMS for AI Search Crawlers
 Sitemap: https://dt7.agency/sitemap.xml
+# https://dt7.agency/llms.txt

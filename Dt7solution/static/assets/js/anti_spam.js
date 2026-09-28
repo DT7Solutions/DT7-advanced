@@ -2,6 +2,10 @@
  * DT7 Solutions - Sequential 2-Step Anti-Spam Security Verification Script
  * Step 1: Security Question (Math Calculation) -> Once solved...
  * Step 2: Visual Security CAPTCHA Code -> Unlocks & verifies -> Enables Submit
+ * 
+ * Configured Rule:
+ * - 2-Step Verification UI enabled for Contact Us section, Get in Touch section (#myForm), and Enquiry Form Modal (#popresetting).
+ * - 2-Step Verification UI REMOVED from Footer newsletter forms.
  */
 (function () {
     function generateCaptchaCode(length) {
@@ -180,11 +184,12 @@
     function initAntiSpamProtection() {
         var renderTime = (Date.now() / 1000).toString();
         var forms = document.querySelectorAll("form");
+        var currentPath = (window.location.pathname || "").toLowerCase();
 
         forms.forEach(function (form) {
             if (form.getAttribute("role") === "search" || form.classList.contains("search-popup__form")) return;
 
-            // 1. Inject Hidden Render Timestamp
+            // 1. Inject Hidden Render Timestamp (Background Protection)
             if (!form.querySelector('input[name="form_render_ts"]')) {
                 var tsInput = document.createElement("input");
                 tsInput.type = "hidden";
@@ -193,7 +198,7 @@
                 form.appendChild(tsInput);
             }
 
-            // 2. Inject Invisible Honeypot Field
+            // 2. Inject Invisible Honeypot Field (Background Protection)
             if (!form.querySelector('input[name="hp_website_url"]')) {
                 var hpInput = document.createElement("input");
                 hpInput.type = "text";
@@ -205,8 +210,43 @@
                 form.appendChild(hpInput);
             }
 
-            // 3. Inject 2-Step Security Challenge Container
+            // 3. Determine if 2-Step Verification UI should be active for this form
+            var isFooterForm = !!(form.closest('footer') || 
+                                  form.classList.contains('mc-form') || 
+                                  form.classList.contains('footer-one__newsletter-form-box') || 
+                                  form.classList.contains('subscribe-one__form') ||
+                                  form.id === 'mc-embedded-subscribe-form');
+
+            // Enable 2-step verification for:
+            // - Contact Us Page section (#myForm, /contact/)
+            // - Get in Touch Enquiry Modal (#popresetting, .modal)
+            var isContactOrGetInTouch = (form.id === "myForm" || 
+                                         form.id === "popresetting" || 
+                                         currentPath.indexOf("/contact") !== -1 || 
+                                         form.classList.contains("form-back") || 
+                                         form.closest(".contact-page") !== null || 
+                                         form.closest(".comment-form") !== null ||
+                                         form.closest(".modal") !== null);
+
+            var shouldAddTwoStepUI = !isFooterForm && isContactOrGetInTouch;
+
             var securityBox = form.querySelector('.anti-spam-security-container');
+
+            if (!shouldAddTwoStepUI) {
+                if (securityBox) {
+                    securityBox.style.display = "none";
+                    securityBox.remove();
+                }
+                var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = "1";
+                    submitBtn.style.cursor = "pointer";
+                }
+                return;
+            }
+
+            // 4. Inject 2-Step Security Challenge Container for Contact Us / Get in Touch / Enquiry Modal
             if (!securityBox) {
                 var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
                 if (submitBtn) {

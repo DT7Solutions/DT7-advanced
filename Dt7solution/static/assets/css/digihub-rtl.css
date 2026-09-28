@@ -863,14 +863,31 @@ i {
   text-align: center;
 }
 .preloader__image {
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-name: flipInY;
-  animation-name: flipInY;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+  width: 550px;
+  max-width: 90vw;
+  max-height: 85vh;
+  height: auto;
+  object-fit: contain;
+  margin: auto;
+  display: block;
+}
+@media (max-width: 992px) {
+  .preloader__image {
+    width: 420px;
+    max-width: 85vw;
+  }
+}
+@media (max-width: 768px) {
+  .preloader__image {
+    width: 320px;
+    max-width: 80vw;
+  }
+}
+@media (max-width: 480px) {
+  .preloader__image {
+    width: 240px;
+    max-width: 75vw;
+  }
 }
 
 /* scroll to top */

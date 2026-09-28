@@ -11,6 +11,7 @@
     <meta name="author" content="DT7Agency">
     <meta name="publisher" content="DT7Agency">
     <meta name="robots" content="index, follow">
+    <link rel="alternate" type="text/markdown" href="https://dt7.agency/llms.txt" title="llms.txt">
     <link rel="canonical" href="https://dt7.agency/">
 
 
@@ -35,7 +36,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/digihub.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/digihub.css' %}?v=large550">
     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
 
 
@@ -78,9 +79,10 @@
 
     <!-- Preloader Start -->
     <div class="preloader">
-       <img class="preloader__image" src="{% static 'assets/images/logoblack.png' %}" alt="DT7Agency Logo - Digital Marketing and Web Development Company" title="DT7Agency | Leading Digital Marketing and Web Development Company">
+       <img class="preloader__image" src="{% static 'assets/images/preloader.gif' %}" alt="DT7Agency Preloader" title="DT7Agency | Leading Digital Marketing and Web Development Company">
     </div>
     <!-- Preloader End -->
+
 
     <div class="page-wrapper">
 
@@ -382,7 +384,7 @@
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
     <!-- template js -->
-    <script src="{% static 'assets/js/digihub.js' %}"></script>
+    <script src="{% static 'assets/js/digihub.js' %}?v=3s"></script>
     <script src="{% static 'assets/js/Contact.js' %}"></script>
     <script src="{% static 'assets/js/anti_spam.js' %}" defer></script>
     <!-- Geo Location -->
