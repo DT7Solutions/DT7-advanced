@@ -154,6 +154,12 @@ def Mobileprivacypolicy(request):
 def productshoot(request):
     return render(request, 'uifiles/Product-shoot.html',{'navbar':'Solutions'})
 
+def MobileApplicationDevelopment(request):
+    return render(request, 'uifiles/mobile-application-development.html', {'navbar': 'Solutions'})
+
+def QuickCommerce(request):
+    return render(request, 'uifiles/quick-commerce.html', {'navbar': 'Solutions'})
+
 # Carrer page views 
 def Carrers(request):
     jobpost = JobPost.objects.filter(status=1).order_by('-Id')
@@ -244,6 +250,7 @@ def Contact(request):
             last_name = ""   # enquiry form has no last name
             email = request.POST.get("exampleInputEmail", "").strip()
             message = request.POST.get("exampleInputMessageinfo", "").strip()
+            purpose = request.POST.get("purposeOfEnquiry", "").strip()
             services = request.POST.getlist("servicesInterestedIn")
 
         # -------- Anti-spam protection check --------
@@ -254,9 +261,10 @@ def Contact(request):
             return JsonResponse({"status": "success"})
 
         # -------- Join services --------
-        services_value = form_type
+        prefix = f"{form_type} ({purpose})" if purpose else form_type
+        services_value = prefix
         if services:
-            services_value = form_type + " | " + ", ".join(services)
+            services_value = prefix + " | " + ", ".join(services)
 
         # -------- Save to DB --------
         FormsData.objects.create(

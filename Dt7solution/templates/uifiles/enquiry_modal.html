@@ -1,0 +1,280 @@
+<!-- Multi-Step Enquiry Form Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow-lg border-0" style="border-radius: 12px; overflow: hidden; background: #ffffff;">
+            <!-- Plain Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title fs-5" id="exampleModalLabel">Enquiry Form</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <div class="modal-body p-4" style="background-color: #ffffff;">
+                <form action="#" id="popresetting" method="POST" class="container-fluid p-0 needs-validation" novalidate>
+                    {% csrf_token %}
+
+                    <!-- ================= STEP 1: NAME, PHONE, EMAIL ================= -->
+                    <div id="enquiryStep1" class="enquiry-step-section">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-dark" style="font-size: 13px;">Your Name <span class="text-danger">*</span></label>
+                            <input type="text" class="comment-form__form-input form-control" required id="exampleInputName" name="exampleInputName" placeholder="Your Name" aria-describedby="nameHelp">
+                            <div class="invalid-feedback" style="font-size: 12px;">Please enter your name.</div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <label class="form-label fw-semibold text-dark" style="font-size: 13px;">Phone Number <span class="text-danger">*</span></label>
+                                <input type="tel" class="comment-form__form-input form-control" required id="exampleInputPhone" name="exampleInputPhone" placeholder="Phone number">
+                                <div class="invalid-feedback" style="font-size: 12px;">Please enter a valid phone number.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold text-dark" style="font-size: 13px;">Email <span class="text-danger">*</span></label>
+                                <input type="email" class="comment-form__form-input form-control" required id="exampleInputEmail" name="exampleInputEmail" placeholder="Email" aria-describedby="emailHelp">
+                                <div class="invalid-feedback" style="font-size: 12px;">Please enter a valid email address.</div>
+                            </div>
+                        </div>
+
+                        <!-- Step 1 Bottom Action Bar: Next Button (Right) -->
+                        <div class="d-flex justify-content-end mt-4 pt-3 border-top" style="border-color: #e2e8f0 !important;">
+                            <button type="button" id="nextToStep2Btn" class="digihub-btn digihub-btn--secondary btn btn-sm px-4 py-2" style="font-size: 14px;">
+                                Next <i class="fas fa-arrow-right ms-1"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ================= STEP 2: PURPOSE OF ENQUIRY ================= -->
+                    <div id="enquiryStep2" class="enquiry-step-section" style="display: none;">
+                        <h5 class="fw-bold mb-3 text-dark border-bottom pb-2" style="font-size: 16px; border-color: #cbd5e1 !important;">Purpose of enquiry</h5>
+                        
+                        <!-- Slide down dropdown options -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-dark" style="font-size: 13px;">Select Purpose <span class="text-danger">*</span></label>
+                            <select id="purposeOfEnquirySelect" name="purposeOfEnquiry" class="form-select comment-form__form-input shadow-sm" style="font-size: 14px; height: 44px; border-radius: 8px; border: 1px solid #cbd5e1;" required>
+                                <option value="" disabled selected>-- Select Purpose --</option>
+                                <option value="Service Enquiry">1. Service Enquiry</option>
+                                <option value="Collaboration">2. Collaboration</option>
+                            </select>
+                        </div>
+
+                        <!-- Option 1: Service Enquiry -> Solutions section with tick box next to names -->
+                        <div id="serviceEnquirySection" class="mb-3 p-3 rounded shadow-sm" style="display: none; background: #ffffff; border: 1px solid #e2e8f0;">
+                            <label class="fw-bold text-dark mb-2 d-block" style="font-size: 13px; color: #0f172a;">Select Solutions / Services:</label>
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="modal_sol1" name="servicesInterestedIn" value="Branding">
+                                        <label class="form-check-label text-dark" style="font-size: 13px;" for="modal_sol1">Branding</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="modal_sol2" name="servicesInterestedIn" value="Digital Marketing">
+                                        <label class="form-check-label text-dark" style="font-size: 13px;" for="modal_sol2">Digital Marketing</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="modal_sol3" name="servicesInterestedIn" value="WhatsApp Marketing">
+                                        <label class="form-check-label text-dark" style="font-size: 13px;" for="modal_sol3">WhatsApp Marketing</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="modal_sol4" name="servicesInterestedIn" value="Design & Development">
+                                        <label class="form-check-label text-dark" style="font-size: 13px;" for="modal_sol4">Design & Development</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="modal_sol5" name="servicesInterestedIn" value="Mobile Application Development">
+                                        <label class="form-check-label text-dark" style="font-size: 13px;" for="modal_sol5">Mobile Application Development</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="modal_sol6" name="servicesInterestedIn" value="SEO Optimization">
+                                        <label class="form-check-label text-dark" style="font-size: 13px;" for="modal_sol6">SEO Optimization</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="modal_sol7" name="servicesInterestedIn" value="Product & Video Shoot">
+                                        <label class="form-check-label text-dark" style="font-size: 13px;" for="modal_sol7">Product & Video Shoot</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="modal_sol8" name="servicesInterestedIn" value="3PL Listing">
+                                        <label class="form-check-label text-dark" style="font-size: 13px;" for="modal_sol8">3PL Listing</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="modal_sol9" name="servicesInterestedIn" value="Quick Commerce">
+                                        <label class="form-check-label text-dark" style="font-size: 13px;" for="modal_sol9">Quick Commerce</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input me-2" type="checkbox" id="modal_sol10" name="servicesInterestedIn" value="Performance Marketing">
+                                        <label class="form-check-label text-dark" style="font-size: 13px;" for="modal_sol10">Performance Marketing</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Enter your message section (shown for both Service Enquiry & Collaboration) -->
+                        <div id="messageSection" class="mb-3" style="display: none;">
+                            <label class="form-label fw-semibold text-dark" style="font-size: 13px;">Enter your message</label>
+                            <textarea class="comment-form__form-input popup-messsge form-control" id="exampleInputMessageinfo" name="exampleInputMessageinfo" placeholder="Enter your message" rows="3"></textarea>
+                        </div>
+
+                        <!-- Dedicated Full-Width Security Verification Placement Area -->
+                        <div id="securityChallengeArea" class="w-100 mb-2"></div>
+
+                        <!-- Guaranteed Side-by-Side Bottom Buttons Row -->
+                        <div id="step2ButtonsRow" class="row g-2 align-items-center mt-3 pt-3 border-top" style="border-color: #e2e8f0 !important; margin-left: 0; margin-right: 0;">
+                            <div class="col-6 ps-0 pe-1">
+                                <button type="button" id="backToStep1Btn" class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center" style="font-size: 14px; border-radius: 6px; font-weight: 600; height: 44px;">
+                                    <i class="fas fa-arrow-left me-1"></i> Back
+                                </button>
+                            </div>
+                            <div class="col-6 ps-1 pe-0">
+                                <button type="submit" id="popupBtn" class="comment-form__form-btn btn digihub-btn digihub-btn--secondary w-100 py-2 d-flex align-items-center justify-content-center" style="font-size: 14px; margin: 0 !important; height: 44px;">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* CSS to ensure 2-Step Security box fits 100% width above side-by-side buttons */
+#securityChallengeArea .anti-spam-security-container,
+#popresetting .anti-spam-security-container {
+    width: 100% !important;
+    display: block !important;
+    margin-bottom: 15px !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 10px !important;
+    padding: 12px 14px !important;
+}
+
+#popresetting .anti-spam-security-container .step1-box,
+#popresetting .anti-spam-security-container .step2-box {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+}
+
+#popresetting .anti-spam-security-container input.math-answer-input,
+#popresetting .anti-spam-security-container input.captcha-input-field {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const modalElement = document.getElementById("exampleModal");
+    const step1 = document.getElementById("enquiryStep1");
+    const step2 = document.getElementById("enquiryStep2");
+    const nextToStep2Btn = document.getElementById("nextToStep2Btn");
+    const backToStep1Btn = document.getElementById("backToStep1Btn");
+    const purposeSelect = document.getElementById("purposeOfEnquirySelect");
+    const serviceSection = document.getElementById("serviceEnquirySection");
+    const messageSection = document.getElementById("messageSection");
+
+    function repositionSecurityBox() {
+        const form = document.getElementById("popresetting");
+        const challengeArea = document.getElementById("securityChallengeArea");
+        if (form && challengeArea) {
+            const securityBox = form.querySelector(".anti-spam-security-container");
+            if (securityBox && securityBox.parentNode !== challengeArea) {
+                challengeArea.appendChild(securityBox);
+                securityBox.style.width = "100%";
+                securityBox.style.margin = "0 0 15px 0";
+            }
+        }
+    }
+
+    function resetToStep1() {
+        if (step1 && step2) {
+            step1.style.display = "block";
+            step2.style.display = "none";
+        }
+        if (purposeSelect) {
+            purposeSelect.value = "";
+        }
+        if (serviceSection) serviceSection.style.display = "none";
+        if (messageSection) messageSection.style.display = "none";
+    }
+
+    if (modalElement) {
+        modalElement.addEventListener("show.bs.modal", function () {
+            resetToStep1();
+            setTimeout(repositionSecurityBox, 100);
+        });
+    }
+
+    if (nextToStep2Btn) {
+        nextToStep2Btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            const nameInput = document.getElementById("exampleInputName");
+            const phoneInput = document.getElementById("exampleInputPhone");
+            const emailInput = document.getElementById("exampleInputEmail");
+
+            let valid = true;
+
+            [nameInput, phoneInput, emailInput].forEach(function(input) {
+                if (!input) return;
+                if (!input.checkValidity() || input.value.trim() === "") {
+                    input.classList.add("is-invalid");
+                    valid = false;
+                } else {
+                    input.classList.remove("is-invalid");
+                    input.classList.add("is-valid");
+                }
+            });
+
+            if (!valid) {
+                return;
+            }
+
+            // Valid! Transition to Step 2
+            if (step1 && step2) {
+                step1.style.display = "none";
+                step2.style.display = "block";
+            }
+
+            // Reposition security box into #securityChallengeArea
+            setTimeout(repositionSecurityBox, 50);
+        });
+    }
+
+    if (backToStep1Btn) {
+        backToStep1Btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (step1 && step2) {
+                step1.style.display = "block";
+                step2.style.display = "none";
+            }
+        });
+    }
+
+    if (purposeSelect) {
+        purposeSelect.addEventListener("change", function () {
+            const selectedVal = this.value;
+            if (selectedVal === "Service Enquiry") {
+                if (serviceSection) {
+                    serviceSection.style.display = "block";
+                }
+                if (messageSection) {
+                    messageSection.style.display = "block";
+                }
+            } else if (selectedVal === "Collaboration") {
+                if (serviceSection) serviceSection.style.display = "none";
+                if (messageSection) {
+                    messageSection.style.display = "block";
+                }
+            } else {
+                if (serviceSection) serviceSection.style.display = "none";
+                if (messageSection) messageSection.style.display = "none";
+            }
+        });
+    }
+
+    // Interval observer to ensure security box stays cleanly placed in #securityChallengeArea
+    setInterval(repositionSecurityBox, 300);
+});
+</script>
