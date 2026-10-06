@@ -237,6 +237,7 @@ def page_not_found_view(request, exception):
 def Contact(request):
     if request.method == "POST":
         # -------- Detect which form --------
+        purpose = ""
         if request.POST.get("FirstName"):
             form_type = "CONTACT_FORM"
             first_name = request.POST.get("FirstName", "").strip()
