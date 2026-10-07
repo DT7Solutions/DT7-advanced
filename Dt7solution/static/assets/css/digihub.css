@@ -2714,13 +2714,25 @@ input, textarea {
 # Page Header
 --------------------------------------------------------------*/
 .page-header {
-  padding: 150px 0 150px !important;
+  padding: 130px 0 50px !important;
   position: relative;
   background: linear-gradient(180deg, rgba(var( --digihub-base-rgb, 142, 197, 87), 0.33) 0%, rgba(var( --digihub-base-rgb, 142, 197, 87), 0) 100%);
 }
 @media (max-width: 767px) {
   .page-header {
-    padding: 160px 0 80px;
+    padding: 100px 0 30px !important;
+  }
+}
+.page-header + section,
+.page-header + div,
+.page-header + main {
+  padding-top: 50px !important;
+}
+@media (max-width: 767px) {
+  .page-header + section,
+  .page-header + div,
+  .page-header + main {
+    padding-top: 30px !important;
   }
 }
 .page-header__content {
