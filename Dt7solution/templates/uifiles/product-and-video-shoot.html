@@ -39,13 +39,48 @@
                                     <p class="projects-details-page__bottom-info-desc text-alignment">At DT7.Agency, we provide professional product shoot services designed to make your products stand out. Our experienced photographers use top-notch equipment and creative techniques to capture stunning images that highlight the details and features of your items. We tailor each shoot to your brand's style, ensuring your products look their best for your website, social media, or promotional materials. Let us help you create eye-catching visuals that attract customers and elevate your brand!</p>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-4">
                                 <div class="col-xl-12 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                     <div class="projects-details-page__img-box">
-                                        <img loading="lazy" src="{% static 'assets/images/service/dt7services/product-shoot-banner.png' %}" alt="DT7 Agency professional product shoot for e-commerce and branding" title="DT7 Agency - Professional Product Photography Services" class="projects-details-page__img">
+                                        <div class="productshoot-slider__carousel digihub-owl__carousel owl-carousel owl-theme" data-owl-options='{
+                                            "items": 1,
+                                            "margin": 0,
+                                            "loop": true,
+                                            "smartSpeed": 1000,
+                                            "autoplay": true,
+                                            "autoplayTimeout": 4500,
+                                            "autoplayHoverPause": true,
+                                            "nav": false,
+                                            "dots": true
+                                        }'>
+                                            <div class="item">
+                                                <img loading="lazy" src="{% static 'assets/images/service/dt7services/product-shoot-banner.png' %}" alt="DT7 Agency professional product shoot for e-commerce and branding" title="DT7 Agency - Professional Product Photography Services" class="projects-details-page__img">
+                                            </div>
+                                            <div class="item">
+                                                <img loading="lazy" src="{% static 'assets/images/service/dt7services/Durga Ghee Container Size Collection.png' %}" alt="Durga Ghee Container Size Collection Product Shoot" title="Durga Ghee Product Photography - DT7 Agency" class="projects-details-page__img">
+                                            </div>
+                                            <div class="item">
+                                                <img loading="lazy" src="{% static 'assets/images/service/dt7services/XXX Detergent Pouch Product Lineup.png' %}" alt="XXX Detergent Pouch Product Lineup Shoot" title="XXX Detergent Product Photography - DT7 Agency" class="projects-details-page__img">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <style>
+                                .productshoot-slider__carousel {
+                                    border-radius: 16px;
+                                    overflow: hidden;
+                                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+                                }
+                                .productshoot-slider__carousel .projects-details-page__img {
+                                    border-radius: 16px;
+                                    width: 100%;
+                                    display: block;
+                                }
+                                .productshoot-slider__carousel.digihub-owl__carousel .owl-dots {
+                                    margin-top: 20px !important;
+                                }
+                            </style>
                         </div>
                     </div>
                     <div class="col-xl-12">

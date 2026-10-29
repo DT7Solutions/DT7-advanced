@@ -100,10 +100,10 @@ def Blogdetails(request,slug):
     return render(request, 'uifiles/blogdetails.html',context)   
  
 def Solutions(request):
-    return render(request, 'uifiles/service.html',{'navbar':'Solutions'})   
+    return render(request, 'uifiles/solutions.html',{'navbar':'Solutions'})   
 
 def Solutiondetails(request):
-    return render(request, 'uifiles/service.html',{'navbar':'Solutions'})
+    return render(request, 'uifiles/solutions.html',{'navbar':'Solutions'})
  
   
 def Projects(request):
@@ -113,28 +113,28 @@ def Projectdetails(request):
     return render(request, 'uifiles/projects-details.html' ,{'navbar':'Projects'})
 
 def Digitalmarketing(request):
-    return render(request, 'uifiles/digital-marketing-services-in-guntur.html' ,{'navbar':'Solutions'})
+    return render(request, 'uifiles/digital-marketing.html' ,{'navbar':'Solutions'})
 
 def websitedesign(request):
-    return render(request, 'uifiles/webdesgin.html' ,{'navbar':'Solutions'})
+    return render(request, 'uifiles/design-and-development.html' ,{'navbar':'Solutions'})
 
 def Brandidentity(request):
-    return render(request, 'uifiles/brandidentity.html' ,{'navbar':'Solutions'})
+    return render(request, 'uifiles/branding.html' ,{'navbar':'Solutions'})
 
 def WhatsAppPromotion(request):
-    return render(request, 'uifiles/whatsapppromotion.html' ,{'navbar':'Solutions'})
+    return render(request, 'uifiles/whatsapp-marketing.html' ,{'navbar':'Solutions'})
 
 def EmailMarketing(request):
     return render(request, 'uifiles/emailmarketing.html' ,{'navbar':'Solutions'})
 
 def EcommerceListing(request):
-    return render(request, 'uifiles/ecommercelisting.html' ,{'navbar':'Solutions'})
+    return render(request, 'uifiles/3pl-listing.html' ,{'navbar':'Solutions'})
 
 def PaidAdvertising(request):
-    return render(request, 'uifiles/paidmarketing.html' ,{'navbar':'Solutions'})
+    return render(request, 'uifiles/performance-marketing.html' ,{'navbar':'Solutions'})
 
 def Seo(request):
-    return render(request, 'uifiles/seo.html' ,{'navbar':'Solutions'})
+    return render(request, 'uifiles/seo-optimization.html' ,{'navbar':'Solutions'})
 
 def Privacypolicy(request):
     return render(request, 'uifiles/privacy-policy.html' ,{'navbar':'Home'})
@@ -152,7 +152,7 @@ def Mobileprivacypolicy(request):
     return render(request, 'uifiles/mobile-privacy-policy.html')
 
 def productshoot(request):
-    return render(request, 'uifiles/Product-shoot.html',{'navbar':'Solutions'})
+    return render(request, 'uifiles/product-and-video-shoot.html',{'navbar':'Solutions'})
 
 def MobileApplicationDevelopment(request):
     return render(request, 'uifiles/mobile-application-development.html', {'navbar': 'Solutions'})
