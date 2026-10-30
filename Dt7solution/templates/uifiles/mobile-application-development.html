@@ -107,12 +107,13 @@
                 <div class="projects-one__carousel digihub-owl__carousel owl-theme owl-carousel" data-owl-options='{
                     "items": 3,
                     "margin": 30,
-                    "smartSpeed":1500,
-                    "loop":true,
-                    "autoplay":6000,
-                    "nav":false,
-                    "dots":true,
-                    "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                    "smartSpeed": 1000,
+                    "loop": true,
+                    "autoplay": true,
+                    "autoplayTimeout": 3000,
+                    "autoplayHoverPause": false,
+                    "nav": false,
+                    "dots": true,
                     "responsive":{
                         "0":{"items": 1},
                         "768":{"items": 2},
@@ -190,7 +191,7 @@
 
                     <div class="projects-one__carousel-item item">
                         <div class="projects-one__single">
-                            <img loading="lazy" src="{% static 'assets/images/service/Effortless Billing_ Smarter Restaurant Management.png' %}" alt="Effortless Billing and Smarter Restaurant POS Management" title="Effortless Restaurant Billing - DT7 Agency" class="projects-one__single-img">
+                            <img loading="lazy" src="{% static 'assets/images/service/Effortless Billing_ Smarter Restaurant Management-mobile.png' %}" alt="Effortless Billing and Smarter Restaurant POS Management" title="Effortless Restaurant Billing - DT7 Agency" class="projects-one__single-img">
                             <div class="projects-one__single-content">
                                 <h3 class="projects-one__single-title">
                                     <a href="/mobile-app-development/" class="text-light" title="Effortless Restaurant Billing">Restaurant POS Billing</a>
@@ -207,7 +208,7 @@
 
                     <div class="projects-one__carousel-item item">
                         <div class="projects-one__single">
-                            <img loading="lazy" src="{% static 'assets/images/service/Every Payment_ Fully Tracked.png' %}" alt="Every Payment Fully Tracked - POS System" title="Multi-Mode Payment Tracking - DT7 Agency" class="projects-one__single-img">
+                            <img loading="lazy" src="{% static 'assets/images/service/Every Payment_ Fully Tracked-mobile.png' %}" alt="Every Payment Fully Tracked - POS System" title="Multi-Mode Payment Tracking - DT7 Agency" class="projects-one__single-img">
                             <div class="projects-one__single-content">
                                 <h3 class="projects-one__single-title">
                                     <a href="/mobile-app-development/" class="text-light" title="Tracked Transactions">Payment & Roster Tracking</a>
@@ -224,7 +225,7 @@
 
                     <div class="projects-one__carousel-item item">
                         <div class="projects-one__single">
-                            <img loading="lazy" src="{% static 'assets/images/service/Every-Menu-Perfectly-Managed.png' %}" alt="Master Catalog and Menu Item Library" title="Master Catalog Management - DT7 Agency" class="projects-one__single-img">
+                            <img loading="lazy" src="{% static 'assets/images/service/Every-Menu-Perfectly-Managed-mobile.png' %}" alt="Master Catalog and Menu Item Library" title="Master Catalog Management - DT7 Agency" class="projects-one__single-img">
                             <div class="projects-one__single-content">
                                 <h3 class="projects-one__single-title">
                                     <a href="/mobile-app-development/" class="text-light" title="Catalog & Item Library">Catalog & Item Library</a>
@@ -241,7 +242,7 @@
 
                     <div class="projects-one__carousel-item item">
                         <div class="projects-one__single">
-                            <img loading="lazy" src="{% static 'assets/images/service/Perfectly Managed Menus and Sales Insights.png' %}" alt="Sales Summary and Net Revenue Trends" title="Sales Trends & Analytics - DT7 Agency" class="projects-one__single-img">
+                            <img loading="lazy" src="{% static 'assets/images/service/Perfectly Managed Menus and Sales Insights-mobile.png' %}" alt="Sales Summary and Net Revenue Trends" title="Sales Trends & Analytics - DT7 Agency" class="projects-one__single-img">
                             <div class="projects-one__single-content">
                                 <h3 class="projects-one__single-title">
                                     <a href="/mobile-app-development/" class="text-light" title="Sales Trends & Analytics">Sales & Revenue Insights</a>
@@ -258,7 +259,7 @@
 
                     <div class="projects-one__carousel-item item">
                         <div class="projects-one__single">
-                            <img loading="lazy" src="{% static 'assets/images/service/Restaurant-Insights-Served-Simply.png' %}" alt="Live Table Layout and Seating Floor Plan" title="Interactive Floor Plan - DT7 Agency" class="projects-one__single-img">
+                            <img loading="lazy" src="{% static 'assets/images/service/Restaurant-Insights-Served-Simply-mobile.png' %}" alt="Live Table Layout and Seating Floor Plan" title="Interactive Floor Plan - DT7 Agency" class="projects-one__single-img">
                             <div class="projects-one__single-content">
                                 <h3 class="projects-one__single-title">
                                     <a href="/mobile-app-development/" class="text-light" title="Floor Plan & Table Layout">Floor Plan & Table Layout</a>
@@ -275,7 +276,7 @@
 
                     <div class="projects-one__carousel-item item">
                         <div class="projects-one__single">
-                            <img loading="lazy" src="{% static 'assets/images/service/Restaurant-Team-Management-Dashboard.png' %}" alt="Staff Permissions and Shift Management Dashboard" title="Team Management Dashboard - DT7 Agency" class="projects-one__single-img">
+                            <img loading="lazy" src="{% static 'assets/images/service/Restaurant-Team-Management-Dashboard-mobile.png' %}" alt="Staff Permissions and Shift Management Dashboard" title="Team Management Dashboard - DT7 Agency" class="projects-one__single-img">
                             <div class="projects-one__single-content">
                                 <h3 class="projects-one__single-title">
                                     <a href="/mobile-app-development/" class="text-light" title="Team & Role Permissions">Team & Role Permissions</a>
@@ -292,6 +293,10 @@
                 </div>
             </div>
             <style>
+                .portfolio-two {
+                    position: relative;
+                    overflow: hidden;
+                }
                 .portfolio-two .projects-one__carousel .owl-stage {
                     display: flex !important;
                     align-items: center !important;
@@ -308,28 +313,63 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    padding: 10px 0;
                 }
                 .portfolio-two .projects-one__single {
                     width: 100%;
+                    max-width: 380px;
                     margin: 0 auto;
-                    border-radius: 14px;
+                    border-radius: 18px;
                     overflow: hidden;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-                    transition: all 0.4s ease;
+                    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.10);
+                    transition: transform 0.4s ease, box-shadow 0.4s ease;
+                    background: #ffffff;
+                    text-align: center;
+                }
+                .portfolio-two .projects-one__single:hover {
+                    transform: translateY(-6px);
+                    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
                 }
                 .portfolio-two .projects-one__single-img {
                     width: 100%;
                     height: auto;
                     display: block;
                     margin: 0 auto;
-                    transition: transform 0.5s ease;
+                    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
                 }
                 .portfolio-two .projects-one__single:hover .projects-one__single-img {
                     transform: scale(1.03);
                 }
+                .portfolio-two .owl-nav {
+                    display: none !important;
+                }
+                .portfolio-two .owl-dots {
+                    margin-top: 30px !important;
+                }
+                @media (max-width: 767px) {
+                    .portfolio-two .projects-one__single {
+                        max-width: 320px;
+                    }
+                }
             </style>
         </section>
         <!-- Projects Portfolio End -->
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var initAutoSlide = function () {
+                    var $carousel = $(".portfolio-two .projects-one__carousel");
+                    if ($carousel.length && $carousel.data("owl.carousel")) {
+                        // Ensure uninterrupted auto sliding
+                        $carousel.off("mouseenter.owl.autoplay mouseleave.owl.autoplay");
+                        $carousel.trigger("play.owl.autoplay", [3000]);
+                    } else {
+                        setTimeout(initAutoSlide, 200);
+                    }
+                };
+                initAutoSlide();
+            });
+        </script>
 
         <!-- CTA Section Start -->
         <section class="cta-two">
